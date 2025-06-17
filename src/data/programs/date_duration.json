@@ -1,0 +1,350 @@
+{
+  "id": "date_duration",
+  "name": {
+    "en": "Date Duration",
+    "zh": "數日子"
+  },
+  "description": {
+    "en": "Calculate the number of days between two dates (excluding end date).",
+    "zh": "計算兩個日期之間的天數（不包括結束日）。"
+  },
+  "mode": "REG Lin",
+  "memory": 294,
+  "status": "completed",
+  "code": [
+    {
+      "line": 1,
+      "code": "?→X:?→Y:ClrStat:Deg:X,YDT:0→M:Fix 0:",
+      "bytes": 24,
+      "cumulativeBytes": 24,
+      "comment": {
+        "en": "Input start date and end date",
+        "zh": "輸入開始日期同結束日期"
+      }
+    },
+    {
+      "line": 2,
+      "code": "Rnd(G-.5+X₁₀^(-4→A:X-A₁₀^(4→X:",
+      "bytes": 21,
+      "cumulativeBytes": 45,
+      "comment": {
+        "en": "Parse start date year",
+        "zh": "抽取開始日期嘅年份"
+      }
+    },
+    {
+      "line": 3,
+      "code": "Rnd(G-.5+Y₁₀^(-4→B:Y-B₁₀^(4→Y:",
+      "bytes": 21,
+      "cumulativeBytes": 66,
+      "comment": {
+        "en": "Parse end date year",
+        "zh": "抽取結束日期嘅年份"
+      }
+    },
+    {
+      "line": 4,
+      "code": "0→C:X≥301⇒1→C:",
+      "bytes": 14,
+      "cumulativeBytes": 80,
+      "comment": {
+        "en": "Check if start date is on or after 1st of March",
+        "zh": "檢查開始日期係咪喺3月1號之後"
+      }
+    },
+    {
+      "line": 5,
+      "code": "For A→A To B-1:A+C:",
+      "bytes": 13,
+      "cumulativeBytes": 93,
+      "comment": {
+        "en": "Loop from start date year to end date year",
+        "zh": "由開始日期年份循環到結束日期年份"
+      }
+    },
+    {
+      "line": 6,
+      "code": "M+365+(sin(45Ans)=0)(sin(1.8Ans)≠0)+(0=sin(.45Ans→M:",
+      "bytes": 37,
+      "cumulativeBytes": 130,
+      "comment": {
+        "en": "Sum days in each year",
+        "zh": "總和每年嘅日數"
+      }
+    },
+    {
+      "line": 7,
+      "code": "Next:",
+      "bytes": 2,
+      "cumulativeBytes": 132,
+      "comment": {
+        "en": "End of loop",
+        "zh": "循環結束"
+      }
+    },
+    {
+      "line": 8,
+      "code": "Rnd(.01X-.5→C:Rnd(.01Y-.5→D:M-X+Y+100(C-D→M:",
+      "bytes": 38,
+      "cumulativeBytes": 170,
+      "comment": {
+        "en": "Parse start date month and end date month",
+        "zh": "抽取開始日期月份同結束日期月份"
+      }
+    },
+    {
+      "line": 9,
+      "code": "∑x→X:∑y→Y:1→A:If C>D:Then C→A:D→C:A→D:-1→A:IfEnd:",
+      "bytes": 37,
+      "cumulativeBytes": 207,
+      "comment": {
+        "en": "Decide whether to add or subtract days",
+        "zh": "決定月份應該向前定向後"
+      }
+    },
+    {
+      "line": 10,
+      "code": "For C→C To D-1:",
+      "bytes": 9,
+      "cumulativeBytes": 216,
+      "comment": {
+        "en": "Loop from start date month to end date month",
+        "zh": "由開始日期月份循環到結束日期月份"
+      }
+    },
+    {
+      "line": 11,
+      "code": "If C≠2:Then M+A(31-(1=Abs(Abs(C-7.5)-2.5→M:",
+      "bytes": 31,
+      "cumulativeBytes": 247,
+      "comment": {
+        "en": "Add or subtract days in each month (except February)",
+        "zh": "加減每月嘅日數（除咗2月）"
+      }
+    },
+    {
+      "line": 12,
+      "code": "Else M+A(28+(sin(45B)=0)(sin(1.8B)≠0)+(0=sin(.45B→M:IfEnd:",
+      "bytes": 41,
+      "cumulativeBytes": 288,
+      "comment": {
+        "en": "Special handling: Add or subtract days in February",
+        "zh": "特別處理：加減2月嘅日數"
+      }
+    },
+    {
+      "line": 13,
+      "code": "Next:Norm 2:M",
+      "bytes": 6,
+      "cumulativeBytes": 294,
+      "comment": {
+        "en": "Display result",
+        "zh": "顯示結果"
+      }
+    }
+  ],
+  "usage": {
+    "en": {
+      "parameters": [
+        "X?: Start date in yyyyMMdd format",
+        "Y?: End date in yyyyMMdd format",
+        "A: Start date year",
+        "B: End date year",
+        "C: Temporary variable/Start date month",
+        "D: End date month",
+        "M: Sum of days between two dates (excluding end date)",
+        "∑x: Store start date input",
+        "∑y: Store end date input"
+      ],
+      "instructions": [
+        "Enter start date in yyyyMMdd format",
+        "Enter end date in yyyyMMdd format",
+        "Program calculates days between dates (excluding end date)"
+      ]
+    },
+    "zh": {
+      "parameters": [
+        "X?: 開始日期，格式 yyyyMMdd",
+        "Y?: 結束日期，格式 yyyyMMdd",
+        "A: 開始日期年份",
+        "B: 結束日期年份",
+        "C: 暫存變數/開始日期月份",
+        "D: 結束日期月份",
+        "M: 兩個日期之間嘅日數（不包括結束日）",
+        "∑x: 儲存開始日期輸入",
+        "∑y: 儲存結束日期輸入"
+      ],
+      "instructions": [
+        "輸入開始日期，格式 yyyyMMdd",
+        "輸入結束日期，格式 yyyyMMdd",
+        "程式計算兩個日期之間嘅日數（不包括結束日）"
+      ]
+    }
+  },
+  "examples": [
+    {
+      "title": {
+        "en": "Calculate days between dates",
+        "zh": "計算日期間天數"
+      },
+      "steps": {
+        "en": [
+          "X?: 20240415 (April 15, 2024)",
+          "Y?: 20250609 (June 9, 2025)",
+          "Result: M = 420 days "
+        ],
+        "zh": [
+          "X?: 20240415（2024年4月15日）",
+          "Y?: 20250609（2025年6月9日）",
+          "結果：M = 420日"
+        ]
+      }
+    }
+  ],
+  "analysis": [
+    {
+      "title": {
+        "en": "Short hand to check if a year is a leap year",
+        "zh": "簡潔檢查閏年的方法"
+      },
+      "actualCode": [
+        "(sin(45Ans)=0 AND sin(1.8Ans)≠0) OR (sin(0.45Ans)=0)"
+      ],
+      "genericCode": [
+        "(sin(45*[year])=0 AND sin(1.8*[year])≠0) OR (sin(0.45*[year])=0)"
+      ],
+      "problem": {
+        "en": "Instead of checking for divisibility by 4, 100, and 400 separately, we can use a clever trick with the sine function to check if a year is a leap year in a single logical statement.",
+        "zh": "我哋唔需要逐個檢查4、100同400嘅整除性，反而可以用一個關於 sin 函數嘅技巧，用一句邏輯語句嚟檢查年份係咪閏年。"
+      },
+      "steps": [
+        {
+          "step": 1,
+          "title": {
+            "en": "The Core Concept: Using Sine to Check Divisibility",
+            "zh": "核心概念：用 Sine 函數檢查整除性"
+          },
+          "formula": "sin(180° * k) = 0",
+          "explanation": {
+            "en": "The sine of any multiple of 180° is always 0. If we can create an expression like 'magic number * year' that equals a multiple of 180° only when 'year' is divisible by a target number, we have a divisibility checker!",
+            "zh": "任何180°嘅倍數，佢嘅 sin 值都係 0。如果我哋可以將公式設計成 `(一個數字 * 年份)`，而呢個算式只有喺年份可以被某個數整除嗰陣，先會等於180°嘅倍數，咁我哋就有一個整除性嘅檢查方法！"
+          }
+        },
+        {
+          "step": 2,
+          "title": {
+            "en": "The Official Leap Year Rule",
+            "zh": "閏年嘅官方規則"
+          },
+          "formula": "(year % 4 == 0 AND year % 100 != 0) OR (year % 400 == 0)",
+          "explanation": {
+            "en": "This is the standard rule we need to replicate. A year is a leap year if it's divisible by 4, but not 100, unless it's divisible by 400.",
+            "zh": "呢個係我哋需要實現嘅標準規則。如果一個年份可以被4整除，但唔可以被100整除，就係閏年；除非，佢可以被400整除。"
+          }
+        },
+        {
+          "step": 3,
+          "title": {
+            "en": "Condition 1: Divisibility by 4",
+            "zh": "條件一：被 4 整除"
+          },
+          "formula": "sin(45 * [year]) = 0",
+          "explanation": {
+            "en": "This checks if a year is divisible by 4. The 'magic number' is 45 because 45 * 4 = 180. So, only when the year is a multiple of 4 will the input to the sine function be a multiple of 180°, making the result 0.",
+            "zh": "呢個條件檢查年份係咪可以被4整除。呢度嘅數字係45，因為 45 * 4 = 180。所以，只有當年份係4嘅倍數嗰陣，sin 函數入面嘅數值先會係180°嘅倍數，令結果等於0。"
+          }
+        },
+        {
+          "step": 4,
+          "title": {
+            "en": "Condition 2: NOT Divisible by 100",
+            "zh": "條件二：唔可以被 100 整除"
+          },
+          "formula": "sin(1.8 * [year]) ≠ 0",
+          "explanation": {
+            "en": "This checks if a year is NOT a century year. The number is 1.8 because 1.8 * 100 = 180. This means `sin(1.8 * year)` WILL be 0 for century years. By checking that the result is NOT 0 (≠ 0), we confirm the condition is met.",
+            "zh": "呢個條件檢查年份係咪唔係世紀年。呢度嘅數字係1.8，因為 1.8 * 100 = 180。意思係，如果年份係世紀年，`sin(1.8 * year)` 就會等於0。所以我哋反向檢查結果係咪『不等於0』(≠ 0)嚟確認條件成立。"
+          }
+        },
+        {
+          "step": 5,
+          "title": {
+            "en": "Condition 3: The Exception for 400",
+            "zh": "條件三：關於 400 嘅例外情況"
+          },
+          "formula": "sin(0.45 * [year]) = 0",
+          "explanation": {
+            "en": "This handles the special rule for centuries. The number is 0.45 because 0.45 * 400 = 180. This will only be true for years divisible by 400, overriding the 'not divisible by 100' rule.",
+            "zh": "呢個條件處理世紀年嘅特殊規則。呢度嘅數字係0.45，因為 0.45 * 400 = 180。所以，呢個算式只會喺年份可以被400整除嗰陣先會等於0，從而覆蓋咗『唔可以被100整除』嘅規則。"
+          }
+        },
+        {
+          "step": 6,
+          "title": {
+            "en": "Putting It All Together",
+            "zh": "組合所有條件"
+          },
+          "formula": "([Step 3] AND [Step 4]) OR [Step 5]",
+          "explanation": {
+            "en": "Combining our sine checks into the standard leap year logic gives us our final formula. The entire statement is true only when the year is a leap year: (sin(45*year)=0 AND sin(1.8*year)≠0) OR (sin(0.45*year)=0)",
+            "zh": "將我哋嘅 sine 檢查方法組合成標準嘅閏年邏輯，就得到最終公式。只有喺年份係閏年嗰陣，呢句完整嘅陳述先會成立：(sin(45*year)=0 AND sin(1.8*year)≠0) OR (sin(0.45*year)=0)"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "A Mathematical Shortcut for Days in a Month (Excluding February)",
+        "zh": "計算月份日數嘅數學捷徑（二月除外）"
+      },
+      "actualCode": [
+        "31-(1=Abs(Abs(C-7.5)-2.5"
+      ],
+      "genericCode": [
+        "31 - ||[month] - 7.5| - 2.5|"
+      ],
+      "problem": {
+        "en": "Calculating the number of days in a month (30 or 31) usually requires a list or a conditional statement. This program demonstrates a clever mathematical formula that can determine the correct number of days in a single line of code, without needing to check each month individually.",
+        "zh": "要計一個月有幾多日（30日定31日），通常要用列表或者條件式。呢個程式展示咗一條數學公式可以計到出嚟，唔使逐個月去檢查。"
+      },
+      "steps": [
+        {
+          "step": 1,
+          "title": {
+            "en": "The Core Expression",
+            "zh": "核心數學表達式"
+          },
+          "formula": "Abs(Abs([month] - 7.5) - 2.5)",
+          "explanation": {
+            "en": "This formula is the heart of the calculation. It cleverly groups the months based on their number of days. By subtracting 7.5 (the midpoint between July and August), it treats the year's calendar as symmetrical. The two absolute value functions, Abs(), work together to map all months with 30 days (April, June, September, November) to the number 1, and all months with 31 days to other numbers.",
+            "zh": "呢條公式係整個計算嘅心臟。佢好巧妙咁將啲月份按日數分組。透過減 7.5（即係七月同八月之間嘅中間點），佢將成年嘅月曆當成係對稱嘅。兩個絕對值函數 Abs() 一齊運作，會將所有得 30 日嘅月份（四月、六月、九月、十一月）都變成數字 1，而將所有有 31 日嘅月份就變成其他數字。"
+          }
+        },
+        {
+          "step": 2,
+          "title": {
+            "en": "The Boolean Check",
+            "zh": "邏輯檢查"
+          },
+          "formula": "(1 = Abs(Abs([month] - 7.5) - 2.5))",
+          "explanation": {
+            "en": "This part of the code is a condition. It checks if the result from Step 1 is equal to 1. In many calculator programming languages, a 'true' condition evaluates to the number 1, and a 'false' condition evaluates to 0. Therefore, this entire expression becomes 1 if the month has 30 days, and 0 if it has 31 days.",
+            "zh": "程式碼呢個部分係一個條件判斷。佢會檢查第一步計出嚟嘅結果係咪等於 1。喺好多計數機嘅程式語言入面，一個『成立』嘅條件會得出數字 1，而一個『唔成立』嘅條件就會得出 0。所以，如果個月份係 30 日，呢條完整嘅式就會變成 1；如果係 31 日，就會變成 0。"
+          }
+        },
+        {
+          "step": 3,
+          "title": {
+            "en": "The Final Calculation",
+            "zh": "最終計算"
+          },
+          "formula": "31 - (result from Step 2)",
+          "explanation": {
+            "en": "Finally, the program subtracts the result of the boolean check (either 0 or 1) from 31. If the month has 31 days, the check is false (0), so the calculation is '31 - 0 = 31'. If the month has 30 days, the check is true (1), so the calculation is '31 - 1 = 30'. This elegantly provides the correct number of days for any month other than February.",
+            "zh": "最後，個程式會用 31 減去邏輯檢查得出嘅結果（一係 0，一係 1）。如果個月份有 31 日，邏輯檢查結果係『唔成立』（0），咁計算就係『31 - 0 = 31』。如果個月份得 30 日，邏輯檢查結果係『成立』（1），咁計算就係『31 - 1 = 30』。用呢個方法就可以好簡潔咁計到二月以外任何月份嘅正確日數。"
+          }
+        }
+      ]
+}
+  ]
+} 

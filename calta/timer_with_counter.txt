@@ -1,0 +1,23 @@
+Name: Timer with Counter 計時器加記數器
+Mode: Comp 
+Memory: 87
+
+Important‼️:
+Not all calculators time 1 second in 50 loops, calibrate variable A with a clock 
+用秒鐘調較A至準確(A預設為50)
+
+Program:
+50→A:3600→B: /12
+Lbl 0:D÷AB→X:M▫+X▫→Y:?→Y: /34
+Y≤0⇒-Y-1→M:X⇒Y=M+X⇒X→Y:1M⁺: /60
+Y<1⇒BY→Y:AY-1→Y: /76
+For 0→D To Y:Next:Goto 0 /87
+
+Guide:
+▫: between (-) and hyp
+
+Usage:
+input Y≤0 to set Counter to Y
+Y入零或者負數 → 記數器設定為負Y
+input Y>0 to time Y seconds
+Y入正數 → 計時器計Y秒

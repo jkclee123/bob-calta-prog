@@ -1,0 +1,355 @@
+.code-viewer {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.code-container {
+  background: var(--code-bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px var(--shadow-light);
+  overflow: hidden;
+  border: 1px solid var(--border-primary);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Code Header */
+.code-header {
+  background: linear-gradient(135deg, #5e71c5 0%, #a57ecc 100%);
+  color: white;
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.code-title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.code-stats {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.total-lines,
+.total-memory {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
+
+/* Code Lines */
+.code-lines {
+  padding: 0;
+}
+
+.code-line-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--border-secondary);
+  transition: all 0.2s ease;
+  min-height: 80px;
+}
+
+.code-line-card:hover {
+  background-color: var(--card-hover-bg);
+  transform: translateX(4px);
+}
+
+.code-line-card.even {
+  background-color: var(--code-even-bg);
+}
+
+.code-line-card.odd {
+  background-color: var(--code-odd-bg);
+}
+
+.code-line-card:last-child {
+  border-bottom: none;
+}
+
+/* Line Content */
+.line-content {
+  flex: 1;
+  display: block;
+  width: 100%;
+}
+
+.line-number-badge {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.line-code-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.code-text {
+  font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', 'Consolas', 'Courier New', monospace;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: none;
+  border: none;
+  white-space: normal;
+  word-wrap: break-word;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+/* Code Comments */
+.line-comment {
+  margin-top: 4px;
+  padding: 6px 10px;
+  background: rgba(102, 126, 234, 0.04);
+  border-left: 2px solid #667eea;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.comment-text {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.3;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+/* Math symbol replacements for Android compatibility */
+.math-symbol {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-weight: 600;
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 0.9em;
+  margin: 0 1px;
+  display: inline-block;
+}
+
+.math-symbol.subscript {
+  font-size: 0.7em;
+  vertical-align: sub;
+  background: rgba(102, 126, 234, 0.15);
+}
+
+/* Line Stats */
+.line-stats {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.line-bytes,
+.line-cumulative {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 60px;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.cumulative-value {
+  color: #667eea;
+  font-size: 1.2rem;
+}
+
+.stat-label {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Summary Card */
+.code-summary-card {
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  border-top: 1px solid #e2e8f0;
+  padding: 24px 32px;
+}
+
+.summary-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.summary-icon {
+  font-size: 2rem;
+  filter: grayscale(20%);
+}
+
+.summary-text h4 {
+  margin: 0 0 8px 0;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.summary-text p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.summary-text strong {
+  color: #667eea;
+  font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .code-header {
+    padding: 20px 24px;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .code-stats {
+    gap: 16px;
+  }
+
+  .code-line-card {
+    padding: 16px 24px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    min-height: auto;
+  }
+
+  .line-content {
+    gap: 16px;
+  }
+
+  .line-stats {
+    justify-content: space-around;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 8px;
+  }
+
+  .code-text {
+    font-size: 14px;
+  }
+
+  .comment-text {
+    font-size: 0.7rem;
+  }
+
+  .line-comment {
+    padding: 4px 8px;
+    margin-top: 3px;
+  }
+
+  .line-number-badge {
+    width: 36px;
+    height: 36px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .code-header {
+    padding: 16px 20px;
+  }
+
+  .code-title {
+    font-size: 1.2rem;
+  }
+
+  .total-lines,
+  .total-memory {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .code-line-card {
+    padding: 12px 20px;
+  }
+
+  .code-text {
+    font-size: 1.1rem;
+  }
+
+  .comment-text {
+    font-size: 0.7rem;
+  }
+
+  .line-comment {
+    padding: 3px 6px;
+    margin-top: 2px;
+  }
+
+  .stat-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .cumulative-value {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    opacity: 0.8;
+  }
+
+  .summary-content {
+    gap: 12px;
+  }
+
+  .summary-icon {
+    font-size: 1.5rem;
+  }
+
+  .code-summary-card {
+    padding: 20px 20px;
+  }
+} 

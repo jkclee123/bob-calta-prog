@@ -1,0 +1,49 @@
+Name: MasterMind 數字推理
+Mode: REG Lin 
+Memory: 359
+
+Program:
+Lbl 0:Norm 2:0→X:?→X:Fix 0:X=0⇒Goto 2:(X<4)+(X>8)+(X≠Rnd(X⇒Goto 0: /45
+X→C:100Ran#+Ran#₁₀^(5)+Ran#₁₀^(8:Rnd(Ans₁₀^(C-8)-.5→X: /76
+Lbl 2:X=0⇒∑x→X:1→Y:For 1-C→D To0:X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G /125
+Y(2Ans+1+(Ans=0)+14((Ans=4)+(Ans=7→Y:Next:ClrStat:X,Ydt:0→X: /167
+Lbl 5:Norm 2:0→Y:?→Y:Y<0⇒Goto 0:Y≥₁₀^(C⇒Goto 5: /196
+If Y=∑x:Then ∑x◢Goto 5:IfEnd: /209
+Fix 0:0→A:∑x→X:∑y→B:For 1-C→D To 0: /233
+Y₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G→M: /260
+X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G: /285
+M=Ans⇒A+.9→A: /296
+B÷(2M+1+(M=0)+14((M=4)+(M=7→M: /326
+If M=Rnd(M:Then A+.1→A:M→B:IfEnd:Next: /348
+0→X:Fix 1:A◢Goto 5 /359
+
+Guide:
+ClrStat: in CLR menu (shift 9)
+dt: M⁺
+Rnd: shift 0
+G: in CONST menu (shift 7)
+∑x: in S-VAR menu (shift 2)
+∑y: in S-VAR menu (shift 2)
+
+Usage:
+    X?: start menu
+    input 0 to continue previous game(if exist)
+    input 4-8 to start a game with 4-8 digits
+
+    Y?: in game
+    input negative number to return to start menu
+    input guess
+
+    A: feedback
+    e.g. A: 1.2 means 1 number in guess is correct and in the right position, 2 numbers are correct but in the wrong position 
+
+Example:
+    digit: 4
+    answer: 5093
+    
+    guess(Y?): 4069
+    feedback(A): 1.1
+
+    guess(Y?): 6650
+    feedback(A): 0.2
+    

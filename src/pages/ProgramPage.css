@@ -1,0 +1,830 @@
+.program-page {
+  min-height: calc(100vh - 70px);
+  background-color: var(--bg-secondary);
+  padding: 40px 0;
+  transition: background-color 0.3s ease;
+}
+
+.error-message {
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 500px;
+  transition: background-color 0.3s ease;
+}
+
+.error-message h2 {
+  color: #f44336;
+  margin-bottom: 16px;
+}
+
+.error-message p {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  transition: color 0.3s ease;
+}
+
+/* Program Header */
+.program-header {
+  color: white;
+  padding: 32px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 15px var(--shadow-medium);
+  border: 1.5px solid var(--border-primary);
+  transition: color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Program-specific header colors - Subtle Pink Variations */
+.program-header-dice_roll {
+  background: linear-gradient(135deg, #e4e6a8 0%, #a8e6cf 100%); /* Pink to Green */
+}
+
+.program-header-mastermind {
+  background: linear-gradient(135deg, #8890d7 0%, #58c9df 100%); /* Pink to Pink-Blue */
+}
+
+.program-header-date_duration {
+  background: linear-gradient(135deg, #ffb6c1 0%, #ffe6d4 100%); /* Pink to Pink-Yellow */
+}
+
+.program-header-timer_stopwatch {
+  background: linear-gradient(135deg, rgb(231, 152, 208) 0%, #f5b3b0 100%); /* Light Pink to Soft Pink-Yellow */
+}
+
+.program-header-timer_with_counter {
+  background: linear-gradient(135deg, #99ddd4 0%, #acdd99 100%); /* Plum Pink to Soft Pink-Green */
+}
+
+.program-header-poker_dealer {
+  background: linear-gradient(135deg, #f8bbc4 0%, #b798d0 100%); /* Deep Pink to Soft Pink-Blue */
+  
+}
+
+.program-header-avalon {
+  background: linear-gradient(135deg, #ffe4e1 0%, #f0e8f5 100%); /* Misty Rose to Soft Pink-Lavender */
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  color: rgb(73, 66, 66, 0.7);
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 24px;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: var(--text-primary);
+}
+
+.program-title-section {
+  border-bottom: 1px solid rgb(73, 66, 66);
+  padding-bottom: 24px;
+  transition: border-color 0.3s ease;
+}
+
+.program-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 16px;
+  color: rgb(73, 66, 66);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  transition: color 0.3s ease;
+}
+
+.program-meta {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  color: rgb(73, 66, 66, 0.8);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Program Description */
+.program-description {
+  background: var(--card-bg);
+  padding: 24px 32px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 4px var(--shadow-light);
+  border: 1.5px solid var(--border-primary);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.program-description p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* Tabs */
+.tabs-container {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 4px var(--shadow-light);
+  border: 1.5px solid var(--border-primary);
+  overflow: hidden;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tabs-header {
+  display: flex;
+  border-bottom: 1px solid var(--border-primary);
+  background-color: var(--bg-tertiary);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 16px 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-button:hover {
+  background-color: var(--card-hover-bg);
+  color: var(--text-primary);
+}
+
+.tab-button.active {
+  color: #2196F3;
+  border-bottom-color: #2196F3;
+  background-color: var(--card-bg);
+}
+
+.tab-content {
+  padding: 32px;
+}
+
+/* Guide Content (merged usage and examples) */
+.guide-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.usage-section h3,
+.examples-section h3 {
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.parameter-list,
+.instruction-list {
+  margin-bottom: 32px;
+  padding-left: 24px;
+}
+
+.parameter-list ul,
+.instruction-list ol,
+.parameter-list ol,
+.instruction-list ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.parameter-list li,
+.instruction-list li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.parameter-item,
+.instruction-item {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.example-card {
+  border: 1px solid var(--border-primary);
+  border-radius: 8px;
+  padding: 20px;
+  background-color: var(--bg-tertiary);
+  overflow: hidden;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.example-title {
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.example-steps {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.example-step {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  word-wrap: break-word;
+  transition: color 0.3s ease;
+}
+
+/* Analysis Content */
+.analysis-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Table of Contents */
+.analysis-toc {
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-primary);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 8px var(--shadow-light);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.toc-title {
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-primary);
+  padding-bottom: 12px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.toc-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: toc-counter;
+}
+
+.toc-item {
+  counter-increment: toc-counter;
+  margin-bottom: 12px;
+}
+
+.toc-item:last-child {
+  margin-bottom: 0;
+}
+
+.toc-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: var(--text-secondary);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  position: relative;
+}
+
+.toc-link::before {
+  content: counter(toc-counter);
+  background-color: #2196F3;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.toc-link:hover {
+  color: var(--text-primary);
+  background-color: var(--card-hover-bg);
+  border-color: #2196F3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+.toc-link:active {
+  transform: translateY(0);
+}
+
+.analysis-section {
+  border: 1px solid var(--border-primary);
+  border-radius: 12px;
+  padding: 32px;
+  background-color: var(--bg-tertiary);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  scroll-margin-top: 90px; /* Adjust scroll position for fixed header */
+}
+
+.analysis-title {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--border-primary);
+  padding-bottom: 12px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.analysis-problem,
+.analysis-code-display,
+.analysis-steps {
+  margin-bottom: 32px;
+}
+
+.analysis-problem h4,
+.analysis-code-display h4,
+.analysis-steps h4 {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  transition: color 0.3s ease;
+}
+
+.analysis-problem p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 1.05rem;
+  transition: color 0.3s ease;
+}
+
+.code-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.actual-code,
+.generic-code {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-primary);
+  border-radius: 8px;
+  padding: 16px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.actual-code h5,
+.generic-code h5 {
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin-bottom: 12px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.code-block-container {
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-primary);
+  border-radius: 6px;
+  padding: 0;
+  overflow: hidden;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.code-block {
+  display: block;
+  color: var(--text-primary);
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.code-line {
+  display: block;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-primary);
+  transition: background-color 0.2s ease;
+}
+
+.code-line:last-child {
+  border-bottom: none;
+}
+
+.code-line:hover {
+  background-color: rgba(33, 150, 243, 0.1);
+}
+
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.step-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-primary);
+  border-radius: 8px;
+  padding: 20px;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.step-number {
+  background-color: #2196F3;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.step-title {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.step-formula {
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-primary);
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 16px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.formula-code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background-color: transparent;
+  padding: 0;
+  margin-left: 8px;
+  transition: color 0.3s ease;
+}
+
+.step-explanation p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+/* Symbols Content */
+.symbols-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.key-instructions h3 {
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  transition: color 0.3s ease;
+}
+
+.key-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.key-instruction {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  background-color: var(--card-bg);
+  border-radius: 6px;
+  border: 1px solid var(--border-primary);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.key-instruction .symbol {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  color: var(--text-primary);
+  background-color: var(--input-bg);
+  padding: 4px 8px;
+  border-radius: 4px;
+  min-width: 40px;
+  text-align: center;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.key-instruction .instruction {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.general-reference {
+  text-align: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-primary);
+  transition: border-color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .program-page {
+    padding: 20px 0;
+  }
+
+  .program-header {
+    padding: 24px 20px;
+  }
+
+  .program-title {
+    font-size: 2rem;
+  }
+
+  .program-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .program-description {
+    padding: 20px;
+  }
+
+  .tabs-header {
+    flex-direction: column;
+  }
+
+  .tab-button {
+    text-align: left;
+    border-bottom: 1px solid var(--border-primary);
+    border-right: none;
+  }
+
+  .tab-button.active {
+    border-bottom-color: var(--border-primary);
+    border-left: 3px solid #2196F3;
+  }
+
+  .tab-content {
+    padding: 20px;
+  }
+
+  .parameter-list,
+  .instruction-list {
+    padding-left: 20px;
+    margin-left: 8px;
+  }
+
+  .parameter-list ul,
+  .instruction-list ol,
+  .parameter-list ol,
+  .instruction-list ul {
+    padding-left: 16px;
+  }
+
+  .examples-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .example-card {
+    padding: 16px;
+    margin: 0;
+  }
+
+  /* Analysis section mobile adjustments */
+  .analysis-section {
+    padding: 24px 16px;
+  }
+
+  .actual-code,
+  .generic-code {
+    padding: 12px;
+  }
+
+  .code-block {
+    font-size: 0.85rem;
+  }
+
+  .code-line {
+    padding: 6px 10px;
+  }
+
+  .step-formula {
+    padding: 10px;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  .formula-code {
+    font-size: 0.85rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    margin-left: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .program-header {
+    padding: 16px;
+  }
+
+  .program-title {
+    font-size: 1.6rem;
+  }
+
+  .program-description {
+    padding: 16px;
+  }
+
+  .tab-content {
+    padding: 16px;
+  }
+
+  .key-instruction {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .parameter-list,
+  .instruction-list {
+    padding-left: 16px;
+    margin-left: 4px;
+  }
+
+  .parameter-list ul,
+  .instruction-list ol,
+  .parameter-list ol,
+  .instruction-list ul {
+    padding-left: 12px;
+  }
+
+  .parameter-item,
+  .instruction-item {
+    margin-bottom: 12px;
+    padding-right: 8px;
+  }
+
+  .guide-content {
+    gap: 24px;
+  }
+
+  .example-card {
+    padding: 16px;
+  }
+
+  .example-steps {
+    padding-left: 16px;
+    margin-left: 0;
+  }
+
+  .example-step {
+    margin-bottom: 12px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .analysis-section {
+    padding: 20px;
+  }
+
+  .analysis-title {
+    font-size: 1.3rem;
+  }
+
+  .code-comparison {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .actual-code,
+  .generic-code {
+    padding: 12px;
+    overflow: hidden;
+  }
+
+  .code-block-container {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  .code-block {
+    font-size: 0.8rem;
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    min-width: 0;
+  }
+
+  .code-line {
+    padding: 6px 8px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    min-width: 0;
+  }
+
+  .step-formula {
+    padding: 8px;
+    margin-bottom: 12px;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  .formula-code {
+    font-size: 0.8rem;
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    margin-left: 4px;
+    display: block;
+    min-width: 0;
+  }
+
+  .step-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .step-number {
+    align-self: flex-start;
+  }
+
+  .step-title {
+    font-size: 1rem;
+  }
+
+  /* Table of Contents responsive */
+  .analysis-toc {
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+
+  .toc-title {
+    font-size: 1.2rem;
+  }
+
+  .toc-link {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+
+  .toc-link::before {
+    width: 20px;
+    height: 20px;
+    font-size: 0.8rem;
+  }
+} 

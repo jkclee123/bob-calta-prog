@@ -1,13 +1,264 @@
+/* Import Google Fonts for better mathematical symbol support */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Math&family=Noto+Sans+Symbols&family=Noto+Sans+Symbols+2&display=swap');
+
+/* CSS Custom Properties for Theme System */
+:root {
+  /* Light Theme Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-tertiary: #fafbff;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --border-primary: #e0e0e0;
+  --border-secondary: #f0f0f0;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+  --hero-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --card-bg: #ffffff;
+  --card-hover-bg: #f8f9ff;
+  --header-bg: #ffffff;
+  --input-bg: #ffffff;
+  --code-bg: #ffffff;
+  --code-even-bg: #fafbff;
+  --code-odd-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  /* Dark Theme Colors */
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #3a3a3a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-tertiary: #999999;
+  --border-primary: #404040;
+  --border-secondary: #333333;
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --shadow-medium: rgba(0, 0, 0, 0.4);
+  --hero-gradient: linear-gradient(135deg, #4a5568 0%, #553c9a 100%);
+  --card-bg: #2d2d2d;
+  --card-hover-bg: #3a3a3a;
+  --header-bg: #1a1a1a;
+  --input-bg: #2d2d2d;
+  --code-bg: #2d2d2d;
+  --code-even-bg: #3a3a3a;
+  --code-odd-bg: #2d2d2d;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', sans-serif, 'Noto Sans Math', 'STIX Two Math', 'Cambria Math';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--text-primary);
+  line-height: 1.6;
+  background-color: var(--bg-secondary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Global animations and transitions */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hover animations for buttons */
+button, .btn, .tab-button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  transform: translateY(-2px);
+}
+
+button:active, .btn:active {
+  transform: translateY(0);
+}
+
+/* Link hover animations */
+a {
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+/* Card hover animations */
+.program-card,
+.symbol-card,
+.example-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-card:hover,
+.symbol-card:hover,
+.example-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Input focus animations */
+input[type="text"],
+input[type="search"],
+select,
+textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+/* Tab animations */
+.tab-button {
+  transition: background-color 0.3s ease, color 0.3s ease, border-bottom 0.3s ease;
+}
+
+/* Fade in animation for page content */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container,
+.hero,
+.programs-section,
+.symbols-content,
+.program-page,
+.symbols-page,
+.home-page {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Stagger animation for grid items */
+.programs-grid > * {
+  animation: fadeIn 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.programs-grid > *:nth-child(1) { animation-delay: 0.1s; }
+.programs-grid > *:nth-child(2) { animation-delay: 0.2s; }
+.programs-grid > *:nth-child(3) { animation-delay: 0.3s; }
+.programs-grid > *:nth-child(4) { animation-delay: 0.4s; }
+.programs-grid > *:nth-child(5) { animation-delay: 0.5s; }
+.programs-grid > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* Code line hover effects */
+.code-line:hover {
+  background-color: rgba(74, 144, 226, 0.05);
+}
+
+/* Header navigation animations */
+.header {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Loading animations */
+.loading {
+  animation: fadeIn 0.5s ease-out infinite alternate;
+}
+
+/* Pulse animation for status badges */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.status-badge.loading {
+  animation: pulse 2s infinite;
+}
+
+/* Toast animation */
+@keyframes toastSlideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toastSlideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.toast.show {
+  animation: toastSlideIn 0.3s ease-out;
+}
+
+.toast.hide {
+  animation: toastSlideOut 0.3s ease-in;
+}
+
+/* Enhanced font support for mathematical symbols */
+.symbol-display,
+.line-code code,
+.typing-instruction,
+code,
+.code-text {
+  font-family: 'Noto Sans Math', 'Noto Sans Symbols', 'Noto Sans Symbols 2', 'Courier New', 'DejaVu Sans Mono', 'Liberation Mono', 'Consolas', 'Ubuntu Mono', 'Noto Sans Mono', 'Droid Sans Mono', monospace, 'STIX Two Math', 'Cambria Math', 'Times New Roman', serif;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  font-variant-numeric: normal;
+}
+
+/* Ensure Unicode mathematical symbols render properly */
+.mathematical-symbols {
+  font-family: 'Noto Sans Math', 'STIX Two Math', 'Cambria Math', 'Times New Roman', serif;
+  font-size: 1.1em;
+  font-weight: normal;
+}
+
+/* Specific styling for superscript and subscript in code */
+.symbol-display,
+.line-code code,
+.code-text {
+  /* Ensure proper Unicode rendering */
+  unicode-bidi: embed;
+  direction: ltr;
+  text-rendering: optimizeLegibility;
+  
+  /* Android-specific fixes */
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  
+  /* Force Unicode font loading */
+  font-display: swap;
+}
+
+/* Force better rendering for problematic Unicode symbols */
+.unicode-symbol {
+  font-family: 'Noto Sans Math', 'Noto Sans Symbols', 'Noto Sans Symbols 2', 'STIX Two Math', 'Cambria Math', system-ui, -apple-system, sans-serif;
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
 }

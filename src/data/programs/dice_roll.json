@@ -1,0 +1,380 @@
+{
+  "id": "dice_roll",
+  "name": {
+    "en": "Dice Roll",
+    "zh": "骰盅"
+  },
+  "description": {
+    "en": "A dice rolling simulator that supports multiple dice with customizable sides. Perfect for board games and probability experiments.",
+    "zh": "骰盅模擬器，支援多粒骰子同自定面數，適合桌遊同概率實驗。"
+  },
+  "mode": "Comp",
+  "memory": 215,
+  "status": "completed",
+  "code": [
+    {
+      "line": 1,
+      "code": "5→A:?→A:6→B:?→B:Lbl 0:Fix 0:0→M:",
+      "bytes": 26,
+      "cumulativeBytes": 26,
+      "comment": {
+        "en": "Set up dice count and size",
+        "zh": "設定骰仔數量同面數"
+      }
+    },
+    {
+      "line": 2,
+      "code": "123456789→Y:Rnd(Y₁₀^(A-9)-.5→Y:",
+      "bytes": 25,
+      "cumulativeBytes": 51,
+      "comment": {
+        "en": "Set up \"re-roll all\" command",
+        "zh": "設定「重擲全部」指令"
+      }
+    },
+    {
+      "line": 3,
+      "code": "Lbl 5:Fix 0:While Y:Rnd(.1Y-.5→X:A-Y+10X→D:X→Y:(D<0)+(D>A-1⇒Goto 5:",
+      "bytes": 49,
+      "cumulativeBytes": 100,
+      "comment": {
+        "en": "Parse re-roll index",
+        "zh": "拆解重擲位置索引"
+      }
+    },
+    {
+      "line": 4,
+      "code": "M<₁₀^(A-1⇒Goto 6:M₁₀^(-D:Rnd(Ans-10Rnd(.1Ans-.5)-.5:Ans₁₀^(DM⁻:",
+      "bytes": 37,
+      "cumulativeBytes": 137,
+      "comment": {
+        "en": "Remove current die at index D",
+        "zh": "整走原有位置索引骰仔"
+      }
+    },
+    {
+      "line": 5,
+      "code": "Lbl 6:Rnd(10³Ran#÷Rnd(10³÷B-.5)+.5+G→X:X>B⇒Goto 6:X₁₀^(DM⁺:WhileEnd:",
+      "bytes": 41,
+      "cumulativeBytes": 178,
+      "comment": {
+        "en": "Add new die at position D",
+        "zh": "加入新骰仔"
+      }
+    },
+    {
+      "line": 6,
+      "code": "Lbl 9:Norm 2:M→Y:?→Y:(Y<0)+(Y=M⇒Goto 9:Y=0⇒Goto 0:Goto 5",
+      "bytes": 37,
+      "cumulativeBytes": 215,
+      "comment": {
+        "en": "Display current dice, input re-roll command",
+        "zh": "顯示所有骰，輸入重擲指令"
+      }
+    }
+  ],
+  "usage": {
+    "en": {
+      "parameters": [
+        "A?: Number of dice (default: 5)",
+        "B?: Number of sides per die (default: 6)",
+        "Y?: Display current dice, input re-roll command",
+        "D: Individual index",
+        "X: Next re-roll command",
+        "M: All dice"
+      ],
+      "instructions": [
+        "Run the program and set your dice count and die size",
+        "The program will display your dice roll as a number",
+        "To re-roll specific dice, enter their positions",
+        "To re-roll all dice, enter 0",
+        "Positions are order from the left: 123456789"
+      ]
+    },
+    "zh": {
+      "parameters": [
+        "A?: 骰仔數量 (預設: 5粒)",
+        "B?: 骰面數 (預設: 6面)",
+        "Y?: 顯示所有骰仔，輸入重擲指令",
+        "D: 個別位置索引",
+        "X: 下一個重擲指令",
+        "M: 所有骰仔"
+      ],
+      "instructions": [
+        "運行程式並設置骰仔數量同面數",
+        "程式會以數字形式顯示骰仔結果",
+        "如要重擲特定骰仔，輸入其位置",
+        "如要重擲所有骰仔，輸入 0",
+        "位置由左至右：123456789"
+      ]
+    }
+  },
+  "examples": [
+    {
+      "title": {
+        "en": "Basic dice roll",
+        "zh": "擲特定骰"
+      },
+      "steps": {
+        "en": [
+          "Y displays: 23156",
+          "Input 24 into Y",
+          "Re-rolls positions 2, and 4 (dice of value 3 and 5)",
+          "Y displays: 63254 (positions 2 and 4 kept)"
+        ],
+        "zh": [
+          "Y 顯示：23156",
+          "在 Y 中輸入 24",
+          "重擲位置 2 和 4 (骰面值 3 和 5)",
+          "Y 顯示：63254 (位置 2 和 4 保持不變)"
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Re-roll all dice",
+        "zh": "重擲所有骰"
+      },
+      "steps": {
+        "en": [
+          "Y displays: 23156",
+          "Input 0 into Y",
+          "Re-rolls all dice",
+          "Y displays: 56241"
+        ],
+        "zh": [
+          "Y 顯示：23156",
+          "在 Y 中輸入 0",
+          "重擲所有骰仔",
+          "Y 顯示：53241"
+        ]
+      }
+    }
+  ],
+  "analysis": [
+    {
+      "title": {
+        "en": "Equal Probability Random Number Generation",
+        "zh": "同等概率隨機數生成"
+      },
+      "actualCode": [
+        "Lbl 6:",
+        "Rnd(10³Ran#÷Rnd(10³÷B-.5)+.5+G→X:",
+        "X>B⇒Goto 6:"
+      ],
+      "genericCode": [
+        "Lbl [L]:",
+        "Rnd(10³Ran#÷Rnd(10³÷[n]-.5)+[Lower Limit - 0.5]+G→[Draw]:",
+        "[Draw]>[Upper Limit]⇒Goto [L]"
+      ],
+      "problem": {
+        "en": "When generating random numbers for dice with n sides, we need each outcome (1 to n) to have equal probability. However, the calculator's Ran# function generates numbers from 0 to 0.999, and 1000 outcomes cannot always be equally divided by n.",
+        "zh": "當為n面骰子生成隨機數時，我哋需要每個結果（1到n）都有相等的概率。但係計數機嘅Ran#函數生成0到0.999嘅隨機數，1000唔會總係被n等分。"
+      },
+      "steps": [
+        {
+          "step": 1,
+          "title": {
+            "en": "Understanding the Problem",
+            "zh": "理解問題"
+          },
+          "explanation": {
+            "en": "For a 6-sided die: 1000 ÷ 6 = 166.67 (not a whole number). This means some outcomes would have 167 chances while others have 166, creating unequal probabilities.",
+            "zh": "對於6面骰子：1000 ÷ 6 = 166.67（唔是整數）。意味住有啲結果有167次機會，而其他結果有166次機會，造成不等概率。"
+          }
+        },
+        {
+          "step": 2,
+          "title": {
+            "en": "Calculate Valid Range",
+            "zh": "計算有效範圍"
+          },
+          "formula": "Rnd(10³÷B-.5)",
+          "explanation": {
+            "en": "This calculates floor(1000÷B). For B=6: floor(1000÷6) = floor(166.67) = 166. This gives us the largest number of equal groups we can make.",
+            "zh": "計算floor(1000÷B)，對於B=6：floor(1000÷6) = floor(166.67) = 166，等同每份最大相等組數。"
+          }
+        },
+        {
+          "step": 3,
+          "title": {
+            "en": "Map Random Number to Valid Range",
+            "zh": "將隨機數映射到有效範圍"
+          },
+          "formula": "10³Ran#÷Rnd(10³÷B-.5)+.5",
+          "explanation": {
+            "en": "For B=6: 10³Ran# ÷ 166 + 0.5. This maps Ran# (0 to 0.999) to the range 0.5 to approximately 6.518. We'll get die range from 1 to 7 when we round.",
+            "zh": "當B=6：10³Ran# ÷ 166 + 0.5，等於將Ran#（0到0.999）映射到0.5至大約6.518，四捨五入時就會得出1－7。"
+          }
+        },
+        {
+          "step": 4,
+          "title": {
+            "en": "Convert to Integer Die Value",
+            "zh": "轉換為整數骰子值"
+          },
+          "formula": "Rnd(10³Ran#÷Rnd(10³÷B-.5)+.5+G",
+          "explanation": {
+            "en": "Rnd() converts the decimal to the nearest integer. Values 0.5-1.49 become 1, 1.5-2.49 become 2, etc., up to 5.5-6.49 becoming 6.",
+            "zh": "Rnd()將小數轉換為最接近的整數。值0.5-1.49變成1，1.5-2.49變成2，等等，直到5.5-6.49變成6，6.5-6.518變成7。"
+          }
+        },
+        {
+          "step": 5,
+          "title": {
+            "en": "Rejection Sampling",
+            "zh": "拒絕採樣"
+          },
+          "formula": "X>B⇒Goto 6",
+          "explanation": {
+            "en": "When we get a result that is greater than the number of sides, we need to reject it and try again.",
+            "zh": "當我哋得到嘅結果大於骰仔面數，就需要拒絕並重試。"
+          }
+        },
+        {
+          "step": 6,
+          "title": {
+            "en": "Why This Works",
+            "zh": "為什麼這有效"
+          },
+          "explanation": {
+            "en": "By using only the first 996 out of 1000 possible Ran# values (0.000 to 0.995), we get exactly 166 values for each die face (996 ÷ 6 = 166). Each face has exactly equal probability of 166/996 = 1/6.",
+            "zh": "淨係使用Ran#值中1000個可能嘅前996個（0.000到0.995），每個骰子面獲得嘅概率完全相等，為166/996 = 1/6。"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "Parsing re-roll command",
+        "zh": "拆解重擲指令"
+      },
+      "actualCode": [
+        "Rnd(.1Y-.5→X:",
+        "A-Y+10X→D:",
+        "X→Y:",
+        "(D<0)+(D>A-1⇒Goto 5:"
+      ],
+      "problem": {
+        "en": "When user re-roll command (like 24 to re-roll positions 2 and 4), we need to extract each digit one by one and convert it to a valid index.",
+        "zh": "當用戶輸入重擲指令（例如24：重擲位置2和4）時，我哋需要逐個提取每個數字並將佢轉有效嘅位置索引。"
+      },
+      "steps": [
+        {
+          "step": 1,
+          "title": {
+            "en": "Generate command for next step",
+            "zh": "生成下一個步驟嘅指令"
+          },
+          "formula": "Rnd(.1Y-.5→X",
+          "explanation": {
+            "en": "For input Y=24: floor(0.1×24) = floor(2.4) = 2. 4 is removed from the command to be processed.",
+            "zh": "例如Y=24：floor(.1×24) = floor(2.4) = 2，2係下一次嘅指令，4被移除及將被處理。"
+          }
+        },
+        {
+          "step": 2,
+          "title": {
+            "en": "Translate to index",
+            "zh": "轉換做位置索引"
+          },
+          "formula": "A-Y+10X→D",
+          "explanation": {
+            "en": "This translate user input position to index, counting from zero from right to left. So (12345) translate to (43210). Now we are translating 4 to 1. For A=5 (5 dice), Y=24, X=2: D = 5 - 24 + 10 x 2 = 5 - 24 + 20 = 1. 1 is the index of the tenth digit in the dice array.",
+            "zh": "將用戶輸入嘅位置轉換為索引，從右到左數，從0開始。所以位置（12345）會轉換為位置索引（43210）。對於A=5（5粒骰仔），Y=24，X=2：D = 5 - 24 + 10 x 2 = 5 - 24 + 20 = 1，位置索引1係骰仔中嘅十位數。"
+          }
+        },
+        {
+          "step": 3,
+          "title": {
+            "en": "Update command for next iteration",
+            "zh": "為下一個步驟更新指令"
+          },
+          "formula": "X→Y",
+          "explanation": {
+            "en": "User input 24, we are processing 4 now. So we store 2 for the next iteration.",
+            "zh": "用戶輸入24，喺呢次處理4。儲存2下一次處理。"
+          }
+        },
+        {
+          "step": 4,
+          "title": {
+            "en": "Validate index bounds",
+            "zh": "驗證索引邊界"
+          },
+          "formula": "(D<0)+(D>A-1⇒Goto 5",
+          "explanation": {
+            "en": "Check if the calculated index D is valid (between 0 and A-1, where A is the number of dice). If invalid, jump back to label 5 to continue parsing the next digit.",
+            "zh": "檢查位置索引係咪有效（喺0和A-1之間，其中A係骰仔數量）。如果無效，跳返標籤5繼續拆解下一個數字。"
+          }
+        },
+        {
+          "step": 5,
+          "title": {
+            "en": "Algorithm Overview",
+            "zh": "算法概述"
+          },
+          "explanation": {
+            "en": "This is a digit extraction algorithm that processes multi-digit input sequentially. It extracts one digit at a time from right to left, validates each position, and continues until all digits are processed.",
+            "zh": "呢個係一個數字提取算法，順序處理多位數輸入。由右到左逐個數字抽取並處理，直到處理完所有數字。"
+          }
+        }
+      ]
+    },{
+      "title": {
+        "en": "Isolate a Specific Digit From a Number",
+        "zh": "喺一個數度抽個別位數出嚟"
+      },
+      "actualCode": [
+        "X₁₀^(-D:",
+        "Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G"
+      ],
+      "genericCode": [
+        "[Number]₁₀^([-Index]):",
+        "Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G"
+      ],
+      "problem": {
+        "en": "Imagine you have a long number like 23156. What if you only need one piece of it? For example, how can we tell a calculator to grab just the '5'? This program uses a clever math trick to isolate any digit you want.",
+        "zh": "想像下你有一串好長嘅數字，例如23156。如果淨係想要其中一個數字？好似我哋點樣叫部計數機淨係攞個'5'出嚟？呢個程式就可以拆解你想要嘅任何一個數字出嚟。"
+      },
+      "steps": [
+        {
+          "step": 1,
+          "title": {
+            "en": "Position target digit to the ones place",
+            "zh": "將目標數字移到個位"
+          },
+          "formula": "X₁₀^(-D",
+          "explanation": {
+            "en": "First, we tell the calculator which digit we want. We count from right to left. '6' is the 1st digit, '5' is the 2nd, and so on. To get the 2nd digit ('5'), we use D=1. For the 3rd digit ('1'), we'd use D=2. The formula X * 10^-D shifts the decimal point. For X=23156 and D=-1, we get 2315.6. This cleverly moves our target digit '5' into the ones place, right before the decimal. This new number is stored as 'Ans'.",
+            "zh": "首先，我哋要話俾計數機知我哋想要邊個數字。我哋由右邊開始數：'6'係第1個，'5'係第2個，如此類推。要攞到第2個嘅'5'，我哋就入D=1。想攞第3個嘅'1'，就要入D=2。條式 X * 10^-D 會將個小數點移位。用X=23156同D=1計，就會得到2315.6。咁樣就好巧妙地將我哋嘅目標'5'搬咗去個位，啱啱好喺小數點前面。呢個新數會變咗做'Ans'。"
+          }
+        },
+        {
+          "step": 2,
+          "title": {
+            "en": "Chop Off the End of the Number",
+            "zh": "斬走個數嘅尾"
+          },
+          "formula": "10Rnd(.1Ans-.5+G)",
+          "explanation": {
+            "en": "This part of the code looks complicated, but its job is simple: take our number 'Ans' (2315.6) and get rid of the target digit and everything after it. It's designed to give us 2310. It works by shifting the decimal again (.1*Ans -> 231.56), using a rounding trick to always round down (Rnd(231.56-.5) -> 231), and then multiplying by 10 to get 2310. Just think of it as the 'chopping' step.",
+            "zh": "呢段睇落好複雜，但佢做嘅嘢好簡單：就係將我哋個'Ans'（2315.6），整走個目標數字同佢後面嘅所有嘢。佢嘅目的係要計到2310。原理係再將個小數點移位（.1*Ans -> 231.56），再用一個rounding技巧確保佢一定係向下計（Rnd(231.56-.5) -> 231），最後乘10就得到2310。你當佢係'斬尾'呢一步就得㗎喇。"
+          }
+        },
+        {
+          "step": 3,
+          "title": {
+            "en": "Isolate the target digit",
+            "zh": "抽出目標數字"
+          },
+          "formula": "Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G",
+          "explanation": {
+            "en": "Now for the magic. We take our focused number from Step 1 (2315.6) and subtract the 'chopped' number from Step 2 (2310). The result is 5.6. The final 'Rnd(...-.5)' is just to clean up, getting rid of the '.6' and leaving us with our answer: 5. So the whole process is: 1. SHIFT to focus, 2. CHOP the end, 3. SUBTRACT to isolate the digit.",
+            "zh": "戲肉嚟喇。我哋用第一步個數（2315.6）減咗第二步'斬尾'之後個數（2310），結果就係5.6。最尾嗰個'Rnd(...-.5)'只係用嚟清走啲手尾，整走個'.6'，剩返我哋要嘅答案：5。所以成個過程就係：1. 移位鎖定，2. 斬走個尾，3. 相減。"
+          }
+        }
+      ]
+    }
+  ]
+}

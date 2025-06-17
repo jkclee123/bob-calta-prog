@@ -1,0 +1,729 @@
+{
+  "categories": {
+    "control_flow": {
+      "name": {
+        "en": "Control Flow",
+        "zh": "控制流程"
+      },
+      "symbols": [
+        {
+          "symbol": "?",
+          "description": {
+            "en": "Input prompt - displays '{variable}?' and assigns input value to a variable",
+            "zh": "輸入提示符 - 顯示輸入提示符 \"{變量}?\" 並將輸入的數值賦給一個變量"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "→",
+          "description": {
+            "en": "Variable assignment - assigns the value obtained by the element on the left to the variable on the right",
+            "zh": "變量賦值 - 將由左側元素求得的數值賦給右側的變量"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": ":",
+          "description": {
+            "en": "Separator code - separates statements without stopping program execution",
+            "zh": "分割碼 - 分割語句，不停止程序的執行"
+          },
+          "howToType": "EXE"
+        },
+        {
+          "symbol": "◢",
+          "description": {
+            "en": "Output command - pauses program execution and displays result (Disp symbol appears)",
+            "zh": "輸出指令 - 暫停程式的執行並顯示現在的執行結果（Disp 符號會出現）"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "⇒",
+          "description": {
+            "en": "Conditional branching command used with relational operators. Executes statement1 if condition is true, skips if false",
+            "zh": "與關係運算符一起使用的條件分枝指令。若條件為真則執行語句1，若為假則跳過"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "Goto",
+          "description": {
+            "en": "Unconditional jump to corresponding Lbl n (n = 0 to 9)",
+            "zh": "無條件跳轉到相應的標籤 n（n = 0 至 9）"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "Lbl",
+          "description": {
+            "en": "Label definition for Goto and loops (n = 0 to 9)",
+            "zh": "Goto 和循環的標籤定義（n = 0 至 9）"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "While",
+          "description": {
+            "en": "Repeats statements while conditional expression is true (non-zero)",
+            "zh": "當條件表達式為真（非零）時，反覆執行語句"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "WhileEnd",
+          "description": {
+            "en": "End of a While loop - execution jumps here when condition becomes false",
+            "zh": "While 循環的結束 - 當條件變為假時跳轉到此處"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "For",
+          "description": {
+            "en": "Start of For loop - repeats as control variable increments from start to end value",
+            "zh": "For 循環的開始 - 控制變量從開始值增量到結束值時反覆執行"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "To",
+          "description": {
+            "en": "Used in For loops to specify the ending value",
+            "zh": "在 For 循環中指定結束值"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "Step",
+          "description": {
+            "en": "Used in For loops to specify the increment step amount",
+            "zh": "在 For 循環中指定增量步數"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "Next",
+          "description": {
+            "en": "End of For loop - increments control variable and checks condition",
+            "zh": "For 循環的結束 - 增量控制變量並檢查條件"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "Break",
+          "description": {
+            "en": "Forces break in For or While loop, jumps to next command (used in Then statements)",
+            "zh": "強制中斷 For 或 While 循環，跳至下一個指令（通常用在 Then 語句中）"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "If",
+          "description": {
+            "en": "Controls program execution branching based on conditional expression (true/false)",
+            "zh": "根據條件表達式（真/假）控制程式執行分歧"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "Then",
+          "description": {
+            "en": "Must accompany If - marks statements executed when If condition is true",
+            "zh": "必須與 If 配對使用 - 標記當 If 條件為真時執行的語句"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "Else",
+          "description": {
+            "en": "Optional - marks statements executed when If condition is false",
+            "zh": "可選 - 標記當 If 條件為假時執行的語句"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "IfEnd",
+          "description": {
+            "en": "Required - marks end of If statement block, prevents unexpected execution results",
+            "zh": "必需 - 標記 If 語句塊的結束，防止意想不到的執行結果"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        }
+      ]
+    },
+    "comparison": {
+      "name": {
+        "en": "Comparison Operators",
+        "zh": "比較運算符"
+      },
+      "symbols": [
+        {
+          "symbol": "=",
+          "description": {
+            "en": "Equality comparison operator",
+            "zh": "等於比較運算符"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "≠",
+          "description": {
+            "en": "Not-equal comparison operator",
+            "zh": "不等於比較運算符"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": ">",
+          "description": {
+            "en": "Greater-than comparison operator",
+            "zh": "大於比較運算符"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "<",
+          "description": {
+            "en": "Less-than comparison operator",
+            "zh": "小於比較運算符"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "≥",
+          "description": {
+            "en": "Greater-than-or-equal comparison operator",
+            "zh": "大於等於比較運算符"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        },
+        {
+          "symbol": "≤",
+          "description": {
+            "en": "Less-than-or-equal comparison operator",
+            "zh": "小於等於比較運算符"
+          },
+          "howToType": "SHIFT 3 (P-CMD)"
+        }
+      ]
+    },
+    "mathematics": {
+      "name": {
+        "en": "Mathematical Functions",
+        "zh": "數學函數"
+      },
+      "symbols": [
+        {
+          "symbol": "⁻¹",
+          "description": {
+            "en": "Superscript -1, used for reciprocal or inverse functions (x⁻¹)",
+            "zh": "上標 -1，用於倒數或反函數 (x⁻¹)"
+          },
+          "howToType": "x⁻¹"
+        },
+        {
+          "symbol": "!",
+          "description": {
+            "en": "Factorial operator",
+            "zh": "階乘運算符"
+          },
+          "howToType": "SHIFT x⁻¹"
+        },
+        {
+          "symbol": "²",
+          "description": {
+            "en": "Superscript 2 (square)",
+            "zh": "上標 2（平方）"
+          },
+          "howToType": "x²"
+        },
+        {
+          "symbol": "³",
+          "description": {
+            "en": "Superscript 3 (cube)",
+            "zh": "上標 3（立方）"
+          },
+          "howToType": "x³"
+        },
+        {
+          "symbol": "√(",
+          "description": {
+            "en": "Square-root function (prefix)",
+            "zh": "平方根函數（前綴）"
+          },
+          "howToType": "√"
+        },
+        {
+          "symbol": "^(",
+          "description": {
+            "en": "Power function (f^(g) = f to the gth power)",
+            "zh": "冪函數 (f^(g) = f 的 g 次方)"
+          },
+          "howToType": "^"
+        },
+        {
+          "symbol": "log(",
+          "description": {
+            "en": "Base-10 logarithm",
+            "zh": "以 10 為底的對數"
+          },
+          "howToType": "log"
+        },
+        {
+          "symbol": "₁₀^(",
+          "description": {
+            "en": "10 to the x power",
+            "zh": "10 的 x 次方"
+          },
+          "howToType": "SHIFT log"
+        },
+        {
+          "symbol": "ln(",
+          "description": {
+            "en": "Natural logarithm (base e)",
+            "zh": "自然對數（以 e 為底）"
+          },
+          "howToType": "ln"
+        },
+        {
+          "symbol": "e^(",
+          "description": {
+            "en": "Exponential function (e to the x)",
+            "zh": "指數函數（e 的 x 次方）"
+          },
+          "howToType": "SHIFT ln"
+        },
+        {
+          "symbol": "sin(",
+          "description": {
+            "en": "Sine trigonometric function",
+            "zh": "正弦三角函數"
+          },
+          "howToType": "sin"
+        },
+        {
+          "symbol": "cos(",
+          "description": {
+            "en": "Cosine trigonometric function",
+            "zh": "餘弦三角函數"
+          },
+          "howToType": "cos"
+        },
+        {
+          "symbol": "tan(",
+          "description": {
+            "en": "Tangent trigonometric function",
+            "zh": "正切三角函數"
+          },
+          "howToType": "tan"
+        },
+        {
+          "symbol": "Abs(",
+          "description": {
+            "en": "Absolute value function",
+            "zh": "絕對值函數"
+          },
+          "howToType": "SHIFT )"
+        },
+        {
+          "symbol": "Rnd(",
+          "description": {
+            "en": "Round calculation result according to decimal places specified by display format",
+            "zh": "根據由顯示形式指定的小數位數捨入計算結果"
+          },
+          "howToType": "SHIFT 0"
+        }
+      ]
+    },
+    "variables_io": {
+      "name": {
+        "en": "Variables & I/O",
+        "zh": "變量和輸入輸出"
+      },
+      "symbols": [
+        {
+          "symbol": "A",
+          "description": {
+            "en": "Variable A",
+            "zh": "變量 A"
+          },
+          "howToType": "ALPHA (-)"
+        },
+        {
+          "symbol": "B",
+          "description": {
+            "en": "Variable B",
+            "zh": "變量 B"
+          },
+          "howToType": "ALPHA ○,,,"
+        },
+        {
+          "symbol": "C",
+          "description": {
+            "en": "Variable C",
+            "zh": "變量 C"
+          },
+          "howToType": "ALPHA hyp"
+        },
+        {
+          "symbol": "D",
+          "description": {
+            "en": "Variable D",
+            "zh": "變量 D"
+          },
+          "howToType": "ALPHA sin"
+        },
+        {
+          "symbol": "X",
+          "description": {
+            "en": "Variable X",
+            "zh": "變量 X"
+          },
+          "howToType": "ALPHA )"
+        },
+        {
+          "symbol": "Y",
+          "description": {
+            "en": "Variable Y",
+            "zh": "變量 Y"
+          },
+          "howToType": "ALPHA ,"
+        },
+        {
+          "symbol": "M",
+          "description": {
+            "en": "Variable M",
+            "zh": "變量 M"
+          },
+          "howToType": "ALPHA M+"
+        },
+        {
+          "symbol": "M⁺",
+          "description": {
+            "en": "Add expression value to independent memory register",
+            "zh": "將表達式的值加到獨立記憶器中"
+          },
+          "howToType": "M+"
+        },
+        {
+          "symbol": "M⁻",
+          "description": {
+            "en": "Subtract expression value from independent memory register",
+            "zh": "從獨立記憶器減去表達式的值"
+          },
+          "howToType": "SHIFT M+"
+        },
+        {
+          "symbol": "Ans",
+          "description": {
+            "en": "The last evaluated result",
+            "zh": "最後一次計算結果"
+          },
+          "howToType": "Ans"
+        }
+      ]
+    },
+    "random_statistics": {
+      "name": {
+        "en": "Random & Statistics",
+        "zh": "隨機數和統計"
+      },
+      "symbols": [
+        {
+          "symbol": "Ran#",
+          "description": {
+            "en": "Random integer generator (model-specific range)",
+            "zh": "隨機整數生成器（型號特定範圍）"
+          },
+          "howToType": "SHIFT ."
+        },
+        {
+          "symbol": "DT",
+          "description": {
+            "en": "Input sample data sets",
+            "zh": "用於輸入樣本資料組"
+          },
+          "howToType": {
+            "en": "M+ (in SD or REG mode)",
+            "zh": "M+ (在 SD 或 REG 模式中)"
+          }
+        },
+        {
+          "symbol": "ClrStat",
+          "description": {
+            "en": "Clear all statistical sample data stored in memory",
+            "zh": "清除保存在記憶器中的所有統計樣本資料"
+          },
+          "howToType": "SHIFT 9 (CLR) 1"
+        },
+        {
+          "symbol": "ClrMemory",
+          "description": {
+            "en": "Clear all variables (A, B, C, D, X, Y, M) to zero",
+            "zh": "將所有變量 (A, B, C, D, X, Y, M) 清除為零"
+          },
+          "howToType": "SHIFT 9 (CLR) 1"
+        },
+        {
+          "symbol": "∑x",
+          "description": {
+            "en": "Statistical register: sum of x-values",
+            "zh": "統計寄存器：x 值的總和"
+          },
+          "howToType": "SHIFT 1 (S-SUM) 2"
+        },
+        {
+          "symbol": "∑y",
+          "description": {
+            "en": "Statistical register: sum of y-values",
+            "zh": "統計寄存器：y 值的總和"
+          },
+          "howToType": "SHIFT 1 (S-SUM) ▶ 2"
+        },
+        {
+          "symbol": "n",
+          "description": {
+            "en": "Statistical register: number of data points",
+            "zh": "統計寄存器：數據點數量"
+          },
+          "howToType": "SHIFT 1 (S-SUM) 3"
+        },
+        {
+          "symbol": "maxX",
+          "description": {
+            "en": "Statistical register: maximum x-value",
+            "zh": "統計寄存器：最大 x 值"
+          },
+          "howToType": "SHIFT 2 (S-VAR) 2 (MINMAX) 2"
+        },
+        {
+          "symbol": "maxY",
+          "description": {
+            "en": "Statistical register: maximum y-value",
+            "zh": "統計寄存器：最大 y 值"
+          },
+          "howToType": "SHIFT 2 (S-VAR) 2 (MINMAX) ▶ 2"
+        }
+      ]
+    },
+    "display_modes": {
+      "name": {
+        "en": "Display Modes",
+        "zh": "顯示模式"
+      },
+      "symbols": [
+        {
+          "symbol": "Fix",
+          "description": {
+            "en": "Set display mode to fixed decimal places (0-9)",
+            "zh": "固定輸出的計算結果的小數位數 (0-9)"
+          },
+          "howToType": {
+            "en": "SHIFT MODE (SETUP) ▶ 1 (Fix) 0-9",
+            "zh": "SHIFT MODE (SETUP) ▶ 1 (Fix) 0-9"
+          }
+        },
+        {
+          "symbol": "Norm",
+          "description": {
+            "en": "Set display mode to Norm1 or Norm2",
+            "zh": "指定計算結果的輸出是使用 Norm1 還是使用 Norm2"
+          },
+          "howToType": {
+            "en": "SHIFT MODE (SETUP) ▶ 3 (Norm) 1 or 2",
+            "zh": "SHIFT MODE (SETUP) ▶ 3 (Norm) 1 或 2"
+          }
+        },
+        {
+          "symbol": "Deg",
+          "description": {
+            "en": "Set angle unit to degrees",
+            "zh": "設置角度單位為度"
+          },
+          "howToType": {
+            "en": "SHIFT MODE (SETUP) 1 (Deg)",
+            "zh": "SHIFT MODE (SETUP) 1 (Deg)"
+          }
+        },
+        {
+          "symbol": "Rad",
+          "description": {
+            "en": "Set angle unit to radians",
+            "zh": "設置角度單位為弧度"
+          },
+          "howToType": {
+            "en": "SHIFT MODE (SETUP) 2 (Rad)",
+            "zh": "SHIFT MODE (SETUP) 2 (Rad)"
+          }
+        },
+        {
+          "symbol": "Gra",
+          "description": {
+            "en": "Set angle unit to gradians",
+            "zh": "設置角度單位為百分度"
+          },
+          "howToType": {
+            "en": "SHIFT MODE (SETUP) 3 (Gra)",
+            "zh": "SHIFT MODE (SETUP) 3 (Gra)"
+          }
+        },
+        {
+          "symbol": "Sci",
+          "description": {
+            "en": "Set display to scientific notation with fixed significant digits (1-10)",
+            "zh": "設置顯示為科學記數法，固定有效位數 (1-10)"
+          },
+          "howToType": {
+            "en": "SHIFT MODE (SETUP) ▶ 2 (Sci) 0-9",
+            "zh": "SHIFT MODE (SETUP) ▶ 2 (Sci) 0-9"
+          }
+        },
+        {
+          "symbol": "FreqOn",
+          "description": {
+            "en": "Turn on statistics frequency",
+            "zh": "打開統計頻率"
+          },
+          "howToType": "SHIFT MODE (SETUP) ◀ ◀ 1"
+        },
+        {
+          "symbol": "FreqOff",
+          "description": {
+            "en": "Turn off statistics frequency",
+            "zh": "關閉統計頻率"
+          },
+          "howToType": "SHIFT MODE (SETUP) ◀ ◀ 2"
+        }
+      ]
+    },
+    "constants": {
+      "name": {
+        "en": "Constants",
+        "zh": "常數"
+      },
+      "symbols": [
+        {
+          "symbol": "π",
+          "description": {
+            "en": "Pi constant (3.14159265…)",
+            "zh": "圓周率常數 (3.14159265…)"
+          },
+          "howToType": "SHIFT EXP"
+        },
+        {
+          "symbol": "E",
+          "description": {
+            "en": "Exponent notation symbol in scientific format (e.g., 1.23E+04)",
+            "zh": "科學記數法中的指數符號 (例如：1.23E+04)"
+          },
+          "howToType": "EXP"
+        },
+        {
+          "symbol": "G",
+          "description": {
+            "en": "Physical constant: gravitational constant (6.672e-11)",
+            "zh": "物理常數：萬有引力常數 (6.672e-11)"
+          },
+          "howToType": "SHIFT 7 (CONST) ◀ 3"
+        },
+        {
+          "symbol": "atm",
+          "description": {
+            "en": "Physical constant: 1 atmosphere (pressure)",
+            "zh": "物理常數：1 大氣壓（壓力）"
+          },
+          "howToType": "SHIFT 7 (CONST) ◀ 4"
+        }
+      ]
+    },
+    "operators": {
+      "name": {
+        "en": "Basic Operators",
+        "zh": "基本運算符"
+      },
+      "symbols": [
+        {
+          "symbol": "+",
+          "description": {
+            "en": "Addition operator",
+            "zh": "加法運算符"
+          },
+          "howToType": "+"
+        },
+        {
+          "symbol": "-",
+          "description": {
+            "en": "Subtraction operator or negative sign",
+            "zh": "減法運算符或負號"
+          },
+          "howToType": "-"
+        },
+        {
+          "symbol": "×",
+          "description": {
+            "en": "Multiplication operator",
+            "zh": "乘法運算符"
+          },
+          "howToType": "×"
+        },
+        {
+          "symbol": "÷",
+          "description": {
+            "en": "Division operator",
+            "zh": "除法運算符"
+          },
+          "howToType": "÷"
+        },
+        {
+          "symbol": "(",
+          "description": {
+            "en": "Opening parenthesis for grouping",
+            "zh": "用於分組的左括號"
+          },
+          "howToType": "("
+        },
+        {
+          "symbol": ")",
+          "description": {
+            "en": "Closing parenthesis for grouping",
+            "zh": "用於分組的右括號"
+          },
+          "howToType": ")"
+        },
+        {
+          "symbol": ".",
+          "description": {
+            "en": "Decimal point",
+            "zh": "小數點"
+          },
+          "howToType": "."
+        },
+        {
+          "symbol": ",",
+          "description": {
+            "en": "Comma, separates X and Y of sample data",
+            "zh": "逗號，分隔樣本數據的 X 和 Y"
+          },
+          "howToType": ","
+        },
+        {
+          "symbol": ";",
+          "description": {
+            "en": "Semicolon, frequency of sample data comes after semicolon",
+            "zh": "分號，樣本數據的頻率在分號後"
+          },
+          "howToType": "SHIFT ,"
+        },
+        {
+          "symbol": "▫",
+          "description": {
+            "en": "Convert between decimal and sexagesimal",
+            "zh": "十進制和六十進制之間轉換"
+          },
+          "howToType": "○,,,"
+        }
+      ]
+    }
+  }
+} 

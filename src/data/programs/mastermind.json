@@ -1,0 +1,341 @@
+{
+  "id": "mastermind",
+  "name": {
+    "en": "Mastermind",
+    "zh": "數字推理"
+  },
+  "description": {
+    "en": "A classic code-breaking game where player guess a secret number sequence. Player can set the number of digits (4-8) for the secret code.",
+    "zh": "經典密碼破解遊戲，玩家可以設定密碼有幾多個位（4至8位）。"
+  },
+  "mode": "REG Lin",
+  "memory": 359,
+  "status": "completed",
+  "code": [
+    {
+      "line": 1,
+      "code": "Lbl 0:Norm 2:0→X:?→X:Fix 0:X=0⇒Goto 2:(X<4)+(X>8)+(X≠Rnd(X⇒Goto 0:",
+      "bytes": 45,
+      "cumulativeBytes": 45,
+      "comment": {
+        "en": "Continue previous game or set new game's code length",
+        "zh": "繼續上一局遊戲或為新遊戲設定密碼長度"
+      }
+    },
+    {
+      "line": 2,
+      "code": "X→C:100Ran#+Ran#₁₀^(5)+Ran#₁₀^(8:Rnd(Ans₁₀^(C-8)-.5→X:",
+      "bytes": 31,
+      "cumulativeBytes": 76,
+      "comment": {
+        "en": "Generate secret code",
+        "zh": "生成密碼"
+      }
+    },
+    {
+      "line": 3,
+      "code": "Lbl 2:X=0⇒∑x→X:1→B:For 1-C→D To0:X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G",
+      "bytes": 49,
+      "cumulativeBytes": 125,
+      "comment": {
+        "en": "Parse individual digits of the secret code",
+        "zh": "拆解密碼個別位"
+      }
+    },
+    {
+      "line": 4,
+      "code": "B(2Ans+1+(Ans=0)+14((Ans=4)+(Ans=7→B:Next:ClrStat:X,BDT:0→X:",
+      "bytes": 42,
+      "cumulativeBytes": 167,
+      "comment": {
+        "en": "Initialize \"product of prime numbers\", input code and the product to sample data sets",
+        "zh": "計出「質數乘積」，輸入密碼同質數乘積入樣本資料組"
+      }
+    },
+    {
+      "line": 5,
+      "code": "Lbl 5:Norm 2:0→Y:?→Y:Y<0⇒Goto 0:Y≥₁₀^(C⇒Goto 5:",
+      "bytes": 29,
+      "cumulativeBytes": 196,
+      "comment": {
+        "en": "Input guess code to Y",
+        "zh": "輸入猜測"
+      }
+    },
+    {
+      "line": 6,
+      "code": "If Y=∑x:Then ∑x◢Goto 5:IfEnd:",
+      "bytes": 13,
+      "cumulativeBytes": 209,
+      "comment": {
+        "en": "Check if guess is correct",
+        "zh": "睇下估得啱唔啱"
+      }
+    },
+    {
+      "line": 7,
+      "code": "Fix 0:0→A:∑x→X:∑y→B:For 1-C→D To 0:",
+      "bytes": 24,
+      "cumulativeBytes": 233,
+      "comment": {
+        "en": "Prepare to check guess",
+        "zh": "準備對答案"
+      }
+    },
+    {
+      "line": 8,
+      "code": "Y₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G→M:",
+      "bytes": 27,
+      "cumulativeBytes": 260,
+      "comment": {
+        "en": "Parse individual digits from the guess",
+        "zh": "拆解猜測個別位數"
+      }
+    },
+    {
+      "line": 9,
+      "code": "X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G:",
+      "bytes": 25,
+      "cumulativeBytes": 285,
+      "comment": {
+        "en": "Parse individual digits from the secret code",
+        "zh": "拆解密碼個別位數"
+      }
+    },
+    {
+      "line": 10,
+      "code": "M=Ans⇒A+.9→A:",
+      "bytes": 11,
+      "cumulativeBytes": 296,
+      "comment": {
+        "en": "Check if guess is on correct position and update feedback",
+        "zh": "有一個啱位，提示加0.9"
+      }
+    },
+    {
+      "line": 11,
+      "code": "B÷(2M+1+(M=0)+14((M=4)+(M=7→M:",
+      "bytes": 30,
+      "cumulativeBytes": 326,
+      "comment": {
+        "en": "\"product of prime numbers\" divided by prime number of guess digit to M",
+        "zh": "「質數乘積」除個別猜測嘅質數"
+      }
+    },
+    {
+      "line": 12,
+      "code": "If M=Rnd(M:Then A+.1→A:M→B:IfEnd:Next:",
+      "bytes": 22,
+      "cumulativeBytes": 348,
+      "comment": {
+        "en": "Check divisibility of \"product of prime numbers\" by guess digit, if divisible, guess digit is in secret code",
+        "zh": "睇下個別猜測嘅質數可唔可以整除「質數乘積」，有就喺密碼入面"
+      }
+    },
+    {
+      "line": 13,
+      "code": "0→X:Fix 1:A◢Goto 5",
+      "bytes": 11,
+      "cumulativeBytes": 359,
+      "comment": {
+        "en": "Display feedback",
+        "zh": "顯示提示"
+      }
+    }
+  ],
+  "usage": {
+    "en": {
+      "parameters": [
+        "X?: Start menu",
+        "Y?: Input guess",
+        "A: Feedback: shows correct positions and correct digits",
+        "B: Running product of prime numbers",
+        "C: Secret code length",
+        "D: Loop index",
+        "M: Temporary variable",
+        "∑x: Secret code",
+        "∑x: Product of prime numbers"
+      ],
+      "instructions": [
+        "Start menu: Input 0 to continue previous game, or 4-8 to start new game with that many digits",
+        "During game: Input your guess (input negative number returns to start menu)",
+        "Read feedback: X.Y means X correct positions, Y correct digits in wrong positions"
+      ]
+    },
+    "zh": {
+      "parameters": [
+        "X?: 開始菜單 - 輸入 0 繼續上一局遊戲，或輸入 4-8 開始新遊戲",
+        "Y?: 遊戲中 - 輸入猜測（負數返返開始菜單）",
+        "A: 提示 - 顯示正確位置同正確數字",
+        "B: 運算用質數乘積",
+        "C: 密碼長度",
+        "D: 循環索引",
+        "M: 暫存變數",
+        "∑x: 密碼",
+        "∑x: 質數乘積"
+      ],
+      "instructions": [
+        "開始菜單： 輸入 0 繼續上一局遊戲，或輸入 4-8 開始新遊戲",
+        "遊戲中： 輸入猜測，輸入負數返回開始菜單",
+        "睇提示：X.Y 表示 X 個正確位置，Y 個正確數字但位置錯誤"
+      ]
+    }
+  },
+  "examples": [
+    {
+      "title": {
+        "en": "4-digit game example",
+        "zh": "4位數遊戲示例"
+      },
+      "steps": {
+        "en": [
+          "Sample Secret answer: 5093",
+          "Guess: 9065 → Feedback: 1.2",
+          "1.2 means 1 correct position, 2 correct digits in wrong positions",
+          "In the guess 9065, 0 is correct position, 9 and 5 are correct digits in wrong positions"
+        ],
+        "zh": [
+          "例子密碼：5093",
+          "猜測：9065 → 提示：1.2",
+          "1.2 表示一個正確位置，兩個正確數字但位置錯誤",
+          "喺猜測9065入面 ，0係正確位置，9同5係正確數字但位置錯誤"
+        ]
+      }
+    }
+  ],
+  "analysis": [
+    {
+      "title": {
+        "en": "Isolate a Specific Digit From a Number",
+        "zh": "喺一個數度抽個別位數出嚟"
+      },
+      "actualCode": [
+        "X₁₀^(D:",
+        "Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G"
+      ],
+      "genericCode": [
+        "[Number]₁₀^([Position]):",
+        "Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G"
+      ],
+      "problem": {
+        "en": "Imagine you have a long number like 23156. What if you only need one piece of it? For example, how can we tell a calculator to grab just the '5'? This program uses a clever math trick to isolate any digit you want.",
+        "zh": "想像下你有一串好長嘅數字，例如23156。如果淨係想要其中一個數字？好似我哋點樣叫部計數機淨係攞個'5'出嚟？呢個程式就可以拆解你想要嘅任何一個數字出嚟。"
+      },
+      "steps": [
+        {
+          "step": 1,
+          "title": {
+            "en": "Position target digit to the ones place",
+            "zh": "將目標數字移到個位"
+          },
+          "formula": "X₁₀^(D",
+          "explanation": {
+            "en": "First, we tell the calculator which digit we want. We count from right to left. '6' is the 1st digit, '5' is the 2nd, and so on. To get the 2nd digit ('5'), we use D=-1. For the 3rd digit ('1'), we'd use D=-2. The formula X * 10^D shifts the decimal point. For X=23156 and D=-1, we get 2315.6. This cleverly moves our target digit '5' into the ones place, right before the decimal. This new number is stored as 'Ans'.",
+            "zh": "首先，我哋要話俾計數機知我哋想要邊個數字。我哋由右邊開始數：'6'係第1個，'5'係第2個，如此類推。要攞到第2個嘅'5'，我哋就入D=-1。想攞第3個嘅'1'，就要入D=-2。條式 X * 10^D 會將個小數點移位。用X=23156同D=-1計，就會得到2315.6。咁樣就好巧妙地將我哋嘅目標'5'搬咗去個位，啱啱好喺小數點前面。呢個新數會變咗做'Ans'。"
+          }
+        },
+        {
+          "step": 2,
+          "title": {
+            "en": "Chop Off the End of the Number",
+            "zh": "斬走個數嘅尾"
+          },
+          "formula": "10Rnd(.1Ans-.5+G)",
+          "explanation": {
+            "en": "This part of the code looks complicated, but its job is simple: take our number 'Ans' (2315.6) and get rid of the target digit and everything after it. It's designed to give us 2310. It works by shifting the decimal again (.1*Ans -> 231.56), using a rounding trick to always round down (Rnd(231.56-.5) -> 231), and then multiplying by 10 to get 2310. Just think of it as the 'chopping' step.",
+            "zh": "呢段睇落好複雜，但佢做嘅嘢好簡單：就係將我哋個'Ans'（2315.6），整走個目標數字同佢後面嘅所有嘢。佢嘅目的係要計到2310。原理係再將個小數點移位（.1*Ans -> 231.56），再用一個rounding技巧確保佢一定係向下計（Rnd(231.56-.5) -> 231），最後乘10就得到2310。你當佢係'斬尾'呢一步就得㗎喇。"
+          }
+        },
+        {
+          "step": 3,
+          "title": {
+            "en": "Isolate the target digit",
+            "zh": "抽出目標數字"
+          },
+          "formula": "Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G",
+          "explanation": {
+            "en": "Now for the magic. We take our focused number from Step 1 (2315.6) and subtract the 'chopped' number from Step 2 (2310). The result is 5.6. The final 'Rnd(...-.5)' is just to clean up, getting rid of the '.6' and leaving us with our answer: 5. So the whole process is: 1. SHIFT to focus, 2. CHOP the end, 3. SUBTRACT to reveal the digit.",
+            "zh": "戲肉嚟喇。我哋用第一步個數（2315.6）減咗第二步'斬尾'之後個數（2310），結果就係5.6。最尾嗰個'Rnd(...-.5)'只係用嚟清走啲手尾，整走個'.6'，剩返我哋要嘅答案：5。所以成個過程就係：1. 移位鎖定，2. 斬走個尾，3. 相減開估。"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "Simulating a Dictionary with Prime Numbers",
+        "zh": "用質數乘積嚟實現一個字典功能"
+      },
+      "actualCode": [
+        "B(2Ans+1+(Ans=0)+14((Ans=4)+(Ans=7→B:",
+        "B÷(2M+1+(M=0)+14((M=4)+(M=7→M:",
+        "If M=Rnd(M:"
+      ],
+      "problem": {
+        "en": "Calculators don't have advanced data structures like dictionaries. However, we can simulate one using math trick with prime numbers.",
+        "zh": "計數機冇內置字典功能，不過我哋可以用質數乘積嚟扮一個字典。"
+      },
+      "steps": [
+        {
+          "step": 1,
+          "title": {
+            "en": "Mapping Digits to Unique Prime Numbers",
+            "zh": "將數字對應到獨一無二嘅質數"
+          },
+          "formula": "f(x) = 2x + 1 + (x=0) + 14 ((x=4) + (x=7))",
+          "explanation": {
+            "en": "The core idea is to assign a unique prime number to each digit from 0 to 9. The formula f(x) does this mapping (e.g., 0→2, 1→3, 2→5, 4→23, etc.). To create our 'dictionary' for a secret number, we multiply the corresponding prime numbers for each of its digits. The result is a 'prime product' that is only divisible by the primes used to create it. This divisibility check is how we'll look up digits.",
+            "zh": "核心概念係，先幫 0 到 9 呢十個數字，每一個都配一個獨一無二嘅質數。上面條公式 f(x) 就係做呢樣嘢 (例如：0對應2，1對應3，2對應5，4對應23，如此類推)。要為一個密碼整我哋個『字典』，我哋就將密碼入面每個數字所對應嘅質數乘埋一齊。乘出嚟嗰個『質數積』，有個好特別嘅性質：佢淨係可以被用嚟乘佢出嚟嗰啲質數整除。我哋就係利用呢個整除特性嚟『查字典』。"
+          }
+        },
+        {
+          "step": 2,
+          "title": {
+            "en": "Building the Prime Product from a Secret Code",
+            "zh": "用密碼嘅數字建立『質數積』"
+          },
+          "formula": "B(2Ans+1+(Ans=0)+14((Ans=4)+(Ans=7→B:",
+          "explanation": {
+            "en": "Let's use an example. If the secret code is 5093, we find the prime number for each digit: 5→11, 0→2, 9→19, and 3→7. Then, we multiply them: 11 × 2 × 19 × 7 = 2926. This number, 2926, is our 'prime product' for the code and is stored in the calculator's memory (variable B).",
+            "zh": "舉個例，如果密碼係 5093，我哋先搵返每個數字對應嘅質數：5→11、0→2、9→19、同埋 3→7。然後，將佢哋全部乘埋一齊：11 × 2 × 19 × 7 = 2926。呢個數 2926 就係我哋個密碼嘅『質數積』，會儲咗喺計數機嘅變數 B 入面。"
+          }
+        },
+        {
+          "step": 3,
+          "title": {
+            "en": "Testing a Guess",
+            "zh": "測試估嘅數字"
+          },
+          "formula": "B÷(2M+1+(M=0)+14((M=4)+(M=7→M:",
+          "explanation": {
+            "en": "Now, let's say you guess a digit, for example, 9. The program first uses the same function f(x) to find its corresponding prime number (9→19). It then divides the stored 'prime product' (B) by this new prime number. The result is temporarily stored in variable M.",
+            "zh": "好啦，假設你估一個數字，例如 9。個程式會先用返同一條 f(x) 公式去搵佢對應嘅質數 (9→19)。跟住，佢會將之前儲低嘅『質數積』 (B) 除以呢個新嘅質數。計到嘅答案會暫時儲喺變數 M。"
+          }
+        },
+        {
+          "step": 4,
+          "title": {
+            "en": "Checking for a Correct Guess",
+            "zh": "檢查係咪估中"
+          },
+          "formula": "If M=Rnd(M:",
+          "explanation": {
+            "en": "The program checks if the result of the division (M) is a whole number. A simple way to do this on a calculator is to see if the number is equal to itself after rounding. If it's a whole number, the division was perfect, proving that your guessed digit's prime was a factor of the 'prime product.' In other words, your guess is correct!",
+            "zh": "跟住個程式就要檢查吓，頭先計到嘅答案 (M) 係咪一個整數。喺計數機上面，一個簡單嘅做法就係睇吓個數四捨五入之後係咪同自己一樣。如果佢係一個整數，就代表可以整除，證明你估嗰個數字對應嘅質數係『質數積』嘅其中一個因數。換句話講，你就估中咗喇！"
+          }
+        },
+        {
+          "step": 5,
+          "title": {
+            "en": "Updating the Prime Product",
+            "zh": "更新個『質數積』"
+          },
+          "formula": "M→B:",
+          "explanation": {
+            "en": "Once a digit is confirmed to be in the code, we 'remove' it by updating our 'prime product' (B) with the result of the division (the quotient, M). For example, if our original product was 2926 and we correctly guessed 9 (prime 19), the new product becomes 2926 ÷ 19 = 154. This new value, 154, is now stored in B. This is like crossing a number off a list.",
+            "zh": "當確認咗一個數字係密碼嘅一部分之後，我哋就要將佢『移除』，做法就係將我哋個『質數積』 (B) 更新做頭先除出嚟嘅答案 (M)。例如，如果我哋原本個積係 2926，而我哋估中咗 9 (質數 19)，咁新嘅『質數積』就變成 2926 ÷ 19 = 154。呢個新數 154 會取代舊有嘅 B。呢個步驟就好似喺字典上面刪咗一個數字咁。"
+          }
+        }
+      ]
+}
+  ]
+} 

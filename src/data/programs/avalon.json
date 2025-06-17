@@ -1,0 +1,26 @@
+{
+  "id": "avalon",
+  "name": {
+    "en": "Avalon",
+    "zh": "阿瓦隆"
+  },
+  "description": {
+    "en": "Game helper for The Resistance: Avalon board game. Manages roles, quests, and voting phases.",
+    "zh": "阿瓦隆抵抗組織桌遊助手。管理角色、任務和投票階段。"
+  },
+  "mode": "Comp",
+  "memory": 0,
+  "status": "coming_soon",
+  "code": [],
+  "usage": {
+    "en": {
+      "parameters": [],
+      "instructions": ["Coming soon..."]
+    },
+    "zh": {
+      "parameters": [],
+      "instructions": ["即將推出..."]
+    }
+  },
+  "examples": []
+} 

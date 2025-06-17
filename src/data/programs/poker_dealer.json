@@ -1,0 +1,239 @@
+{
+  "id": "poker_dealer",
+  "name": {
+    "en": "Poker Dealer",
+    "zh": "啤牌"
+  },
+  "description": {
+    "en": "A virtual card dealer that deals poker cards.",
+    "zh": "模擬派牌機。"
+  },
+  "mode": "Comp",
+  "memory": 199,
+  "status": "completed",
+  "code": [
+    {
+      "line": 1,
+      "code": "Lbl 0:M→D:?→M:M=0⇒Goto 9:D→M:Fix 0:",
+      "bytes": 25,
+      "cumulativeBytes": 25,
+      "comment": {
+        "en": "Deal card or shuffle",
+        "zh": "派牌或洗牌"
+      }
+    },
+    {
+      "line": 2,
+      "code": "Lbl 1:Ran#→X:X≥.988⇒Goto 1:Rnd(10³X÷19+.5→X:",
+      "bytes": 31,
+      "cumulativeBytes": 56,
+      "comment": {
+        "en": "Draw card",
+        "zh": "抽牌"
+      }
+    },
+    {
+      "line": 3,
+      "code": "Rnd(X÷4+.5-G→D:4(X÷4-D+1→C:A→X:C≥3⇒B→X:C-2(C≥3→Y:",
+      "bytes": 46,
+      "cumulativeBytes": 102,
+      "comment": {
+        "en": "Calculate card rank and suit",
+        "zh": "計算牌嘅點數同花色"
+      }
+    },
+    {
+      "line": 4,
+      "code": "X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G:(Ans=3)+(Ans=Y⇒Goto 1:",
+      "bytes": 39,
+      "cumulativeBytes": 141,
+      "comment": {
+        "en": "Check if card has been drawn before",
+        "zh": "檢查牌係咪抽過"
+      }
+    },
+    {
+      "line": 5,
+      "code": "X+Y₁₀^(-D→X:C<3⇒X→A:C≥3⇒X→B:1M⁻:D+.1C:Norm 2◢Goto 0:",
+      "bytes": 40,
+      "cumulativeBytes": 181,
+      "comment": {
+        "en": "Remember card has been drawn",
+        "zh": "記住牌已經抽過"
+      }
+    },
+    {
+      "line": 6,
+      "code": "Lbl 9:52→M:0→A:0→B:Goto 0",
+      "bytes": 18,
+      "cumulativeBytes": 199,
+      "comment": {
+        "en": "Shuffle deck",
+        "zh": "洗牌"
+      }
+    }
+  ],
+  "usage": {
+    "en": {
+      "parameters": [
+        "M?: display remaining cards, input command",
+        "A: dictionary for diamonds♦️ and clubs♣️",
+        "B: dictionary for hearts♥️ and spades♠️",
+        "C: suit",
+        "D: rank",
+        "X: temporary variable",
+        "Y: dictionary value"
+      ],
+      "instructions": [
+        "Input 0 to shuffle and reset deck",
+        "Input any other number to draw a card",
+        "Cards displayed as [rank].[suit] format",
+        "For first use, input 0 to shuffle and reset deck"
+      ]
+    },
+    "zh": {
+      "parameters": [
+        "M?: 顯示剩餘牌數，輸入命令",
+        "A: 階磚♦️同梅花♣️嘅字典",
+        "B: 紅心♥️同葵扇♠️嘅字典",
+        "C: 花色",
+        "D: 點數",
+        "X: 暫存變數",
+        "Y: 字典值"
+      ],
+      "instructions": [
+        "輸入0洗牌並重置牌組",
+        "輸入任何其他數字抽牌",
+        "卡牌以[點數].[花色]格式顯示",
+        "第一次用前輸入0洗牌"
+      ]
+    }
+  },
+  "examples": [
+    {
+      "title": {
+        "en": "Card format examples",
+        "zh": "卡牌格式示例"
+      },
+      "steps": {
+        "en": [
+          "7.1 → Seven of Diamonds ♦️",
+          "5.2 → Five of Clubs ♣️", 
+          "12.3 → Queen of Hearts ♥️",
+          "1.4 → Ace of Spades ♠️"
+        ],
+        "zh": [
+          "7.1 → 階磚七♦️",
+          "5.2 → 梅花五♣️",
+          "12.3 → 紅心女♥️",
+          "1.4 → 葵扇煙♠️"
+        ]
+      }
+    }
+  ],
+  "analysis": [
+    {
+      "title": {
+        "en": "Memorize drawn cards with decimal points",
+        "zh": "用小數位記住抽過嘅牌"
+        },  
+        "actualCode": [
+          "A→X:C≥3⇒B→X:",
+          "C-2(C≥3→Y:",
+          "X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G:",
+          "(Ans=3)+(Ans=Y⇒Goto 1:",
+          "X+Y₁₀^(-D→X:C<3⇒X→A:C≥3⇒X→B:"
+        ],
+      "problem": {
+        "en": "Design a way to memorize whether cards are drawn or not.",
+        "zh": "設計一個方法記住牌係咪抽過。"
+      },
+      "steps": [
+        {
+          "step": 1,
+          "formula":"0.123456789012345",
+          "title": {
+            "en": "Solution",
+            "zh": "解決方法"
+          },
+          "explanation": {
+            "en": "In calculator, each variable can store up to 15 decimal places. Storing 2 cards in each decimal place, we can store all 52 cards with 2 variables, namely dictionary A and B.",
+            "zh": "喺計數機入面，每個變數可以儲存最多15個小數位。如果每個小數位儲存2張牌，就可以用2個變數(字典A同字典B)，儲存52張牌。"
+          }
+        },
+        {
+          "step": 2,
+          "formula":"A→X:C≥3⇒B→X:",
+          "title": {
+            "en": "Use the respective dictionary",
+            "zh": "揀選相應字典"
+          },
+          "explanation": {
+            "en": "Each dictionary is responsible for storing two suits. Dictionary A stores diamonds♦️ and clubs♣️, while dictionary B stores hearts♥️ and spades♠️.",
+            "zh": "每個字典負責儲存2個花色。字典A儲存階磚♦️同梅花♣️，字典B儲存紅心♥️同葵扇♠️。"
+          }
+        },
+        {
+          "step": 3,
+          "formula":"C-2(C≥3→Y:",
+          "title": {
+            "en": "Determine drawn card dict value",
+            "zh": "計算抽到嘅牌嘅字典值"
+          },
+          "explanation": {
+            "en": "If the card drawn is a diamond♦️ or heart♥️ (red suit), the dictionary value is 1. If the card drawn is a club♣️ or spade♠️ (black suit), the dictionary value is 2.",
+            "zh": "如果抽到嘅牌係階磚♦️或紅心♥️（紅色花式），字典值係1。如果抽到嘅牌係梅花♣️或葵扇♠️（黑色花式），字典值係2。"
+          }
+        },
+        {
+          "step": 3,
+          "formula":"X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G:",
+          "title": {
+            "en": "Look up current dictionary value with drawn card's rank",
+            "zh": "以抽到嘅牌嘅點數查字典"
+          },
+          "explanation": {
+            "en": "In the dictionary, the rank is the decimal place. For example, Aces are stored in the first decimal place, 2s in the second, and so on.",
+            "zh": "喺字典入面，點數決定儲存嘅小數位置。例如，A儲存喺第1個小數位，2儲存喺第2個小數位，J儲存喺第11個小數位，如此類推。"
+          }
+        },
+        {
+          "step": 4,
+          "formula":"(Ans=3)+(Ans=Y⇒Goto 1:",
+          "title": {
+            "en": "Check if card has been drawn before",
+            "zh": "檢查牌係咪抽過"
+          },
+          "explanation": {
+            "en": "At the same decimal place, if the dict value is 3 or the same as the drawn card's dict value, the card has been drawn before, and needs to be re-drawn.",
+            "zh": "喺同一個小數位，如果字典內字典值已經係3（1+2）或者同抽到嘅牌嘅字典值相同，就代表抽到嘅牌已經抽過，需要重抽。"
+          }
+        },
+        {
+          "step": 5,
+          "formula":"X+Y₁₀^(-D→X:C<3⇒X→A:C≥3⇒X→B:",
+          "title": {
+            "en": "Add the drawn card to the dictionary",
+            "zh": "將抽到嘅牌加入字典"
+          },
+          "explanation": {
+            "en": "Add the drawn card to the dictionary, to represent that the card has been drawn.",
+            "zh": "喺相應字典嘅點數小數位加入相應字典值，以代表該牌已經抽過。"
+          }
+        },
+        {
+          "step": 6,
+          "formula":"0.0100020000300",
+          "title": {
+            "en": "Example",
+            "zh": "例子"
+          },
+          "explanation": {
+            "en": "If the value above is from dictionary A, it represents 4 cards have been drawn. two of diamonds♦️, six of clubs♣️, jack of diamonds♦️, and jack of clubs♣️. Conversely, if the value above is from dictionary B, it represents 4 cards have been drawn. two of hearts♥️, six of spades♠️, jack of hearts♥️ and jack of spades♠️.",
+            "zh": "如果公式係字典A嘅值，代表已經抽咗4張牌，階磚二♦️、梅花六♣️、階磚J♦️同梅花J♣️。相反如果公式係字典B嘅值，代表已經抽咗4張牌。紅心二♥️、葵扇六♠️、紅心J♥️同葵扇J♠️。"
+          }
+        }
+      ]
+    }
+  ]
+} 
