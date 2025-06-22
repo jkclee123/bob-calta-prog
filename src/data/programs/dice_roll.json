@@ -9,7 +9,7 @@
     "zh": "骰盅模擬器，支援多粒骰子同自定面數，適合桌遊同概率實驗。"
   },
   "mode": "Comp",
-  "memory": 215,
+  "memory": 213,
   "status": "completed",
   "code": [
     {
@@ -54,9 +54,9 @@
     },
     {
       "line": 5,
-      "code": "Lbl 6:Rnd(10³Ran#÷Rnd(10³÷B-.5)+.5+G→X:X>B⇒Goto 6:X₁₀^(DM⁺:WhileEnd:",
-      "bytes": 41,
-      "cumulativeBytes": 178,
+      "code": "Lbl 6:Rnd(10³Ran#÷Rnd(10³÷B-.5)+.5→X:X>B⇒Goto 6:X₁₀^(DM⁺:WhileEnd:",
+      "bytes": 39,
+      "cumulativeBytes": 176,
       "comment": {
         "en": "Add new die at position D",
         "zh": "加入新骰仔"
@@ -66,7 +66,7 @@
       "line": 6,
       "code": "Lbl 9:Norm 2:M→Y:?→Y:(Y<0)+(Y=M⇒Goto 9:Y=0⇒Goto 0:Goto 5",
       "bytes": 37,
-      "cumulativeBytes": 215,
+      "cumulativeBytes": 213,
       "comment": {
         "en": "Display current dice, input re-roll command",
         "zh": "顯示所有骰，輸入重擲指令"
@@ -159,7 +159,7 @@
       },
       "actualCode": [
         "Lbl 6:",
-        "Rnd(10³Ran#÷Rnd(10³÷B-.5)+.5+G→X:",
+        "Rnd(10³Ran#÷Rnd(10³÷B-.5)+.5→X:",
         "X>B⇒Goto 6:"
       ],
       "genericCode": [
@@ -213,7 +213,7 @@
             "en": "Convert to Integer Die Value",
             "zh": "轉換為整數骰子值"
           },
-          "formula": "Rnd(10³Ran#÷Rnd(10³÷B-.5)+.5+G",
+          "formula": "Rnd(10³Ran#÷Rnd(10³÷B-.5)+.5",
           "explanation": {
             "en": "Rnd() converts the decimal to the nearest integer. Values 0.5-1.49 become 1, 1.5-2.49 become 2, etc., up to 5.5-6.49 becoming 6.",
             "zh": "Rnd()將小數轉換為最接近的整數。值0.5-1.49變成1，1.5-2.49變成2，等等，直到5.5-6.49變成6，6.5-6.518變成7。"

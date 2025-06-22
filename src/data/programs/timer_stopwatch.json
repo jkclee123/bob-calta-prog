@@ -63,10 +63,10 @@
       ],
       "instructions": [
         "‼️Calibrate variable A with a clock",
-        "Input Y≤0 (zero or negative) to start Stopwatch mode",
-        "Input Y>0 (positive) to start Timer for Y seconds",
+        "To start Stopwatch mode, enter zero or a negative value to Y",
+        "To start a timer of Y seconds, enter a positive number of seconds to Y",
         "To input ▫, its between (-) and hyp",
-        "atm: SHIFT 7 (CONST) ◀ 4"
+        "To input atm, SHIFT 7 (CONST) ◀ 4"
       ]
     },
     "zh": {
@@ -78,10 +78,10 @@
       ],
       "instructions": [
         "‼️用時鐘校準變數A",
-        "輸入Y≤0（零或負數）開始秒錶模式",
-        "輸入Y>0（正數）開始計時器計Y秒",
+        "輸入Y為零或負數開始秒錶模式",
+        "輸入Y為正數開始計時器計Y秒",
         "▫ 喺 (-) 同 hyp 之間",
-        "atm: SHIFT 7 (CONST) ◀ 4"
+        "輸入atm: SHIFT 7 (CONST) ◀ 4"
       ]
     }
   },
@@ -93,13 +93,13 @@
       },
       "steps": {
         "en": [
-          "Input Y = 0 (or any negative number)",
+          "Input 0 to Y (or any negative number)",
           "Stopwatch starts",
           "Stop the program with \"ON\"",
           "Goes back to the program to see the elapsed time"
         ],
         "zh": [
-          "輸入 Y = 0（或任何負數）",
+          "輸入 0 到 Y（或任何負數）",
           "秒錶開始",
           "㩒「ON」停秒錶",
           "返入程式睇秒錶"
@@ -113,12 +113,12 @@
       },
       "steps": {
         "en": [
-          "Input Y = 60 (for 1 minute)",
+          "Input 60 to Y (for 1 minute)",
           "Timer counts down",
           "Program will display when timer reaches 0"
         ],
         "zh": [
-          "輸入 Y = 60（1分鐘）",
+          "輸入 60 到 Y（1分鐘）",
           "計時器倒數1分鐘",
           "夠鐘時，程式會重新顯示"
         ]

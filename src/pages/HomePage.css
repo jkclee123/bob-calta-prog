@@ -6,7 +6,7 @@
 .hero {
   background: var(--hero-gradient);
   color: white;
-  padding: 60px 0;
+  padding: 70px 0;
   text-align: center;
 }
 
@@ -41,7 +41,7 @@
 .programs-section {
   background-color: var(--bg-secondary);
   transition: background-color 0.3s ease;
-  padding: 60px 0 80px 0;
+  padding: 0 0 80px 0;
 }
 
 .section-title {
@@ -237,7 +237,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero {
-    padding: 60px 0;
+    padding: 70px 0;
   }
 
   .hero-title {
@@ -269,7 +269,7 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: 40px 0;
+    padding: 50px 0;
   }
 
   .hero-title {

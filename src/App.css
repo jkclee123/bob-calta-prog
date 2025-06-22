@@ -96,7 +96,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .main-content {
-    padding-top: 60px; /* Match tablet/mobile header height */
+    padding-top: 80px;
   }
   
   .container {

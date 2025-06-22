@@ -147,14 +147,14 @@
 /* Math symbol replacements for Android compatibility */
 .math-symbol {
   font-family: 'Roboto', 'Arial', sans-serif;
-  font-weight: 600;
-  color: #667eea;
-  background: rgba(102, 126, 234, 0.1);
-  padding: 2px 4px;
+  /* font-weight: 600; */
+  /* color: #667eea; */
+  /* background: rgba(102, 126, 234, 0.1); */
+  /* padding: 2px 4px;
   border-radius: 3px;
   font-size: 0.9em;
   margin: 0 1px;
-  display: inline-block;
+  display: inline-block; */
 }
 
 .math-symbol.subscript {

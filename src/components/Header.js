@@ -43,6 +43,7 @@ const Header = () => {
             className="logo"
             onClick={() => handleNavLinkClick('/')}
           >
+            <img src="/logo.png" alt="Bob's Calta Logo" className="logo-image" />
             <h1>{t({ en: 'Bob\'s Calta', zh: 'Bob\'s Calta' })}</h1>
           </Link>
           <nav className="nav">

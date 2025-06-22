@@ -75,8 +75,8 @@
       ],
       "instructions": [
         "‼️Calibrate variable A with a clock (default A=50)",
-        "Input Y≤0 (zero or negative) to set Counter to -Y",
-        "Input Y>0 (positive) to start Timer for Y seconds",
+        "To set Counter to -Y, enter zero or a negative value to Y",
+        "To start a timer of Y seconds, enter a positive number of seconds to Y",
         "Counter increments automatically during timing",
         "To input ▫, its between (-) and hyp"
       ]
@@ -92,8 +92,8 @@
       ],
       "instructions": [
         "‼️用時鐘校準變數A（預設A=50）",
-        "輸入Y≤0（零或負數）將記數器設定為負Y",
-        "輸入Y>0（正數）開始計時器計Y秒",
+        "輸入Y為零或負數將記數器設定為負Y",
+        "輸入Y為正數開始計時器計Y秒",
         "計時過程中記數器自動遞增",
         "▫ 喺 (-) 同 hyp 之間"
       ]
@@ -107,11 +107,11 @@
       },
       "steps": {
         "en": [
-          "Input Y = -3 (negative value)",
+          "Input -3 to Y (negative value)",
           "Counter is set to 3"
         ],
         "zh": [
-          "輸入 Y = -3（負值）",
+          "輸入 -3 到 Y（負值）",
           "記數器設定為3"
         ]
       }
@@ -123,12 +123,12 @@
       },
       "steps": {
         "en": [
-          "Input Y = 60 (for 1 minute)",
+          "Input 60 to Y (for 1 minute)",
           "Timer counts down",
           "Program will display when timer reaches 0"
         ],
         "zh": [
-          "輸入 Y = 60（1分鐘）",
+          "輸入 60 到 Y（1分鐘）",
           "計時器倒數1分鐘",
           "夠鐘時，程式會重新顯示"
         ]

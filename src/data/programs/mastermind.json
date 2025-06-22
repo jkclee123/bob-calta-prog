@@ -34,7 +34,7 @@
     },
     {
       "line": 3,
-      "code": "Lbl 2:X=0⇒∑x→X:1→B:For 1-C→D To0:X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G",
+      "code": "Lbl 2:X=0⇒∑x→X:1→B:For 1-C→D To 0:X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G:",
       "bytes": 49,
       "cumulativeBytes": 125,
       "comment": {
@@ -159,7 +159,8 @@
       "instructions": [
         "Start menu: Input 0 to continue previous game, or 4-8 to start new game with that many digits",
         "During game: Input your guess (input negative number returns to start menu)",
-        "Read feedback: X.Y means X correct positions, Y correct digits in wrong positions"
+        "Read feedback: X.Y means X correct positions, Y correct digits in wrong positions",
+        "For symbol input instructions, refer to the symbols page."
       ]
     },
     "zh": {
@@ -177,7 +178,8 @@
       "instructions": [
         "開始菜單： 輸入 0 繼續上一局遊戲，或輸入 4-8 開始新遊戲",
         "遊戲中： 輸入猜測，輸入負數返回開始菜單",
-        "睇提示：X.Y 表示 X 個正確位置，Y 個正確數字但位置錯誤"
+        "睇提示：X.Y 表示 X 個正確位置，Y 個正確數字但位置錯誤",
+        "符號輸入說明，請參考符號頁。"
       ]
     }
   },

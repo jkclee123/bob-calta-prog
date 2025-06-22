@@ -64,9 +64,9 @@
     },
     {
       "line": 6,
-      "code": "M+365+(sin(45Ans)=0)(sin(1.8Ans)≠0)+(0=sin(.45Ans→M:",
+      "code": "M+365+(sin(45Ans)=0)(sin(1.8Ans)≠0)+(0=sin(.45Ans→M:Next:",
       "bytes": 37,
-      "cumulativeBytes": 130,
+      "cumulativeBytes": 132,
       "comment": {
         "en": "Sum days in each year",
         "zh": "總和每年嘅日數"
@@ -74,16 +74,6 @@
     },
     {
       "line": 7,
-      "code": "Next:",
-      "bytes": 2,
-      "cumulativeBytes": 132,
-      "comment": {
-        "en": "End of loop",
-        "zh": "循環結束"
-      }
-    },
-    {
-      "line": 8,
       "code": "Rnd(.01X-.5→C:Rnd(.01Y-.5→D:M-X+Y+100(C-D→M:",
       "bytes": 38,
       "cumulativeBytes": 170,
@@ -93,13 +83,23 @@
       }
     },
     {
+      "line": 8,
+      "code": "∑x→X:∑y→Y:",
+      "bytes": 8,
+      "cumulativeBytes": 178,
+      "comment": {
+        "en": "Reload start date and end date to preserve input",
+        "zh": "重新載入開始日期同結束日期，保留輸入"
+      }
+    },
+    {
       "line": 9,
-      "code": "∑x→X:∑y→Y:1→A:If C>D:Then C→A:D→C:A→D:-1→A:IfEnd:",
-      "bytes": 37,
+      "code": "1→A:If C>D:Then C→A:D→C:A→D:-1→A:IfEnd:",
+      "bytes": 29,
       "cumulativeBytes": 207,
       "comment": {
         "en": "Decide whether to add or subtract days",
-        "zh": "決定月份應該向前定向後"
+        "zh": "決定月份應該向前定向後行"
       }
     },
     {
@@ -159,7 +159,8 @@
       "instructions": [
         "Enter start date in yyyyMMdd format",
         "Enter end date in yyyyMMdd format",
-        "Program calculates days between dates (excluding end date)"
+        "Program calculates days between dates (excluding end date)",
+        "For symbol input instructions, refer to the symbols page."
       ]
     },
     "zh": {
@@ -177,7 +178,8 @@
       "instructions": [
         "輸入開始日期，格式 yyyyMMdd",
         "輸入結束日期，格式 yyyyMMdd",
-        "程式計算兩個日期之間嘅日數（不包括結束日）"
+        "程式計算兩個日期之間嘅日數（不包括結束日）",
+        "符號輸入說明，請參考符號頁。"
       ]
     }
   },

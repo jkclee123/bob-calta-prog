@@ -134,106 +134,106 @@
   "analysis": [
     {
       "title": {
-        "en": "Memorize drawn cards with decimal points",
-        "zh": "用小數位記住抽過嘅牌"
-        },  
-        "actualCode": [
-          "A→X:C≥3⇒B→X:",
-          "C-2(C≥3→Y:",
-          "X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G:",
-          "(Ans=3)+(Ans=Y⇒Goto 1:",
-          "X+Y₁₀^(-D→X:C<3⇒X→A:C≥3⇒X→B:"
-        ],
+        "en": "Draw poker cards without replacement",
+        "zh": "唔重複抽牌"
+      },
+      "actualCode": [
+        "A→X:C≥3⇒B→X:",
+        "C-2(C≥3→Y:",
+        "X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G:",
+        "(Ans=3)+(Ans=Y⇒Goto 1:",
+        "X+Y₁₀^(-D→X:C<3⇒X→A:C≥3⇒X→B:"
+      ],
       "problem": {
-        "en": "Design a way to memorize whether cards are drawn or not.",
-        "zh": "設計一個方法記住牌係咪抽過。"
+        "en": "Design a way to draw poker cards without replacement.",
+        "zh": "設計一個不放回抽樣嘅方法"
       },
       "steps": [
         {
           "step": 1,
-          "formula":"0.123456789012345",
+          "formula": "A = 0.0000000000000, B = 0.0000000000000",
           "title": {
-            "en": "Solution",
-            "zh": "解決方法"
+            "en": "The Core Idea: Use decimal points to mark drawn cards",
+            "zh": "核心概念：用小數點做記號"
           },
           "explanation": {
-            "en": "In calculator, each variable can store up to 15 decimal places. Storing 2 cards in each decimal place, we can store all 52 cards with 2 variables, namely dictionary A and B.",
-            "zh": "喺計數機入面，每個變數可以儲存最多15個小數位。如果每個小數位儲存2張牌，就可以用2個變數(字典A同字典B)，儲存52張牌。"
+            "en": "The calculator variables can store numbers with up to  15 decimal places. We use two variables, A and B, as 'ledgers'. Each decimal place, from the 1st to the 13th, represents a card rank (A, 2, 3, ..., K).",
+            "zh": "計數機嘅變數可以儲存15個小數位，我哋用兩個變數 A 同 B 做「數簿」。由第1個到第13個小數位，分別代表啤牌嘅點數（A, 2, 3, ..., K）。"
           }
         },
         {
           "step": 2,
-          "formula":"A→X:C≥3⇒B→X:",
+          "formula": "A→X:C≥3⇒B→X:",
           "title": {
-            "en": "Use the respective dictionary",
-            "zh": "揀選相應字典"
+            "en": "Select the Correct Ledger",
+            "zh": "揀啱要用邊本「數簿」"
           },
           "explanation": {
-            "en": "Each dictionary is responsible for storing two suits. Dictionary A stores diamonds♦️ and clubs♣️, while dictionary B stores hearts♥️ and spades♠️.",
-            "zh": "每個字典負責儲存2個花色。字典A儲存階磚♦️同梅花♣️，字典B儲存紅心♥️同葵扇♠️。"
+            "en": "The program first decides which ledger to check. Ledger 'A' is for Diamonds (♦️) and Clubs (♣️). Ledger 'B' is for Hearts (♥️) and Spades (♠️).",
+            "zh": "程式會先決定要查邊本數簿。數簿 'A' 係用嚟記階磚♦️同梅花♣️，數簿 'B' 就係用嚟記紅心♥️同葵扇♠️。"
           }
         },
         {
           "step": 3,
-          "formula":"C-2(C≥3→Y:",
+          "formula": "C-2(C≥3→Y:",
           "title": {
-            "en": "Determine drawn card dict value",
-            "zh": "計算抽到嘅牌嘅字典值"
+            "en": "Determine the Suit's Value",
+            "zh": "決定花色嘅「標記值」"
           },
           "explanation": {
-            "en": "If the card drawn is a diamond♦️ or heart♥️ (red suit), the dictionary value is 1. If the card drawn is a club♣️ or spade♠️ (black suit), the dictionary value is 2.",
-            "zh": "如果抽到嘅牌係階磚♦️或紅心♥️（紅色花式），字典值係1。如果抽到嘅牌係梅花♣️或葵扇♠️（黑色花式），字典值係2。"
-          }
-        },
-        {
-          "step": 3,
-          "formula":"X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G:",
-          "title": {
-            "en": "Look up current dictionary value with drawn card's rank",
-            "zh": "以抽到嘅牌嘅點數查字典"
-          },
-          "explanation": {
-            "en": "In the dictionary, the rank is the decimal place. For example, Aces are stored in the first decimal place, 2s in the second, and so on.",
-            "zh": "喺字典入面，點數決定儲存嘅小數位置。例如，A儲存喺第1個小數位，2儲存喺第2個小數位，J儲存喺第11個小數位，如此類推。"
+            "en": "A value 'Y' is calculated to represent the suit. For red suits (♦️, ♥️), Y becomes 1. For black suits (♣️, ♠️), Y becomes 2. This is the 'mark' we will put in our ledger.",
+            "zh": "程式會計算一個叫 'Y' 嘅值去代表花色，紅色牌（♦️, ♥️）嘅 Y 會係 1。黑色牌（♣️, ♠️）嘅 Y 會係 2，呢個就係我哋將要寫落數簿嘅「標記」。"
           }
         },
         {
           "step": 4,
-          "formula":"(Ans=3)+(Ans=Y⇒Goto 1:",
+          "formula": "X₁₀^(D...)",
           "title": {
-            "en": "Check if card has been drawn before",
-            "zh": "檢查牌係咪抽過"
+            "en": "Check the Ledger",
+            "zh": "檢查數簿"
           },
           "explanation": {
-            "en": "At the same decimal place, if the dict value is 3 or the same as the drawn card's dict value, the card has been drawn before, and needs to be re-drawn.",
-            "zh": "喺同一個小數位，如果字典內字典值已經係3（1+2）或者同抽到嘅牌嘅字典值相同，就代表抽到嘅牌已經抽過，需要重抽。"
+            "en": "The code looks at the specific decimal place (D, the rank) in the chosen ledger (X). For example, to check the '7', it looks at the 7th decimal place.",
+            "zh": "呢段程式碼會喺揀好咗嘅數簿(X)入面，搵出代表點數(D)嗰個小數位。例如，如果要查「7」，佢就會睇第7個小數位嘅數值。"
           }
         },
         {
           "step": 5,
-          "formula":"X+Y₁₀^(-D→X:C<3⇒X→A:C≥3⇒X→B:",
+          "formula": "(Ans=3)+(Ans=Y⇒Goto 1:",
           "title": {
-            "en": "Add the drawn card to the dictionary",
-            "zh": "將抽到嘅牌加入字典"
+            "en": "Has this card been drawn?",
+            "zh": "呢張牌係咪已經抽過？"
           },
           "explanation": {
-            "en": "Add the drawn card to the dictionary, to represent that the card has been drawn.",
-            "zh": "喺相應字典嘅點數小數位加入相應字典值，以代表該牌已經抽過。"
+            "en": "It checks the value at that decimal place. If the value is the same as our suit's mark 'Y' (e.g., we drew a ♣️, Y=2, and the value is already 2), it means the card is taken. If the value is 3, it means both cards of that rank (e.g., both ♦️7 and ♣️7) are gone. In either case, it goes back (Goto 1) to draw another card.",
+            "zh": "程式會檢查嗰個小數位嘅數值。如果數值同我哋張牌嘅標記 'Y' 一樣（例如我哋抽到梅花♣️，Y=2，而嗰個位嘅數值已經係2），就代表張牌已經被抽走咗。如果數值係3，代表嗰個點數嘅兩張牌（例如階磚7♦️同梅花7♣️）都已經抽晒。無論邊種情況，程式都會返去(Goto 1)重新抽過一張。"
           }
         },
         {
           "step": 6,
-          "formula":"0.0100020000300",
+          "formula": "X+Y₁₀^(-D→X ...",
           "title": {
-            "en": "Example",
-            "zh": "例子"
+            "en": "Mark the Card as Drawn",
+            "zh": "將抽到嘅牌做個記號"
           },
           "explanation": {
-            "en": "If the value above is from dictionary A, it represents 4 cards have been drawn. two of diamonds♦️, six of clubs♣️, jack of diamonds♦️, and jack of clubs♣️. Conversely, if the value above is from dictionary B, it represents 4 cards have been drawn. two of hearts♥️, six of spades♠️, jack of hearts♥️ and jack of spades♠️.",
-            "zh": "如果公式係字典A嘅值，代表已經抽咗4張牌，階磚二♦️、梅花六♣️、階磚J♦️同梅花J♣️。相反如果公式係字典B嘅值，代表已經抽咗4張牌。紅心二♥️、葵扇六♠️、紅心J♥️同葵扇J♠️。"
+            "en": "If the card is available, the program adds the suit's value 'Y' to the correct decimal place in the ledger. For example, if we draw the Seven of Clubs (♣️7), it adds 2 to the 7th decimal place of ledger 'A'.",
+            "zh": "如果張牌係可以抽嘅，程式就會將代表花色嘅標記值 'Y' 加落去數簿嘅相應小數位。例如，如果抽到梅花七(♣️7)，佢就會喺數簿 'A' 嘅第7個小數位加上 2。"
+          }
+        },
+        {
+          "step": 7,
+          "formula": "A = 0.1000021000300",
+          "title": {
+            "en": "Example Ledger",
+            "zh": "數簿例子"
+          },
+          "explanation": {
+            "en": "If ledger 'A' looks like this, it means: Ace of Diamonds (♦️A, 1st decimal is 1), Six of Clubs (♣️6, 6th decimal is 2), Seven of Diamonds (♦️7, 7th decimal is 1), and both Jack of Diamonds (♦️J) and Jack of Clubs (♣️J) have been drawn (11th decimal is 3).",
+            "zh": "如果數簿 'A' 嘅數值係咁，就代表：階磚煙♦️A (第1個小數位係1) 、梅花六♣️6 (第6個小數位係2) 、階磚七♦️7 (第7個小數位係1) ，同埋階磚J♦️同梅花J♣️都已經抽咗 (第11個小數位係3)。"
           }
         }
       ]
     }
   ]
-} 
+}
