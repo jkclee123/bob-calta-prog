@@ -18,12 +18,12 @@
 }
 
 .language-select:hover {
-  border-color: #2196F3;
+  border-color: var(--accent-color);
 }
 
 .language-select:focus {
-  border-color: #2196F3;
-  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px var(--accent-color-alpha);
 }
 
 .language-select option {

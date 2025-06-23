@@ -15,15 +15,15 @@
 }
 
 .theme-toggle:hover {
-  border-color: #2196F3;
+  border-color: var(--accent-color);
   background-color: var(--card-hover-bg);
   transform: scale(1.05);
 }
 
 .theme-toggle:focus {
   outline: none;
-  border-color: #2196F3;
-  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px var(--accent-color-alpha);
 }
 
 .theme-toggle:active {

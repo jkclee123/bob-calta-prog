@@ -15,7 +15,7 @@
 
 /* Code Header */
 .code-header {
-  background: linear-gradient(135deg, #5e71c5 0%, #a57ecc 100%);
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-color) 100%);
   color: white;
   padding: 24px 32px;
   display: flex;
@@ -86,7 +86,7 @@
 }
 
 .line-number-badge {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-color));
   color: white;
   width: 40px;
   height: 40px;
@@ -97,7 +97,7 @@
   font-weight: 600;
   font-size: 0.9rem;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 2px 8px var(--accent-color-alpha);
 }
 
 .line-code-content {
@@ -129,8 +129,8 @@
 .line-comment {
   margin-top: 4px;
   padding: 6px 10px;
-  background: rgba(102, 126, 234, 0.04);
-  border-left: 2px solid #667eea;
+  background: var(--accent-color-bg);
+  border-left: 2px solid var(--accent-color);
   border-radius: 3px;
   width: 100%;
 }
@@ -147,20 +147,20 @@
 /* Math symbol replacements for Android compatibility */
 .math-symbol {
   font-family: 'Roboto', 'Arial', sans-serif;
-  /* font-weight: 600; */
-  /* color: #667eea; */
-  /* background: rgba(102, 126, 234, 0.1); */
-  /* padding: 2px 4px;
-  border-radius: 3px;
-  font-size: 0.9em;
-  margin: 0 1px;
-  display: inline-block; */
+  color: var(--accent-color);
 }
 
-.math-symbol.subscript {
+
+.superscript {
   font-size: 0.7em;
-  vertical-align: sub;
-  background: rgba(102, 126, 234, 0.15);
+  vertical-align: 10%;
+  color: var(--accent-color);
+}
+
+.subscript {
+  font-size: 0.7em;
+  vertical-align: -10%;
+  color: var(--accent-color);
 }
 
 /* Line Stats */
@@ -187,7 +187,7 @@
 }
 
 .cumulative-value {
-  color: #667eea;
+  color: var(--accent-color);
   font-size: 1.2rem;
 }
 
@@ -234,7 +234,7 @@
 }
 
 .summary-text strong {
-  color: #667eea;
+  color: var(--accent-color);
   font-weight: 700;
 }
 

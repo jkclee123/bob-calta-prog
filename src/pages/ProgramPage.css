@@ -163,8 +163,8 @@
 }
 
 .tab-button.active {
-  color: #2196F3;
-  border-bottom-color: #2196F3;
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
   background-color: var(--card-bg);
 }
 
@@ -320,7 +320,7 @@
 
 .toc-link::before {
   content: counter(toc-counter);
-  background-color: #2196F3;
+  background-color: var(--accent-color);
   color: white;
   width: 24px;
   height: 24px;
@@ -336,7 +336,7 @@
 .toc-link:hover {
   color: var(--text-primary);
   background-color: var(--card-hover-bg);
-  border-color: #2196F3;
+  border-color: var(--accent-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px var(--shadow-light);
 }
@@ -446,7 +446,7 @@
 }
 
 .code-line:hover {
-  background-color: rgba(33, 150, 243, 0.1);
+  background-color: var(--accent-color-bg);
 }
 
 .steps-container {
@@ -476,7 +476,7 @@
 }
 
 .step-number {
-  background-color: #2196F3;
+  background-color: var(--accent-color);
   color: white;
   width: 32px;
   height: 32px;
@@ -613,7 +613,7 @@
 
   .tab-button.active {
     border-bottom-color: var(--border-primary);
-    border-left: 3px solid #2196F3;
+    border-left: 3px solid var(--accent-color);
   }
 
   .tab-content {

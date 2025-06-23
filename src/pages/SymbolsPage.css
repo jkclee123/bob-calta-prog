@@ -63,8 +63,8 @@
 }
 
 .search-input:focus {
-  border-color: #2196F3;
-  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px var(--accent-color-alpha);
 }
 
 .category-filter {
@@ -85,8 +85,8 @@
 }
 
 .category-select:focus {
-  border-color: #2196F3;
-  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px var(--accent-color-alpha);
 }
 
 .category-select option {
@@ -141,7 +141,7 @@
 .symbol-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px var(--shadow-medium);
-  border-color: #2196F3;
+  border-color: var(--accent-color);
   background-color: var(--card-hover-bg);
 }
 
@@ -156,7 +156,7 @@
   font-family: 'Courier New', monospace;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #2196F3;
+  color: var(--accent-color);
   background-color: var(--input-bg);
   padding: 8px 12px;
   border-radius: 6px;
@@ -165,30 +165,22 @@
 }
 
 /* Math symbol replacements for Android compatibility */
-.symbol-display .math-symbol {
+.math-symbol {
   font-family: 'Roboto', 'Arial', sans-serif;
-  font-weight: 600;
-  color: #2196F3;
-  background: rgba(33, 150, 243, 0.1);
-  padding: 2px 4px;
-  border-radius: 3px;
-  font-size: 0.9em;
-  margin: 0 1px;
-  display: inline-block;
+  color: var(--accent-color);
 }
 
-[data-theme="dark"] .symbol-display .math-symbol {
-  background: rgba(33, 150, 243, 0.2);
-}
 
-.symbol-display .math-symbol.subscript {
+.superscript {
   font-size: 0.7em;
-  vertical-align: sub;
-  background: rgba(33, 150, 243, 0.15);
+  vertical-align: 15%;
+  color: var(--accent-color);
 }
 
-[data-theme="dark"] .symbol-display .math-symbol.subscript {
-  background: rgba(33, 150, 243, 0.25);
+.subscript {
+  font-size: 0.7em;
+  vertical-align: -15%;
+  color: var(--accent-color);
 }
 
 .symbol-info {
@@ -220,18 +212,13 @@
 }
 
 .typing-instruction {
-  background-color: #e3f2fd;
+  background-color: var(--accent-color-bg);
   padding: 6px 8px;
   border-radius: 4px;
   font-family: 'Courier New', monospace;
   font-size: 0.9rem;
-  color: #1976D2;
+  color: var(--accent-color);
   transition: background-color 0.3s ease;
-}
-
-[data-theme="dark"] .typing-instruction {
-  background-color: rgba(33, 150, 243, 0.2);
-  color: #64b5f6;
 }
 
 .symbol-bytes {
@@ -251,7 +238,7 @@
 }
 
 .bytes-value {
-  color: #2196F3;
+  color: var(--accent-color);
   font-weight: 600;
   font-size: 0.9rem;
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useDocumentTitle } from '../utils/useDocumentTitle';
+import { formatCodeForDisplay } from '../utils/symbolFormatter';
 import programsData from '../data/programs/index.js';
 import CodeViewer from '../components/CodeViewer';
 import './ProgramPage.css';
@@ -163,7 +164,11 @@ const ProgramPage = () => {
                         <h5>{t({ en: 'Actual Code', zh: '實際代碼' })}</h5>
                         <div className="code-block-container">
                           {analysis.actualCode.map((line, lineIndex) => (
-                            <code key={lineIndex} className="code-block code-line">{line}</code>
+                            <code 
+                              key={lineIndex} 
+                              className="code-block code-line"
+                              dangerouslySetInnerHTML={{ __html: formatCodeForDisplay(line) }}
+                            />
                           ))}
                         </div>
                       </div>
@@ -173,7 +178,11 @@ const ProgramPage = () => {
                         <h5>{t({ en: 'Generic Form', zh: '通用形式' })}</h5>
                         <div className="code-block-container">
                           {analysis.genericCode.map((line, lineIndex) => (
-                            <code key={lineIndex} className="code-block code-line">{line}</code>
+                            <code 
+                              key={lineIndex} 
+                              className="code-block code-line"
+                              dangerouslySetInnerHTML={{ __html: formatCodeForDisplay(line) }}
+                            />
                           ))}
                         </div>
                       </div>
@@ -193,7 +202,10 @@ const ProgramPage = () => {
                         {step.formula && (
                           <div className="step-formula">
                             <strong>{t({ en: 'Formula:', zh: '公式：' })}</strong> 
-                            <code className="formula-code">{step.formula}</code>
+                            <code 
+                              className="formula-code"
+                              dangerouslySetInnerHTML={{ __html: formatCodeForDisplay(step.formula) }}
+                            />
                           </div>
                         )}
                         <div className="step-explanation">

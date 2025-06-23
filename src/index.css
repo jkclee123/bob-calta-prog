@@ -22,6 +22,11 @@
   --code-bg: #ffffff;
   --code-even-bg: #fafbff;
   --code-odd-bg: #ffffff;
+  
+  /* Accent Colors - Light Theme */
+  --accent-color: #2196F3;
+  --accent-color-alpha: rgba(33, 150, 243, 0.2);
+  --accent-color-bg: rgba(33, 150, 243, 0.1);
 }
 
 [data-theme="dark"] {
@@ -44,6 +49,11 @@
   --code-bg: #2d2d2d;
   --code-even-bg: #3a3a3a;
   --code-odd-bg: #2d2d2d;
+  
+  /* Accent Colors - Dark Theme */
+  --accent-color: #F49F29;
+  --accent-color-alpha: rgba(244, 159, 41, 0.2);
+  --accent-color-bg: rgba(244, 159, 41, 0.1);
 }
 
 body {

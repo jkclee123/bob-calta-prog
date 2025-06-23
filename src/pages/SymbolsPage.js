@@ -143,9 +143,12 @@ const SymbolsPage = () => {
                         </p>
                         <div className="symbol-typing">
                           <strong>{t({ en: 'How to type:', zh: '輸入方法:' })}</strong>
-                          <code className="typing-instruction">
-                            {t(symbol.howToType)}
-                          </code>
+                          <code 
+                            className="typing-instruction"
+                            dangerouslySetInnerHTML={{ 
+                              __html: formatCodeForDisplay(t(symbol.howToType)) 
+                            }}
+                          />
                         </div>
                       </div>
                     </div>
