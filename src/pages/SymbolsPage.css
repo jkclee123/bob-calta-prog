@@ -170,16 +170,15 @@
   color: var(--accent-color);
 }
 
-
 .superscript {
   font-size: 0.7em;
-  vertical-align: 15%;
+  vertical-align: super;
   color: var(--accent-color);
 }
 
 .subscript {
   font-size: 0.7em;
-  vertical-align: -15%;
+  vertical-align: sub;
   color: var(--accent-color);
 }
 

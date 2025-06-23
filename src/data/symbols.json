@@ -630,10 +630,42 @@
         {
           "symbol": "atm",
           "description": {
-            "en": "Physical constant: 1 atmosphere (pressure)",
+            "en": "Physical constant: one standard atmosphere (101325)",
             "zh": "物理常數：1 大氣壓（壓力）"
           },
           "howToType": "SHIFT 7 (CONST) ◀ 4"
+        },
+        {
+          "symbol": "t",
+          "description": {
+            "en": "Physical constant: convert between Celsius and Kelvin temperature scales (273.15)",
+            "zh": "物理常數：攝氏和開爾文溫度單位之間的轉換 (273.15)"
+          },
+          "howToType": "SHIFT 7 (CONST) ◀ 2"
+        },
+        {
+          "symbol": "F",
+          "description": {
+            "en": "Physical constant: Faraday constant (96485.3365)",
+            "zh": "物理常數：法拉第常數 (96485.3365)"
+          },
+          "howToType": "SHIFT 7 (CONST) ◀ ◀ ◀ ◀ ◀ 2"
+        },
+        {
+          "symbol": "σ",
+          "description": {
+            "en": "Physical constant: Stefan-Boltzmann constant (5.67e-8)",
+            "zh": "物理常數：斯特凡-玻爾茲曼常數 (5.67e-8)"
+          },
+          "howToType": "SHIFT 7 (CONST) ◀ ◀ ◀ 3"
+        },
+        {
+          "symbol": "Z₀",
+          "description": {
+            "en": "Physical constant: vacuum impedance (376.730313668)",
+            "zh": "物理常數：真空阻抗 (376.730313668)"
+          },
+          "howToType": "SHIFT 7 (CONST) ◀ 1"
         }
       ]
     },

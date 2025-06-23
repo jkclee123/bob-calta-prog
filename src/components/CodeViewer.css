@@ -144,25 +144,6 @@
   transition: color 0.3s ease;
 }
 
-/* Math symbol replacements for Android compatibility */
-.math-symbol {
-  font-family: 'Roboto', 'Arial', sans-serif;
-  color: var(--accent-color);
-}
-
-
-.superscript {
-  font-size: 0.7em;
-  vertical-align: 10%;
-  color: var(--accent-color);
-}
-
-.subscript {
-  font-size: 0.7em;
-  vertical-align: -10%;
-  color: var(--accent-color);
-}
-
 /* Line Stats */
 .line-stats {
   display: flex;
