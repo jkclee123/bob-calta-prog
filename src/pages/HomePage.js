@@ -101,9 +101,15 @@ const HomePage = () => {
       <section className="programs-section">
         <div className="container">
           <div className="programs-grid">
-            {Object.values(programsData).map((program) => (
+            {Object.values(programsData).map((program, index) => (
               program.status === 'completed' ? (
-                <Link key={program.id} to={`/program/${program.id}`} className="program-card-link" onClick={handleProgramLinkClick}>
+                <Link 
+                  key={program.id} 
+                  to={`/program/${program.id}`} 
+                  className="program-card-link" 
+                  onClick={handleProgramLinkClick}
+                  style={{ animationDelay: `${(index + 1) * 0.05}s` }}
+                >
                   <div className="program-card">
                     <div className={`program-header program-header-${program.id}`}>
                       <h3 className="program-name">{t(program.name)}</h3>
@@ -127,7 +133,11 @@ const HomePage = () => {
                   </div>
                 </Link>
               ) : (
-                <div key={program.id} className="program-card program-card-disabled">
+                <div 
+                  key={program.id} 
+                  className="program-card program-card-disabled"
+                  style={{ animationDelay: `${(index + 1) * 0.1}s` }}
+                >
                   <div className={`program-header program-header-${program.id}`}>
                     <h3 className="program-name">{t(program.name)}</h3>
                     {getStatusBadge(program.status)}
