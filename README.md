@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Bob's Calta 🧮
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React web application showcasing a collection of calculator programs for the **Casio fx-50FH II**. This interactive documentation provides detailed program code, usage instructions, and mathematical analysis for various recreational programs.
 
-## Available Scripts
+## 🌟 Features
 
-In the project directory, you can run:
+- **Interactive Program Browser**: Browse through a collection of calculator programs with detailed documentation
+- **Multilingual Support**: Full English and Traditional Chinese language support
+- **Dark/Light Theme**: Toggle between dark and light themes for comfortable viewing
+- **Responsive Design**: Optimized for both desktop and mobile devices
+- **Detailed Code Analysis**: In-depth explanations of programming techniques and algorithms
+- **Symbol Reference**: Comprehensive guide to Casio fx-50FH II programming symbols
 
-### `npm start`
+## 📱 Programs Included
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **🎲 Dice Roll**: Multi-dice simulator with customizable sides and selective re-rolling
+- **🧩 Mastermind**: Classic code-breaking game implementation
+- **📅 Date Duration**: Calculate duration between dates
+- **⏱️ Timer & Stopwatch**: Timing utilities with counter functionality
+- **🃏 Poker Dealer**: Card dealing simulation for poker games
+- **⚔️ Avalon**: Game mechanics for The Resistance: Avalon
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📁 Project Structure
 
-### `npm test`
+```
+src/
+├── components/          # Reusable UI components
+│   ├── CodeViewer.js   # Syntax-highlighted code display
+│   ├── Header.js       # Navigation header
+│   ├── LanguageSelector.js
+│   └── ThemeToggle.js
+├── contexts/           # React context providers
+│   ├── LanguageContext.js
+│   └── ThemeContext.js
+├── data/              # Program data and symbols
+│   ├── programs/      # Individual program JSON files
+│   └── symbols.json   # Calculator symbol reference
+├── pages/             # Main application pages
+│   ├── HomePage.js    # Program listing page
+│   ├── ProgramPage.js # Individual program details
+│   └── SymbolsPage.js # Symbol reference guide
+└── utils/             # Utility functions
+    ├── symbolFormatter.js
+    └── useDocumentTitle.js
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🎯 Usage
 
-### `npm run build`
+### Browsing Programs
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Visit the homepage to see all available programs
+2. Click on any completed program to view its details
+3. Each program page includes:
+   - Complete source code with line-by-line comments
+   - Usage instructions and parameter explanations
+   - Working examples with step-by-step execution
+   - Technical analysis of algorithms and techniques
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Symbol Reference
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Navigate to the "Symbols" page for a comprehensive guide to calculator programming symbols
+- Search and filter symbols by category
+- View detailed descriptions and input methods for each symbol
 
-### `npm run eject`
+### Language Support
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Toggle between English and Traditional Chinese using the language selector
+- All content, including program descriptions and instructions, is fully localized
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🔗 Related Resources
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [Casio fx-50FH II](https://www.casio.com/intl/scientific-calculators/product.FX-50FHII) - Official calculator documentation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Made with ❤️ for the calculator programming community**
