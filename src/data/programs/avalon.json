@@ -124,9 +124,9 @@
     },
     {
       "line": 12,
-      "code": "Y>1⇒Goto 3:0→X:Goto 0:",
-      "bytes": 14,
-      "cumulativeBytes": 245,
+      "code": "Y>1⇒Goto 3:0→X:ClrStat:Goto 0:",
+      "bytes": 16,
+      "cumulativeBytes": 247,
       "comment": {
         "en": "Continue drawing cards until all cards are drawn",
         "zh": "繼續抽牌直至抽晒牌"
@@ -136,7 +136,7 @@
       "line": 13,
       "code": "Lbl 8:0→X:For -M→M To -1:",
       "bytes": 16,
-      "cumulativeBytes": 261,
+      "cumulativeBytes": 263,
       "comment": {
         "en": "Function 4 - Play quest card",
         "zh": "功能4 - 出任務"
@@ -146,7 +146,7 @@
       "line": 14,
       "code": "Lbl 9:M→D:?→D:D≠0⇒D≠1⇒Goto 9:X+D→X:Next:",
       "bytes": 30,
-      "cumulativeBytes": 291,
+      "cumulativeBytes": 293,
       "comment": {
         "en": "Play quest card: Success/Failure",
         "zh": "出任務：任務成功／失敗"
@@ -156,7 +156,7 @@
       "line": 15,
       "code": "tFBσYZ₀◢X◢Goto 0",
       "bytes": 11,
-      "cumulativeBytes": 302,
+      "cumulativeBytes": 304,
       "comment": {
         "en": "Display the number of failure quest cards",
         "zh": "顯示任務失敗卡數量"
