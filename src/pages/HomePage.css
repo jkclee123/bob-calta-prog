@@ -167,12 +167,6 @@
 }
 
 .status-badge.coming-soon {
-  background-color: #fff3cd;
-  color: #856404;
-  border: 1px solid #ffeaa7;
-}
-
-[data-theme="dark"] .status-badge.coming-soon {
   background-color: rgba(255, 243, 205, 0.2);
   color: #ffd54f;
   border: 1px solid rgba(255, 234, 167, 0.3);

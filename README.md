@@ -6,7 +6,7 @@ A React web application showcasing a collection of calculator programs for the *
 
 - **Interactive Program Browser**: Browse through a collection of calculator programs with detailed documentation
 - **Multilingual Support**: Full English and Traditional Chinese language support
-- **Dark/Light Theme**: Toggle between dark and light themes for comfortable viewing
+- **Dark Theme**: Dark theme is used across the app for comfortable viewing
 - **Responsive Design**: Optimized for both desktop and mobile devices
 - **Detailed Code Analysis**: In-depth explanations of programming techniques and algorithms
 - **Symbol Reference**: Comprehensive guide to Casio fx-50FH II programming symbols
@@ -28,10 +28,10 @@ src/
 │   ├── CodeViewer.js   # Syntax-highlighted code display
 │   ├── Header.js       # Navigation header
 │   ├── LanguageSelector.js
-│   └── ThemeToggle.js
+│   └── (removed) ThemeToggle.js
 ├── contexts/           # React context providers
 │   ├── LanguageContext.js
-│   └── ThemeContext.js
+│   └── (removed) ThemeContext.js
 ├── data/              # Program data and symbols
 │   ├── programs/      # Individual program JSON files
 │   └── symbols.json   # Calculator symbol reference

@@ -1,35 +1,8 @@
 /* Import Google Fonts for better mathematical symbol support */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Math&family=Noto+Sans+Symbols&family=Noto+Sans+Symbols+2&display=swap');
 
-/* CSS Custom Properties for Theme System */
+/* CSS Custom Properties - Dark Theme Only */
 :root {
-  /* Light Theme Colors */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f5f5f5;
-  --bg-tertiary: #fafbff;
-  --text-primary: #333333;
-  --text-secondary: #666666;
-  --text-tertiary: #999999;
-  --border-primary: #e0e0e0;
-  --border-secondary: #f0f0f0;
-  --shadow-light: rgba(0, 0, 0, 0.1);
-  --shadow-medium: rgba(0, 0, 0, 0.15);
-  --hero-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --card-bg: #ffffff;
-  --card-hover-bg: #f8f9ff;
-  --header-bg: #ffffff;
-  --input-bg: #ffffff;
-  --code-bg: #ffffff;
-  --code-even-bg: #fafbff;
-  --code-odd-bg: #ffffff;
-  
-  /* Accent Colors - Light Theme */
-  --accent-color: #2196F3;
-  --accent-color-alpha: rgba(33, 150, 243, 0.2);
-  --accent-color-bg: rgba(33, 150, 243, 0.1);
-}
-
-[data-theme="dark"] {
   /* Dark Theme Colors */
   --bg-primary: #1a1a1a;
   --bg-secondary: #2d2d2d;
@@ -50,7 +23,7 @@
   --code-even-bg: #3a3a3a;
   --code-odd-bg: #2d2d2d;
   
-  /* Accent Colors - Dark Theme */
+  /* Accent Colors */
   --accent-color: #F49F29;
   --accent-color-alpha: rgba(244, 159, 41, 0.2);
   --accent-color-bg: rgba(244, 159, 41, 0.1);

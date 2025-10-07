@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSelector from './LanguageSelector';
-import ThemeToggle from './ThemeToggle';
 import './Header.css';
 
 const Header = () => {
@@ -60,7 +59,6 @@ const Header = () => {
           </nav>
         </div>
         <div className="header-right">
-          <ThemeToggle />
           <LanguageSelector />
         </div>
       </div>
