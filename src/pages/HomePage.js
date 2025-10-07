@@ -101,49 +101,33 @@ const HomePage = () => {
                   style={{ animationDelay: `${(index + 1) * 0.05}s` }}
                 >
                   <div className="program-card">
-                    <div className={`program-header program-header-${program.id}`}>
-                      <h3 className="program-name">{t(program.name)}</h3>
-                    </div>
-                    
-                    <p className="program-description">{t(program.description)}</p>
-                    
-                    <div className="program-info">
-                      <div className="info-row">
-                        <span className="info-label">{t({ en: 'Mode', zh: '模式' })}:</span>
-                        <span className="info-value">{program.mode}</span>
-                      </div>
-                      <div className="info-row">
-                        <span className="info-label">{t({ en: 'Memory', zh: '記憶體' })}:</span>
-                        <span className="info-value">
-                          {program.memory > 0 ? `${program.memory} bytes` : t({ en: 'TBD', zh: '待定' })}
-                        </span>
-                      </div>
+                    <img
+                      src={program.image}
+                      alt={`${t(program.name)} preview`}
+                      className="program-card-image"
+                      loading="lazy"
+                    />
+                    <div className="program-card-content">
+                      <h3 className="program-card-title">{t(program.name)}</h3>
+                      <p className="program-card-description">{t(program.description)}</p>
                     </div>
                   </div>
                 </Link>
               ) : (
-                <div 
-                  key={program.id} 
+                <div
+                  key={program.id}
                   className="program-card program-card-disabled"
                   style={{ animationDelay: `${(index + 1) * 0.1}s` }}
                 >
-                  <div className={`program-header program-header-${program.id}`}>
-                    <h3 className="program-name">{t(program.name)}</h3>
-                  </div>
-                  
-                  <p className="program-description">{t(program.description)}</p>
-                  
-                  <div className="program-info">
-                    <div className="info-row">
-                      <span className="info-label">{t({ en: 'Mode', zh: '模式' })}:</span>
-                      <span className="info-value">{program.mode}</span>
-                    </div>
-                    <div className="info-row">
-                      <span className="info-label">{t({ en: 'Memory', zh: '記憶體' })}:</span>
-                      <span className="info-value">
-                        {program.memory > 0 ? `${program.memory} bytes` : t({ en: 'TBD', zh: '待定' })}
-                      </span>
-                    </div>
+                  <img
+                    src={program.image}
+                    alt={`${t(program.name)} preview`}
+                    className="program-card-image program-card-image-disabled"
+                    loading="lazy"
+                  />
+                  <div className="program-card-content">
+                    <h3 className="program-card-title program-card-title-disabled">{t(program.name)}</h3>
+                    <p className="program-card-description program-card-description-disabled">{t(program.description)}</p>
                   </div>
                 </div>
               )

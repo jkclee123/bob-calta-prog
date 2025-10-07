@@ -37,36 +37,6 @@
   transition: color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-/* Program-specific header colors - Subtle Pink Variations */
-.program-header-dice_roll {
-  background: mediumaquamarine
-}
-
-.program-header-mastermind {
-  background: mediumblue
-}
-
-.program-header-date_duration {
-  background: mediumorchid
-}
-
-.program-header-timer_stopwatch {
-  background: linear-gradient(135deg, rgb(231, 152, 208) 0%, #f5b3b0 100%); /* Light Pink to Soft Pink-Yellow */
-}
-
-.program-header-timer_with_counter {
-  background: linear-gradient(135deg, #99ddd4 0%, #acdd99 100%); /* Plum Pink to Soft Pink-Green */
-}
-
-.program-header-poker_dealer {
-  background: linear-gradient(135deg, #f8bbc4 0%, #b798d0 100%); /* Deep Pink to Soft Pink-Blue */
-  
-}
-
-.program-header-avalon {
-  background: linear-gradient(135deg, #ffe4e1 0%, #f0e8f5 100%); /* Misty Rose to Soft Pink-Lavender */
-}
-
 .back-link {
   display: inline-flex;
   align-items: center;

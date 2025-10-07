@@ -8,6 +8,7 @@
     "en": "A virtual card dealer that deals poker cards.",
     "zh": "模擬派牌機。"
   },
+  "image": "/images/programs/poker.png",
   "mode": "Comp",
   "memory": 199,
   "status": "completed",

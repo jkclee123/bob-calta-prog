@@ -8,6 +8,7 @@
     "en": "Calculate the number of days between two dates (excluding end date).",
     "zh": "計算兩個日期之間的天數（不包括結束日）。"
   },
+  "image": "/images/programs/date_duration.png",
   "mode": "REG Lin",
   "memory": 294,
   "status": "completed",

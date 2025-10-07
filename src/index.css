@@ -4,9 +4,10 @@
 /* CSS Custom Properties - Dark Theme Only */
 :root {
   /* Dark Theme Colors */
-  --bg-primary: hsl(0, 2%, 5%);
-  --bg-secondary: hsl(0, 2%, 10%);
-  --bg-tertiary: hsl(0, 2%, 15%);
+  --bg-primary: hsl(0, 2%, 2%);
+  --bg-secondary: hsl(0, 2%, 7%);
+  --bg-tertiary: hsl(0, 2%, 12%);
+  --bg-quaternary: hsl(0, 2%, 18%);
   --text-primary: hsl(0, 0%, 95%);
   --text-secondary: hsl(0, 0%, 70%);
   --text-tertiary: #5f3535;
@@ -83,7 +84,7 @@ a {
 .symbol-card:hover,
 .example-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 25px hsla(0, 0%, 0%, 0.15);
 }
 
 /* Input focus animations */
@@ -230,7 +231,6 @@ code,
   
   /* Android-specific fixes */
   -webkit-text-size-adjust: 100%;
-  -webkit-font-feature-settings: "kern" 1;
   
   /* Force Unicode font loading */
   font-display: swap;

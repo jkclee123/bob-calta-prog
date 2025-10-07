@@ -12,7 +12,7 @@ const Header = () => {
   const handleNavLinkClick = (targetPath) => {
     const currentPath = location.pathname;
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-    
+
     // Save scroll position based on current page
     if (currentPath === '/') {
       sessionStorage.setItem('homepage-scroll-position', scrollPosition.toString());
@@ -22,13 +22,26 @@ const Header = () => {
     // Note: Program pages don't need scroll position saving as they always start from top
   };
 
+  // Check if current path matches any of the nav item's paths
+  const isNavItemActive = (currentPath, paths) => {
+    return paths.some(path => {
+      if (path === '/') {
+        return currentPath === '/';
+      }
+      if (path === '/program/:programId') {
+        return currentPath.startsWith('/program/');
+      }
+      return currentPath === path;
+    });
+  };
+
   const navItems = [
     {
-      path: '/',
+      paths: ['/', '/program/:programId'],
       label: { en: 'Programs', zh: '程式' }
     },
     {
-      path: '/symbols',
+      paths: ['/symbols'],
       label: { en: 'Symbols', zh: '符號' }
     }
   ];
@@ -43,15 +56,15 @@ const Header = () => {
             onClick={() => handleNavLinkClick('/')}
           >
             <img src="/logo.png" alt="Bob's Calta Logo" className="logo-image" />
-            <h1>{t({ en: 'Bob\'s Calta', zh: 'Bob\'s Calta' })}</h1>
+            <h1>{t({ en: "Bob's Calta", zh: "Bob's Calta" })}</h1>
           </Link>
           <nav className="nav">
             {navItems.map((item) => (
               <Link
-                key={item.path}
-                to={item.path}
-                className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
-                onClick={() => handleNavLinkClick(item.path)}
+                key={item.paths[0]}
+                to={item.paths[0]}
+                className={`nav-link ${isNavItemActive(location.pathname, item.paths) ? 'active' : ''}`}
+                onClick={() => handleNavLinkClick(item.paths[0])}
               >
                 {t(item.label)}
               </Link>

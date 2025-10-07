@@ -229,7 +229,7 @@ const ProgramPage = () => {
     <div className="program-page">
       <div className="container">
         {/* Header */}
-        <div className={`program-header program-header-${programId}`}>
+        <div className="program-header">
           <Link to="/" className="back-link">
             ← {t({ en: 'Back to Programs', zh: '返回程式列表' })}
           </Link>

@@ -8,6 +8,7 @@
     "en": "A classic code-breaking game where player guess a secret number sequence. Player can set the number of digits (4-8) for the secret code.",
     "zh": "經典密碼破解遊戲，玩家可以設定密碼有幾多個位（4至8位）。"
   },
+  "image": "/images/programs/mastermind.png",
   "mode": "REG Lin",
   "memory": 359,
   "status": "completed",

@@ -8,6 +8,7 @@
     "en": "A timer with counter function.",
     "zh": "帶有記數功能的計時器。"
   },
+  "image": "/images/programs/timer.png",
   "mode": "Comp",
   "memory": 87,
   "status": "completed",

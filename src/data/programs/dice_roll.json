@@ -8,6 +8,7 @@
     "en": "A dice rolling simulator that supports multiple dice with customizable sides. Perfect for board games and probability experiments.",
     "zh": "骰盅模擬器，支援多粒骰子同自定面數，適合桌遊同概率實驗。"
   },
+  "image": "/images/programs/dice.png",
   "mode": "Comp",
   "memory": 213,
   "status": "completed",

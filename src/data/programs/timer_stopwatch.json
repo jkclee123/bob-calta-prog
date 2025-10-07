@@ -8,6 +8,7 @@
     "en": "A dual-purpose timer that can function as both a countdown timer and a stopwatch.",
     "zh": "雙功能計時器，可以當計時器同秒錶用。"
   },
+  "image": "/images/programs/timer.png",
   "mode": "Comp",
   "memory": 62,
   "status": "completed",

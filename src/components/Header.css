@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: var(--header-bg);
+  background-color: var(--bg-secondary);
   border-bottom: 1px solid var(--border-primary);
   z-index: 1000;
   box-shadow: 0 2px 4px var(--shadow-light);
