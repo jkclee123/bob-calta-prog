@@ -5,7 +5,7 @@
     "zh": "計時器加記數器"
   },
   "description": {
-    "en": "A timer with an integrated counter function.",
+    "en": "A timer with counter function.",
     "zh": "帶有記數功能的計時器。"
   },
   "mode": "Comp",
@@ -13,156 +13,146 @@
   "status": "completed",
   "code": [
     {
-      "line": 1,
       "code": "50→A:3600→B:",
-      "bytes": 12,
-      "cumulativeBytes": 12,
-      "comment": {
-        "en": "Set up variables",
-        "zh": "設定變數"
-      }
+      "bytes": 12
     },
     {
-      "line": 2,
       "code": "Lbl 0:D÷AB→X:M▫+X▫→Y:?→Y:",
       "bytes": 22,
-      "cumulativeBytes": 34,
       "comment": {
-        "en": "Set up display",
-        "zh": "設定顯示"
+        "en": "▫ is between (-) and hyp",
+        "zh": "▫ 於 (-) 和 hyp 之間"
       }
     },
     {
-      "line": 3,
       "code": "Y≤0⇒-Y-1→M:X⇒Y=M+X⇒X→Y:1M⁺:",
       "bytes": 26,
-      "cumulativeBytes": 60,
       "comment": {
         "en": "Set counter",
-        "zh": "設定記數器"
+        "zh": "記數"
       }
     },
     {
-      "line": 4,
       "code": "Y<1⇒BY→Y:AY-1→Y:",
       "bytes": 16,
-      "cumulativeBytes": 76,
       "comment": {
         "en": "Set loop target",
-        "zh": "設定循環目標"
+        "zh": "設定循環次數"
       }
     },
     {
-      "line": 5,
       "code": "For 0→D To Y:Next:Goto 0",
       "bytes": 11,
-      "cumulativeBytes": 87,
       "comment": {
-        "en": "Loop to time",
+        "en": "Empty loop to time",
         "zh": "空循環計時"
       }
     }
   ],
   "usage": {
-    "en": {
-      "parameters": [
+    "parameters": {
+      "en": [
         "Y?: display elasped time, input command",
         "A: loop per second (default A=50)",
-        "B: scalar to convert between decimal and sexagesimal",
+        "B: scalar to convert between decimal and sexagesimal (3600)",
         "D: loop index",
-        "X: time without counter",
+        "X: time in sexagesimal",
         "M: counter value"
       ],
-      "instructions": [
-        "‼️Calibrate variable A with a clock (default A=50)",
-        "To set Counter to -Y, enter zero or a negative value to Y",
-        "To start a timer of Y seconds, enter a positive number of seconds to Y",
-        "Counter increments automatically during timing",
-        "To input ▫, its between (-) and hyp"
+      "zh": [
+        "Y?: 顯示經過時間，輸入指令",
+        "A: 一秒循環次數 (預設A=50)",
+        "B: 十進制六十進制轉換系數 (3600)",
+        "D: 循環索引",
+        "X: 時間值 (六十進制)",
+        "M: 記數值"
       ]
     },
-    "zh": {
-      "parameters": [
-        "Y?: 顯示經過時間，輸入命令",
-        "A: 每秒循環次數 (預設A=50)",
-        "B: 十進制同六十進制之間嘅轉換係數",
-        "D: 循環指標",
-        "X: 時間值",
-        "M: 記數器值"
+    "instructions": {
+      "en": [
+        "‼️Calibrate variable A with a clock",
+        "To reset Counter, enter 0 to Y",
+        "To set Counter to 3, enter -3 to Y",
+        "To start a timer of 60 seconds, enter 60 to Y",
+        "Counter increments during timing"
       ],
-      "instructions": [
-        "‼️用時鐘校準變數A（預設A=50）",
-        "輸入Y為零或負數將記數器設定為負Y",
+      "zh": [
+        "‼️用時鐘校準變數A",
+        "輸入Y為零重設記數器",
+        "輸入Y為負數將記數器設定為負Y",
         "輸入Y為正數開始計時器計Y秒",
-        "計時過程中記數器自動遞增",
-        "▫ 喺 (-) 同 hyp 之間"
+        "計時過程中記數器x遞增"
       ]
-    }
-  },
-  "examples": [
-    {
-      "title": {
-        "en": "Setting counter to 3",
-        "zh": "設定記數器為3"
-      },
-      "steps": {
-        "en": [
-          "Input -3 to Y (negative value)",
-          "Counter is set to 3"
-        ],
-        "zh": [
-          "輸入 -3 到 Y（負值）",
-          "記數器設定為3"
-        ]
-      }
     },
-    {
-      "title": {
-        "en": "Timing with timer",
-        "zh": "使用計時器"
+    "examples": [
+      {
+        "title": {
+          "en": "Setting counter to 3",
+          "zh": "設定記數器為3"
+        },
+        "steps": [
+          {
+            "en": "Input -3 to Y (negative value)",
+            "zh": "輸入 -3 到 Y（負值）"
+          },
+          {
+            "en": "Counter is set to 3",
+            "zh": "記數器設定為3"
+          }
+        ]
       },
-      "steps": {
-        "en": [
-          "Input 60 to Y (for 1 minute)",
-          "Timer counts down",
-          "Program will display when timer reaches 0"
-        ],
-        "zh": [
-          "輸入 60 到 Y（1分鐘）",
-          "計時器倒數1分鐘",
-          "夠鐘時，程式會重新顯示"
+      {
+        "title": {
+          "en": "Timer",
+          "zh": "使用計時器"
+        },
+        "steps": [
+          {
+            "en": "Input 60 to Y (1 minute)",
+            "zh": "輸入 60 到 Y（1分鐘）"
+          },
+          {
+            "en": "Timer counts down",
+            "zh": "計時器倒數1分鐘"
+          },
+          {
+            "en": "Program will display when timer reaches 0",
+            "zh": "程式會重新顯示"
+          }
         ]
       }
-    }
-  ],
+    ]
+  },
   "analysis": [
     {
       "title": {
         "en": "Empty loop to time",
         "zh": "空循環計時"
       },
-      "actualCode": [
-        "AY-1→Y:",
-        "For 0→D To Y:Next:"
-      ],
-      "genericCode": [
-        "[A(50)] x [seconds to time] - 1 → [target]",
-        "For 0→[_] To [target]:Next"
-      ],
       "problem": {
         "en": "Design a way to time with a calculator.",
-        "zh": "設計一個用計算機計時嘅方法。"
+        "zh": "設計使用計算機計時的方法。"
       },
       "steps": [
         {
-          "step": 1,
           "title": {
             "en": "Use empty loop to time",
             "zh": "用空循環計時"
           },
           "explanation": {
-            "en": "fx-50FH II loops approximately 50 times per second. (‼️ Your calculator may not loop exactly 50 times per second. Do calibrate variable A with a clock)",
-            "zh": "fx-50FH II循環大約50次為一秒。（‼️每部計數機都有少少唔同，用之前用時鐘校準變數A）"
+            "en": "Empty loop is constant work. fx-50FH II empty loops 50 times per second.",
+            "zh": "fx-50FH II空循環50次為一秒。"
+          }
+        },
+
+        {
+          "title": {
+            "en": "Calibrate variable A with a clock",
+            "zh": "校準變數A"
+          },
+          "explanation": {
+            "en": "‼️ Your calculator may not loop exactly 50 times per second. Calibrate variable A with a clock before use.",
+            "zh": "‼️ 每部計算機均有差異，使用前用時鐘校準變數A"
           }
         }
       ]
