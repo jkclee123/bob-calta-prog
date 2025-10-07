@@ -2,7 +2,7 @@
   "id": "date_duration",
   "name": {
     "en": "Date Duration",
-    "zh": "數日子"
+    "zh": "日期差距"
   },
   "description": {
     "en": "Calculate the number of days between two dates (excluding end date).",

@@ -229,7 +229,10 @@ const ProgramPage = () => {
     <div className="program-page">
       <div className="container">
         {/* Header */}
-        <div className="program-header">
+        <div
+          className="program-header"
+          style={{ '--program-bg-image': `url(${program.image})` }}
+        >
           <div className="program-title-section">
             <h1 className="program-title">{t(program.name)}</h1>
             <div className="program-description">
@@ -241,7 +244,7 @@ const ProgramPage = () => {
                 {t({ en: 'Mode', zh: '模式' })}: {program.mode}
               </span>
               <span className="meta-item">
-                {t({ en: 'Memory', zh: '記憶體' })}: {program.memory} bytes
+                {t({ en: 'Bytes', zh: '字節' })}: {program.memory}
               </span>
             </div>
         </div>
