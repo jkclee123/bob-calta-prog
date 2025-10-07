@@ -8,6 +8,7 @@
   --bg-secondary: hsl(0, 2%, 7%);
   --bg-tertiary: hsl(0, 2%, 12%);
   --bg-quaternary: hsl(0, 2%, 18%);
+  --bg-quinary: hsl(0, 2%, 24%);
   --text-primary: hsl(0, 0%, 95%);
   --text-secondary: hsl(0, 0%, 70%);
   --text-tertiary: hsl(0, 0%, 50%);
@@ -20,8 +21,8 @@
   --header-bg: hsl(0, 2%, 5%);
   --input-bg: #2d2d2d;
   --code-bg: #2d2d2d;
-  --code-even-bg: #3a3a3a;
-  --code-odd-bg: #2d2d2d;
+  --code-even-bg: hsl(0, 2%, 12%);
+  --code-odd-bg: hsl(0, 2%, 12%);
   
   /* Accent Colors */
   --accent-color: #F49F29;

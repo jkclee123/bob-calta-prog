@@ -106,7 +106,7 @@
   border: 1px solid #404040;
   display: flex;
   flex-direction: column;
-  height: 340px;
+  height: 100%;
 }
 
 .program-card:hover {
@@ -201,10 +201,6 @@
     gap: 24px;
   }
 
-  .program-card {
-    height: 300px;
-  }
-
   .program-card-image {
     height: 140px;
   }
@@ -246,10 +242,6 @@
   .section-title {
     font-size: 1.6rem;
     margin-bottom: 40px;
-  }
-
-  .program-card {
-    height: 280px;
   }
 
   .program-card-image {
