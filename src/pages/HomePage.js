@@ -69,22 +69,13 @@ const HomePage = () => {
 
   const heroContent = {
     title: {
-      en: 'Bob\'s Calta',
-      zh: 'Bob\'s Calta'
+      en: "Bob's Calta",
+      zh: "Bob's Calta"
     },
     subtitle: {
-      en: 'Calculator programs collection for Casio fx-50FH II. For recreational use, not suitable for exams. I do not encourage gambling 💸',
-      zh: 'Casio fx-50FH II 程式集。娛樂用程式，唔適用喺考試，唔鼓勵賭博💸'
+      en: 'Casio fx-50FH II Calculator Program Collection by Bob.',
+      zh: 'Casio fx-50FH II 程式集'
     }
-  };
-
-  const getStatusBadge = (status) => {
-    if (status === 'completed') {
-      return <span className="status-badge completed"></span>;
-    } else if (status === 'coming_soon') {
-      return <span className="status-badge coming-soon">{t({ en: 'Coming Soon', zh: '即將推出' })}</span>;
-    }
-    return null;
   };
 
   return (
@@ -113,7 +104,6 @@ const HomePage = () => {
                   <div className="program-card">
                     <div className={`program-header program-header-${program.id}`}>
                       <h3 className="program-name">{t(program.name)}</h3>
-                      {getStatusBadge(program.status)}
                     </div>
                     
                     <p className="program-description">{t(program.description)}</p>
@@ -140,7 +130,6 @@ const HomePage = () => {
                 >
                   <div className={`program-header program-header-${program.id}`}>
                     <h3 className="program-name">{t(program.name)}</h3>
-                    {getStatusBadge(program.status)}
                   </div>
                   
                   <p className="program-description">{t(program.description)}</p>
