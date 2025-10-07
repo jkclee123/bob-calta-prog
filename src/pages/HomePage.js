@@ -69,8 +69,8 @@ const HomePage = () => {
 
   const heroContent = {
     title: {
-      en: "Bob's Calta",
-      zh: "Bob's Calta"
+      en: "Programs",
+      zh: "程式"
     },
     subtitle: {
       en: 'Casio fx-50FH II Calculator Program Collection by Bob.',

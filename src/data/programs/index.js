@@ -9,13 +9,13 @@ import avalon from './avalon.json';
 
 // Export combined programs object
 const programs = {
+  avalon: avalon,
+  date_duration: dateDuration,
   dice_roll: diceRoll,
   mastermind: mastermind,
-  date_duration: dateDuration,
+  poker_dealer: pokerDealer,
   timer_stopwatch: timerStopwatch,
   timer_with_counter: timerWithCounter,
-  poker_dealer: pokerDealer,
-  avalon: avalon
 };
 
 export default programs; 

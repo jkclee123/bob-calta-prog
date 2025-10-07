@@ -1,6 +1,6 @@
 .program-page {
   min-height: calc(100vh - 70px);
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-primary);
   padding: 40px 0;
   transition: background-color 0.3s ease;
 }
@@ -28,6 +28,7 @@
 
 /* Program Header */
 .program-header {
+  background: var(--bg-secondary);
   color: white;
   padding: 32px;
   border-radius: 12px;
@@ -52,7 +53,7 @@
 }
 
 .program-title-section {
-  border-bottom: 1px solid rgb(73, 66, 66);
+  border-bottom: 1px solid var(--border-primary);
   padding-bottom: 24px;
   transition: border-color 0.3s ease;
 }
@@ -62,7 +63,7 @@
   font-weight: 700;
   text-decoration: none;
   margin-bottom: 16px;
-  color: hsl(0, 0%, 15%);
+  color: var(--text-primary);
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   transition: color 0.3s ease;
 }
@@ -71,31 +72,19 @@
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
+  color: var(--text-tertiary);
+  padding-top: 4px;
 }
 
 .meta-item {
-  color: hsla(0, 0%, 25%, 0.7);
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 400;
   transition: color 0.3s ease;
 }
 
 /* Program Description */
 .program-description {
-  background: var(--card-bg);
-  padding: 24px 32px;
-  border-radius: 12px;
-  margin-bottom: 24px;
-  box-shadow: 0 2px 4px var(--shadow-light);
-  border: 1.5px solid var(--border-primary);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.program-description p {
-  font-size: 1.1rem;
-  line-height: 1.6;
   color: var(--text-secondary);
-  margin: 0;
-  transition: color 0.3s ease;
 }
 
 /* Tabs */
@@ -562,15 +551,6 @@
     font-size: 2rem;
   }
 
-  .program-meta {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .program-description {
-    padding: 20px;
-  }
-
   .tabs-header {
     flex-direction: column;
   }
@@ -652,10 +632,6 @@
 
   .program-title {
     font-size: 1.6rem;
-  }
-
-  .program-description {
-    padding: 16px;
   }
 
   .tab-content {

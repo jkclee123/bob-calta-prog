@@ -230,12 +230,13 @@ const ProgramPage = () => {
       <div className="container">
         {/* Header */}
         <div className="program-header">
-          <Link to="/" className="back-link">
-            ← {t({ en: 'Back to Programs', zh: '返回程式列表' })}
-          </Link>
           <div className="program-title-section">
             <h1 className="program-title">{t(program.name)}</h1>
-            <div className="program-meta">
+            <div className="program-description">
+              <p>{t(program.description)}</p>
+            </div>
+          </div>
+          <div className="program-meta">
               <span className="meta-item">
                 {t({ en: 'Mode', zh: '模式' })}: {program.mode}
               </span>
@@ -243,12 +244,6 @@ const ProgramPage = () => {
                 {t({ en: 'Memory', zh: '記憶體' })}: {program.memory} bytes
               </span>
             </div>
-          </div>
-        </div>
-
-        {/* Program Description */}
-        <div className="program-description">
-          <p>{t(program.description)}</p>
         </div>
 
         {/* Tabs */}

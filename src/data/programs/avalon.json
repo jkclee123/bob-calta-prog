@@ -6,7 +6,7 @@
   },
   "description": {
     "en": "Game helper for The Resistance: Avalon board game. Support functions like character drawing, timer, and playing quest cards.",
-    "zh": "阿瓦隆抵抗組織桌遊助手，功能包括抽角色、計時同出任務。"
+    "zh": "阿瓦隆抵抗組織桌遊助手，功能包括抽角色、計時和出任務。"
   },
   "image": "/images/programs/avalon.png",
   "mode": "Comp",

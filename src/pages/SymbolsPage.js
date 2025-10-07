@@ -98,8 +98,8 @@ const SymbolsPage = () => {
           <h1>{t({ en: 'Symbols  ', zh: '符號' })}</h1>
           <p className="symbols-description">
             {t({ 
-              en: 'Reference for symbols used in my collection of programs, including how to type each symbol on your calculator.',
-              zh: '符號參考，包括如何在計數機上輸入每個符號。'
+              en: "Reference for symbols in Casio fx-50FH II.",
+              zh: '符號參考，包括如何輸入每個符號。'
             })}
           </p>
         </div>

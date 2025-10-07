@@ -16,7 +16,11 @@
   transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.symbols-header h1 {
+.homepage-description {
+  color: var(--text-secondary);
+}
+
+.homepage-header h1 {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -205,11 +209,11 @@
     padding: 20px 0;
   }
 
-  .symbols-header {
+  .homepage-header {
     padding: 24px 20px;
   }
 
-  .symbols-header h1 {
+  .homepage-header h1 {
     font-size: 2rem;
   }
 
@@ -257,15 +261,15 @@
 }
 
 @media (max-width: 480px) {
-  .symbols-header {
+  .homepage-header {
     padding: 20px 16px;
   }
 
-  .symbols-header h1 {
+  .homepage-header h1 {
     font-size: 1.6rem;
   }
 
-  .symbols-description {
+  .homepage-description {
     font-size: 1rem;
   }
 
