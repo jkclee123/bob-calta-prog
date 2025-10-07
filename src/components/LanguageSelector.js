@@ -6,8 +6,8 @@ const LanguageSelector = () => {
   const { language, changeLanguage } = useLanguage();
 
   const languages = [
-    { code: 'zh', name: '中文', flag: '🇭🇰' },
-    { code: 'en', name: 'English', flag: '🇬🇧' }
+    { code: 'zh', name: '中文'},
+    { code: 'en', name: 'English'}
   ];
 
   return (
