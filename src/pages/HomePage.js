@@ -80,13 +80,12 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="hero-content">
-          <h1 className="hero-title">{t(heroContent.title)}</h1>
-          <p className="hero-subtitle">{t(heroContent.subtitle)}</p>
+      <div className="container">
+        <div className="homepage-header">
+          <h1>{t(heroContent.title)}</h1>
+          <p className="homepage-description">{t(heroContent.subtitle)}</p>
         </div>
-      </section>
+      </div>
 
       {/* Programs Grid */}
       <section className="programs-section">

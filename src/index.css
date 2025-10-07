@@ -4,20 +4,19 @@
 /* CSS Custom Properties - Dark Theme Only */
 :root {
   /* Dark Theme Colors */
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #2d2d2d;
-  --bg-tertiary: #3a3a3a;
-  --text-primary: #ffffff;
-  --text-secondary: #cccccc;
-  --text-tertiary: #999999;
-  --border-primary: #404040;
+  --bg-primary: hsl(0, 2%, 5%);
+  --bg-secondary: hsl(0, 2%, 10%);
+  --bg-tertiary: hsl(0, 2%, 15%);
+  --text-primary: hsl(0, 0%, 95%);
+  --text-secondary: hsl(0, 0%, 70%);
+  --text-tertiary: #5f3535;
+  --border-primary: hsl(0, 2%, 30%);
   --border-secondary: #333333;
   --shadow-light: rgba(0, 0, 0, 0.3);
   --shadow-medium: rgba(0, 0, 0, 0.4);
-  --hero-gradient: linear-gradient(135deg, #4a5568 0%, #553c9a 100%);
-  --card-bg: #2d2d2d;
-  --card-hover-bg: #3a3a3a;
-  --header-bg: #1a1a1a;
+  --card-bg: hsl(0, 2%, 10%);
+  --card-hover-bg: hsl(0, 2%, 15%);
+  --header-bg: hsl(0, 2%, 5%);
   --input-bg: #2d2d2d;
   --code-bg: #2d2d2d;
   --code-even-bg: #3a3a3a;

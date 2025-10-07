@@ -39,15 +39,15 @@
 
 /* Program-specific header colors - Subtle Pink Variations */
 .program-header-dice_roll {
-  background: linear-gradient(135deg, #e4e6a8 0%, #a8e6cf 100%); /* Pink to Green */
+  background: mediumaquamarine
 }
 
 .program-header-mastermind {
-  background: linear-gradient(135deg, #8890d7 0%, #58c9df 100%); /* Pink to Pink-Blue */
+  background: mediumblue
 }
 
 .program-header-date_duration {
-  background: linear-gradient(135deg, #ffb6c1 0%, #ffe6d4 100%); /* Pink to Pink-Yellow */
+  background: mediumorchid
 }
 
 .program-header-timer_stopwatch {
