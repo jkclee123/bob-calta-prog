@@ -92,45 +92,26 @@ const HomePage = () => {
         <div className="container">
           <div className="programs-grid">
             {Object.values(programsData).map((program, index) => (
-              program.status === 'completed' ? (
-                <Link 
-                  key={program.id} 
-                  to={`/program/${program.id}`} 
-                  className="program-card-link" 
-                  onClick={handleProgramLinkClick}
-                  style={{ animationDelay: `${(index + 1) * 0.05}s` }}
-                >
-                  <div className="program-card">
-                    <img
-                      src={program.image}
-                      alt={`${t(program.name)} preview`}
-                      className="program-card-image"
-                      loading="lazy"
-                    />
-                    <div className="program-card-content">
-                      <h3 className="program-card-title">{t(program.name)}</h3>
-                      <p className="program-card-description">{t(program.description)}</p>
-                    </div>
-                  </div>
-                </Link>
-              ) : (
-                <div
-                  key={program.id}
-                  className="program-card program-card-disabled"
-                  style={{ animationDelay: `${(index + 1) * 0.1}s` }}
-                >
+              <Link
+                key={program.id}
+                to={`/program/${program.id}`}
+                className="program-card-link"
+                onClick={handleProgramLinkClick}
+                style={{ animationDelay: `${(index + 1) * 0.05}s` }}
+              >
+                <div className="program-card">
                   <img
                     src={program.image}
                     alt={`${t(program.name)} preview`}
-                    className="program-card-image program-card-image-disabled"
+                    className="program-card-image"
                     loading="lazy"
                   />
                   <div className="program-card-content">
-                    <h3 className="program-card-title program-card-title-disabled">{t(program.name)}</h3>
-                    <p className="program-card-description program-card-description-disabled">{t(program.description)}</p>
+                    <h3 className="program-card-title">{t(program.name)}</h3>
+                    <p className="program-card-description">{t(program.description)}</p>
                   </div>
                 </div>
-              )
+              </Link>
             ))}
           </div>
         </div>
