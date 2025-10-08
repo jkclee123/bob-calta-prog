@@ -98,14 +98,14 @@ const ProgramPage = () => {
             <div className="usage-section">
               <h3>{t({ en: 'Parameters', zh: '參數' })}</h3>
               <ul className="parameter-list">
-                {t(program.usage).parameters.map((param, index) => (
+                {t(program.usage.parameters).map((param, index) => (
                   <li key={index} className="parameter-item">{param}</li>
                 ))}
               </ul>
-              
+
               <h3>{t({ en: 'Instructions', zh: '使用說明' })}</h3>
               <ol className="instruction-list">
-                {t(program.usage).instructions.map((instruction, index) => (
+                {t(program.usage.instructions).map((instruction, index) => (
                   <li key={index} className="instruction-item">{instruction}</li>
                 ))}
               </ol>
@@ -118,8 +118,8 @@ const ProgramPage = () => {
                   <div key={index} className="example-card">
                     <h4 className="example-title">{t(example.title)}</h4>
                     <ol className="example-steps">
-                      {t(example.steps).map((step, stepIndex) => (
-                        <li key={stepIndex} className="example-step">{step}</li>
+                      {example.steps.map((step, stepIndex) => (
+                        <li key={stepIndex} className="example-step">{t(step)}</li>
                       ))}
                     </ol>
                   </div>

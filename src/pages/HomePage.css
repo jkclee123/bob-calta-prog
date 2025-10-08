@@ -100,19 +100,17 @@
   background: var(--bg-secondary);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
   cursor: pointer;
   border: 1px solid var(--border-primary);
   display: flex;
   flex-direction: column;
   height: 100%;
+  box-shadow: var(--shadow);
 }
 
 .program-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px var(--shadow-medium);
-  border-color: var(--accent-color);
   background-color: var(--bg-tertiary);
 }
 

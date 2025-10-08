@@ -18,12 +18,7 @@
 }
 
 .language-select:hover {
-  border-color: var(--accent-color);
-}
-
-.language-select:focus {
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 2px var(--accent-color-alpha);
+  border-color: var(--border-highlight);
 }
 
 .language-select option {
@@ -38,7 +33,7 @@
   .language-select {
     padding: 6px 10px;
     font-size: 12px;
-    min-width: 100px;
+    min-width: 80px;
     height: 36px;
   }
 }
@@ -47,7 +42,7 @@
   .language-select {
     padding: 4px 8px;
     font-size: 11px;
-    min-width: 80px;
+    min-width: 70px;
     height: 32px;
   }
 } 

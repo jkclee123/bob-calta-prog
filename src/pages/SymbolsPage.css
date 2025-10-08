@@ -156,7 +156,6 @@
   font-family: 'Courier New', monospace;
   font-size: 1.5rem;
   font-weight: bold;
-  /* color: var(--accent-color); */
   background-color: var(--input-bg);
   padding: 8px 12px;
   border-radius: 6px;
@@ -211,11 +210,12 @@
 .typing-instruction {
   background-color: var(--input-bg);
   padding: 6px 8px;
-  border-radius: 4px;
   font-family: 'Courier New', monospace;
   font-size: 0.9rem;
   color: var(--text-secondary);
   transition: background-color 0.3s ease;
+  border-radius: 6px;
+  border: 1px solid var(--border-secondary);
 }
 
 .symbol-bytes {

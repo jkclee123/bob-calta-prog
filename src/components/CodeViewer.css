@@ -59,20 +59,12 @@
   border-bottom: 1px solid var(--border-secondary);
   transition: all 0.2s ease;
   min-height: 80px;
-}
-
-.code-line-card.even {
-  background-color: var(--code-even-bg);
-}
-
-.code-line-card.odd {
-  background-color: var(--code-odd-bg);
+  background-color: var(--bg-tertiary);
 }
 
 .code-line-card:hover {
-  background-color: var(--bg-quaternary);
+  background: linear-gradient(0deg, var(--bg-quaternary), var(--bg-quinary));
   transform: translateY(-2px);
-  border-color: var(--accent-color);
 }
 
 .code-line-card:last-child {
@@ -134,7 +126,7 @@
 
 .comment-text {
   font-size: 0.75rem;
-  color: var(--text-secondary);
+  color: var(--accent-color-alpha);
   font-style: italic;
   line-height: 1.3;
   display: block;
@@ -286,7 +278,7 @@
   }
 
   .code-text {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 
   .comment-text {
@@ -324,7 +316,7 @@
   }
 
   .code-text {
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 
   .comment-text {
