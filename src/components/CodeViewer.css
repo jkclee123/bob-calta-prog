@@ -13,38 +13,6 @@
   transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-/* Code Header */
-.code-header {
-  background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-color) 100%);
-  color: white;
-  padding: 24px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.code-title {
-  margin: 0;
-  font-size: 1.4rem;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-}
-
-.code-stats {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-}
-
-.total-lines,
-.total-memory {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  backdrop-filter: blur(10px);
-}
 
 /* Code Lines */
 .code-lines {
@@ -161,56 +129,9 @@
   font-weight: 600;
 }
 
-/* Summary Card */
-.code-summary-card {
-  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-  border-top: 1px solid #e2e8f0;
-  padding: 24px 32px;
-}
-
-.summary-content {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.summary-icon {
-  font-size: 2rem;
-  filter: grayscale(20%);
-}
-
-.summary-text h4 {
-  margin: 0 0 8px 0;
-  color: var(--text-primary);
-  font-size: 1.1rem;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.summary-text p {
-  margin: 0;
-  color: var(--text-secondary);
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-.summary-text strong {
-  color: var(--accent-color);
-  font-weight: 700;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .code-header {
-    padding: 20px 24px;
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
-  }
-
-  .code-stats {
-    gap: 16px;
-  }
 
   .code-line-card {
     padding: 16px 24px;
@@ -273,19 +194,6 @@
 }
 
 @media (max-width: 480px) {
-  .code-header {
-    padding: 16px 20px;
-  }
-
-  .code-title {
-    font-size: 1.2rem;
-  }
-
-  .total-lines,
-  .total-memory {
-    padding: 6px 12px;
-    font-size: 0.8rem;
-  }
 
   .code-line-card {
     padding: 12px 20px;
@@ -333,15 +241,4 @@
     padding-left: 2px;
   }
 
-  .summary-content {
-    gap: 12px;
-  }
-
-  .summary-icon {
-    font-size: 1.5rem;
-  }
-
-  .code-summary-card {
-    padding: 20px 20px;
-  }
 } 
