@@ -142,7 +142,7 @@ const SymbolsPage = () => {
                           {t(symbol.description)}
                         </p>
                         <div className="symbol-typing">
-                          <strong>{t({ en: 'How to input:', zh: '輸入方法:' })}</strong>
+                          <strong>{t({ en: 'How to input:', zh: '輸入說明:' })}</strong>
                           <code 
                             className="typing-instruction"
                             dangerouslySetInnerHTML={{ 

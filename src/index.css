@@ -47,9 +47,9 @@ code {
 }
 
 /* Global animations and transitions */
-* {
+/* * {
   transition: all 0.3s ease;
-}
+} */
 
 /* Smooth scrolling for the entire page */
 html {
@@ -81,8 +81,7 @@ a {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.symbol-card:hover,
-.example-card:hover {
+.symbol-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 25px hsla(0, 0%, 0%, 0.15);
 }

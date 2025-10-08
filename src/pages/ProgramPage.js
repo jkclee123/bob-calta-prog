@@ -159,7 +159,7 @@ const ProgramPage = () => {
                 </div>
 
                 
-                  <div className="analysis-code-display">
+                  {/* <div className="analysis-code-display">
                     <h4>{t({ en: 'Code', zh: '代碼' })}</h4>
                     <div className="code-comparison">
                     {analysis.actualCode && analysis.actualCode.length > 0 && (
@@ -191,7 +191,7 @@ const ProgramPage = () => {
                       </div>
                     )}
                     </div>
-                  </div>
+                  </div> */}
 
                 <div className="analysis-steps">
                   <h4>{t({ en: 'Step-by-Step Explanation', zh: '逐步解釋' })}</h4>

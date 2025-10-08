@@ -6,7 +6,7 @@
   },
   "description": {
     "en": "Calculate the number of days between two dates (excluding end date).",
-    "zh": "計算兩個日期之間的天數（不包括結束日）。"
+    "zh": "計算兩個日期之間的日數（不包括結束日）。"
   },
   "image": "/images/programs/date_duration.png",
   "mode": "REG Lin",
@@ -16,7 +16,7 @@
       "bytes": 24,
       "comment": {
         "en": "Input start date and end date",
-        "zh": "輸入開始日期同結束日期"
+        "zh": "輸入開始日期及結束日期"
       }
     },
     {
@@ -24,7 +24,7 @@
       "bytes": 21,
       "comment": {
         "en": "Parse start date year",
-        "zh": "抽取開始日期嘅年份"
+        "zh": "讀取開始日期年份"
       }
     },
     {
@@ -32,7 +32,7 @@
       "bytes": 21,
       "comment": {
         "en": "Parse end date year",
-        "zh": "抽取結束日期嘅年份"
+        "zh": "讀取結束日期年份"
       }
     },
     {
@@ -40,7 +40,7 @@
       "bytes": 14,
       "comment": {
         "en": "Check if start date is on or after 1st of March",
-        "zh": "檢查開始日期係咪喺3月1號之後"
+        "zh": "檢查開始日期是否在3月1日之後"
       }
     },
     {
@@ -48,7 +48,7 @@
       "bytes": 13,
       "comment": {
         "en": "Loop from start date year to end date year",
-        "zh": "由開始日期年份循環到結束日期年份"
+        "zh": "由開始年份循環至結束年份"
       }
     },
     {
@@ -56,7 +56,7 @@
       "bytes": 37,
       "comment": {
         "en": "Sum days in each year",
-        "zh": "總和每年嘅日數"
+        "zh": "總和每年日數"
       }
     },
     {
@@ -64,23 +64,23 @@
       "bytes": 38,
       "comment": {
         "en": "Parse start date month and end date month",
-        "zh": "抽取開始日期月份同結束日期月份"
+        "zh": "讀取開始月份及結束月份"
       }
     },
     {
       "code": "∑x→X:∑y→Y:",
       "bytes": 8,
       "comment": {
-        "en": "Reload start date and end date to preserve input",
-        "zh": "重新載入開始日期同結束日期，保留輸入"
+        "en": "Load start date and end date back to input",
+        "zh": "載入開始日期及結束日期到輸入"
       }
     },
     {
       "code": "1→A:If C>D:Then C→A:D→C:A→D:-1→A:IfEnd:",
       "bytes": 29,
       "comment": {
-        "en": "Decide whether to add or subtract days",
-        "zh": "決定月份應該向前定向後行"
+        "en": "Determine whether to add or subtract days",
+        "zh": "決定月份應該向前或向後移動"
       }
     },
     {
@@ -88,7 +88,7 @@
       "bytes": 9,
       "comment": {
         "en": "Loop from start date month to end date month",
-        "zh": "由開始日期月份循環到結束日期月份"
+        "zh": "由開始月份循環至結束月份"
       }
     },
     {
@@ -96,7 +96,7 @@
       "bytes": 31,
       "comment": {
         "en": "Add or subtract days in each month (except February)",
-        "zh": "加減每月嘅日數（除咗2月）"
+        "zh": "加或減每月日數（除2月）"
       }
     },
     {
@@ -104,7 +104,7 @@
       "bytes": 41,
       "comment": {
         "en": "Special handling: Add or subtract days in February",
-        "zh": "特別處理：加減2月嘅日數"
+        "zh": "特別處理：加或減2月日數"
       }
     },
     {
@@ -119,26 +119,14 @@
   "usage": {
     "parameters": {
       "en": [
-        "X?: Start date in yyyyMMdd format",
-        "Y?: End date in yyyyMMdd format",
-        "A: Start date year",
-        "B: End date year",
-        "C: Temporary variable/Start date month",
-        "D: End date month",
-        "M: Sum of days between two dates (excluding end date)",
-        "∑x: Store start date input",
-        "∑y: Store end date input"
+        "X: Start date in yyyyMMdd format",
+        "Y: End date in yyyyMMdd format",
+        "M: Sum of days between two dates (excluding end date)"
       ],
       "zh": [
-        "X?: 開始日期，格式 yyyyMMdd",
-        "Y?: 結束日期，格式 yyyyMMdd",
-        "A: 開始日期年份",
-        "B: 結束日期年份",
-        "C: 暫存變數/開始日期月份",
-        "D: 結束日期月份",
-        "M: 兩個日期之間嘅日數（不包括結束日）",
-        "∑x: 儲存開始日期輸入",
-        "∑y: 儲存結束日期輸入"
+        "X: 開始日期，格式 yyyyMMdd",
+        "Y: 結束日期，格式 yyyyMMdd",
+        "M: 日期差距（不包括結束日）"
       ]
     },
     "instructions": {
@@ -146,13 +134,13 @@
         "Enter start date in yyyyMMdd format",
         "Enter end date in yyyyMMdd format",
         "Program calculates days between dates (excluding end date)",
-        "For symbol input instructions, refer to the symbols page."
+        "Refer to the symbols page for input instructions."
       ],
       "zh": [
         "輸入開始日期，格式 yyyyMMdd",
         "輸入結束日期，格式 yyyyMMdd",
-        "程式計算兩個日期之間嘅日數（不包括結束日）",
-        "符號輸入說明，請參考符號頁。"
+        "程式計算兩個日期之間的日數（不包括結束日）",
+        "請參考符號頁輸入說明"
       ]
     }
   },
@@ -164,12 +152,12 @@
       },
       "steps": [
         {
-          "en": "X?: 20240415 (April 15, 2024)",
-          "zh": "X?: 20240415（2024年4月15日）"
+          "en": "Input X = 20240415 (April 15, 2024)",
+          "zh": "輸入 X = 20240415（2024年4月15日）"
         },
         {
-          "en": "Y?: 20250609 (June 9, 2025)",
-          "zh": "Y?: 20250609（2025年6月9日）"
+          "en": "Input Y = 20250609 (June 9, 2025)",
+          "zh": "輸入 Y = 20250609（2025年6月9日）"
         },
         {
           "en": "Result: M = 420 days",
@@ -182,7 +170,7 @@
     {
       "title": {
         "en": "Short hand to check if a year is a leap year",
-        "zh": "簡潔檢查閏年的方法"
+        "zh": "檢查閏年的簡短方法"
       },
       "actualCode": [
         "(sin(45Ans)=0 AND sin(1.8Ans)≠0) OR (sin(0.45Ans)=0)"
@@ -191,8 +179,8 @@
         "(sin(45*[year])=0 AND sin(1.8*[year])≠0) OR (sin(0.45*[year])=0)"
       ],
       "problem": {
-        "en": "Instead of checking for divisibility by 4, 100, and 400 separately, we can use a clever trick with the sine function to check if a year is a leap year in a single logical statement.",
-        "zh": "我哋唔需要逐個檢查4、100同400嘅整除性，反而可以用一個關於 sin 函數嘅技巧，用一句邏輯語句嚟檢查年份係咪閏年。"
+        "en": "Casio FX-50FH II does not have a modulo operator, it cannot effciently check for divisibility by 4, 100, and 400.",
+        "zh": "Casio FX-50FH II 沒有模運算符號，無法有效率地檢查4、100和400的整除性。"
       },
       "steps": [
         {
