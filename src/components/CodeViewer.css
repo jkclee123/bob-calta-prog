@@ -156,7 +156,7 @@
 
 .cumulative-label {
   font-size: 0.65rem;
-  color: var(--accent-color-alpha);
+  color: var(--accent-color);
   letter-spacing: 0.5px;
   font-weight: 600;
 }
