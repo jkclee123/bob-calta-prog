@@ -67,23 +67,12 @@ const HomePage = () => {
     sessionStorage.setItem('homepage-scroll-position', scrollPosition.toString());
   };
 
-  const heroContent = {
-    title: {
-      en: "Programs",
-      zh: "程式"
-    },
-    subtitle: {
-      en: 'Casio fx-50FH II Calculator Programs Collection by Bob.',
-      zh: 'Casio fx-50FH II 程式集'
-    }
-  };
-
   return (
     <div className="home-page">
       <div className="container">
         <div className="homepage-header">
-          <h1>{t(heroContent.title)}</h1>
-          <p className="homepage-description">{t(heroContent.subtitle)}</p>
+          <h1>{t({ en: 'Programs  ', zh: '程式' })}</h1>
+          <p className="homepage-description">{t({ en: 'Casio fx-50FH II Calculator Programs Collection by Bob.', zh: 'Casio fx-50FH II 程式集' })}</p>
         </div>
       </div>
 

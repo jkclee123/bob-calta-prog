@@ -45,47 +45,11 @@
   text-align: center;
 }
 
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.hero-title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 24px;
-  line-height: 1.2;
-}
-
-.hero-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
-  opacity: 0.9;
-  line-height: 1.5;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 /* Programs Section */
 .programs-section {
   background-color: var(--bg-primary);
   transition: background-color 0.3s ease;
   padding: 0 0 80px 0;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 60px;
-  color: var(--text-primary);
-  transition: color 0.3s ease;
 }
 
 .programs-grid {
@@ -112,6 +76,7 @@
 .program-card:hover {
   transform: translateY(-2px);
   background-color: var(--bg-tertiary);
+  border-color: var(--border-highlight);
 }
 
 .program-card-image {
@@ -145,14 +110,6 @@
   flex: 1;
 }
 
-.difficulty-badge {
-  padding: 4px 8px;
-  border-radius: 4px;
-  color: white;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
 .program-card-link {
   text-decoration: none;
   color: inherit;
@@ -177,30 +134,9 @@
     padding: 70px 0;
   }
 
-  .hero-title {
-    font-size: 2.2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
   .programs-grid {
     grid-template-columns: 1fr;
     gap: 24px;
-  }
-
-  .program-card-image {
-    height: 140px;
   }
 
   .program-card-content {
@@ -227,23 +163,6 @@
 
   .hero {
     padding: 50px 0;
-  }
-
-  .hero-title {
-    font-size: 1.8rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .section-title {
-    font-size: 1.6rem;
-    margin-bottom: 40px;
-  }
-
-  .program-card-image {
-    height: 120px;
   }
 
   .program-card-content {
