@@ -26,7 +26,7 @@
   
   /* Accent Colors */
   --accent-color: hsl(35, 90%, 56%);
-  --accent-color-alpha: hsla(35, 90%, 56%, 0.6);
+  --accent-color-alpha: hsla(35, 90%, 56%, 0.7);
   --accent-color-bg: hsla(35, 90%, 56%, 0.3);
 }
 

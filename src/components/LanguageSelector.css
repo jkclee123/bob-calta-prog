@@ -5,7 +5,7 @@
 
 .language-select {
   padding: 8px 12px;
-  border: 1px solid var(--border-primary);
+  border: 1px solid var(--border-highlight);
   border-radius: 6px;
   background-color: var(--bg-tertiary);
   color: var(--text-secondary);
@@ -18,17 +18,9 @@
 }
 
 .language-select:hover {
-  border-top-color: var(--border-highlight);
   background: linear-gradient(0deg, var(--bg-tertiary), var(--bg-quaternary));
   color: var(--text-primary);
   box-shadow: var(--shadow);
-}
-
-.language-select option {
-  padding: 8px;
-  font-size: 14px;
-  background-color: var(--input-bg);
-  color: var(--text-primary);
 }
 
 /* Responsive Design */

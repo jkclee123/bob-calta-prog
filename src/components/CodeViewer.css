@@ -78,21 +78,6 @@
   width: 100%;
 }
 
-.line-number-badge {
-  background: linear-gradient(135deg, var(--accent-color), var(--accent-color));
-  color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  font-size: 0.9rem;
-  flex-shrink: 0;
-  box-shadow: 0 2px 8px var(--accent-color-alpha);
-}
-
 .line-code-content {
   flex: 1;
   min-width: 0;
@@ -138,6 +123,7 @@
   display: flex;
   gap: 16px;
   align-items: center;
+  transition: color 0.3s ease;
 }
 
 .line-bytes,
@@ -151,16 +137,14 @@
 
 .stat-value {
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text-secondary);
-  transition: color 0.3s ease;
 }
 
 .cumulative-value {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--text-primary);
-  transition: color 0.3s ease;
 }
 
 .stat-label {
@@ -168,7 +152,6 @@
   color: var(--text-secondary);
   letter-spacing: 0.5px;
   font-weight: 600;
-  transition: color 0.3s ease;
 }
 
 .cumulative-label {
@@ -176,7 +159,6 @@
   color: var(--accent-color-alpha);
   letter-spacing: 0.5px;
   font-weight: 600;
-  transition: color 0.3s ease;
 }
 
 /* Summary Card */
@@ -287,12 +269,6 @@
 
   .line-comment {
     margin-bottom: 3px;
-  }
-
-  .line-number-badge {
-    width: 36px;
-    height: 36px;
-    font-size: 0.8rem;
   }
 }
 
