@@ -11,6 +11,7 @@ const ProgramPage = () => {
   const { programId } = useParams();
   const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState('code');
+  const [modalImage, setModalImage] = useState(null); // {src: string, alt: string}
 
   const program = programsData[programId];
 
@@ -19,6 +20,38 @@ const ProgramPage = () => {
 
   // Set document title for program page
   useDocumentTitle(null, program ? program.name : { en: 'Program Not Found', zh: '找不到程式' });
+
+  // Handle analysis image click to open modal
+  const openImageModal = (src, alt) => {
+    setModalImage({ src, alt });
+  };
+
+  // Handle modal close
+  const closeImageModal = () => {
+    setModalImage(null);
+  };
+
+  // Handle ESC key to close modal and manage body scroll
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape' && modalImage) {
+        closeImageModal();
+      }
+    };
+
+    // Prevent body scroll when modal is open
+    if (modalImage) {
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.classList.remove('modal-open');
+    };
+  }, [modalImage]);
 
   // Scroll to top when component mounts or programId changes
   useEffect(() => {
@@ -167,6 +200,8 @@ const ProgramPage = () => {
                         src={analysis.image}
                         alt={t({ en: 'Analysis Image', zh: '解決方法圖表' })}
                         className="analysis-image"
+                        onClick={() => openImageModal(analysis.image, t({ en: 'Analysis Image', zh: '解決方法圖表' }))}
+                        style={{ cursor: 'pointer' }}
                       />
                     )}
                   </div>
@@ -251,6 +286,22 @@ const ProgramPage = () => {
           </div>
         </div>
       </div>
+
+      {/* Image Modal */}
+      {modalImage && (
+        <div className="image-modal-overlay" onClick={closeImageModal}>
+          <div className="image-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="image-modal-close" onClick={closeImageModal}>
+              ×
+            </button>
+            <img
+              src={modalImage.src}
+              alt={modalImage.alt}
+              className="image-modal-image"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
