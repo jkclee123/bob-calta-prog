@@ -178,8 +178,8 @@
       },
       "image": "/images/analysis/leap_year_graph.png",
       "solution": {
-        "en": "Use sine functions instead of modulo operator. As seen in the graph, the blue line intercepts with x-axis at the multiples of 4, the red line intercepts with x-axis at the multiples of 100, the green line intercepts with x-axis at the multiples of 400.",
-        "zh": "我們可以用 sine 函數來檢查4、100和400的整除性。圖中，藍線在4的倍數處與x軸相交，紅線在100的倍數處與x軸相交，綠線在400的倍數處與x軸相交。"
+        "en": "Use sine functions instead of modulo operator. As seen in the graph, the blue statement is true when x is a multiple of 4, the red statement is true when x is a multiple of 100, the green statement is true when x is a multiple of 400.",
+        "zh": "我們可以用 sine 函數來檢查4、100和400的整除性。圖中，藍語句在4的倍數處為真，紅語句在100的倍數處為真，綠語句在400的倍數處為真。"
       },
       "steps": [
         {
@@ -201,7 +201,7 @@
           "formula": "sin(1.8°x) ≠ 0",
           "explanation": {
             "en": "Sine of product of 1.8° and x is always 0, if x is a multiple of 100. When x is not a multiple of 100, its sine value is not 0.",
-            "zh": "當x是100的倍數時，1.8°乘x的sine值都是零。當x不是100的倍數時，sine值就不是零。"
+            "zh": "當x不是100的倍數時，sine值不是零。"
           }
         },
         {
@@ -246,23 +246,23 @@
       },
       "problem": {
         "en": "There are 4 months with 30 days in a year, April, June, September and November. Using if statements to check would use a lot of memory.",
-        "zh": "一年有4個月有30天，四月、六月、九月和十一月，使用if語句來檢查會使用很多記憶體。"
+        "zh": "一年有4個月有30天，四月、六月、九月和十一月，使用if語句來檢查需要用很多字節。"
       },
       "image": "/images/analysis/days_in_month.png",
       "solution": {
         "en": "We can use a single statement to filter months with 30 days. As seen in the graph, the function intersects with y = 1 at x = 4, x = 6, x = 9 and x = 11.",
-        "zh": "我們可以用一條陳述來計算哪個月份有30天。圖中，函數在x = 4、x = 6、x = 9和x = 11處與y = 1相交。"
+        "zh": "我們可以用一條語句來檢查哪個月份有30天。圖中，函數在x = 4、x = 6、x = 9和x = 11處與y = 1相交。"
       },
       "steps": [
         {
           "title": {
-            "en": "The Core Statement",
-            "zh": "核心陳述"
+            "en": "Core Statement",
+            "zh": "核心語句"
           },
           "formula": "||x - 7.5|-2.5| = 1",
           "explanation": {
             "en": "When x is 4, 6, 9 or 11, LHS equals to 1. When substituting x with months with 30 days, the statement is true.",
-            "zh": "當x是4、6、9或11時，公式等於1。當x是30天的月份時，陳述為真。"
+            "zh": "當x是4、6、9或11時，公式等於1。當x是30天的月份時，語句為真。"
           }
         }
       ]
