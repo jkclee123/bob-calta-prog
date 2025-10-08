@@ -77,21 +77,16 @@
   border: 1px solid var(--border-primary);
   border-radius: 8px;
   font-size: 16px;
-  background-color: var(--input-bg);
+  background-color: var(--bg-tertiary);
   color: var(--text-primary);
   cursor: pointer;
   outline: none;
   transition: all 0.3s ease;
 }
 
-.category-select:focus {
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 2px var(--accent-color-alpha);
-}
-
-.category-select option {
-  background-color: var(--input-bg);
-  color: var(--text-primary);
+.category-select:hover {
+  border-color: var(--border-highlight);
+  background-color: var(--bg-quaternary);
 }
 
 /* Symbols Content */
@@ -116,7 +111,7 @@
   color: var(--text-primary);
   margin-bottom: 24px;
   padding-bottom: 12px;
-  border-bottom: 2px solid var(--border-primary);
+  border-bottom: 2px solid var(--accent-color-bg);
   transition: color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -131,7 +126,7 @@
   border: 1.5px solid var(--border-primary);
   border-radius: 8px;
   padding: 16px;
-  background-color: var(--bg-tertiary);
+  background: linear-gradient(0deg, var(--bg-tertiary) 95%, var(--bg-quaternary));
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -140,9 +135,9 @@
 
 .symbol-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px var(--shadow-medium);
-  border-color: var(--accent-color);
-  background-color: var(--bg-quaternary);
+  box-shadow: var(--shadow);
+  border-top: 1px solid var(--border-highlight);
+  background: linear-gradient(0deg, var(--bg-quaternary), var(--bg-quinary));
 }
 
 .symbol-header {
@@ -156,7 +151,8 @@
   font-family: 'Courier New', monospace;
   font-size: 1.5rem;
   font-weight: bold;
-  background-color: var(--input-bg);
+  background-color: var(--bg-quaternary);
+  color: var(--text-primary);
   padding: 8px 12px;
   border-radius: 6px;
   border: 1px solid var(--border-primary);
@@ -208,7 +204,7 @@
 }
 
 .typing-instruction {
-  background-color: var(--input-bg);
+  background-color: var(--bg-quaternary);
   padding: 6px 8px;
   font-family: 'Courier New', monospace;
   font-size: 0.9rem;

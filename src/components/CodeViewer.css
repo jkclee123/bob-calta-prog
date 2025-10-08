@@ -126,7 +126,7 @@
 
 .comment-text {
   font-size: 0.75rem;
-  color: var(--accent-color-alpha);
+  color: var(--text-tertiary);
   font-style: italic;
   line-height: 1.3;
   display: block;
@@ -173,7 +173,7 @@
 
 .cumulative-label {
   font-size: 0.65rem;
-  color: var(--text-primary);
+  color: var(--accent-color-alpha);
   letter-spacing: 0.5px;
   font-weight: 600;
   transition: color 0.3s ease;

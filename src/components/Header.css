@@ -67,7 +67,7 @@
 }
 
 .nav-link.active {
-  color: var(--text-primary);
+  color: var(--accent-color);
   background-color: var(--bg-tertiary);
 }
 
