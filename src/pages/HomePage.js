@@ -73,7 +73,7 @@ const HomePage = () => {
       zh: "程式"
     },
     subtitle: {
-      en: 'Casio fx-50FH II Calculator Program Collection by Bob.',
+      en: 'Casio fx-50FH II Calculator Programs Collection by Bob.',
       zh: 'Casio fx-50FH II 程式集'
     }
   };
