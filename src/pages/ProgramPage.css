@@ -297,7 +297,6 @@
   color: var(--text-secondary);
   background: linear-gradient(0deg, var(--bg-quaternary) 95%, var(--bg-quinary));
   border: 1px solid var(--border-secondary);
-  border-top: 1px solid var(--border-highlight);
   border-radius: 8px;
   transition: all 0.3s ease;
   font-weight: 500;
@@ -306,6 +305,7 @@
 
 .toc-link:hover,
 .toc-link:active {
+  border-top: 1px solid var(--border-highlight);
   color: var(--text-primary);
   background: linear-gradient(0deg, var(--bg-quaternary), var(--bg-quinary));
   box-shadow: var(--shadow);
@@ -780,6 +780,7 @@
   justify-content: center;
   z-index: 1000;
   animation: fadeIn 0.3s ease-out;
+  overflow: hidden; /* Prevent background scrolling when modal is open */
 }
 
 .image-modal-content {
@@ -845,8 +846,3 @@
     transform: scale(1);
   }
 }
-
-/* Prevent body scroll when modal is open */
-body.modal-open {
-  overflow: hidden;
-} 

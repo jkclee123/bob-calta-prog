@@ -18,7 +18,7 @@
 }
 
 .language-select:hover {
-  background: linear-gradient(0deg, var(--bg-tertiary), var(--bg-quaternary));
+  background-color: var(--bg-quaternary);
   color: var(--text-primary);
   box-shadow: var(--shadow);
 }
