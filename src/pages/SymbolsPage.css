@@ -1,6 +1,5 @@
 .symbols-page {
   min-height: calc(100vh - 70px);
-  background-color: var(--bg-primary);
   padding: 40px 0;
   transition: background-color 0.3s ease;
 }

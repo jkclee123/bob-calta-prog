@@ -142,58 +142,7 @@ textarea:focus {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Loading animations */
-.loading {
-  animation: fadeIn 0.5s ease-out infinite alternate;
-}
 
-/* Pulse animation for status badges */
-@keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.status-badge.loading {
-  animation: pulse 2s infinite;
-}
-
-/* Toast animation */
-@keyframes toastSlideIn {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes toastSlideOut {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-}
-
-.toast.show {
-  animation: toastSlideIn 0.3s ease-out;
-}
-
-.toast.hide {
-  animation: toastSlideOut 0.3s ease-in;
-}
 
 /* Enhanced font support for mathematical symbols */
 .symbol-display,
@@ -206,12 +155,6 @@ code,
   font-variant-numeric: normal;
 }
 
-/* Ensure Unicode mathematical symbols render properly */
-.mathematical-symbols {
-  font-family: 'Noto Sans Math', 'STIX Two Math', 'Cambria Math', 'Times New Roman', serif;
-  font-size: 1.1em;
-  font-weight: normal;
-}
 
 /* Specific styling for superscript and subscript in code */
 .symbol-display,
@@ -229,9 +172,3 @@ code,
   font-display: swap;
 }
 
-/* Force better rendering for problematic Unicode symbols */
-.unicode-symbol {
-  font-family: 'Noto Sans Math', 'Noto Sans Symbols', 'Noto Sans Symbols 2', 'STIX Two Math', 'Cambria Math', system-ui, -apple-system, sans-serif;
-  font-feature-settings: "kern" 1, "liga" 1;
-  text-rendering: optimizeLegibility;
-}
