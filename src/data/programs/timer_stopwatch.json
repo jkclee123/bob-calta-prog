@@ -11,43 +11,34 @@
   "image": "/images/programs/timer.png",
   "mode": "Comp",
   "memory": 62,
-  "status": "completed",
   "code": [
     {
-      "line": 1,
       "code": "50→A:3600→B:",
       "bytes": 12,
-      "cumulativeBytes": 12,
       "comment": {
         "en": "Set up variables",
         "zh": "設定變數"
       }
     },
     {
-      "line": 2,
       "code": "Lbl 0:D÷AB▫→Y:?→Y:",
       "bytes": 15,
-      "cumulativeBytes": 27,
       "comment": {
         "en": "Set up display",
         "zh": "設定顯示"
       }
     },
     {
-      "line": 3,
       "code": "Y≤0⇒atm→Y:Y<1⇒BY→Y:AY-1→Y:",
       "bytes": 24,
-      "cumulativeBytes": 51,
       "comment": {
         "en": "Set loop target",
         "zh": "設定循環目標"
       }
     },
     {
-      "line": 4,
       "code": "For 0→D To Y:Next:Goto 0",
       "bytes": 11,
-      "cumulativeBytes": 62,
       "comment": {
         "en": "Loop to time",
         "zh": "空循環計時"
@@ -55,29 +46,29 @@
     }
   ],
   "usage": {
-    "en": {
-      "parameters": [
+    "parameters": {
+      "en": [
         "Y?: display elasped time, input command",
         "A: loop per second (default A=50)",
         "B: scalar to convert between decimal and sexagesimal",
         "D: loop index"
       ],
-      "instructions": [
+      "zh": [
+        "Y?: 顯示經過時間，輸入命令",
+        "A: 每秒循環次數 (預設A=50)",
+        "B: 十進制同六十進制之間嘅轉換係數",
+        "D: 循環指標"
+      ]
+    },
+    "instructions": {
+      "en": [
         "‼️Calibrate variable A with a clock",
         "To start Stopwatch mode, enter zero or a negative value to Y",
         "To start a timer of Y seconds, enter a positive number of seconds to Y",
         "To input ▫, its between (-) and hyp",
         "To input atm, SHIFT 7 (CONST) ◀ 4"
-      ]
-    },
-    "zh": {
-      "parameters": [
-        "Y?: 顯示經過時間，輸入命令",
-        "A: 每秒循環次數 (預設A=50)",
-        "B: 十進制同六十進制之間嘅轉換係數",
-        "D: 循環指標"
       ],
-      "instructions": [
+      "zh": [
         "‼️用時鐘校準變數A",
         "輸入Y為零或負數開始秒錶模式",
         "輸入Y為正數開始計時器計Y秒",
@@ -92,38 +83,44 @@
         "en": "Using as stopwatch",
         "zh": "使用秒錶"
       },
-      "steps": {
-        "en": [
-          "Input 0 to Y (or any negative number)",
-          "Stopwatch starts",
-          "Stop the program with \"ON\"",
-          "Goes back to the program to see the elapsed time"
-        ],
-        "zh": [
-          "輸入 0 到 Y（或任何負數）",
-          "秒錶開始",
-          "㩒「ON」停秒錶",
-          "返入程式睇秒錶"
-        ]
-      }
+      "steps": [
+        {
+          "en": "Input 0 to Y (or any negative number)",
+          "zh": "輸入 0 到 Y（或任何負數）"
+        },
+        {
+          "en": "Stopwatch starts",
+          "zh": "秒錶開始"
+        },
+        {
+          "en": "Stop the program with \"ON\"",
+          "zh": "㩒「ON」停秒錶"
+        },
+        {
+          "en": "Goes back to the program to see the elapsed time",
+          "zh": "返入程式睇秒錶"
+        }
+      ]
     },
     {
       "title": {
         "en": "Timing with timer",
         "zh": "使用計時器"
       },
-      "steps": {
-        "en": [
-          "Input 60 to Y (for 1 minute)",
-          "Timer counts down",
-          "Program will display when timer reaches 0"
-        ],
-        "zh": [
-          "輸入 60 到 Y（1分鐘）",
-          "計時器倒數1分鐘",
-          "夠鐘時，程式會重新顯示"
-        ]
-      }
+      "steps": [
+        {
+          "en": "Input 60 to Y (for 1 minute)",
+          "zh": "輸入 60 到 Y（1分鐘）"
+        },
+        {
+          "en": "Timer counts down",
+          "zh": "計時器倒數1分鐘"
+        },
+        {
+          "en": "Program will display when timer reaches 0",
+          "zh": "夠鐘時，程式會重新顯示"
+        }
+      ]
     }
   ],
   "analysis": [
@@ -131,15 +128,15 @@
       "title": {
         "en": "Empty loop to time",
         "zh": "空循環計時"
-        },  
-        "actualCode": [
-          "AY-1→Y:",
-          "For 0→D To Y:Next:"
-        ],
-        "genericCode": [
-          "[A(50)] x [seconds to time] - 1 → [target]",
-          "For 0→[_] To [target]:Next"
-        ],
+      },
+      "actualCode": [
+        "AY-1→Y:",
+        "For 0→D To Y:Next:"
+      ],
+      "genericCode": [
+        "[A(50)] x [seconds to time] - 1 → [target]",
+        "For 0→[_] To [target]:Next"
+      ],
       "problem": {
         "en": "Design a way to time with a calculator.",
         "zh": "設計一個用計算機計時嘅方法。"
@@ -159,4 +156,4 @@
       ]
     }
   ]
-} 
+}

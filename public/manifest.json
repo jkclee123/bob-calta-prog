@@ -5,8 +5,7 @@
     {
       "src": "apple-touch-icon.png",
       "sizes": "180x180",
-      "type": "image/png",
-      "background_color": "#121111"
+      "type": "image/png"
     },
     {
       "src": "logo192.png",

@@ -10,133 +10,106 @@
   },
   "image": "/images/programs/date_duration.png",
   "mode": "REG Lin",
-  "status": "completed",
   "code": [
     {
-      "line": 1,
       "code": "?→X:?→Y:ClrStat:Deg:X,YDT:0→M:Fix 0:",
       "bytes": 24,
-      "cumulativeBytes": 24,
       "comment": {
         "en": "Input start date and end date",
         "zh": "輸入開始日期同結束日期"
       }
     },
     {
-      "line": 2,
       "code": "Rnd(G-.5+X₁₀^(-4→A:X-A₁₀^(4→X:",
       "bytes": 21,
-      "cumulativeBytes": 45,
       "comment": {
         "en": "Parse start date year",
         "zh": "抽取開始日期嘅年份"
       }
     },
     {
-      "line": 3,
       "code": "Rnd(G-.5+Y₁₀^(-4→B:Y-B₁₀^(4→Y:",
       "bytes": 21,
-      "cumulativeBytes": 66,
       "comment": {
         "en": "Parse end date year",
         "zh": "抽取結束日期嘅年份"
       }
     },
     {
-      "line": 4,
       "code": "0→C:X≥301⇒1→C:",
       "bytes": 14,
-      "cumulativeBytes": 80,
       "comment": {
         "en": "Check if start date is on or after 1st of March",
         "zh": "檢查開始日期係咪喺3月1號之後"
       }
     },
     {
-      "line": 5,
       "code": "For A→A To B-1:A+C:",
       "bytes": 13,
-      "cumulativeBytes": 93,
       "comment": {
         "en": "Loop from start date year to end date year",
         "zh": "由開始日期年份循環到結束日期年份"
       }
     },
     {
-      "line": 6,
       "code": "M+365+(sin(45Ans)=0)(sin(1.8Ans)≠0)+(0=sin(.45Ans→M:Next:",
       "bytes": 37,
-      "cumulativeBytes": 132,
       "comment": {
         "en": "Sum days in each year",
         "zh": "總和每年嘅日數"
       }
     },
     {
-      "line": 7,
       "code": "Rnd(.01X-.5→C:Rnd(.01Y-.5→D:M-X+Y+100(C-D→M:",
       "bytes": 38,
-      "cumulativeBytes": 170,
       "comment": {
         "en": "Parse start date month and end date month",
         "zh": "抽取開始日期月份同結束日期月份"
       }
     },
     {
-      "line": 8,
       "code": "∑x→X:∑y→Y:",
       "bytes": 8,
-      "cumulativeBytes": 178,
       "comment": {
         "en": "Reload start date and end date to preserve input",
         "zh": "重新載入開始日期同結束日期，保留輸入"
       }
     },
     {
-      "line": 9,
       "code": "1→A:If C>D:Then C→A:D→C:A→D:-1→A:IfEnd:",
       "bytes": 29,
-      "cumulativeBytes": 207,
       "comment": {
         "en": "Decide whether to add or subtract days",
         "zh": "決定月份應該向前定向後行"
       }
     },
     {
-      "line": 10,
       "code": "For C→C To D-1:",
       "bytes": 9,
-      "cumulativeBytes": 216,
       "comment": {
         "en": "Loop from start date month to end date month",
         "zh": "由開始日期月份循環到結束日期月份"
       }
     },
     {
-      "line": 11,
       "code": "If C≠2:Then M+A(31-(1=Abs(Abs(C-7.5)-2.5→M:",
       "bytes": 31,
-      "cumulativeBytes": 247,
       "comment": {
         "en": "Add or subtract days in each month (except February)",
         "zh": "加減每月嘅日數（除咗2月）"
       }
     },
     {
-      "line": 12,
       "code": "Else M+A(28+(sin(45B)=0)(sin(1.8B)≠0)+(0=sin(.45B→M:IfEnd:",
       "bytes": 41,
-      "cumulativeBytes": 288,
       "comment": {
         "en": "Special handling: Add or subtract days in February",
         "zh": "特別處理：加減2月嘅日數"
       }
     },
     {
-      "line": 13,
       "code": "Next:Norm 2:M",
       "bytes": 6,
-      "cumulativeBytes": 294,
       "comment": {
         "en": "Display result",
         "zh": "顯示結果"
@@ -144,8 +117,8 @@
     }
   ],
   "usage": {
-    "en": {
-      "parameters": [
+    "parameters": {
+      "en": [
         "X?: Start date in yyyyMMdd format",
         "Y?: End date in yyyyMMdd format",
         "A: Start date year",
@@ -156,15 +129,7 @@
         "∑x: Store start date input",
         "∑y: Store end date input"
       ],
-      "instructions": [
-        "Enter start date in yyyyMMdd format",
-        "Enter end date in yyyyMMdd format",
-        "Program calculates days between dates (excluding end date)",
-        "For symbol input instructions, refer to the symbols page."
-      ]
-    },
-    "zh": {
-      "parameters": [
+      "zh": [
         "X?: 開始日期，格式 yyyyMMdd",
         "Y?: 結束日期，格式 yyyyMMdd",
         "A: 開始日期年份",
@@ -174,8 +139,16 @@
         "M: 兩個日期之間嘅日數（不包括結束日）",
         "∑x: 儲存開始日期輸入",
         "∑y: 儲存結束日期輸入"
+      ]
+    },
+    "instructions": {
+      "en": [
+        "Enter start date in yyyyMMdd format",
+        "Enter end date in yyyyMMdd format",
+        "Program calculates days between dates (excluding end date)",
+        "For symbol input instructions, refer to the symbols page."
       ],
-      "instructions": [
+      "zh": [
         "輸入開始日期，格式 yyyyMMdd",
         "輸入結束日期，格式 yyyyMMdd",
         "程式計算兩個日期之間嘅日數（不包括結束日）",
@@ -189,18 +162,20 @@
         "en": "Calculate days between dates",
         "zh": "計算日期間天數"
       },
-      "steps": {
-        "en": [
-          "X?: 20240415 (April 15, 2024)",
-          "Y?: 20250609 (June 9, 2025)",
-          "Result: M = 420 days "
-        ],
-        "zh": [
-          "X?: 20240415（2024年4月15日）",
-          "Y?: 20250609（2025年6月9日）",
-          "結果：M = 420日"
-        ]
-      }
+      "steps": [
+        {
+          "en": "X?: 20240415 (April 15, 2024)",
+          "zh": "X?: 20240415（2024年4月15日）"
+        },
+        {
+          "en": "Y?: 20250609 (June 9, 2025)",
+          "zh": "Y?: 20250609（2025年6月9日）"
+        },
+        {
+          "en": "Result: M = 420 days",
+          "zh": "結果：M = 420日"
+        }
+      ]
     }
   ],
   "analysis": [

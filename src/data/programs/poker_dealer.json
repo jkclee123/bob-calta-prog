@@ -11,63 +11,50 @@
   "image": "/images/programs/poker.png",
   "mode": "Comp",
   "memory": 199,
-  "status": "completed",
   "code": [
     {
-      "line": 1,
       "code": "Lbl 0:M→D:?→M:M=0⇒Goto 9:D→M:Fix 0:",
       "bytes": 25,
-      "cumulativeBytes": 25,
       "comment": {
         "en": "Deal card or shuffle",
         "zh": "派牌或洗牌"
       }
     },
     {
-      "line": 2,
       "code": "Lbl 1:Ran#→X:X≥.988⇒Goto 1:Rnd(10³X÷19+.5→X:",
       "bytes": 31,
-      "cumulativeBytes": 56,
       "comment": {
         "en": "Draw card",
         "zh": "抽牌"
       }
     },
     {
-      "line": 3,
       "code": "Rnd(X÷4+.5-G→D:4(X÷4-D+1→C:A→X:C≥3⇒B→X:C-2(C≥3→Y:",
       "bytes": 46,
-      "cumulativeBytes": 102,
       "comment": {
         "en": "Calculate card rank and suit",
         "zh": "計算牌嘅點數同花色"
       }
     },
     {
-      "line": 4,
       "code": "X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G:(Ans=3)+(Ans=Y⇒Goto 1:",
       "bytes": 39,
-      "cumulativeBytes": 141,
       "comment": {
         "en": "Check if card has been drawn before",
         "zh": "檢查牌係咪抽過"
       }
     },
     {
-      "line": 5,
       "code": "X+Y₁₀^(-D→X:C<3⇒X→A:C≥3⇒X→B:1M⁻:D+.1C:Norm 2◢Goto 0:",
       "bytes": 40,
-      "cumulativeBytes": 181,
       "comment": {
         "en": "Remember card has been drawn",
         "zh": "記住牌已經抽過"
       }
     },
     {
-      "line": 6,
       "code": "Lbl 9:52→M:0→A:0→B:Goto 0",
       "bytes": 18,
-      "cumulativeBytes": 199,
       "comment": {
         "en": "Shuffle deck",
         "zh": "洗牌"
@@ -75,8 +62,8 @@
     }
   ],
   "usage": {
-    "en": {
-      "parameters": [
+    "parameters": {
+      "en": [
         "M?: display remaining cards, input command",
         "A: dictionary for diamonds♦️ and clubs♣️",
         "B: dictionary for hearts♥️ and spades♠️",
@@ -85,15 +72,7 @@
         "X: temporary variable",
         "Y: dictionary value"
       ],
-      "instructions": [
-        "Input 0 to shuffle and reset deck",
-        "Input any other number to draw a card",
-        "Cards displayed as [rank].[suit] format",
-        "For first use, input 0 to shuffle and reset deck"
-      ]
-    },
-    "zh": {
-      "parameters": [
+      "zh": [
         "M?: 顯示剩餘牌數，輸入命令",
         "A: 階磚♦️同梅花♣️嘅字典",
         "B: 紅心♥️同葵扇♠️嘅字典",
@@ -101,8 +80,16 @@
         "D: 點數",
         "X: 暫存變數",
         "Y: 字典值"
+      ]
+    },
+    "instructions": {
+      "en": [
+        "Input 0 to shuffle and reset deck",
+        "Input any other number to draw a card",
+        "Cards displayed as [rank].[suit] format",
+        "For first use, input 0 to shuffle and reset deck"
       ],
-      "instructions": [
+      "zh": [
         "輸入0洗牌並重置牌組",
         "輸入任何其他數字抽牌",
         "卡牌以[點數].[花色]格式顯示",
@@ -116,20 +103,24 @@
         "en": "Card format examples",
         "zh": "卡牌格式示例"
       },
-      "steps": {
-        "en": [
-          "7.1 → Seven of Diamonds ♦️",
-          "5.2 → Five of Clubs ♣️", 
-          "12.3 → Queen of Hearts ♥️",
-          "1.4 → Ace of Spades ♠️"
-        ],
-        "zh": [
-          "7.1 → 階磚七♦️",
-          "5.2 → 梅花五♣️",
-          "12.3 → 紅心女♥️",
-          "1.4 → 葵扇煙♠️"
-        ]
-      }
+      "steps": [
+        {
+          "en": "7.1 → Seven of Diamonds ♦️",
+          "zh": "7.1 → 階磚七♦️"
+        },
+        {
+          "en": "5.2 → Five of Clubs ♣️",
+          "zh": "5.2 → 梅花五♣️"
+        },
+        {
+          "en": "12.3 → Queen of Hearts ♥️",
+          "zh": "12.3 → 紅心女♥️"
+        },
+        {
+          "en": "1.4 → Ace of Spades ♠️",
+          "zh": "1.4 → 葵扇煙♠️"
+        }
+      ]
     }
   ],
   "analysis": [

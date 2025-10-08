@@ -11,63 +11,50 @@
   "image": "/images/programs/dice.png",
   "mode": "Comp",
   "memory": 213,
-  "status": "completed",
   "code": [
     {
-      "line": 1,
       "code": "5→A:?→A:6→B:?→B:Lbl 0:Fix 0:0→M:",
       "bytes": 26,
-      "cumulativeBytes": 26,
       "comment": {
         "en": "Set up dice count and size",
         "zh": "設定骰仔數量同面數"
       }
     },
     {
-      "line": 2,
       "code": "123456789→Y:Rnd(Y₁₀^(A-9)-.5→Y:",
       "bytes": 25,
-      "cumulativeBytes": 51,
       "comment": {
         "en": "Set up \"re-roll all\" command",
         "zh": "設定「重擲全部」指令"
       }
     },
     {
-      "line": 3,
       "code": "Lbl 5:Fix 0:While Y:Rnd(.1Y-.5→X:A-Y+10X→D:X→Y:(D<0)+(D>A-1⇒Goto 5:",
       "bytes": 49,
-      "cumulativeBytes": 100,
       "comment": {
         "en": "Parse re-roll index",
         "zh": "拆解重擲位置索引"
       }
     },
     {
-      "line": 4,
       "code": "M<₁₀^(A-1⇒Goto 6:M₁₀^(-D:Rnd(Ans-10Rnd(.1Ans-.5)-.5:Ans₁₀^(DM⁻:",
       "bytes": 37,
-      "cumulativeBytes": 137,
       "comment": {
         "en": "Remove current die at index D",
         "zh": "整走原有位置索引骰仔"
       }
     },
     {
-      "line": 5,
       "code": "Lbl 6:Rnd(10³Ran#÷Rnd(10³÷B-.5)+.5→X:X>B⇒Goto 6:X₁₀^(DM⁺:WhileEnd:",
       "bytes": 39,
-      "cumulativeBytes": 176,
       "comment": {
         "en": "Add new die at position D",
         "zh": "加入新骰仔"
       }
     },
     {
-      "line": 6,
       "code": "Lbl 9:Norm 2:M→Y:?→Y:(Y<0)+(Y=M⇒Goto 9:Y=0⇒Goto 0:Goto 5",
       "bytes": 37,
-      "cumulativeBytes": 213,
       "comment": {
         "en": "Display current dice, input re-roll command",
         "zh": "顯示所有骰，輸入重擲指令"
@@ -75,8 +62,8 @@
     }
   ],
   "usage": {
-    "en": {
-      "parameters": [
+    "parameters": {
+      "en": [
         "A?: Number of dice (default: 5)",
         "B?: Number of sides per die (default: 6)",
         "Y?: Display current dice, input re-roll command",
@@ -84,24 +71,24 @@
         "X: Next re-roll command",
         "M: All dice"
       ],
-      "instructions": [
-        "Run the program and set your dice count and die size",
-        "The program will display your dice roll as a number",
-        "To re-roll specific dice, enter their positions",
-        "To re-roll all dice, enter 0",
-        "Positions are order from the left: 123456789"
-      ]
-    },
-    "zh": {
-      "parameters": [
+      "zh": [
         "A?: 骰仔數量 (預設: 5粒)",
         "B?: 骰面數 (預設: 6面)",
         "Y?: 顯示所有骰仔，輸入重擲指令",
         "D: 個別位置索引",
         "X: 下一個重擲指令",
         "M: 所有骰仔"
+      ]
+    },
+    "instructions": {
+      "en": [
+        "Run the program and set your dice count and die size",
+        "The program will display your dice roll as a number",
+        "To re-roll specific dice, enter their positions",
+        "To re-roll all dice, enter 0",
+        "Positions are order from the left: 123456789"
       ],
-      "instructions": [
+      "zh": [
         "運行程式並設置骰仔數量同面數",
         "程式會以數字形式顯示骰仔結果",
         "如要重擲特定骰仔，輸入其位置",
@@ -116,40 +103,48 @@
         "en": "Basic dice roll",
         "zh": "擲特定骰"
       },
-      "steps": {
-        "en": [
-          "Y displays: 23156",
-          "Input 24 into Y",
-          "Re-rolls positions 2, and 4 (dice of value 3 and 5)",
-          "Y displays: 63254 (positions 2 and 4 kept)"
-        ],
-        "zh": [
-          "Y 顯示：23156",
-          "在 Y 中輸入 24",
-          "重擲位置 2 和 4 (骰面值 3 和 5)",
-          "Y 顯示：63254 (位置 2 和 4 保持不變)"
-        ]
-      }
+      "steps": [
+        {
+          "en": "Y displays: 23156",
+          "zh": "Y 顯示：23156"
+        },
+        {
+          "en": "Input 24 into Y",
+          "zh": "在 Y 中輸入 24"
+        },
+        {
+          "en": "Re-rolls positions 2, and 4 (dice of value 3 and 5)",
+          "zh": "重擲位置 2 和 4 (骰面值 3 和 5)"
+        },
+        {
+          "en": "Y displays: 63254 (positions 2 and 4 kept)",
+          "zh": "Y 顯示：63254 (位置 2 和 4 保持不變)"
+        }
+      ]
     },
     {
       "title": {
         "en": "Re-roll all dice",
         "zh": "重擲所有骰"
       },
-      "steps": {
-        "en": [
-          "Y displays: 23156",
-          "Input 0 into Y",
-          "Re-rolls all dice",
-          "Y displays: 56241"
-        ],
-        "zh": [
-          "Y 顯示：23156",
-          "在 Y 中輸入 0",
-          "重擲所有骰仔",
-          "Y 顯示：53241"
-        ]
-      }
+      "steps": [
+        {
+          "en": "Y displays: 23156",
+          "zh": "Y 顯示：23156"
+        },
+        {
+          "en": "Input 0 into Y",
+          "zh": "在 Y 中輸入 0"
+        },
+        {
+          "en": "Re-rolls all dice",
+          "zh": "重擲所有骰仔"
+        },
+        {
+          "en": "Y displays: 56241",
+          "zh": "Y 顯示：53241"
+        }
+      ]
     }
   ],
   "analysis": [

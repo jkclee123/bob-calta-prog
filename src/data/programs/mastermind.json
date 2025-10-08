@@ -11,133 +11,106 @@
   "image": "/images/programs/mastermind.png",
   "mode": "REG Lin",
   "memory": 359,
-  "status": "completed",
   "code": [
     {
-      "line": 1,
       "code": "Lbl 0:Norm 2:0→X:?→X:Fix 0:X=0⇒Goto 2:(X<4)+(X>8)+(X≠Rnd(X⇒Goto 0:",
       "bytes": 45,
-      "cumulativeBytes": 45,
       "comment": {
         "en": "Continue previous game or set new game's code length",
         "zh": "繼續上一局遊戲或為新遊戲設定密碼長度"
       }
     },
     {
-      "line": 2,
       "code": "X→C:100Ran#+Ran#₁₀^(5)+Ran#₁₀^(8:Rnd(Ans₁₀^(C-8)-.5→X:",
       "bytes": 31,
-      "cumulativeBytes": 76,
       "comment": {
         "en": "Generate secret code",
         "zh": "生成密碼"
       }
     },
     {
-      "line": 3,
       "code": "Lbl 2:X=0⇒∑x→X:1→B:For 1-C→D To 0:X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G:",
       "bytes": 49,
-      "cumulativeBytes": 125,
       "comment": {
         "en": "Parse individual digits of the secret code",
         "zh": "拆解密碼個別位"
       }
     },
     {
-      "line": 4,
       "code": "B(2Ans+1+(Ans=0)+14((Ans=4)+(Ans=7→B:Next:ClrStat:X,BDT:0→X:",
       "bytes": 42,
-      "cumulativeBytes": 167,
       "comment": {
         "en": "Initialize \"product of prime numbers\", input code and the product to sample data sets",
         "zh": "計出「質數乘積」，輸入密碼同質數乘積入樣本資料組"
       }
     },
     {
-      "line": 5,
       "code": "Lbl 5:Norm 2:0→Y:?→Y:Y<0⇒Goto 0:Y≥₁₀^(C⇒Goto 5:",
       "bytes": 29,
-      "cumulativeBytes": 196,
       "comment": {
         "en": "Input guess code to Y",
         "zh": "輸入猜測"
       }
     },
     {
-      "line": 6,
       "code": "If Y=∑x:Then ∑x◢Goto 5:IfEnd:",
       "bytes": 13,
-      "cumulativeBytes": 209,
       "comment": {
         "en": "Check if guess is correct",
         "zh": "睇下估得啱唔啱"
       }
     },
     {
-      "line": 7,
       "code": "Fix 0:0→A:∑x→X:∑y→B:For 1-C→D To 0:",
       "bytes": 24,
-      "cumulativeBytes": 233,
       "comment": {
         "en": "Prepare to check guess",
         "zh": "準備對答案"
       }
     },
     {
-      "line": 8,
       "code": "Y₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G→M:",
       "bytes": 27,
-      "cumulativeBytes": 260,
       "comment": {
         "en": "Parse individual digits from the guess",
         "zh": "拆解猜測個別位數"
       }
     },
     {
-      "line": 9,
       "code": "X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G:",
       "bytes": 25,
-      "cumulativeBytes": 285,
       "comment": {
         "en": "Parse individual digits from the secret code",
         "zh": "拆解密碼個別位數"
       }
     },
     {
-      "line": 10,
       "code": "M=Ans⇒A+.9→A:",
       "bytes": 11,
-      "cumulativeBytes": 296,
       "comment": {
         "en": "Check if guess is on correct position and update feedback",
         "zh": "有一個啱位，提示加0.9"
       }
     },
     {
-      "line": 11,
       "code": "B÷(2M+1+(M=0)+14((M=4)+(M=7→M:",
       "bytes": 30,
-      "cumulativeBytes": 326,
       "comment": {
         "en": "\"product of prime numbers\" divided by prime number of guess digit to M",
         "zh": "「質數乘積」除個別猜測嘅質數"
       }
     },
     {
-      "line": 12,
       "code": "If M=Rnd(M:Then A+.1→A:M→B:IfEnd:Next:",
       "bytes": 22,
-      "cumulativeBytes": 348,
       "comment": {
         "en": "Check divisibility of \"product of prime numbers\" by guess digit, if divisible, guess digit is in secret code",
         "zh": "睇下個別猜測嘅質數可唔可以整除「質數乘積」，有就喺密碼入面"
       }
     },
     {
-      "line": 13,
       "code": "0→X:Fix 1:A◢Goto 5",
       "bytes": 11,
-      "cumulativeBytes": 359,
       "comment": {
         "en": "Display feedback",
         "zh": "顯示提示"
@@ -145,8 +118,8 @@
     }
   ],
   "usage": {
-    "en": {
-      "parameters": [
+    "parameters": {
+      "en": [
         "X?: Start menu",
         "Y?: Input guess",
         "A: Feedback: shows correct positions and correct digits",
@@ -157,15 +130,7 @@
         "∑x: Secret code",
         "∑x: Product of prime numbers"
       ],
-      "instructions": [
-        "Start menu: Input 0 to continue previous game, or 4-8 to start new game with that many digits",
-        "During game: Input your guess (input negative number returns to start menu)",
-        "Read feedback: X.Y means X correct positions, Y correct digits in wrong positions",
-        "For symbol input instructions, refer to the symbols page."
-      ]
-    },
-    "zh": {
-      "parameters": [
+      "zh": [
         "X?: 開始菜單 - 輸入 0 繼續上一局遊戲，或輸入 4-8 開始新遊戲",
         "Y?: 遊戲中 - 輸入猜測（負數返返開始菜單）",
         "A: 提示 - 顯示正確位置同正確數字",
@@ -175,8 +140,16 @@
         "M: 暫存變數",
         "∑x: 密碼",
         "∑x: 質數乘積"
+      ]
+    },
+    "instructions": {
+      "en": [
+        "Start menu: Input 0 to continue previous game, or 4-8 to start new game with that many digits",
+        "During game: Input your guess (input negative number returns to start menu)",
+        "Read feedback: X.Y means X correct positions, Y correct digits in wrong positions",
+        "For symbol input instructions, refer to the symbols page."
       ],
-      "instructions": [
+      "zh": [
         "開始菜單： 輸入 0 繼續上一局遊戲，或輸入 4-8 開始新遊戲",
         "遊戲中： 輸入猜測，輸入負數返回開始菜單",
         "睇提示：X.Y 表示 X 個正確位置，Y 個正確數字但位置錯誤",
@@ -190,20 +163,24 @@
         "en": "4-digit game example",
         "zh": "4位數遊戲示例"
       },
-      "steps": {
-        "en": [
-          "Sample Secret answer: 5093",
-          "Guess: 9065 → Feedback: 1.2",
-          "1.2 means 1 correct position, 2 correct digits in wrong positions",
-          "In the guess 9065, 0 is correct position, 9 and 5 are correct digits in wrong positions"
-        ],
-        "zh": [
-          "例子密碼：5093",
-          "猜測：9065 → 提示：1.2",
-          "1.2 表示一個正確位置，兩個正確數字但位置錯誤",
-          "喺猜測9065入面 ，0係正確位置，9同5係正確數字但位置錯誤"
-        ]
-      }
+      "steps": [
+        {
+          "en": "Sample Secret answer: 5093",
+          "zh": "例子密碼：5093"
+        },
+        {
+          "en": "Guess: 9065 → Feedback: 1.2",
+          "zh": "猜測：9065 → 提示：1.2"
+        },
+        {
+          "en": "1.2 means 1 correct position, 2 correct digits in wrong positions",
+          "zh": "1.2 表示一個正確位置，兩個正確數字但位置錯誤"
+        },
+        {
+          "en": "In the guess 9065, 0 is correct position, 9 and 5 are correct digits in wrong positions",
+          "zh": "喺猜測9065入面 ，0係正確位置，9同5係正確數字但位置錯誤"
+        }
+      ]
     }
   ],
   "analysis": [
@@ -339,6 +316,6 @@
           }
         }
       ]
-}
+    }
   ]
-} 
+}
