@@ -46,11 +46,6 @@ code {
     monospace;
 }
 
-/* Global animations and transitions */
-/* * {
-  transition: all 0.3s ease;
-} */
-
 /* Smooth scrolling for the entire page */
 html {
   scroll-behavior: smooth;

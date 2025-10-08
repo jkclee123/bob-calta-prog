@@ -169,144 +169,100 @@
   "analysis": [
     {
       "title": {
-        "en": "Short hand to check if a year is a leap year",
-        "zh": "檢查閏年的簡短方法"
+        "en": "Leap Year Check",
+        "zh": "檢查閏年"
       },
-      "actualCode": [
-        "(sin(45Ans)=0 AND sin(1.8Ans)≠0) OR (sin(0.45Ans)=0)"
-      ],
-      "genericCode": [
-        "(sin(45*[year])=0 AND sin(1.8*[year])≠0) OR (sin(0.45*[year])=0)"
-      ],
       "problem": {
-        "en": "Casio FX-50FH II does not have a modulo operator, it cannot effciently check for divisibility by 4, 100, and 400.",
-        "zh": "Casio FX-50FH II 沒有模運算符號，無法有效率地檢查4、100和400的整除性。"
+        "en": "A leap year occurs when a year is divisible by 4, with the exception that years divisible by 100 are not leap years unless they are also divisible by 400. Casio FX-50FH II does not have a modulo operator, it cannot effciently check for divisibility by 4, 100, and 400.",
+        "zh": "閏年是指可以被4整除，但不可以被100整除，除非可以被400整除嘅年份。Casio FX-50FH II 沒有模運算，無法有效地檢查4、100和400的整除性。"
+      },
+      "image": "/images/analysis/leap_year_graph.png",
+      "solution": {
+        "en": "Use sine functions instead of modulo operator. As seen in the graph, the blue line intercepts with x-axis at the multiples of 4, the red line intercepts with x-axis at the multiples of 100, the green line intercepts with x-axis at the multiples of 400.",
+        "zh": "我們可以用 sine 函數來檢查4、100和400的整除性。圖中，藍線在4的倍數處與x軸相交，紅線在100的倍數處與x軸相交，綠線在400的倍數處與x軸相交。"
       },
       "steps": [
         {
-          "step": 1,
           "title": {
-            "en": "The Core Concept: Using Sine to Check Divisibility",
-            "zh": "核心概念：用 Sine 函數檢查整除性"
-          },
-          "formula": "sin(180° * k) = 0",
-          "explanation": {
-            "en": "The sine of any multiple of 180° is always 0. If we can create an expression like 'magic number * year' that equals a multiple of 180° only when 'year' is divisible by a target number, we have a divisibility checker!",
-            "zh": "任何180°嘅倍數，佢嘅 sin 值都係 0。如果我哋可以將公式設計成 `(一個數字 * 年份)`，而呢個算式只有喺年份可以被某個數整除嗰陣，先會等於180°嘅倍數，咁我哋就有一個整除性嘅檢查方法！"
-          }
-        },
-        {
-          "step": 2,
-          "title": {
-            "en": "The Official Leap Year Rule",
-            "zh": "閏年嘅官方規則"
-          },
-          "formula": "(year % 4 == 0 AND year % 100 != 0) OR (year % 400 == 0)",
-          "explanation": {
-            "en": "This is the standard rule we need to replicate. A year is a leap year if it's divisible by 4, but not 100, unless it's divisible by 400.",
-            "zh": "呢個係我哋需要實現嘅標準規則。如果一個年份可以被4整除，但唔可以被100整除，就係閏年；除非，佢可以被400整除。"
-          }
-        },
-        {
-          "step": 3,
-          "title": {
-            "en": "Condition 1: Divisibility by 4",
+            "en": "Condition 1: Divisible by 4",
             "zh": "條件一：被 4 整除"
           },
-          "formula": "sin(45 * [year]) = 0",
+          "formula": "sin(45°x) = 0",
           "explanation": {
-            "en": "This checks if a year is divisible by 4. The 'magic number' is 45 because 45 * 4 = 180. So, only when the year is a multiple of 4 will the input to the sine function be a multiple of 180°, making the result 0.",
-            "zh": "呢個條件檢查年份係咪可以被4整除。呢度嘅數字係45，因為 45 * 4 = 180。所以，只有當年份係4嘅倍數嗰陣，sin 函數入面嘅數值先會係180°嘅倍數，令結果等於0。"
+            "en": "Sine of product of 45° and x is always 0, if x is a multiple of 4.",
+            "zh": "當K是4的倍數時，45°乘K的sine值都是零。"
           }
         },
         {
-          "step": 4,
           "title": {
             "en": "Condition 2: NOT Divisible by 100",
-            "zh": "條件二：唔可以被 100 整除"
+            "zh": "條件二：不被 100 整除"
           },
-          "formula": "sin(1.8 * [year]) ≠ 0",
+          "formula": "sin(1.8°x) ≠ 0",
           "explanation": {
-            "en": "This checks if a year is NOT a century year. The number is 1.8 because 1.8 * 100 = 180. This means `sin(1.8 * year)` WILL be 0 for century years. By checking that the result is NOT 0 (≠ 0), we confirm the condition is met.",
-            "zh": "呢個條件檢查年份係咪唔係世紀年。呢度嘅數字係1.8，因為 1.8 * 100 = 180。意思係，如果年份係世紀年，`sin(1.8 * year)` 就會等於0。所以我哋反向檢查結果係咪『不等於0』(≠ 0)嚟確認條件成立。"
+            "en": "Sine of product of 1.8° and x is always 0, if x is a multiple of 100. When x is not a multiple of 100, its sine value is not 0.",
+            "zh": "當x是100的倍數時，1.8°乘x的sine值都是零。當x不是100的倍數時，sine值就不是零。"
           }
         },
         {
-          "step": 5,
           "title": {
-            "en": "Condition 3: The Exception for 400",
-            "zh": "條件三：關於 400 嘅例外情況"
+            "en": "Condition 3: Divisible by 400",
+            "zh": "條件三：被 400 整除"
           },
-          "formula": "sin(0.45 * [year]) = 0",
+          "formula": "sin(0.45°x) = 0",
           "explanation": {
-            "en": "This handles the special rule for centuries. The number is 0.45 because 0.45 * 400 = 180. This will only be true for years divisible by 400, overriding the 'not divisible by 100' rule.",
-            "zh": "呢個條件處理世紀年嘅特殊規則。呢度嘅數字係0.45，因為 0.45 * 400 = 180。所以，呢個算式只會喺年份可以被400整除嗰陣先會等於0，從而覆蓋咗『唔可以被100整除』嘅規則。"
+            "en": "Sine of product of 0.45° and x is always 0, if x is a multiple of 400.",
+            "zh": "當x是400的倍數時，0.45°乘x的sine值都是零。"
           }
         },
         {
-          "step": 6,
           "title": {
-            "en": "Putting It All Together",
+            "en": "Putting All Conditions Together",
             "zh": "組合所有條件"
           },
-          "formula": "([Step 3] AND [Step 4]) OR [Step 5]",
+          "formula": "([Condition 1] AND [Condition 2]) OR [Condition 3]",
           "explanation": {
-            "en": "Combining our sine checks into the standard leap year logic gives us our final formula. The entire statement is true only when the year is a leap year: (sin(45*year)=0 AND sin(1.8*year)≠0) OR (sin(0.45*year)=0)",
-            "zh": "將我哋嘅 sine 檢查方法組合成標準嘅閏年邏輯，就得到最終公式。只有喺年份係閏年嗰陣，呢句完整嘅陳述先會成立：(sin(45*year)=0 AND sin(1.8*year)≠0) OR (sin(0.45*year)=0)"
+            "en": "Putting all conditions into a logic statement gives us the leap year checking formula.",
+            "zh": "將所有條件組合成一條邏輯陳述，就得到閏年檢查公式。"
+          }
+        },
+        {
+          "title": {
+            "en": "Leap Year Checking Formula",
+            "zh": "閏年檢查公式"
+          },
+          "formula": "(sin(45x) = 0)(sin(1.8x) ≠ 0) + (sin(0.45x) = 0)",
+          "explanation": {
+            "en": "",
+            "zh": ""
           }
         }
       ]
     },
     {
       "title": {
-        "en": "A Mathematical Shortcut for Days in a Month (Excluding February)",
-        "zh": "計算月份日數嘅數學捷徑（二月除外）"
+        "en": "Filter Months with 30 Days",
+        "zh": "計算有30天的月份"
       },
-      "actualCode": [
-        "31-(1=Abs(Abs(C-7.5)-2.5"
-      ],
-      "genericCode": [
-        "31 - ||[month] - 7.5| - 2.5|"
-      ],
       "problem": {
-        "en": "Calculating the number of days in a month (30 or 31) usually requires a list or a conditional statement. This program demonstrates a clever mathematical formula that can determine the correct number of days in a single line of code, without needing to check each month individually.",
-        "zh": "要計一個月有幾多日（30日定31日），通常要用列表或者條件式。呢個程式展示咗一條數學公式可以計到出嚟，唔使逐個月去檢查。"
+        "en": "There are 4 months with 30 days in a year, April, June, September and November. Using if statements to check would use a lot of memory.",
+        "zh": "一年有4個月有30天，四月、六月、九月和十一月，使用if語句來檢查會使用很多記憶體。"
+      },
+      "image": "/images/analysis/days_in_month.png",
+      "solution": {
+        "en": "We can use a single statement to filter months with 30 days. As seen in the graph, the function intersects with y = 1 at x = 4, x = 6, x = 9 and x = 11.",
+        "zh": "我們可以用一條陳述來計算哪個月份有30天。圖中，函數在x = 4、x = 6、x = 9和x = 11處與y = 1相交。"
       },
       "steps": [
         {
-          "step": 1,
           "title": {
-            "en": "The Core Expression",
-            "zh": "核心數學表達式"
+            "en": "The Core Statement",
+            "zh": "核心陳述"
           },
-          "formula": "Abs(Abs([month] - 7.5) - 2.5)",
+          "formula": "||x - 7.5|-2.5| = 1",
           "explanation": {
-            "en": "This formula is the heart of the calculation. It cleverly groups the months based on their number of days. By subtracting 7.5 (the midpoint between July and August), it treats the year's calendar as symmetrical. The two absolute value functions, Abs(), work together to map all months with 30 days (April, June, September, November) to the number 1, and all months with 31 days to other numbers.",
-            "zh": "呢條公式係整個計算嘅心臟。佢好巧妙咁將啲月份按日數分組。透過減 7.5（即係七月同八月之間嘅中間點），佢將成年嘅月曆當成係對稱嘅。兩個絕對值函數 Abs() 一齊運作，會將所有得 30 日嘅月份（四月、六月、九月、十一月）都變成數字 1，而將所有有 31 日嘅月份就變成其他數字。"
-          }
-        },
-        {
-          "step": 2,
-          "title": {
-            "en": "The Boolean Check",
-            "zh": "邏輯檢查"
-          },
-          "formula": "(1 = Abs(Abs([month] - 7.5) - 2.5))",
-          "explanation": {
-            "en": "This part of the code is a condition. It checks if the result from Step 1 is equal to 1. In many calculator programming languages, a 'true' condition evaluates to the number 1, and a 'false' condition evaluates to 0. Therefore, this entire expression becomes 1 if the month has 30 days, and 0 if it has 31 days.",
-            "zh": "程式碼呢個部分係一個條件判斷。佢會檢查第一步計出嚟嘅結果係咪等於 1。喺好多計數機嘅程式語言入面，一個『成立』嘅條件會得出數字 1，而一個『唔成立』嘅條件就會得出 0。所以，如果個月份係 30 日，呢條完整嘅式就會變成 1；如果係 31 日，就會變成 0。"
-          }
-        },
-        {
-          "step": 3,
-          "title": {
-            "en": "The Final Calculation",
-            "zh": "最終計算"
-          },
-          "formula": "31 - (result from Step 2)",
-          "explanation": {
-            "en": "Finally, the program subtracts the result of the boolean check (either 0 or 1) from 31. If the month has 31 days, the check is false (0), so the calculation is '31 - 0 = 31'. If the month has 30 days, the check is true (1), so the calculation is '31 - 1 = 30'. This elegantly provides the correct number of days for any month other than February.",
-            "zh": "最後，個程式會用 31 減去邏輯檢查得出嘅結果（一係 0，一係 1）。如果個月份有 31 日，邏輯檢查結果係『唔成立』（0），咁計算就係『31 - 0 = 31』。如果個月份得 30 日，邏輯檢查結果係『成立』（1），咁計算就係『31 - 1 = 30』。用呢個方法就可以好簡潔咁計到二月以外任何月份嘅正確日數。"
+            "en": "When x is 4, 6, 9 or 11, LHS equals to 1. When substituting x with months with 30 days, the statement is true.",
+            "zh": "當x是4、6、9或11時，公式等於1。當x是30天的月份時，陳述為真。"
           }
         }
       ]

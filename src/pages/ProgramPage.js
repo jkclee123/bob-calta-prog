@@ -151,60 +151,40 @@ const ProgramPage = () => {
             
             {program.analysis && program.analysis.map((analysis, index) => (
               <div key={index} className="analysis-section" id={`analysis-${index}`}>
-                <h3 className="analysis-title">{t(analysis.title)}</h3>
+                <h1 className="analysis-title">{t(analysis.title)}</h1>
                 
                 <div className="analysis-problem">
-                  <h4>{t({ en: 'Problem', zh: '問題' })}</h4>
+                  <h2>{t({ en: 'Problem', zh: '問題' })}</h2>
                   <p>{t(analysis.problem)}</p>
                 </div>
 
-                
-                  {/* <div className="analysis-code-display">
-                    <h4>{t({ en: 'Code', zh: '代碼' })}</h4>
-                    <div className="code-comparison">
-                    {analysis.actualCode && analysis.actualCode.length > 0 && (
-                      <div className="actual-code">
-                        <h5>{t({ en: 'Actual Code', zh: '實際代碼' })}</h5>
-                        <div className="code-block-container">
-                          {analysis.actualCode.map((line, lineIndex) => (
-                            <code 
-                              key={lineIndex} 
-                              className="code-block code-line"
-                              dangerouslySetInnerHTML={{ __html: formatCodeForDisplay(line) }}
-                            />
-                          ))}
-                        </div>
-                      </div>
+
+                <div className="analysis-solution">
+                  <h2>{t({ en: 'Solution', zh: '解決方法' })}</h2>
+                  <div className="analysis-graph">
+                    {analysis.image && (
+                      <img
+                        src={analysis.image}
+                        alt={t({ en: 'Analysis Image', zh: '解決方法圖表' })}
+                        className="analysis-image"
+                      />
                     )}
-                    {analysis.genericCode && analysis.genericCode.length > 0 && (
-                      <div className="generic-code">
-                        <h5>{t({ en: 'Generic Form', zh: '通用形式' })}</h5>
-                        <div className="code-block-container">
-                          {analysis.genericCode.map((line, lineIndex) => (
-                            <code 
-                              key={lineIndex} 
-                              className="code-block code-line"
-                              dangerouslySetInnerHTML={{ __html: formatCodeForDisplay(line) }}
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    </div>
-                  </div> */}
+                  </div>
+                  {analysis.solution && (
+                    <p>{t(analysis.solution)}</p>
+                  )}
+                </div>
 
                 <div className="analysis-steps">
-                  <h4>{t({ en: 'Step-by-Step Explanation', zh: '逐步解釋' })}</h4>
+                  <h2>{t({ en: 'Step-by-Step Explanation', zh: '解釋' })}</h2>
                   <div className="steps-container">
                     {analysis.steps.map((step, stepIndex) => (
                       <div key={stepIndex} className="step-card">
                         <div className="step-header">
-                          <span className="step-number">{step.step}</span>
                           <h5 className="step-title">{t(step.title)}</h5>
                         </div>
                         {step.formula && (
                           <div className="step-formula">
-                            <strong>{t({ en: 'Formula:', zh: '公式：' })}</strong> 
                             <code 
                               className="formula-code"
                               dangerouslySetInnerHTML={{ __html: formatCodeForDisplay(step.formula) }}
