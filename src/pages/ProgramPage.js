@@ -13,7 +13,10 @@ const ProgramPage = () => {
   const [activeTab, setActiveTab] = useState('code');
 
   const program = programsData[programId];
-  
+
+  // Calculate the final cumulative bytes from the program code
+  const finalCumulativeBytes = program ? program.code.reduce((total, line) => total + line.bytes, 0) : 0;
+
   // Set document title for program page
   useDocumentTitle(null, program ? program.name : { en: 'Program Not Found', zh: '找不到程式' });
 
@@ -244,7 +247,7 @@ const ProgramPage = () => {
                 {t({ en: 'Mode', zh: '模式' })}: {program.mode}
               </span>
               <span className="meta-item">
-                {t({ en: 'Bytes', zh: '字節' })}: {program.memory}
+                {t({ en: 'Bytes', zh: '字節' })}: {finalCumulativeBytes}
               </span>
             </div>
         </div>

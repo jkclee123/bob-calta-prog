@@ -96,7 +96,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .main-content {
-    padding-top: 80px;
+    padding-top: 60px;
   }
   
   .container {
@@ -106,5 +106,11 @@ body {
   .btn {
     padding: 10px 20px;
     font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding-top: 50px;
   }
 }

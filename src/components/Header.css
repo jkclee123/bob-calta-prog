@@ -43,7 +43,7 @@
 
 .logo h1 {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 800;
   margin: 0;
 }
 
@@ -62,13 +62,13 @@
 }
 
 .nav-link:hover {
-  color: var(--accent-color);
+  color: var(--text-primary);
   background-color: var(--bg-tertiary);
 }
 
 .nav-link.active {
-  color: var(--accent-color);
-  background-color: var(--accent-color-bg);
+  color: var(--text-primary);
+  background-color: var(--bg-tertiary);
 }
 
 .header-right {
@@ -99,7 +99,7 @@
   }
 
   .logo h1 {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .nav {
@@ -135,7 +135,7 @@
   }
 
   .logo h1 {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .nav {

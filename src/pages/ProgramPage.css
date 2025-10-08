@@ -28,10 +28,9 @@
 
 /* Program Header */
 .program-header {
-  background: var(--bg-secondary) var(--program-bg-image, none);
+  background: var(--program-bg-image, none);
   background-size: cover;
   background-position: center;
-  background-blend-mode: overlay;
   color: white;
   padding: 32px;
   border-radius: 12px;
@@ -49,7 +48,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0.6);
   border-radius: 12px;
   z-index: 1;
 }
@@ -94,17 +93,19 @@
   padding-top: 4px;
   position: relative;
   z-index: 2;
+  font-size: 0.85rem;
+  font-weight: 400;
 }
 
 .meta-item {
-  font-size: 0.8rem;
-  font-weight: 400;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   transition: color 0.3s ease;
 }
 
 /* Program Description */
 .program-description {
+  font-size: 1rem;
+  font-weight: 500;
   color: var(--text-secondary);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
@@ -139,15 +140,15 @@
 }
 
 .tab-button:hover {
-  background-color: var(--card-hover-bg);
+  background-color: var(--bg-quaternary);
   color: var(--text-primary);
 }
 
 .tab-button.active {
-  color: var(--accent-color);
+  color: var(--text-primary);
   border-bottom-color: var(--accent-color);
   border-width: 0.5px;
-  background-color: var(--card-bg);
+  background-color: var(--bg-quinary);
 }
 
 .tab-content {
