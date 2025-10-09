@@ -144,7 +144,6 @@
 .guide-content {
   display: flex;
   flex-direction: column;
-  gap: 40px;
 }
 
 .guide-section h3,
@@ -550,9 +549,9 @@
     padding-right: 8px;
   }
 
-  .guide-content {
+  /* .guide-content {
     gap: 24px;
-  }
+  } */
 
   .example-card {
     padding: 16px;

@@ -210,29 +210,32 @@ const ProgramPage = () => {
                   )}
                 </div>
 
-                <div className="analysis-steps">
-                  <h2>{t({ en: 'Step-by-Step Explanation', zh: '解釋' })}</h2>
-                  <div className="steps-container">
-                    {analysis.steps && Array.isArray(analysis.steps) && analysis.steps.map((step, stepIndex) => (
-                      <div key={stepIndex} className="step-card">
-                        <div className="step-header">
-                          <h5 className="step-title">{t(step.title)}</h5>
-                        </div>
-                        {step.formula && (
-                          <div className="step-formula">
-                            <code 
-                              className="formula-code"
-                              dangerouslySetInnerHTML={{ __html: formatCodeForDisplay(step.formula) }}
-                            />
+
+                {analysis.steps && Array.isArray(analysis.steps) && analysis.steps.length > 0 && (
+                  <div className="analysis-steps">
+                    <h2>{t({ en: 'Step-by-Step Explanation', zh: '解釋' })}</h2>
+                    <div className="steps-container">
+                      {analysis.steps.map((step, stepIndex) => (
+                        <div key={stepIndex} className="step-card">
+                          <div className="step-header">
+                            <h5 className="step-title">{t(step.title)}</h5>
                           </div>
-                        )}
-                        <div className="step-explanation">
-                          <p>{t(step.explanation)}</p>
+                          {step.formula && (
+                            <div className="step-formula">
+                              <code
+                                className="formula-code"
+                                dangerouslySetInnerHTML={{ __html: formatCodeForDisplay(step.formula) }}
+                              />
+                            </div>
+                          )}
+                          <div className="step-explanation">
+                            <p>{t(step.explanation)}</p>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             ))}
           </div>

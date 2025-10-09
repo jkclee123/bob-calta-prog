@@ -64,29 +64,27 @@
     "instructions": {
       "en": [
         "‼️Calibrate variable A with a clock",
-        "To reset Counter, enter 0 to Y",
-        "To set Counter to 3, enter -3 to Y",
-        "To start a timer of 60 seconds, enter 60 to Y",
-        "Counter increments during timing"
+        "Reset Counter: input 0 to Y",
+        "Set Counter to N: input -N to Y",
+        "Start a timer of 60 seconds: input 60 to Y"
       ],
       "zh": [
         "‼️用時鐘校準變數A",
-        "輸入Y為零重設記數器",
-        "輸入Y為負數將記數器設定為負Y",
-        "輸入Y為正數開始計時器計Y秒",
-        "計時過程中記數器x遞增"
+        "重設記數器：輸入Y為零",
+        "設定記數器為N：輸入Y為-N",
+        "計時K秒：輸入Y為K"
       ]
     },
     "examples": [
       {
         "title": {
-          "en": "Setting counter to 3",
+          "en": "Set counter to 3",
           "zh": "設定記數器為3"
         },
         "steps": [
           {
-            "en": "Input -3 to Y (negative value)",
-            "zh": "輸入 -3 到 Y（負值）"
+            "en": "Input -3 to Y",
+            "zh": "輸入 -3 到 Y"
           },
           {
             "en": "Counter is set to 3",
@@ -109,8 +107,8 @@
             "zh": "計時器倒數1分鐘"
           },
           {
-            "en": "Program will display when timer reaches 0",
-            "zh": "程式會重新顯示"
+            "en": "Calculator will display when timer reaches 0",
+            "zh": "當計時完畢，計算機會顯示"
           }
         ]
       }
@@ -123,29 +121,23 @@
         "zh": "空循環計時"
       },
       "problem": {
-        "en": "Design a way to time with a calculator.",
-        "zh": "設計使用計算機計時的方法。"
+        "en": "Fx-50FH II does not have a Real-Time Clock(RTC).",
+        "zh": "Fx-50FH II 沒有實時時鐘(RTC)。"
+      },
+      "solution": {
+        "en": "Empty loop is constant time work. If calculator empty loops 50 times per second, we can manipulate the number of loops to time.",
+        "zh": "空循環是恆常時間工作。如果計算機空循環50次為一秒，我們可以操縱循環次數來計時。"
       },
       "steps": [
         {
           "title": {
-            "en": "Use empty loop to time",
-            "zh": "用空循環計時"
+            "en": "Empty loop",
+            "zh": "空循環"
           },
+          "formula": "For 0→D To Y:Next",
           "explanation": {
-            "en": "Empty loop is constant work. fx-50FH II empty loops 50 times per second.",
-            "zh": "fx-50FH II空循環50次為一秒。"
-          }
-        },
-
-        {
-          "title": {
-            "en": "Calibrate variable A with a clock",
-            "zh": "校準變數A"
-          },
-          "explanation": {
-            "en": "‼️ Your calculator may not loop exactly 50 times per second. Calibrate variable A with a clock before use.",
-            "zh": "‼️ 每部計算機均有差異，使用前用時鐘校準變數A"
+            "en": "",
+            "zh": ""
           }
         }
       ]

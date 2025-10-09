@@ -119,28 +119,24 @@
   "guide": {
     "parameters": {
       "en": [
-        "X: Start date in yyyyMMdd format",
-        "Y: End date in yyyyMMdd format",
+        "X: Start date (yyyyMMdd)",
+        "Y: End date (yyyyMMdd)",
         "M: Sum of days between two dates (excluding end date)"
       ],
       "zh": [
-        "X: 開始日期，格式 yyyyMMdd",
-        "Y: 結束日期，格式 yyyyMMdd",
+        "X: 開始日期 (yyyyMMdd)",
+        "Y: 結束日期 (yyyyMMdd)",
         "M: 日期差距（不包括結束日）"
       ]
     },
     "instructions": {
       "en": [
-        "Enter start date in yyyyMMdd format",
-        "Enter end date in yyyyMMdd format",
-        "Program calculates days between dates (excluding end date)",
-        "Refer to the symbols page for input instructions."
+        "Enter start date X in format yyyyMMdd",
+        "Enter end date Y in format yyyyMMdd"
       ],
       "zh": [
-        "輸入開始日期，格式 yyyyMMdd",
-        "輸入結束日期，格式 yyyyMMdd",
-        "程式計算兩個日期之間的日數（不包括結束日）",
-        "請參考符號頁輸入說明"
+        "輸入開始日期 X，格式 yyyyMMdd",
+        "輸入結束日期 Y，格式 yyyyMMdd"
       ]
     },
     "examples": [
