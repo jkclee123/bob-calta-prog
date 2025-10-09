@@ -47,17 +47,17 @@
   "guide": {
     "parameters": {
       "en": [
-        "Y: Display timer, input command"
+        "Y: Display timer/Input command"
       ],
       "zh": [
-        "Y: 顯示計時器，輸入命令"
+        "Y: 顯示計時器/輸入命令"
       ]
     },
     "instructions": {
       "en": [
         "‼️Calibrate variable A with a clock (Empty loop per second)",
-        "Stopwatch mode: input 0 or any negative value to Y",
-        "Time N seconds: input N to Y"
+        "Stopwatch mode: Input 0 or any negative value to Y",
+        "Time N seconds: Input N to Y"
       ],
       "zh": [
         "‼️用時鐘校準變數A（每秒空循環次數）",

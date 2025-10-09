@@ -55,18 +55,18 @@
   "guide": {
     "parameters": {
       "en": [
-        "Y: Display timer and counter, input command"
+        "Y: Display timer and counter/Input command"
       ],
       "zh": [
-        "Y: 計時器及記數器顯示，輸入指令"
+        "Y: 計時器及記數器顯示/輸入指令"
       ]
     },
     "instructions": {
       "en": [
         "‼️Calibrate variable A with a clock (Empty loop per second)",
-        "Reset Counter: input 0 to Y",
-        "Set Counter to N: input -N to Y",
-        "Time N seconds: input N to Y"
+        "Reset Counter: Input 0 to Y",
+        "Set Counter to N: Input -N to Y",
+        "Time N seconds: Input N to Y"
       ],
       "zh": [
         "‼️用時鐘校準變數A（每秒空循環次數）",
