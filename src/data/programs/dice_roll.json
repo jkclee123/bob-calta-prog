@@ -95,58 +95,58 @@
         "如要重擲所有骰仔，輸入 0",
         "位置由左至右：123456789"
       ]
-    }
-  },
-  "examples": [
-    {
-      "title": {
-        "en": "Basic dice roll",
-        "zh": "擲特定骰"
-      },
-      "steps": [
-        {
-          "en": "Y displays: 23156",
-          "zh": "Y 顯示：23156"
-        },
-        {
-          "en": "Input 24 into Y",
-          "zh": "在 Y 中輸入 24"
-        },
-        {
-          "en": "Re-rolls positions 2, and 4 (dice of value 3 and 5)",
-          "zh": "重擲位置 2 和 4 (骰面值 3 和 5)"
-        },
-        {
-          "en": "Y displays: 63254 (positions 2 and 4 kept)",
-          "zh": "Y 顯示：63254 (位置 2 和 4 保持不變)"
-        }
-      ]
     },
-    {
-      "title": {
-        "en": "Re-roll all dice",
-        "zh": "重擲所有骰"
+    "examples": [
+      {
+        "title": {
+          "en": "Basic dice roll",
+          "zh": "擲特定骰"
+        },
+        "steps": [
+          {
+            "en": "Y displays: 23156",
+            "zh": "Y 顯示：23156"
+          },
+          {
+            "en": "Input 24 into Y",
+            "zh": "在 Y 中輸入 24"
+          },
+          {
+            "en": "Re-rolls positions 2, and 4 (dice of value 3 and 5)",
+            "zh": "重擲位置 2 和 4 (骰面值 3 和 5)"
+          },
+          {
+            "en": "Y displays: 63254 (positions 2 and 4 kept)",
+            "zh": "Y 顯示：63254 (位置 2 和 4 保持不變)"
+          }
+        ]
       },
-      "steps": [
-        {
-          "en": "Y displays: 23156",
-          "zh": "Y 顯示：23156"
+      {
+        "title": {
+          "en": "Re-roll all dice",
+          "zh": "重擲所有骰"
         },
-        {
-          "en": "Input 0 into Y",
-          "zh": "在 Y 中輸入 0"
-        },
-        {
-          "en": "Re-rolls all dice",
-          "zh": "重擲所有骰仔"
-        },
-        {
-          "en": "Y displays: 56241",
-          "zh": "Y 顯示：53241"
-        }
-      ]
-    }
-  ],
+        "steps": [
+          {
+            "en": "Y displays: 23156",
+            "zh": "Y 顯示：23156"
+          },
+          {
+            "en": "Input 0 into Y",
+            "zh": "在 Y 中輸入 0"
+          },
+          {
+            "en": "Re-rolls all dice",
+            "zh": "重擲所有骰仔"
+          },
+          {
+            "en": "Y displays: 56241",
+            "zh": "Y 顯示：53241"
+          }
+        ]
+      }
+    ]
+  },
   "analysis": [
     {
       "title": {

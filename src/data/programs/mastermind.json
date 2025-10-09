@@ -155,34 +155,34 @@
         "睇提示：X.Y 表示 X 個正確位置，Y 個正確數字但位置錯誤",
         "符號輸入說明，請參考符號頁。"
       ]
-    }
+    },
+    "examples": [
+      {
+        "title": {
+          "en": "4-digit game example",
+          "zh": "4位數遊戲示例"
+        },
+        "steps": [
+          {
+            "en": "Sample Secret answer: 5093",
+            "zh": "例子密碼：5093"
+          },
+          {
+            "en": "Guess: 9065 → Feedback: 1.2",
+            "zh": "猜測：9065 → 提示：1.2"
+          },
+          {
+            "en": "1.2 means 1 correct position, 2 correct digits in wrong positions",
+            "zh": "1.2 表示一個正確位置，兩個正確數字但位置錯誤"
+          },
+          {
+            "en": "In the guess 9065, 0 is correct position, 9 and 5 are correct digits in wrong positions",
+            "zh": "喺猜測9065入面 ，0係正確位置，9同5係正確數字但位置錯誤"
+          }
+        ]
+      }
+    ]
   },
-  "examples": [
-    {
-      "title": {
-        "en": "4-digit game example",
-        "zh": "4位數遊戲示例"
-      },
-      "steps": [
-        {
-          "en": "Sample Secret answer: 5093",
-          "zh": "例子密碼：5093"
-        },
-        {
-          "en": "Guess: 9065 → Feedback: 1.2",
-          "zh": "猜測：9065 → 提示：1.2"
-        },
-        {
-          "en": "1.2 means 1 correct position, 2 correct digits in wrong positions",
-          "zh": "1.2 表示一個正確位置，兩個正確數字但位置錯誤"
-        },
-        {
-          "en": "In the guess 9065, 0 is correct position, 9 and 5 are correct digits in wrong positions",
-          "zh": "喺猜測9065入面 ，0係正確位置，9同5係正確數字但位置錯誤"
-        }
-      ]
-    }
-  ],
   "analysis": [
     {
       "title": {

@@ -13,22 +13,26 @@
   "code": [
     {
       "code": "50→A:3600→B:",
-      "bytes": 12
+      "bytes": 12,
+      "comment": {
+        "en": "Set up constants",
+        "zh": "設定常數"
+      }
     },
     {
       "code": "Lbl 0:D÷AB→X:M▫+X▫→Y:?→Y:",
       "bytes": 22,
       "comment": {
-        "en": "▫ is between (-) and hyp",
-        "zh": "▫ 於 (-) 和 hyp 之間"
+        "en": "Set counter and timer ",
+        "zh": "設定記數器和計時器"
       }
     },
     {
       "code": "Y≤0⇒-Y-1→M:X⇒Y=M+X⇒X→Y:1M⁺:",
       "bytes": 26,
       "comment": {
-        "en": "Set counter",
-        "zh": "記數"
+        "en": "Increment counter",
+        "zh": "記數遞增"
       }
     },
     {
@@ -51,20 +55,10 @@
   "usage": {
     "parameters": {
       "en": [
-        "Y?: display elasped time, input command",
-        "A: loop per second (default A=50)",
-        "B: scalar to convert between decimal and sexagesimal (3600)",
-        "D: loop index",
-        "X: time in sexagesimal",
-        "M: counter value"
+        "Y: Display timer and counter, input command"
       ],
       "zh": [
-        "Y?: 顯示經過時間，輸入指令",
-        "A: 一秒循環次數 (預設A=50)",
-        "B: 十進制六十進制轉換系數 (3600)",
-        "D: 循環索引",
-        "X: 時間值 (六十進制)",
-        "M: 記數值"
+        "Y: 計時器及記數器顯示，輸入指令"
       ]
     },
     "instructions": {

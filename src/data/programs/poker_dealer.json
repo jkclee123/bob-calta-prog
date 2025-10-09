@@ -95,34 +95,34 @@
         "卡牌以[點數].[花色]格式顯示",
         "第一次用前輸入0洗牌"
       ]
-    }
+    },
+    "examples": [
+      {
+        "title": {
+          "en": "Card format examples",
+          "zh": "卡牌格式示例"
+        },
+        "steps": [
+          {
+            "en": "7.1 → Seven of Diamonds ♦️",
+            "zh": "7.1 → 階磚七♦️"
+          },
+          {
+            "en": "5.2 → Five of Clubs ♣️",
+            "zh": "5.2 → 梅花五♣️"
+          },
+          {
+            "en": "12.3 → Queen of Hearts ♥️",
+            "zh": "12.3 → 紅心女♥️"
+          },
+          {
+            "en": "1.4 → Ace of Spades ♠️",
+            "zh": "1.4 → 葵扇煙♠️"
+          }
+        ]
+      }
+    ]
   },
-  "examples": [
-    {
-      "title": {
-        "en": "Card format examples",
-        "zh": "卡牌格式示例"
-      },
-      "steps": [
-        {
-          "en": "7.1 → Seven of Diamonds ♦️",
-          "zh": "7.1 → 階磚七♦️"
-        },
-        {
-          "en": "5.2 → Five of Clubs ♣️",
-          "zh": "5.2 → 梅花五♣️"
-        },
-        {
-          "en": "12.3 → Queen of Hearts ♥️",
-          "zh": "12.3 → 紅心女♥️"
-        },
-        {
-          "en": "1.4 → Ace of Spades ♠️",
-          "zh": "1.4 → 葵扇煙♠️"
-        }
-      ]
-    }
-  ],
   "analysis": [
     {
       "title": {

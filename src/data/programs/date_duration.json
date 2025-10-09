@@ -142,30 +142,30 @@
         "程式計算兩個日期之間的日數（不包括結束日）",
         "請參考符號頁輸入說明"
       ]
-    }
+    },
+    "examples": [
+      {
+        "title": {
+          "en": "Calculate days between dates",
+          "zh": "計算日期間天數"
+        },
+        "steps": [
+          {
+            "en": "Input X = 20240415 (April 15, 2024)",
+            "zh": "輸入 X = 20240415（2024年4月15日）"
+          },
+          {
+            "en": "Input Y = 20250609 (June 9, 2025)",
+            "zh": "輸入 Y = 20250609（2025年6月9日）"
+          },
+          {
+            "en": "Result: M = 420 days",
+            "zh": "結果：M = 420日"
+          }
+        ]
+      }
+    ]
   },
-  "examples": [
-    {
-      "title": {
-        "en": "Calculate days between dates",
-        "zh": "計算日期間天數"
-      },
-      "steps": [
-        {
-          "en": "Input X = 20240415 (April 15, 2024)",
-          "zh": "輸入 X = 20240415（2024年4月15日）"
-        },
-        {
-          "en": "Input Y = 20250609 (June 9, 2025)",
-          "zh": "輸入 Y = 20250609（2025年6月9日）"
-        },
-        {
-          "en": "Result: M = 420 days",
-          "zh": "結果：M = 420日"
-        }
-      ]
-    }
-  ],
   "analysis": [
     {
       "title": {

@@ -75,54 +75,54 @@
         "▫ 喺 (-) 同 hyp 之間",
         "輸入atm: SHIFT 7 (CONST) ◀ 4"
       ]
-    }
-  },
-  "examples": [
-    {
-      "title": {
-        "en": "Using as stopwatch",
-        "zh": "使用秒錶"
-      },
-      "steps": [
-        {
-          "en": "Input 0 to Y (or any negative number)",
-          "zh": "輸入 0 到 Y（或任何負數）"
-        },
-        {
-          "en": "Stopwatch starts",
-          "zh": "秒錶開始"
-        },
-        {
-          "en": "Stop the program with \"ON\"",
-          "zh": "㩒「ON」停秒錶"
-        },
-        {
-          "en": "Goes back to the program to see the elapsed time",
-          "zh": "返入程式睇秒錶"
-        }
-      ]
     },
-    {
-      "title": {
-        "en": "Timing with timer",
-        "zh": "使用計時器"
+    "examples": [
+      {
+        "title": {
+          "en": "Using as stopwatch",
+          "zh": "使用秒錶"
+        },
+        "steps": [
+          {
+            "en": "Input 0 to Y (or any negative number)",
+            "zh": "輸入 0 到 Y（或任何負數）"
+          },
+          {
+            "en": "Stopwatch starts",
+            "zh": "秒錶開始"
+          },
+          {
+            "en": "Stop the program with \"ON\"",
+            "zh": "㩒「ON」停秒錶"
+          },
+          {
+            "en": "Goes back to the program to see the elapsed time",
+            "zh": "返入程式睇秒錶"
+          }
+        ]
       },
-      "steps": [
-        {
-          "en": "Input 60 to Y (for 1 minute)",
-          "zh": "輸入 60 到 Y（1分鐘）"
+      {
+        "title": {
+          "en": "Timing with timer",
+          "zh": "使用計時器"
         },
-        {
-          "en": "Timer counts down",
-          "zh": "計時器倒數1分鐘"
-        },
-        {
-          "en": "Program will display when timer reaches 0",
-          "zh": "夠鐘時，程式會重新顯示"
-        }
-      ]
-    }
-  ],
+        "steps": [
+          {
+            "en": "Input 60 to Y (for 1 minute)",
+            "zh": "輸入 60 到 Y（1分鐘）"
+          },
+          {
+            "en": "Timer counts down",
+            "zh": "計時器倒數1分鐘"
+          },
+          {
+            "en": "Program will display when timer reaches 0",
+            "zh": "夠鐘時，程式會重新顯示"
+          }
+        ]
+      }
+    ]
+  },
   "analysis": [
     {
       "title": {

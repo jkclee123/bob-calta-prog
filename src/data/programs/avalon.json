@@ -197,114 +197,114 @@
         "喺功能3（抽角色），GσσD代表好人陣營角色，BAD代表壞人陣營角色。69代表平民，數字代表咩角色自己定",
         "喺功能4（出任務），輸入0到D出任務成功卡，輸入1到D出任務失敗卡"
       ]
-    }
+    },
+    "examples": [
+      {
+        "title": {
+          "en": "Function 1 - Generate random number",
+          "zh": "功能1 - 打骰"
+        },
+        "steps": [
+          {
+            "en": "Input -3 to M (draw from 1 to 3)",
+            "zh": "輸入-3到M（打骰1至3）"
+          },
+          {
+            "en": "Program displays: 2 (random number)",
+            "zh": "程式顯示：2（隨機數）"
+          },
+          {
+            "en": "Returns to main menu",
+            "zh": "返回主選單"
+          }
+        ]
+      },
+      {
+        "title": {
+          "en": "Function 2 - Timer",
+          "zh": "功能2 - 計時"
+        },
+        "steps": [
+          {
+            "en": "Input 60 to M (start timer of 60 seconds)",
+            "zh": "輸入60到M（計時60秒）"
+          },
+          {
+            "en": "Timer starts",
+            "zh": "計時器開始"
+          },
+          {
+            "en": "Program will display when timer reaches 0",
+            "zh": "程式會顯示計時器到0"
+          }
+        ]
+      },
+      {
+        "title": {
+          "en": "Function 3 - Character Drawing",
+          "zh": "功能3 - 抽角色"
+        },
+        "steps": [
+          {
+            "en": "Input 0 to M (start character drawing)",
+            "zh": "輸入0到M（開始抽角色）"
+          },
+          {
+            "en": "Input 10 to A (10 players)",
+            "zh": "輸入10到A（10個玩家）"
+          },
+          {
+            "en": "Input 3 to B (3 players of evil loyalty)",
+            "zh": "輸入3到B（3個壞人陣營玩家）"
+          },
+          {
+            "en": "Input 2 to C (2 special characters of good loyalty)",
+            "zh": "輸入2到C（2個好人陣營特殊角色）"
+          },
+          {
+            "en": "Each player draw their character",
+            "zh": "每個玩家抽角色"
+          },
+          {
+            "en": "Returns to main menu",
+            "zh": "返回主選單"
+          }
+        ]
+      },
+      {
+        "title": {
+          "en": "Function 4 - Play quest card",
+          "zh": "功能4 - 出任務"
+        },
+        "steps": [
+          {
+            "en": "Input 5 to M (start playing 5 quest cards)",
+            "zh": "輸入5到M（開始出5張任務卡）"
+          },
+          {
+            "en": "Each player play their quest card",
+            "zh": "每個玩家出任務卡"
+          },
+          {
+            "en": "Input 0 to D to play quest success card",
+            "zh": "輸入0到D出任務成功卡"
+          },
+          {
+            "en": "Input 1 to D to play quest failure card",
+            "zh": "輸入1到D出任務失敗卡"
+          },
+          {
+            "en": "Program displays 1 in X, there is 1 quest failure card",
+            "zh": "程式顯示1喺X，有1張任務失敗卡"
+          },
+          {
+            "en": "Returns to main menu",
+            "zh": "返回主選單"
+          }
+        ]
+      }
+    ]
   },
-  "examples": [
-    {
-      "title": {
-        "en": "Function 1 - Generate random number",
-        "zh": "功能1 - 打骰"
-      },
-      "steps": [
-        {
-          "en": "Input -3 to M (draw from 1 to 3)",
-          "zh": "輸入-3到M（打骰1至3）"
-        },
-        {
-          "en": "Program displays: 2 (random number)",
-          "zh": "程式顯示：2（隨機數）"
-        },
-        {
-          "en": "Returns to main menu",
-          "zh": "返回主選單"
-        }
-      ]
-    },
-    {
-      "title": {
-        "en": "Function 2 - Timer",
-        "zh": "功能2 - 計時"
-      },
-      "steps": [
-        {
-          "en": "Input 60 to M (start timer of 60 seconds)",
-          "zh": "輸入60到M（計時60秒）"
-        },
-        {
-          "en": "Timer starts",
-          "zh": "計時器開始"
-        },
-        {
-          "en": "Program will display when timer reaches 0",
-          "zh": "程式會顯示計時器到0"
-        }
-      ]
-    },
-    {
-      "title": {
-        "en": "Function 3 - Character Drawing",
-        "zh": "功能3 - 抽角色"
-      },
-      "steps": [
-        {
-          "en": "Input 0 to M (start character drawing)",
-          "zh": "輸入0到M（開始抽角色）"
-        },
-        {
-          "en": "Input 10 to A (10 players)",
-          "zh": "輸入10到A（10個玩家）"
-        },
-        {
-          "en": "Input 3 to B (3 players of evil loyalty)",
-          "zh": "輸入3到B（3個壞人陣營玩家）"
-        },
-        {
-          "en": "Input 2 to C (2 special characters of good loyalty)",
-          "zh": "輸入2到C（2個好人陣營特殊角色）"
-        },
-        {
-          "en": "Each player draw their character",
-          "zh": "每個玩家抽角色"
-        },
-        {
-          "en": "Returns to main menu",
-          "zh": "返回主選單"
-        }
-      ]
-    },
-    {
-      "title": {
-        "en": "Function 4 - Play quest card",
-        "zh": "功能4 - 出任務"
-      },
-      "steps": [
-        {
-          "en": "Input 5 to M (start playing 5 quest cards)",
-          "zh": "輸入5到M（開始出5張任務卡）"
-        },
-        {
-          "en": "Each player play their quest card",
-          "zh": "每個玩家出任務卡"
-        },
-        {
-          "en": "Input 0 to D to play quest success card",
-          "zh": "輸入0到D出任務成功卡"
-        },
-        {
-          "en": "Input 1 to D to play quest failure card",
-          "zh": "輸入1到D出任務失敗卡"
-        },
-        {
-          "en": "Program displays 1 in X, there is 1 quest failure card",
-          "zh": "程式顯示1喺X，有1張任務失敗卡"
-        },
-        {
-          "en": "Returns to main menu",
-          "zh": "返回主選單"
-        }
-      ]
-    }
-  ],
   "analysis": [
     {
       "title": {
