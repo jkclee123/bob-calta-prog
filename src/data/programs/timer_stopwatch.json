@@ -2,30 +2,29 @@
   "id": "timer_stopwatch",
   "name": {
     "en": "Timer and Stopwatch",
-    "zh": "計時器加秒錶"
+    "zh": "計時器及秒錶"
   },
   "description": {
-    "en": "A dual-purpose timer that can function as both a countdown timer and a stopwatch.",
-    "zh": "雙功能計時器，可以當計時器同秒錶用。"
+    "en": "Dual function program, can function as a countdown timer and a stopwatch.",
+    "zh": "雙功能程式，可以當計時器及秒錶用。"
   },
   "image": "/images/programs/timer.png",
   "mode": "Comp",
-  "memory": 62,
   "code": [
     {
       "code": "50→A:3600→B:",
       "bytes": 12,
       "comment": {
-        "en": "Set up variables",
-        "zh": "設定變數"
+        "en": "Set up constants",
+        "zh": "設定常數"
       }
     },
     {
       "code": "Lbl 0:D÷AB▫→Y:?→Y:",
       "bytes": 15,
       "comment": {
-        "en": "Set up display",
-        "zh": "設定顯示"
+        "en": "Display timer ",
+        "zh": "顯示計時器"
       }
     },
     {
@@ -33,14 +32,14 @@
       "bytes": 24,
       "comment": {
         "en": "Set loop target",
-        "zh": "設定循環目標"
+        "zh": "設定循環次數"
       }
     },
     {
       "code": "For 0→D To Y:Next:Goto 0",
       "bytes": 11,
       "comment": {
-        "en": "Loop to time",
+        "en": "Empty loop to time",
         "zh": "空循環計時"
       }
     }
@@ -48,32 +47,22 @@
   "guide": {
     "parameters": {
       "en": [
-        "Y?: display elasped time, input command",
-        "A: loop per second (default A=50)",
-        "B: scalar to convert between decimal and sexagesimal",
-        "D: loop index"
+        "Y: Display timer, input command"
       ],
       "zh": [
-        "Y?: 顯示經過時間，輸入命令",
-        "A: 每秒循環次數 (預設A=50)",
-        "B: 十進制同六十進制之間嘅轉換係數",
-        "D: 循環指標"
+        "Y: 顯示計時器，輸入命令"
       ]
     },
     "instructions": {
       "en": [
-        "‼️Calibrate variable A with a clock",
-        "To start Stopwatch mode, enter zero or a negative value to Y",
-        "To start a timer of Y seconds, enter a positive number of seconds to Y",
-        "To input ▫, its between (-) and hyp",
-        "To input atm, SHIFT 7 (CONST) ◀ 4"
+        "‼️Calibrate variable A with a clock (Empty loop per second)",
+        "Stopwatch mode: input 0 or any negative value to Y",
+        "Time N seconds: input N to Y"
       ],
       "zh": [
-        "‼️用時鐘校準變數A",
-        "輸入Y為零或負數開始秒錶模式",
-        "輸入Y為正數開始計時器計Y秒",
-        "▫ 喺 (-) 同 hyp 之間",
-        "輸入atm: SHIFT 7 (CONST) ◀ 4"
+        "‼️用時鐘校準變數A（每秒空循環次數）",
+        "秒錶模式：輸入Y為零或負數",
+        "計時N秒：輸入Y為N"
       ]
     },
     "examples": [
@@ -84,20 +73,20 @@
         },
         "steps": [
           {
-            "en": "Input 0 to Y (or any negative number)",
-            "zh": "輸入 0 到 Y（或任何負數）"
+            "en": "Input 0 to Y",
+            "zh": "輸入 0 到 Y"
           },
           {
             "en": "Stopwatch starts",
             "zh": "秒錶開始"
           },
           {
-            "en": "Stop the program with \"ON\"",
-            "zh": "㩒「ON」停秒錶"
+            "en": "Stop the stopwatch with \"ON\"",
+            "zh": "按「ON」停止秒錶"
           },
           {
-            "en": "Goes back to the program to see the elapsed time",
-            "zh": "返入程式睇秒錶"
+            "en": "Enter program to check stopwatch elapsed time",
+            "zh": "返回程式查看秒錶"
           }
         ]
       },
@@ -116,8 +105,8 @@
             "zh": "計時器倒數1分鐘"
           },
           {
-            "en": "Program will display when timer reaches 0",
-            "zh": "夠鐘時，程式會重新顯示"
+            "en": "Calculator will display when timer reaches 0",
+            "zh": "當計時完畢，計算機會顯示"
           }
         ]
       }
@@ -129,28 +118,24 @@
         "en": "Empty loop to time",
         "zh": "空循環計時"
       },
-      "actualCode": [
-        "AY-1→Y:",
-        "For 0→D To Y:Next:"
-      ],
-      "genericCode": [
-        "[A(50)] x [seconds to time] - 1 → [target]",
-        "For 0→[_] To [target]:Next"
-      ],
       "problem": {
-        "en": "Design a way to time with a calculator.",
-        "zh": "設計一個用計算機計時嘅方法。"
+        "en": "Fx-50FH II does not have a Real-Time Clock(RTC).",
+        "zh": "Fx-50FH II 沒有實時時鐘(RTC)。"
+      },
+      "solution": {
+        "en": "Empty loop is constant time work. If calculator empty loops 50 times per second, we can manipulate the number of loops to time.",
+        "zh": "空循環是恆常時間工作。如果計算機空循環50次為一秒，我們可以操縱循環次數來計時。"
       },
       "steps": [
         {
-          "step": 1,
           "title": {
-            "en": "Use empty loop to time",
-            "zh": "用空循環計時"
+            "en": "Empty loop",
+            "zh": "空循環"
           },
+          "formula": "For 0→D To Y:Next",
           "explanation": {
-            "en": "fx-50FH II loops approximately 50 times per second. (‼️ Your calculator may not loop exactly 50 times per second. Do calibrate variable A with a clock)",
-            "zh": "fx-50FH II循環大約50次為一秒。（‼️每部計數機都有少少唔同，用之前用時鐘校準變數A）"
+            "en": "",
+            "zh": ""
           }
         }
       ]
