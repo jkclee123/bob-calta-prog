@@ -195,12 +195,17 @@
 
 .example-card {
   border: 1px solid var(--border-primary);
-  border-top: 1px solid var(--border-highlight);
   border-radius: 8px;
   padding: 20px;
-  background: linear-gradient(0deg, var(--bg-tertiary), var(--bg-quaternary));
+  background: linear-gradient(0deg, var(--bg-tertiary) 95%, var(--bg-quaternary));
   overflow: hidden;
   transition: all 0.3s ease;
+}
+
+.example-card:hover {
+  background: linear-gradient(0deg, var(--bg-quaternary), var(--bg-quinary));
+  border-top: 1px solid var(--border-highlight);
+  box-shadow: var(--shadow);
 }
 
 .example-title {
@@ -294,6 +299,7 @@
   color: var(--text-primary);
   background: linear-gradient(0deg, var(--bg-quaternary), var(--bg-quinary));
   box-shadow: var(--shadow);
+  transform: translateY(-2px);
 }
 
 .analysis-section {

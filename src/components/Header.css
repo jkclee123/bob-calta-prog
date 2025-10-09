@@ -63,12 +63,12 @@
 
 .nav-link:hover {
   color: var(--text-primary);
-  background-color: var(--bg-tertiary);
+  background-color: var(--bg-quaternary);
 }
 
 .nav-link.active {
   color: var(--accent-color);
-  background-color: var(--bg-tertiary);
+  background-color: var(--bg-quaternary);
 }
 
 .header-right {

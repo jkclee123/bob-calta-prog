@@ -32,7 +32,6 @@
 
 .code-line-card:hover {
   background: linear-gradient(0deg, var(--bg-quaternary), var(--bg-quinary));
-  transform: translateY(-2px);
 }
 
 .code-line-card:last-child {

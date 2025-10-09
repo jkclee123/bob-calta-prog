@@ -129,7 +129,6 @@
 }
 
 .symbol-card:hover {
-  transform: translateY(-2px);
   box-shadow: var(--shadow);
   border-top: 1px solid var(--border-highlight);
   background: linear-gradient(0deg, var(--bg-quaternary), var(--bg-quinary));

@@ -20,7 +20,7 @@ const CodeViewer = ({ program }) => {
 
         <div className="code-lines">
           {linesWithCumulative.map((line, index) => (
-            <div key={line.line} className={`code-line-card ${index % 2 === 0 ? 'even' : 'odd'}`}>
+            <div key={line.line} className={'code-line-card'}>
               <div className="line-content">
                 {line.comment && (
                   <div className="line-comment">

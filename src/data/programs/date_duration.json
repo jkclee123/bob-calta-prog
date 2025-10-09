@@ -189,8 +189,8 @@
           },
           "formula": "sin(45°x) = 0",
           "explanation": {
-            "en": "Sine of product of 45° and x is always 0, if x is a multiple of 4.",
-            "zh": "當K是4的倍數時，45°乘K的sine值都是零。"
+            "en": "Sine of product of 45 and x is always 0, if x is a multiple of 4.",
+            "zh": "當K是4的倍數時，45乘K的sine值都是零。"
           }
         },
         {
@@ -200,8 +200,8 @@
           },
           "formula": "sin(1.8°x) ≠ 0",
           "explanation": {
-            "en": "Sine of product of 1.8° and x is always 0, if x is a multiple of 100. When x is not a multiple of 100, its sine value is not 0.",
-            "zh": "當x不是100的倍數時，sine值不是零。"
+            "en": "Sine of product of 1.8 and x is always 0, if x is a multiple of 100. When x is not a multiple of 100, its sine value is not 0.",
+            "zh": "當x不是100的倍數時，1.8乘K的sine值不是零。"
           }
         },
         {
@@ -211,8 +211,8 @@
           },
           "formula": "sin(0.45°x) = 0",
           "explanation": {
-            "en": "Sine of product of 0.45° and x is always 0, if x is a multiple of 400.",
-            "zh": "當x是400的倍數時，0.45°乘x的sine值都是零。"
+            "en": "Sine of product of 0.45 and x is always 0, if x is a multiple of 400.",
+            "zh": "當x是400的倍數時，0.45乘x的sine值都是零。"
           }
         },
         {
