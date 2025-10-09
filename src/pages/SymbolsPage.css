@@ -126,10 +126,10 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  box-shadow: var(--shadow);
 }
 
 .symbol-card:hover {
-  box-shadow: var(--shadow);
   border-top: 1px solid var(--border-highlight);
   background: linear-gradient(0deg, var(--bg-quaternary), var(--bg-quinary));
 }

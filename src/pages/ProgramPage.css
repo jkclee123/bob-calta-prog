@@ -121,18 +121,17 @@
   font-weight: 500;
   color: var(--text-secondary);
   transition: all 0.3s ease;
+  box-shadow: var(--shadow);
 }
 
 .tab-button:hover {
   background: linear-gradient(0deg, var(--bg-tertiary), var(--bg-quaternary));
   color: var(--text-primary);
-  box-shadow: var(--shadow);
 }
 
 .tab-button.active {
   background: linear-gradient(0deg, var(--bg-tertiary), var(--bg-quaternary));
   color: var(--text-primary);
-  box-shadow: var(--shadow);
   border-bottom: 2px solid var(--accent-color);
 }
 
@@ -200,12 +199,12 @@
   background: linear-gradient(0deg, var(--bg-tertiary) 95%, var(--bg-quaternary));
   overflow: hidden;
   transition: all 0.3s ease;
+  box-shadow: var(--shadow);
 }
 
 .example-card:hover {
   background: linear-gradient(0deg, var(--bg-quaternary), var(--bg-quinary));
   border-top: 1px solid var(--border-highlight);
-  box-shadow: var(--shadow);
 }
 
 .example-title {
@@ -291,6 +290,7 @@
   transition: all 0.3s ease;
   font-weight: 500;
   position: relative;
+  box-shadow: var(--shadow);
 }
 
 .toc-link:hover,
@@ -298,7 +298,6 @@
   border-top: 1px solid var(--border-highlight);
   color: var(--text-primary);
   background: linear-gradient(0deg, var(--bg-quaternary), var(--bg-quinary));
-  box-shadow: var(--shadow);
   transform: translateY(-2px);
 }
 
@@ -377,11 +376,17 @@
 }
 
 .step-card {
-  background-color: var(--bg-quaternary);
+  background: linear-gradient(0deg, var(--bg-quaternary) 95%, var(--bg-quinary));
   border: 1px solid var(--border-primary);
   border-radius: 8px;
   padding: 20px;
   transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  box-shadow: var(--shadow);
+}
+
+.step-card:hover {
+  background: linear-gradient(0deg, var(--bg-quaternary), var(--bg-quinary));
+  border-top: 1px solid var(--border-highlight);
 }
 
 .step-header {
