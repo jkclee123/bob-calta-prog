@@ -147,11 +147,11 @@ const ProgramPage = () => {
             <div className="examples-section">
               <h3>{t({ en: 'Examples', zh: '示例' })}</h3>
               <div className="examples-grid">
-                {program.examples.map((example, index) => (
+                {program.examples && Array.isArray(program.examples) && program.examples.map((example, index) => (
                   <div key={index} className="example-card">
                     <h4 className="example-title">{t(example.title)}</h4>
                     <ol className="example-steps">
-                      {example.steps.map((step, stepIndex) => (
+                      {example.steps && Array.isArray(example.steps) && example.steps.map((step, stepIndex) => (
                         <li key={stepIndex} className="example-step">{t(step)}</li>
                       ))}
                     </ol>
@@ -182,7 +182,7 @@ const ProgramPage = () => {
               </div>
             )}
             
-            {program.analysis && program.analysis.map((analysis, index) => (
+            {program.analysis && Array.isArray(program.analysis) && program.analysis.map((analysis, index) => (
               <div key={index} className="analysis-section" id={`analysis-${index}`}>
                 <h1 className="analysis-title">{t(analysis.title)}</h1>
                 
@@ -213,7 +213,7 @@ const ProgramPage = () => {
                 <div className="analysis-steps">
                   <h2>{t({ en: 'Step-by-Step Explanation', zh: '解釋' })}</h2>
                   <div className="steps-container">
-                    {analysis.steps.map((step, stepIndex) => (
+                    {analysis.steps && Array.isArray(analysis.steps) && analysis.steps.map((step, stepIndex) => (
                       <div key={stepIndex} className="step-card">
                         <div className="step-header">
                           <h5 className="step-title">{t(step.title)}</h5>
