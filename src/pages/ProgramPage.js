@@ -147,7 +147,7 @@ const ProgramPage = () => {
             <div className="examples-section">
               <h3>{t({ en: 'Examples', zh: '示例' })}</h3>
               <div className="examples-grid">
-                {program.examples && Array.isArray(program.examples) && program.examples.map((example, index) => (
+                {program.usage.examples && Array.isArray(program.usage.examples) && program.usage.examples.map((example, index) => (
                   <div key={index} className="example-card">
                     <h4 className="example-title">{t(example.title)}</h4>
                     <ol className="example-steps">
