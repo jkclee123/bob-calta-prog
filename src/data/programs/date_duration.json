@@ -116,7 +116,7 @@
       }
     }
   ],
-  "usage": {
+  "guide": {
     "parameters": {
       "en": [
         "X: Start date in yyyyMMdd format",

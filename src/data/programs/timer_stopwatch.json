@@ -45,7 +45,7 @@
       }
     }
   ],
-  "usage": {
+  "guide": {
     "parameters": {
       "en": [
         "Y?: display elasped time, input command",

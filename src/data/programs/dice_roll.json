@@ -61,7 +61,7 @@
       }
     }
   ],
-  "usage": {
+  "guide": {
     "parameters": {
       "en": [
         "A?: Number of dice (default: 5)",

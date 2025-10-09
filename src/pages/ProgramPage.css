@@ -147,7 +147,7 @@
   gap: 40px;
 }
 
-.usage-section h3,
+.guide-section h3,
 .examples-section h3 {
   color: var(--text-primary);
   margin-bottom: 16px;

@@ -61,7 +61,7 @@
       }
     }
   ],
-  "usage": {
+  "guide": {
     "parameters": {
       "en": [
         "M?: display remaining cards, input command",

@@ -52,7 +52,7 @@
       }
     }
   ],
-  "usage": {
+  "guide": {
     "parameters": {
       "en": [
         "Y: Display timer and counter, input command"
