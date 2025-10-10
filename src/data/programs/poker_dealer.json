@@ -118,12 +118,15 @@
         "zh": "不重複抽牌"
       },
       "problem": {
-        "en": "Calculator Fx-50FH II does not have a data structures like set or map to \"memorize\" drawn cards.",
+        "en": "Calculator Fx-50FH II does not have data structures like list, set or map to \"memorize\" drawn cards.",
         "zh": "計算機 Fx-50FH II 沒有集合或映射等資料結構來「記住」已派出的牌。"
+      },
+      "solution": {
+        "en": "",
+        "zh": ""
       },
       "steps": [
         {
-          "step": 1,
           "formula": "A = 0.0000000000000, B = 0.0000000000000",
           "title": {
             "en": "The Core Idea: Use decimal points to mark drawn cards",
