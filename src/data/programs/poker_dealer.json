@@ -2,11 +2,11 @@
   "id": "poker_dealer",
   "name": {
     "en": "Poker Dealer",
-    "zh": "啤牌"
+    "zh": "啤牌機"
   },
   "description": {
     "en": "A virtual card dealer that deals poker cards.",
-    "zh": "模擬派牌機。"
+    "zh": "模擬啤牌機，每次派一隻牌。"
   },
   "image": "/images/programs/poker.png",
   "mode": "Comp",
@@ -16,7 +16,7 @@
       "code": "Lbl 0:M→D:?→M:M=0⇒Goto 9:D→M:Fix 0:",
       "bytes": 25,
       "comment": {
-        "en": "Deal card or shuffle",
+        "en": "Deal card or Shuffle deck",
         "zh": "派牌或洗牌"
       }
     },
@@ -24,16 +24,16 @@
       "code": "Lbl 1:Ran#→X:X≥.988⇒Goto 1:Rnd(10³X÷19+.5→X:",
       "bytes": 31,
       "comment": {
-        "en": "Draw card",
-        "zh": "抽牌"
+        "en": "Generate random number",
+        "zh": "生成隨機數"
       }
     },
     {
       "code": "Rnd(X÷4+.5-G→D:4(X÷4-D+1→C:A→X:C≥3⇒B→X:C-2(C≥3→Y:",
       "bytes": 46,
       "comment": {
-        "en": "Calculate card rank and suit",
-        "zh": "計算牌嘅點數同花色"
+        "en": "Calculate card's rank and suit",
+        "zh": "計算牌的點數和花色"
       }
     },
     {
@@ -41,15 +41,15 @@
       "bytes": 39,
       "comment": {
         "en": "Check if card has been drawn before",
-        "zh": "檢查牌係咪抽過"
+        "zh": "檢查牌是否抽過"
       }
     },
     {
       "code": "X+Y₁₀^(-D→X:C<3⇒X→A:C≥3⇒X→B:1M⁻:D+.1C:Norm 2◢Goto 0:",
       "bytes": 40,
       "comment": {
-        "en": "Remember card has been drawn",
-        "zh": "記住牌已經抽過"
+        "en": "Mark card as drawn",
+        "zh": "標記牌已派出"
       }
     },
     {
@@ -64,43 +64,31 @@
   "guide": {
     "parameters": {
       "en": [
-        "M?: display remaining cards, input command",
-        "A: dictionary for diamonds♦️ and clubs♣️",
-        "B: dictionary for hearts♥️ and spades♠️",
-        "C: suit",
-        "D: rank",
-        "X: temporary variable",
-        "Y: dictionary value"
+        "M: display remaining cards/Input command"
       ],
       "zh": [
-        "M?: 顯示剩餘牌數，輸入命令",
-        "A: 階磚♦️同梅花♣️嘅字典",
-        "B: 紅心♥️同葵扇♠️嘅字典",
-        "C: 花色",
-        "D: 點數",
-        "X: 暫存變數",
-        "Y: 字典值"
+        "M: 顯示剩餘牌數/輸入指令"
       ]
     },
     "instructions": {
       "en": [
-        "Input 0 to shuffle and reset deck",
-        "Input any other number to draw a card",
-        "Cards displayed as [rank].[suit] format",
-        "For first use, input 0 to shuffle and reset deck"
+        "Shuffle Deck: Input 0 to M",
+        "Draw Card: Input any other number to M",
+        "Cards displayed in [Rank].[Suit] format",
+        "Shuffle and Reset Deck for first use"
       ],
       "zh": [
-        "輸入0洗牌並重置牌組",
-        "輸入任何其他數字抽牌",
+        "洗牌：輸入0到M",
+        "派牌：輸入任何其他數字到M",
         "卡牌以[點數].[花色]格式顯示",
-        "第一次用前輸入0洗牌"
+        "第一次使用前請重置牌組"
       ]
     },
     "examples": [
       {
         "title": {
           "en": "Card format examples",
-          "zh": "卡牌格式示例"
+          "zh": "卡牌格式例子"
         },
         "steps": [
           {
@@ -127,18 +115,11 @@
     {
       "title": {
         "en": "Draw poker cards without replacement",
-        "zh": "唔重複抽牌"
+        "zh": "不重複抽牌"
       },
-      "actualCode": [
-        "A→X:C≥3⇒B→X:",
-        "C-2(C≥3→Y:",
-        "X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G:",
-        "(Ans=3)+(Ans=Y⇒Goto 1:",
-        "X+Y₁₀^(-D→X:C<3⇒X→A:C≥3⇒X→B:"
-      ],
       "problem": {
-        "en": "Design a way to draw poker cards without replacement.",
-        "zh": "設計一個不放回抽樣嘅方法"
+        "en": "Calculator Fx-50FH II does not have a data structures like set or map to \"memorize\" drawn cards.",
+        "zh": "計算機 Fx-50FH II 沒有集合或映射等資料結構來「記住」已派出的牌。"
       },
       "steps": [
         {
