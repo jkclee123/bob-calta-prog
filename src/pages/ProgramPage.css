@@ -346,8 +346,8 @@
 }
 
 .step-card {
-  background: linear-gradient(0deg, var(--bg-quaternary) 95%, var(--bg-quinary));
-  border: 1px solid var(--border-primary);
+  background: linear-gradient(0deg, var(--bg-quaternary) 90%, var(--bg-quinary));
+  border: 1px solid var(--border-secondary);
   border-top-color: var(--border-highlight);
   border-radius: 8px;
   padding: 20px;
