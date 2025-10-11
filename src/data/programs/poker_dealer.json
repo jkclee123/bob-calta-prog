@@ -40,7 +40,7 @@
       "code": "X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G:(Ans=3)+(Ans=Y⇒Goto 1:",
       "bytes": 39,
       "comment": {
-        "en": "Check if card has been drawn before",
+        "en": "Check if card has been dealt before",
         "zh": "檢查牌是否已派出"
       }
     },
@@ -48,7 +48,7 @@
       "code": "X+Y₁₀^(-D→X:C<3⇒X→A:C≥3⇒X→B:1M⁻:D+.1C:Norm 2◢Goto 0:",
       "bytes": 40,
       "comment": {
-        "en": "Mark card as drawn",
+        "en": "Mark card as dealt",
         "zh": "標記牌已派出"
       }
     },
@@ -118,95 +118,66 @@
         "zh": "不重複抽牌"
       },
       "problem": {
-        "en": "Calculator Fx-50FH II does not have data structures like list, set or map to \"memorize\" drawn cards.",
-        "zh": "計算機 Fx-50FH II 沒有集合或映射等資料結構來「記住」已派出的牌。"
+        "en": "Calculator Fx-50FH II does not have data structures like list, set or map to store dealt cards.",
+        "zh": "計算機 Fx-50FH II 沒有列表、集合或映射等資料結構來儲存已派出的牌。"
       },
       "solution": {
-        "en": "",
-        "zh": ""
+        "en": "Use decimal places to store dealt cards",
+        "zh": "用小數點位置儲存已派出的牌。"
       },
       "steps": [
         {
-          "formula": "A = 0.0000000000000, B = 0.0000000000000",
+          "formula": "0.1234567890123",
           "title": {
-            "en": "The Core Idea: Use decimal points to mark drawn cards",
-            "zh": "核心概念：用小數點做記號"
+            "en": "Store ranks by position",
+            "zh": "位置儲存點數"
           },
           "explanation": {
-            "en": "The calculator variables can store numbers with up to  15 decimal places. We use two variables, A and B, as 'ledgers'. Each decimal place, from the 1st to the 13th, represents a card rank (A, 2, 3, ..., K).",
-            "zh": "計數機嘅變數可以儲存15個小數位，我哋用兩個變數 A 同 B 做「數簿」。由第1個到第13個小數位，分別代表啤牌嘅點數（A, 2, 3, ..., K）。"
+            "en": "Each decimal place represents a rank. A is the 1st decimal place, 2 is the 2nd, and so on. Each variable can store up to 15 decimal place, which is enough for 13 ranks.",
+            "zh": "每個小數位代表一個點數。第1個小數位是A，第2個小數位是2，如此類推。每個變量可以儲存最多15個小數位，足夠記錄13個點數。"
           }
         },
         {
-          "step": 2,
-          "formula": "A→X:C≥3⇒B→X:",
+          "formula": "0.0123",
           "title": {
-            "en": "Select the Correct Ledger",
-            "zh": "揀啱要用邊本「數簿」"
+            "en": "Store suits by value",
+            "zh": "值儲存花色"
           },
           "explanation": {
-            "en": "The program first decides which ledger to check. Ledger 'A' is for Diamonds (♦️) and Clubs (♣️). Ledger 'B' is for Hearts (♥️) and Spades (♠️).",
-            "zh": "程式會先決定要查邊本數簿。數簿 'A' 係用嚟記階磚♦️同梅花♣️，數簿 'B' 就係用嚟記紅心♥️同葵扇♠️。"
+            "en": "Each decimal place stores value 0, 1, 2 or 3. 0 for none dealt, 1 for first suit dealt, 2 for second suit dealt, 3 for both suits dealt. Each decimal place can store up to 2 suits. Each variable can store up to 26 cards, 2 variables can store all 52 cards.",
+            "zh": "每個小數位儲存值為0、1、2或3。0表示未派出，1表示第一花色已派出，2表示第二花色已派出，3表示兩種花色都已派出。每個小數位可以儲存最多2種花色。每個變量可以儲存最多26張牌，2個變量可以儲存所有52張牌。"
           }
         },
         {
-          "step": 3,
-          "formula": "C-2(C≥3→Y:",
+          "formula": "var A: ♦️(1) ♣️(2), var B: ♥️(1) ♠️(2)",
           "title": {
-            "en": "Determine the Suit's Value",
-            "zh": "決定花色嘅「標記值」"
+            "en": "Suits store value",
+            "zh": "花色儲存值"
           },
           "explanation": {
-            "en": "A value 'Y' is calculated to represent the suit. For red suits (♦️, ♥️), Y becomes 1. For black suits (♣️, ♠️), Y becomes 2. This is the 'mark' we will put in our ledger.",
-            "zh": "程式會計算一個叫 'Y' 嘅值去代表花色，紅色牌（♦️, ♥️）嘅 Y 會係 1。黑色牌（♣️, ♠️）嘅 Y 會係 2，呢個就係我哋將要寫落數簿嘅「標記」。"
+            "en": "We use variables A and B to store dealt cards. A stores cards of ♦️(1) and ♣️(2), B stores cards of ♥️(1) and ♠️(2).",
+            "zh": "我們用變量A和B來儲存已派出的牌。A儲存♦️(1)和♣️(2)，B儲存♥️(1)和♠️(2)。"
           }
         },
         {
-          "step": 4,
-          "formula": "X₁₀^(D...)",
+          "formula": "([Store Value] = 3) OR ([Store Value] = [Drawn Card Store Value])",
           "title": {
-            "en": "Check the Ledger",
-            "zh": "檢查數簿"
+            "en": "Check if card has been dealt",
+            "zh": "檢查牌是否已派出"
           },
           "explanation": {
-            "en": "The code looks at the specific decimal place (D, the rank) in the chosen ledger (X). For example, to check the '7', it looks at the 7th decimal place.",
-            "zh": "呢段程式碼會喺揀好咗嘅數簿(X)入面，搵出代表點數(D)嗰個小數位。例如，如果要查「7」，佢就會睇第7個小數位嘅數值。"
+            "en": "If store value is 3 or same as drawn card store value, the card has been dealt.",
+            "zh": "如果儲存值是3，或與抽到的牌的儲存值相同，則牌已派出。"
           }
         },
         {
-          "step": 5,
-          "formula": "(Ans=3)+(Ans=Y⇒Goto 1:",
           "title": {
-            "en": "Has this card been drawn?",
-            "zh": "呢張牌係咪已經抽過？"
+            "en": "Efficient performance for limited card dealing",
+            "zh": "高效性能於有限派牌"
           },
           "explanation": {
-            "en": "It checks the value at that decimal place. If the value is the same as our suit's mark 'Y' (e.g., we drew a ♣️, Y=2, and the value is already 2), it means the card is taken. If the value is 3, it means both cards of that rank (e.g., both ♦️7 and ♣️7) are gone. In either case, it goes back (Goto 1) to draw another card.",
-            "zh": "程式會檢查嗰個小數位嘅數值。如果數值同我哋張牌嘅標記 'Y' 一樣（例如我哋抽到梅花♣️，Y=2，而嗰個位嘅數值已經係2），就代表張牌已經被抽走咗。如果數值係3，代表嗰個點數嘅兩張牌（例如階磚7♦️同梅花7♣️）都已經抽晒。無論邊種情況，程式都會返去(Goto 1)重新抽過一張。"
-          }
-        },
-        {
-          "step": 6,
-          "formula": "X+Y₁₀^(-D→X ...",
-          "title": {
-            "en": "Mark the Card as Drawn",
-            "zh": "將抽到嘅牌做個記號"
-          },
-          "explanation": {
-            "en": "If the card is available, the program adds the suit's value 'Y' to the correct decimal place in the ledger. For example, if we draw the Seven of Clubs (♣️7), it adds 2 to the 7th decimal place of ledger 'A'.",
-            "zh": "如果張牌係可以抽嘅，程式就會將代表花色嘅標記值 'Y' 加落去數簿嘅相應小數位。例如，如果抽到梅花七(♣️7)，佢就會喺數簿 'A' 嘅第7個小數位加上 2。"
-          }
-        },
-        {
-          "step": 7,
-          "formula": "A = 0.1000021000300",
-          "title": {
-            "en": "Example Ledger",
-            "zh": "數簿例子"
-          },
-          "explanation": {
-            "en": "If ledger 'A' looks like this, it means: Ace of Diamonds (♦️A, 1st decimal is 1), Six of Clubs (♣️6, 6th decimal is 2), Seven of Diamonds (♦️7, 7th decimal is 1), and both Jack of Diamonds (♦️J) and Jack of Clubs (♣️J) have been drawn (11th decimal is 3).",
-            "zh": "如果數簿 'A' 嘅數值係咁，就代表：階磚煙♦️A (第1個小數位係1) 、梅花六♣️6 (第6個小數位係2) 、階磚七♦️7 (第7個小數位係1) ，同埋階磚J♦️同梅花J♣️都已經抽咗 (第11個小數位係3)。"
+            "en": "As the program keeps dealing cards, colision rate increases, performance degrades. That said, the program is specifically optimized for use cases where only a small number of cards are dealt—such as in Texas Hold'em, where a maximum of 25 cards are dealt.",
+            "zh": "隨著程式不斷派牌，碰撞率增加，性能下降。然而，程式特別優化於少量派牌的情況——例如德州撲克，最多只會派25張牌。"
           }
         }
       ]
