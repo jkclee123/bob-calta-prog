@@ -29,7 +29,7 @@
 }
 
 .code-line-card:hover {
-  background: linear-gradient(0deg, var(--bg-tertiary), var(--bg-quinary));
+  background-color: var(--bg-quaternary);
 }
 
 .code-line-card:last-child {

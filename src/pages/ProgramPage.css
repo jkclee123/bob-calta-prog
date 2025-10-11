@@ -107,7 +107,7 @@
   flex: 1;
   padding: 16px 24px;
   border: none;
-  background: linear-gradient(0deg, var(--bg-tertiary) 80%, var(--bg-quaternary));
+  background: linear-gradient(0deg, var(--bg-tertiary) 80%, var(--bg-quinary));
   cursor: pointer;
   font-weight: 500;
   color: var(--text-secondary);
@@ -115,7 +115,7 @@
 }
 
 .tab-button:hover {
-  background: linear-gradient(0deg, var(--bg-tertiary), var(--bg-quaternary));
+  background: linear-gradient(0deg, var(--bg-tertiary), var(--bg-quinary));
   color: var(--text-primary);
 }
 

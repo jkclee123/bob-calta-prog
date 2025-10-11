@@ -285,8 +285,8 @@
             "zh": "建立「質數乘積」"
           },
           "explanation": {
-            "en": "Parse each digit from the secret code, then map them to their corresponding prime numbers, finally multiply them together to get the \"prime numbers product\".",
-            "zh": "抽取密碼所有的個別位，然後將它們對應到其相應的質數，最後將它們相乘得到「質數乘積」。"
+            "en": "Parse each digit from the secret code, map them to their corresponding prime numbers, finally multiply them together to get the \"prime numbers product\".",
+            "zh": "抽取密碼所有的個別位，對應到其相應的質數，最後將它們相乘得到「質數乘積」。"
           }
         },
         {
@@ -295,8 +295,8 @@
             "zh": "檢查數字匹配"
           },
           "explanation": {
-            "en": "Parse digits from the guess, then map them to their corresponding prime numbers, finally divide the \"prime numbers product\" by the prime numbers. If the result is a whole number, the secret code contains the digit, it is a number match.",
-            "zh": "抽取猜測所有的個別位，然後將它們對應到其相應的質數，最後將「質數乘積」除以質數。如果結果是整數，密碼包含該數字，則為數字匹配。"
+            "en": "Parse digits from the guess, map them to their corresponding prime numbers, finally divide the \"prime numbers product\" by the prime numbers. If the result is a whole number, it is a number match.",
+            "zh": "抽取猜測所有的個別位，對應到其相應的質數，最後將「質數乘積」除以質數。如果結果是整數，則為數字匹配。"
           }
         }
       ]
