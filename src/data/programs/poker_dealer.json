@@ -118,8 +118,8 @@
         "zh": "不重複抽啤牌"
       },
       "problem": {
-        "en": "Calculator Fx-50FH II does not have data structures like list, set or map to store dealt cards.",
-        "zh": "計算機 Fx-50FH II 沒有列表、集合或映射等資料結構來儲存已派出的牌。"
+        "en": "Calculator Fx-50FH II do not have data structures like list, set or map to store dealt cards.",
+        "zh": "計算機 Fx-50FH II 沒有列表、集合或映射等數據結構來儲存已派出的牌。"
       },
       "solution": {
         "en": "Use decimal places to store dealt cards",

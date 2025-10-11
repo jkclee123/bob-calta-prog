@@ -194,8 +194,8 @@ const ProgramPage = () => {
 
                 <div className="analysis-solution">
                   <h2>{t({ en: 'Solution', zh: '解決方法' })}</h2>
-                  <div className="analysis-graph">
-                    {analysis.image && (
+                  {analysis.image && (
+                    <div className="analysis-graph">
                       <img
                         src={analysis.image}
                         alt={t({ en: 'Analysis Image', zh: '解決方法圖表' })}
@@ -203,8 +203,8 @@ const ProgramPage = () => {
                         onClick={() => openImageModal(analysis.image, t({ en: 'Analysis Image', zh: '解決方法圖表' }))}
                         style={{ cursor: 'pointer' }}
                       />
-                    )}
-                  </div>
+                    </div>
+                  )}
                   {analysis.solution && (
                     <p>{t(analysis.solution)}</p>
                   )}
