@@ -117,9 +117,11 @@
 .tab-button:hover {
   background: linear-gradient(0deg, var(--bg-tertiary), var(--bg-quinary));
   color: var(--text-primary);
+  font-weight: 600;
 }
 
 .tab-button.active {
+  font-weight: 600;
   background: linear-gradient(0deg, var(--bg-tertiary), var(--bg-quaternary));
   color: var(--text-primary);
   border-bottom: 2px solid var(--accent-color);
@@ -423,7 +425,8 @@
   }
 
   .tab-button.active {
-    border-bottom-color: var(--border-secondary);
+    border-bottom-color: transparent;
+    border-top: 0.5px solid var(--border-primary);
     border-left: 2px solid var(--accent-color);
   }
 

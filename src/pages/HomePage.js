@@ -28,14 +28,12 @@ const HomePage = () => {
                 key={program.id}
                 to={`/program/${program.id}`}
                 className="program-card-link"
-                style={{ animationDelay: `${(index + 1) * 0.05}s` }}
               >
                 <div className="program-card">
                   <img
                     src={program.image}
                     alt={`${t(program.name)} preview`}
                     className="program-card-image"
-                    loading="lazy"
                   />
                   <div className="program-card-content">
                     <h3 className="program-card-title">{t(program.name)}</h3>
