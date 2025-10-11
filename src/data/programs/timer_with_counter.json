@@ -109,6 +109,10 @@
           {
             "en": "Calculator will display when timer reaches 0",
             "zh": "當計時完畢，計算機會顯示"
+          },
+          {
+            "en": "Counter incremented by 1",
+            "zh": "記數器遞增"
           }
         ]
       }
