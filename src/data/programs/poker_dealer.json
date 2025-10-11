@@ -115,7 +115,7 @@
     {
       "title": {
         "en": "Draw poker cards without replacement",
-        "zh": "不重複抽牌"
+        "zh": "不重複抽啤牌"
       },
       "problem": {
         "en": "Calculator Fx-50FH II does not have data structures like list, set or map to store dealt cards.",
