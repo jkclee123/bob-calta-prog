@@ -8,20 +8,6 @@ const Header = () => {
   const { t } = useLanguage();
   const location = useLocation();
 
-  // Save current page scroll position when navigating
-  const handleNavLinkClick = (targetPath) => {
-    const currentPath = location.pathname;
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-
-    // Save scroll position based on current page
-    if (currentPath === '/') {
-      sessionStorage.setItem('homepage-scroll-position', scrollPosition.toString());
-    } else if (currentPath === '/symbols') {
-      sessionStorage.setItem('symbols-scroll-position', scrollPosition.toString());
-    }
-    // Note: Program pages don't need scroll position saving as they always start from top
-  };
-
   // Check if current path matches any of the nav item's paths
   const isNavItemActive = (currentPath, paths) => {
     return paths.some(path => {
@@ -53,7 +39,6 @@ const Header = () => {
           <Link 
             to="/" 
             className="logo"
-            onClick={() => handleNavLinkClick('/')}
           >
             <img src="/logo.png" alt="Bob's Calta Logo" className="logo-image" />
             <h1>{t({ en: "Bob's Calta", zh: "Bob's Calta" })}</h1>
@@ -64,7 +49,6 @@ const Header = () => {
                 key={item.paths[0]}
                 to={item.paths[0]}
                 className={`nav-link ${isNavItemActive(location.pathname, item.paths) ? 'active' : ''}`}
-                onClick={() => handleNavLinkClick(item.paths[0])}
               >
                 {t(item.label)}
               </Link>

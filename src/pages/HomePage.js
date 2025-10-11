@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useDocumentTitle } from '../utils/useDocumentTitle';
@@ -10,62 +9,6 @@ const HomePage = () => {
   
   // Set document title for homepage
   useDocumentTitle("Bob's Calta");
-
-  // Restore scroll position when returning to homepage (especially for iOS)
-  useEffect(() => {
-    const savedScrollPosition = sessionStorage.getItem('homepage-scroll-position');
-    
-    if (savedScrollPosition) {
-      const scrollPosition = parseInt(savedScrollPosition, 10);
-      
-      // iOS-specific scroll restoration with multiple attempts
-      const restoreScroll = () => {
-        // Method 1: Direct scroll
-        window.scrollTo(0, scrollPosition);
-        document.body.scrollTop = scrollPosition;
-        document.documentElement.scrollTop = scrollPosition;
-        
-        // Method 2: Check if it worked and retry
-        setTimeout(() => {
-          if (Math.abs(window.scrollY - scrollPosition) > 10) {
-            window.scrollTo({
-              top: scrollPosition,
-              behavior: 'instant'
-            });
-          }
-        }, 50);
-        
-        // Method 3: Final attempt for iOS
-        setTimeout(() => {
-          if (Math.abs(window.scrollY - scrollPosition) > 10) {
-            document.documentElement.scrollTop = scrollPosition;
-            document.body.scrollTop = scrollPosition;
-          }
-        }, 150);
-      };
-
-      // Use multiple timing approaches for iOS compatibility
-      requestAnimationFrame(restoreScroll);
-      setTimeout(restoreScroll, 100);
-      setTimeout(restoreScroll, 300);
-      
-      // Clear our own saved position after restoring
-      setTimeout(() => {
-        sessionStorage.removeItem('homepage-scroll-position');
-      }, 500);
-    } else {
-      // If no saved position, start at top
-      window.scrollTo(0, 0);
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-  }, []);
-
-  // Save scroll position when clicking a program link
-  const handleProgramLinkClick = () => {
-    const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
-    sessionStorage.setItem('homepage-scroll-position', scrollPosition.toString());
-  };
 
   return (
     <div className="home-page">
@@ -85,7 +28,6 @@ const HomePage = () => {
                 key={program.id}
                 to={`/program/${program.id}`}
                 className="program-card-link"
-                onClick={handleProgramLinkClick}
                 style={{ animationDelay: `${(index + 1) * 0.05}s` }}
               >
                 <div className="program-card">

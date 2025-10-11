@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useDocumentTitle } from '../utils/useDocumentTitle';
 import symbolsData from '../data/symbols.json';
@@ -13,65 +13,6 @@ const SymbolsPage = () => {
   useDocumentTitle(null, { en: 'Symbols', zh: '符號' });
 
   const categories = symbolsData.categories;
-
-  // Manage scroll position for SymbolsPage specifically
-  useEffect(() => {
-    const savedScrollPosition = sessionStorage.getItem('symbols-scroll-position');
-    
-    if (savedScrollPosition) {
-      const scrollPosition = parseInt(savedScrollPosition, 10);
-      
-      // iOS-specific scroll restoration
-      const restoreScroll = () => {
-        window.scrollTo(0, scrollPosition);
-        document.body.scrollTop = scrollPosition;
-        document.documentElement.scrollTop = scrollPosition;
-        
-        setTimeout(() => {
-          if (Math.abs(window.scrollY - scrollPosition) > 10) {
-            window.scrollTo({
-              top: scrollPosition,
-              behavior: 'instant'
-            });
-          }
-        }, 50);
-        
-        setTimeout(() => {
-          if (Math.abs(window.scrollY - scrollPosition) > 10) {
-            document.documentElement.scrollTop = scrollPosition;
-            document.body.scrollTop = scrollPosition;
-          }
-        }, 150);
-      };
-
-      requestAnimationFrame(restoreScroll);
-      setTimeout(restoreScroll, 100);
-      setTimeout(restoreScroll, 300);
-      
-      // Clear our own saved position after restoring
-      setTimeout(() => {
-        sessionStorage.removeItem('symbols-scroll-position');
-      }, 500);
-    } else {
-      // If no saved position, start at top
-      window.scrollTo(0, 0);
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-
-    // Save scroll position when leaving the page
-    const saveScrollPosition = () => {
-      const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
-      sessionStorage.setItem('symbols-scroll-position', scrollPosition.toString());
-    };
-
-    // Save position before page unload
-    window.addEventListener('beforeunload', saveScrollPosition);
-
-    return () => {
-      window.removeEventListener('beforeunload', saveScrollPosition);
-    };
-  }, []);
 
   const filterSymbols = () => {
     let filteredSymbols = [];
