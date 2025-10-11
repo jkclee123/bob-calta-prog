@@ -176,7 +176,7 @@
   "analysis": [
     {
       "title": {
-        "en": "Parse Digit from a Number",
+        "en": "Parse Digits from a Number",
         "zh": "抽取個別位"
       },
       "problem": {
