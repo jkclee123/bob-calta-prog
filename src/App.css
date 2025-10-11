@@ -5,10 +5,13 @@
 }
 
 body {
-  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', sans-serif, 'Noto Sans Math', 'STIX Two Math', 'Cambria Math';
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-primary);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .App {
@@ -38,7 +41,6 @@ body {
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
   text-align: center;
   line-height: 1;
 }
@@ -54,10 +56,6 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .main-content {
-    padding-top: 60px;
-  }
-  
   .container {
     padding: 0 16px;
   }

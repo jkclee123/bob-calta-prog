@@ -17,7 +17,7 @@
       "bytes": 45,
       "comment": {
         "en": "Start menu - Continue or Set new game's code length",
-        "zh": "開始菜單 - 繼續上一局或設定新遊戲密碼長度"
+        "zh": "開始菜單 - 繼續遊戲或設定新遊戲密碼長度"
       }
     },
     {
@@ -125,7 +125,7 @@
         "A: Feedback: shows exact matches and number matches"
       ],
       "zh": [
-        "X: 開始菜單 - 繼續上一局遊戲或為新遊戲設定密碼長度",
+        "X: 開始菜單 - 繼續遊戲或為新遊戲設定密碼長度",
         "Y: 輸入猜測",
         "A: 提示 - 顯示完全匹配和數字匹配"
       ]
@@ -139,7 +139,7 @@
         "Read feedback: in format [J.K]. J is number of exact matches, K is number of number matches"
       ],
       "zh": [
-        "繼續上一局：在開始菜單輸入0到X",
+        "繼續遊戲：在開始菜單輸入0到X",
         "設定新遊戲密碼長度：在開始菜單輸入4-8到X",
         "猜測：在遊戲中輸入猜測到Y",
         "返回開始菜單：在遊戲中輸入任何負數到Y",
