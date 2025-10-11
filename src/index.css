@@ -5,10 +5,10 @@
 :root {
   /* Dark Theme Colors */
   --bg-primary: hsl(0, 1%, 0%);
-  --bg-secondary: hsl(0, 1%, 5%);
-  --bg-tertiary: hsl(0, 1%, 10%);
-  --bg-quaternary: hsl(0, 1%, 15%);
-  --bg-quinary: hsl(0, 1%, 20%);
+  --bg-secondary: hsl(0, 1%, 4%);
+  --bg-tertiary: hsl(0, 1%, 8%);
+  --bg-quaternary: hsl(0, 1%, 12%);
+  --bg-quinary: hsl(0, 1%, 16%);
   --text-primary: hsl(0, 0%, 95%);
   --text-secondary: hsl(0, 0%, 70%);
   --text-tertiary: hsl(0, 0%, 60%);
@@ -54,14 +54,6 @@ html {
 /* Hover animations for buttons */
 button, .btn, .tab-button {
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
-}
-
-button:hover, .btn:hover {
-  transform: translateY(-2px);
-}
-
-button:active, .btn:active {
-  transform: translateY(0);
 }
 
 /* Link hover animations */
