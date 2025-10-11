@@ -141,16 +141,15 @@
 /* Math symbol replacements for Android compatibility */
 .math-symbol {
   font-family: 'Roboto', 'Arial', sans-serif;
-  /* color: var(--accent-color); */
 }
 
 .superscript {
-  font-size: 0.7em;
+  font-size: 0.7rem;
   vertical-align: super;
 }
 
 .subscript {
-  font-size: 0.7em;
+  font-size: 0.65rem;
   vertical-align: sub;
 }
 
