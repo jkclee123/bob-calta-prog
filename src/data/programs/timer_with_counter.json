@@ -23,8 +23,8 @@
       "code": "Lbl 0:D÷AB→X:M▫+X▫→Y:?→Y:",
       "bytes": 22,
       "comment": {
-        "en": "Display counter and timer ",
-        "zh": "顯示記數器和計時器"
+        "en": "Display counter and timer, Input command",
+        "zh": "顯示記數器和計時器，輸入指令"
       }
     },
     {
@@ -55,10 +55,10 @@
   "guide": {
     "parameters": {
       "en": [
-        "Y: Display timer and counter/Input command"
+        "Y: Display timer and counter, Input command"
       ],
       "zh": [
-        "Y: 計時器及記數器顯示/輸入指令"
+        "Y: 顯示計時器及記數器，輸入指令"
       ]
     },
     "instructions": {
