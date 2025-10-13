@@ -194,6 +194,10 @@ const ProgramPage = () => {
 
                 <div className="analysis-solution">
                   <h2>{t({ en: 'Solution', zh: '解決方法' })}</h2>
+                  {analysis.solution && (
+                    <p>{t(analysis.solution)}</p>
+                  )}
+
                   {analysis.image && (
                     <div className="analysis-graph">
                       <img
@@ -204,9 +208,6 @@ const ProgramPage = () => {
                         style={{ cursor: 'pointer' }}
                       />
                     </div>
-                  )}
-                  {analysis.solution && (
-                    <p>{t(analysis.solution)}</p>
                   )}
                 </div>
 
