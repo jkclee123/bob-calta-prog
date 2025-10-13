@@ -150,8 +150,8 @@
         "zh": "生成同等概率的隨機數"
       },
       "problem": {
-        "en": "Fx-50FH II built-in random number generator ranges from 0 to 0.999, 1000 outcomes which sometimes cannot be equally divided by die size.",
-        "zh": "Fx-50FH II 內置的隨機數生成器範圍是0到0.999，1000個結果有時無法被骰子面數等分。"
+        "en": "Casio Fx-50FH II built-in random number generator ranges from 0 to 0.999, 1000 outcomes which sometimes cannot be equally divided by die size.",
+        "zh": "Casio Fx-50FH II 內置的隨機數生成器範圍是0到0.999，1000個結果有時無法被骰子面數等分。"
       },
       "solution": {
         "en": "We have to calculate which outcomes should be discarded to ensure each die size has equal probability. As seen in the graph, using die size 6 as an example. The 4 outcomes from 0.996 to 0.999 are group to 7 and should be discarded.",

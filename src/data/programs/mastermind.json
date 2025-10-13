@@ -250,8 +250,8 @@
         "zh": "檢查數字匹配"
       },
       "problem": {
-        "en": "Calculator Fx-50FH II do not have data structures like map, which can be used to look up if the secret code contains a certain digit.",
-        "zh": "計算機 Fx-50FH II 沒有映射等數據結構，用來檢查密碼是否包含某個數字。"
+        "en": "Casio Fx-50FH II do not have data structures like map, which can be used to look up if the secret code contains a certain digit.",
+        "zh": "Casio Fx-50FH II 沒有映射等數據結構，用來檢查密碼是否包含某個數字。"
       },
       "solution": {
         "en": "Check divisibility of a \"prime numbers product\" to look up whether the secret code contains a certain digit.",

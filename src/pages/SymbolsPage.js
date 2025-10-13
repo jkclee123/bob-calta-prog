@@ -40,7 +40,7 @@ const SymbolsPage = () => {
           <p className="symbols-description">
             {t({ 
               en: "Reference for symbols in Casio fx-50FH II.",
-              zh: '符號參考，包括如何輸入每個符號。'
+              zh: 'Casio fx-50FH II 符號參考。'
             })}
           </p>
         </div>

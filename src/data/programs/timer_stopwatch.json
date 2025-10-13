@@ -119,8 +119,8 @@
         "zh": "空循環計時"
       },
       "problem": {
-        "en": "Fx-50FH II does not have a Real-Time Clock(RTC).",
-        "zh": "Fx-50FH II 沒有實時時鐘(RTC)。"
+        "en": "Casio Fx-50FH II does not have a Real-Time Clock(RTC).",
+        "zh": "Casio Fx-50FH II 沒有實時時鐘(RTC)。"
       },
       "solution": {
         "en": "Empty loop is constant time work. If calculator empty loops 50 times per second, we can manipulate the number of loops to time.",
