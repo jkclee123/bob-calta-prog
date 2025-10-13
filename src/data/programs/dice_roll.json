@@ -5,8 +5,8 @@
     "zh": "骰盅"
   },
   "description": {
-    "en": "A dice rolling simulator that supports multiple dice with customizable sides. Perfect for board games and probability experiments.",
-    "zh": "骰盅模擬器，支援多粒骰子同自定面數，適合桌遊同概率實驗。"
+    "en": "A dice rolling simulator that supports customizable dice count and die size. Perfect for board games and probability experiments.",
+    "zh": "骰盅模擬器，支援自定骰子數量和面數，適合桌遊和概率實驗。"
   },
   "image": "/images/programs/dice.png",
   "mode": "Comp",
@@ -16,15 +16,15 @@
       "code": "5→A:?→A:6→B:?→B:Lbl 0:Fix 0:0→M:",
       "bytes": 26,
       "comment": {
-        "en": "Set up dice count and size",
-        "zh": "設定骰仔數量同面數"
+        "en": "Input dice count and die size",
+        "zh": "輸入骰子數量和面數"
       }
     },
     {
       "code": "123456789→Y:Rnd(Y₁₀^(A-9)-.5→Y:",
       "bytes": 25,
       "comment": {
-        "en": "Set up \"re-roll all\" command",
+        "en": "Set up \"Re-roll All\" command",
         "zh": "設定「重擲全部」指令"
       }
     },
@@ -32,8 +32,8 @@
       "code": "Lbl 5:Fix 0:While Y:Rnd(.1Y-.5→X:A-Y+10X→D:X→Y:(D<0)+(D>A-1⇒Goto 5:",
       "bytes": 49,
       "comment": {
-        "en": "Parse re-roll index",
-        "zh": "拆解重擲位置索引"
+        "en": "Retrieve re-roll position",
+        "zh": "讀取重擲位置"
       }
     },
     {

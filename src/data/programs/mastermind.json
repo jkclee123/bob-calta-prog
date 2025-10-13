@@ -32,8 +32,8 @@
       "code": "Lbl 2:X=0⇒∑x→X:1→B:For 1-C→D To 0:X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G:",
       "bytes": 49,
       "comment": {
-        "en": "Parse digits from secret code",
-        "zh": "抽取密碼個別位"
+        "en": "Retrieve digits from secret code",
+        "zh": "讀取密碼個別位"
       }
     },
     {
@@ -72,16 +72,16 @@
       "code": "Y₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G→M:",
       "bytes": 27,
       "comment": {
-        "en": "Parse digits in the guess",
-        "zh": "抽取猜測個別位"
+        "en": "Retrieve digits from guess",
+        "zh": "讀取猜測個別位"
       }
     },
     {
       "code": "X₁₀^(D:Rnd(Ans-10Rnd(.1Ans-.5+G)-.5+G:",
       "bytes": 25,
       "comment": {
-        "en": "Parse digits from secret code",
-        "zh": "抽取密碼個別位"
+        "en": "Retrieve digits from secret code",
+        "zh": "讀取密碼個別位"
       }
     },
     {
@@ -176,16 +176,16 @@
   "analysis": [
     {
       "title": {
-        "en": "Parse Digits from a Number",
-        "zh": "抽取個別位"
+        "en": "Retrieve Digits from a Number",
+        "zh": "讀取個別位"
       },
       "problem": {
         "en": "Calculator lacks a built-in function for extracting the nth digit from a number. A function needed to find exact matches and number matches.",
         "zh": "計算機沒有內置抽取數字的第n位的功能。需要這個功能來找出完全匹配和數字匹配。"
       },
       "solution": {
-        "en": "Calculator does have round function, we can shift digits and floor to parse a digit.",
-        "zh": "計算機有四捨五入功能，可以移位及向下取整來抽取個別位"
+        "en": "Calculator does have round function, we can shift digits and floor to retrieve a digit.",
+        "zh": "計算機有四捨五入功能，可以移位及向下取整來讀取個別位"
       },
       "steps": [
         {
@@ -195,8 +195,8 @@
           },
           "formula": "476128",
           "explanation": {
-            "en": "We want to parse the 3rd digit, which is 6.",
-            "zh": "我們要抽取第3位數字，即6。"
+            "en": "We want to retrieve the 3rd digit, which is 6.",
+            "zh": "我們要讀取第3位數字，即6。"
           }
         },
         {
@@ -238,8 +238,8 @@
             "zh": "檢查完全匹配"
           },
           "explanation": {
-            "en": "We parse the digits from the secret code and the guess at the same position. It is an exact match if the digits are the same.",
-            "zh": "我們抽取密碼和猜測相同位置的個別位，如果數字相同，則為完全匹配。"
+            "en": "We retrieve the digits from the secret code and the guess at the same position. It is an exact match if the digits are the same.",
+            "zh": "我們讀取密碼和猜測相同位置的個別位，如果數字相同，則為完全匹配。"
           }
         }
       ]
@@ -285,8 +285,8 @@
             "zh": "建立「質數乘積」"
           },
           "explanation": {
-            "en": "Parse each digit from the secret code, map them to their corresponding prime numbers, finally multiply them together to get the \"prime numbers product\".",
-            "zh": "抽取密碼所有的個別位，對應到其相應的質數，最後將它們相乘得到「質數乘積」。"
+            "en": "Retrieve each digit from the secret code, map them to their corresponding prime numbers, finally multiply them together to build the \"prime numbers product\".",
+            "zh": "讀取密碼所有的個別位，對應到其相應的質數，最後將它們相乘建立「質數乘積」。"
           }
         },
         {
@@ -295,8 +295,8 @@
             "zh": "檢查數字匹配"
           },
           "explanation": {
-            "en": "Parse digits from the guess, map them to their corresponding prime numbers, finally divide the \"prime numbers product\" by the prime numbers. If the result is a whole number, it is a number match.",
-            "zh": "抽取猜測所有的個別位，對應到其相應的質數，最後將「質數乘積」除以質數。如果結果是整數，則為數字匹配。"
+            "en": "Retrieve digits from the guess, map them to their corresponding prime numbers, finally divide the \"prime numbers product\" by the prime numbers. If the result is a whole number, it is a number match.",
+            "zh": "讀取猜測所有的個別位，對應到其相應的質數，最後將「質數乘積」除以質數。如果結果是整數，則為數字匹配。"
           }
         }
       ]

@@ -23,7 +23,7 @@
       "code": "Rnd(G-.5+X₁₀^(-4→A:X-A₁₀^(4→X:",
       "bytes": 21,
       "comment": {
-        "en": "Parse start date year",
+        "en": "Retrieve start date year",
         "zh": "讀取開始日期年份"
       }
     },
@@ -31,7 +31,7 @@
       "code": "Rnd(G-.5+Y₁₀^(-4→B:Y-B₁₀^(4→Y:",
       "bytes": 21,
       "comment": {
-        "en": "Parse end date year",
+        "en": "Retrieve end date year",
         "zh": "讀取結束日期年份"
       }
     },
@@ -63,7 +63,7 @@
       "code": "Rnd(.01X-.5→C:Rnd(.01Y-.5→D:M-X+Y+100(C-D→M:",
       "bytes": 38,
       "comment": {
-        "en": "Parse start date month and end date month",
+        "en": "Retrieve start date month and end date month",
         "zh": "讀取開始月份及結束月份"
       }
     },
