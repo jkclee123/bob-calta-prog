@@ -124,12 +124,12 @@
   .header-left {
     align-items: flex-start;
     width: 100%;
-    gap: 10px;
+    gap: 12px;
   }
 
   .logo-image {
-    height: 28px;
-    width: 28px;
+    height: 32px;
+    width: 32px;
   }
 
   .logo h1 {
@@ -137,11 +137,11 @@
   }
 
   .nav {
-    gap: 12px;
+    gap: 8px;
   }
 
   .nav-link {
-    padding: 4px 8px;
+    padding: 6px 8px;
     font-size: 12px;
   }
 } 
