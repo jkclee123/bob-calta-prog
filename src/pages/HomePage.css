@@ -1,35 +1,5 @@
 .home-page {
   min-height: calc(100vh - 70px);
-  padding: 40px 0;
-}
-
-.homepage-header {
-  text-align: center;
-  margin-bottom: 40px;
-  background: var(--bg-secondary);
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 2px 4px var(--shadow-light);
-  border: 1.5px solid var(--border-primary);
-}
-
-.homepage-description {
-  color: var(--text-secondary);
-}
-
-.homepage-header h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 16px;
-}
-
-.symbols-description {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
   /* Programs Section */
@@ -102,17 +72,6 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .home-page {
-    padding: 20px 0;
-  }
-
-  .homepage-header {
-    padding: 24px 20px;
-  }
-
-  .homepage-header h1 {
-    font-size: 2rem;
-  }
 
   .programs-grid {
     grid-template-columns: 1fr;
@@ -129,17 +88,6 @@
 }
 
 @media (max-width: 480px) {
-  .homepage-header {
-    padding: 20px 16px;
-  }
-
-  .homepage-header h1 {
-    font-size: 1.6rem;
-  }
-
-  .homepage-description {
-    font-size: 1rem;
-  }
 
   .program-card-content {
     padding: 14px;

@@ -35,15 +35,6 @@ const SymbolsPage = () => {
   return (
     <div className="symbols-page">
       <div className="container">
-        <div className="symbols-header">
-          <h1>{t({ en: 'Symbols  ', zh: '符號' })}</h1>
-          <p className="symbols-description">
-            {t({ 
-              en: "Reference for symbols in Casio fx-50FH II.",
-              zh: 'Casio fx-50FH II 符號參考。'
-            })}
-          </p>
-        </div>
 
         <div className="symbols-controls">
           <div className="category-filter">

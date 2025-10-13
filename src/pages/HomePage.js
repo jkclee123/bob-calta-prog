@@ -12,12 +12,6 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
-      <div className="container">
-        <div className="homepage-header">
-          <h1>{t({ en: 'Programs  ', zh: '程式' })}</h1>
-          <p className="homepage-description">{t({ en: 'Casio fx-50FH II Calculator Programs Collection by Bob.', zh: 'Casio fx-50FH II 程式集' })}</p>
-        </div>
-      </div>
 
       {/* Programs Grid */}
       <section className="programs-section">
