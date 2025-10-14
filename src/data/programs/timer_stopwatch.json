@@ -105,8 +105,8 @@
             "zh": "計時器倒數1分鐘"
           },
           {
-            "en": "Calculator will display when timer reaches 0",
-            "zh": "當計時完畢，計算機會顯示"
+            "en": "Program will display when timer reaches 0",
+            "zh": "當計時完畢，程式會重新顯示"
           }
         ]
       }

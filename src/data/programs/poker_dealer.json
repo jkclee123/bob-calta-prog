@@ -172,12 +172,12 @@
         },
         {
           "title": {
-            "en": "Efficient performance for limited card dealing",
-            "zh": "高效性能於有限派牌"
+            "en": "Performance discussion",
+            "zh": "性能討論"
           },
           "explanation": {
-            "en": "As the program keeps dealing cards, colision rate increases, performance degrades. That said, the program is specifically optimized for use cases where only a small number of cards are dealt—such as in Texas Hold'em, where a maximum of 25 cards are dealt.",
-            "zh": "隨著程式不斷派牌，碰撞率增加，性能下降。然而，程式特別優化於少量派牌的情況——例如德州撲克，最多只會派25張牌。"
+            "en": "As the program keeps dealing cards, colision rate increases, performance degrades. That said, the program is optimized for use cases where only a small number of cards are dealt—such as in Texas Hold'em, where a maximum of 25 cards are dealt.",
+            "zh": "隨著程式不斷派牌，碰撞率增加，性能下降。然而，程式優化於少量派牌的情況——例如德州撲克，最多只會派25張牌。"
           }
         }
       ]

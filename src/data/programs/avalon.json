@@ -5,8 +5,8 @@
     "zh": "阿瓦隆"
   },
   "description": {
-    "en": "Game helper for The Resistance: Avalon board game. Support functions like character drawing, timer, and playing quest cards.",
-    "zh": "阿瓦隆抵抗組織桌遊助手，功能包括抽角色、計時和出任務。"
+    "en": "Assistant program for The Resistance: Avalon board game. Functions including drawing character cards, dicussion timer, random select leader and playing quest cards.",
+    "zh": "桌遊阿瓦隆程式，功能包括抽身份牌、討論計時器、隨機選出領袖和出任務牌。"
   },
   "image": "/images/programs/avalon.png",
   "mode": "Comp",
@@ -16,15 +16,15 @@
       "code": "Lbl 0:Norm 2:60→M:?→M:",
       "bytes": 15,
       "comment": {
-        "en": "Main menu - function selection (default: 60 for timer 60 seconds)",
-        "zh": "主選單 - 功能選擇（預設：60為計時60秒）"
+        "en": "Function Selection Menu",
+        "zh": "功能選單"
       }
     },
     {
       "code": "Fix 0:M=0⇒Goto 2:M>5⇒Goto 1:M>0⇒Goto 8:",
       "bytes": 24,
       "comment": {
-        "en": "Route to different function based on input",
+        "en": "Route to different function",
         "zh": "根據輸入跳轉不同功能"
       }
     },
@@ -32,274 +32,236 @@
       "code": "-MRan#+.5◢",
       "bytes": 7,
       "comment": {
-        "en": "Function 1 - Generate random number",
-        "zh": "功能1 - 打骰"
+        "en": "Random select leader",
+        "zh": "隨機選出領袖"
       }
     },
     {
       "code": "Lbl 1:50M→M:For 1→D To M:Next:Goto 0:",
       "bytes": 21,
       "comment": {
-        "en": "Function 2 - Timer",
-        "zh": "功能2 - 計時"
+        "en": "Discussion Timer",
+        "zh": "討論計時器"
       }
     },
     {
       "code": "Lbl 2:?→A:?→B:?→C:ClrStat:0DT:Lbl 3:A-n+1→Y:",
       "bytes": 31,
       "comment": {
-        "en": "Function 3 - Character drawing",
-        "zh": "功能3 - 抽角色"
+        "en": "Draw Character Cards: Set up",
+        "zh": "抽身份牌：設定"
       }
     },
     {
       "code": "Rnd(10³Ran#÷Rnd(10³÷Y-.5)+.5→D:D>Y⇒Goto 3:",
       "bytes": 29,
       "comment": {
-        "en": "Generate random number",
-        "zh": "生成隨機數"
+        "en": "Draw Character Cards: Generate random number",
+        "zh": "抽身份牌：生成隨機數"
       }
     },
     {
       "code": "∑x→M:-1→X:",
       "bytes": 9,
       "comment": {
-        "en": "Load ledger to running ledger",
-        "zh": "載入數簿到運行數簿"
+        "en": "Draw Character Cards: Load \"Drawn Card Memory\"",
+        "zh": "抽身份牌：載入「已抽牌記憶」"
       }
     },
     {
       "code": "While D:D-(M<1→D:10(M-(M≥1→M:X+1→X:WhileEnd:",
       "bytes": 32,
       "comment": {
-        "en": "Find the actual card number",
-        "zh": "搵出實際嘅牌號"
+        "en": "Draw Character Cards: Find actual card number",
+        "zh": "抽身份牌：找出實際牌號"
       }
     },
     {
       "code": "-Y◢₁₀^(-XDT:X-B→X:",
       "bytes": 14,
       "comment": {
-        "en": "Display the remaining number of cards",
-        "zh": "顯示剩餘未抽牌數"
+        "en": "Draw Character Cards: Display number of remaining cards",
+        "zh": "抽身份牌：顯示剩餘牌數"
       }
     },
     {
       "code": "If X≥0:Then (Gσσ)⁻¹(69-(68-X)(X< C→D:GσσD◢",
       "bytes": 34,
       "comment": {
-        "en": "Display card for good loyalty",
-        "zh": "顯示好人陣營角色"
+        "en": "Draw Character Cards: Display good loyalty card",
+        "zh": "抽身份牌：顯示好人陣營角色"
       }
     },
     {
       "code": "Else -X÷BA→D:BAD◢IfEnd:",
       "bytes": 15,
       "comment": {
-        "en": "Display card for evil loyalty",
-        "zh": "顯示壞人陣營角色"
+        "en": "Draw Character Cards: Display evil loyalty card",
+        "zh": "抽身份牌：顯示壞人陣營角色"
       }
     },
     {
       "code": "Y>1⇒Goto 3:0→X:ClrStat:Goto 0:",
       "bytes": 16,
       "comment": {
-        "en": "Continue drawing cards until all cards are drawn",
-        "zh": "繼續抽牌直至抽晒牌"
+        "en": "Draw Character Cards: Continue drawing",
+        "zh": "抽身份牌：繼續抽牌"
       }
     },
     {
       "code": "Lbl 8:0→X:For -M→M To -1:",
       "bytes": 16,
       "comment": {
-        "en": "Function 4 - Play quest card",
-        "zh": "功能4 - 出任務"
+        "en": "Play Quest Cards: Set up",
+        "zh": "出任務牌：設定"
       }
     },
     {
       "code": "Lbl 9:M→D:?→D:D≠0⇒D≠1⇒Goto 9:X+D→X:Next:",
       "bytes": 30,
       "comment": {
-        "en": "Play quest card: Success/Failure",
-        "zh": "出任務：任務成功／失敗"
+        "en": "Play Quest Cards: Success/Failure",
+        "zh": "出任務牌：任務成功／失敗"
       }
     },
     {
       "code": "tFBσYZ₀◢X◢Goto 0",
       "bytes": 11,
       "comment": {
-        "en": "Display the number of failure quest cards",
-        "zh": "顯示任務失敗卡數量"
+        "en": "Play Quest Cards: Display number of failure quest cards",
+        "zh": "出任務牌：顯示任務失敗卡數量"
       }
     }
   ],
   "guide": {
     "parameters": {
       "en": [
-        "Main Menu:",
-        "- M?: function selector (default: 60 for timer 60 seconds)",
-        "Timer:",
-        "- D: loop counter",
-        "- M: timer target",
+        "Function Selection Menu:",
+        "- M: Function select variable",
         "Character Drawing:",
-        "- A: total number of players",
-        "- B: number of players of evil loyalty",
-        "- C: number of special characters of good loyalty",
-        "- D: drawn random number/temporary variable",
-        "- X: actual card number",
-        "- Y: number of remaining cards",
-        "- M: running drawn cards ledger",
-        "- ∑x: drawn cards ledger",
-        "- n: number of drawn cards + 1",
+        "- A: Number of players",
+        "- B: Number of evil loyalty characters",
+        "- C: Number of good loyalty special characters",
         "Play Quest Card:",
-        "- X: number of failure quest cards",
-        "- M: number of quest cards required",
-        "- D: quest card type"
+        "- D: Quest card type (0: success, 1: failure)",
+        "- X: Number of failure quest cards"
       ],
       "zh": [
-        "主選單：",
-        "- M?: 功能選擇（預設：60為計時60秒）",
-        "計時：",
-        "- D: 循環計數",
-        "- M: 計時目標",
-        "抽角色：",
-        "- A: 總玩家人數",
-        "- B: 壞人陣營玩家人數",
+        "功能選單：",
+        "- M: 功能選擇變數",
+        "抽身份牌：",
+        "- A: 玩家人數",
+        "- B: 壞人陣營角色人數",
         "- C: 好人陣營特殊角色人數",
-        "- D: 抽出隨機數/暫存變數",
-        "- X: 實際牌號",
-        "- Y: 剩餘未抽牌數",
-        "- M: 運行抽牌記錄",
-        "- ∑x: 抽牌記錄",
-        "- n: 抽咗牌數量 + 1",
-        "出任務：",
-        "- X: 任務失敗卡數量",
-        "- M: 任務卡數量",
-        "- D: 任務卡類型"
+        "出任務牌：",
+        "- D: 任務牌類型（0: 成功，1: 失敗）",
+        "- X: 任務失敗卡數量"
       ]
     },
     "instructions": {
       "en": [
-        "Run program, enter main menu and choose function:",
-        "To run function 1 (random number), enter negative number to M to draw from 1 to -M",
-        "To run function 2 (timer), enter positive number that is larger than 5 to M to start timer of M seconds",
-        "To run function 3 (character drawing), enter zero to M to start character drawing",
-        "To run function 4 (play quest card), enter positive number that is smaller than 5 to M to start playing M quest cards",
-        "In function 3: character drawing, GσσD represents good loyalty character, BAD represents evil loyalty character. 69 represents loyal servant, user determines which character is represented by each number",
-        "In function 4: play quest card, enter 0 to D to play quest success card, enter 1 to D to play quest failure card"
+        "Random select leader from N players: Input -N to M",
+        "Time N seconds: Input N to M",
+        "Play N quest cards: Input N to M (N less than or equal to 5)",
+        "Draw character cards: Input 0 to M"
       ],
       "zh": [
-        "運行程式，進入主選單並選擇功能：",
-        "選擇功能1（打骰），輸入負數到M以打骰1到-M",
-        "選擇功能2（計時），輸入大過5嘅正數到M以計時M秒",
-        "選擇功能3（抽角色），輸入零到M以開始抽角色",
-        "選擇功能4（出任務），輸入細過5嘅正數到M以開始出M張任務卡",
-        "喺功能3（抽角色），GσσD代表好人陣營角色，BAD代表壞人陣營角色。69代表平民，數字代表咩角色自己定",
-        "喺功能4（出任務），輸入0到D出任務成功卡，輸入1到D出任務失敗卡"
       ]
     },
     "examples": [
       {
         "title": {
-          "en": "Function 1 - Generate random number",
-          "zh": "功能1 - 打骰"
+          "en": "Function 1 - Random Select Leader",
+          "zh": "功能1 - 隨機選出領袖"
         },
         "steps": [
           {
-            "en": "Input -3 to M (draw from 1 to 3)",
-            "zh": "輸入-3到M（打骰1至3）"
+            "en": "Input -10 to M (random number from 1 to 10)",
+            "zh": "輸入-10到M（隨機數1至10）"
           },
           {
-            "en": "Program displays: 2 (random number)",
-            "zh": "程式顯示：2（隨機數）"
-          },
-          {
-            "en": "Returns to main menu",
-            "zh": "返回主選單"
+            "en": "Program displays: 7",
+            "zh": "程式顯示：7"
           }
         ]
       },
       {
         "title": {
-          "en": "Function 2 - Timer",
-          "zh": "功能2 - 計時"
+          "en": "Function 2 - Discussion Timer",
+          "zh": "功能2 - 討論計時器"
         },
         "steps": [
           {
-            "en": "Input 60 to M (start timer of 60 seconds)",
-            "zh": "輸入60到M（計時60秒）"
+            "en": "Input 60 to M",
+            "zh": "輸入60到M"
           },
           {
-            "en": "Timer starts",
-            "zh": "計時器開始"
+            "en": "Timer counts down 60 seconds",
+            "zh": "計時器倒數60秒"
           },
           {
             "en": "Program will display when timer reaches 0",
-            "zh": "程式會顯示計時器到0"
+            "zh": "當計時完畢，程式會重新顯示"
           }
         ]
       },
       {
         "title": {
-          "en": "Function 3 - Character Drawing",
-          "zh": "功能3 - 抽角色"
+          "en": "Function 3 - Play Quest Cards",
+          "zh": "功能3 - 出任務牌"
         },
         "steps": [
           {
-            "en": "Input 0 to M (start character drawing)",
-            "zh": "輸入0到M（開始抽角色）"
+            "en": "Input 5 to M (play 5 quest cards)",
+            "zh": "輸入5到M（出5張任務卡）"
+          },
+          {
+            "en": "Input 0 to D to play success card",
+            "zh": "輸入0到D出任務成功卡"
+          },
+          {
+            "en": "Input 1 to D to play failure card",
+            "zh": "輸入1到D出任務失敗卡"
+          },
+          {
+            "en": "Program displays 1 in X, there is 1 failure card played",
+            "zh": "程式顯示X為1，有1張任務失敗卡"
+          }
+        ]
+      },
+      {
+        "title": {
+          "en": "Function 4 - Draw Character Cards",
+          "zh": "功能4 - 抽身份牌"
+        },
+        "steps": [
+          {
+            "en": "Input 0 to M",
+            "zh": "輸入0到M"
           },
           {
             "en": "Input 10 to A (10 players)",
             "zh": "輸入10到A（10個玩家）"
           },
           {
-            "en": "Input 3 to B (3 players of evil loyalty)",
-            "zh": "輸入3到B（3個壞人陣營玩家）"
+            "en": "Input 3 to B (3 evil loyalty characters)",
+            "zh": "輸入3到B（3個壞人陣營角色）"
           },
           {
-            "en": "Input 2 to C (2 special characters of good loyalty)",
+            "en": "Input 2 to C (2 good loyalty special characters)",
             "zh": "輸入2到C（2個好人陣營特殊角色）"
           },
           {
-            "en": "Each player draw their character",
-            "zh": "每個玩家抽角色"
+            "en": "Program displays GσσD 1 (good loyalty character 1)",
+            "zh": "程式顯示GσσD 1（好人陣營角色1）"
           },
           {
-            "en": "Returns to main menu",
-            "zh": "返回主選單"
-          }
-        ]
-      },
-      {
-        "title": {
-          "en": "Function 4 - Play quest card",
-          "zh": "功能4 - 出任務"
-        },
-        "steps": [
-          {
-            "en": "Input 5 to M (start playing 5 quest cards)",
-            "zh": "輸入5到M（開始出5張任務卡）"
+            "en": "Program displays GσσD 69 (good loyalty ordinary villager)",
+            "zh": "程式顯示GσσD 69（好人陣營平民）"
           },
           {
-            "en": "Each player play their quest card",
-            "zh": "每個玩家出任務卡"
-          },
-          {
-            "en": "Input 0 to D to play quest success card",
-            "zh": "輸入0到D出任務成功卡"
-          },
-          {
-            "en": "Input 1 to D to play quest failure card",
-            "zh": "輸入1到D出任務失敗卡"
-          },
-          {
-            "en": "Program displays 1 in X, there is 1 quest failure card",
-            "zh": "程式顯示1喺X，有1張任務失敗卡"
-          },
-          {
-            "en": "Returns to main menu",
-            "zh": "返回主選單"
+            "en": "Program displays BAD 2 (evil loyalty character 2)",
+            "zh": "程式顯示BAD 2（壞人陣營角色2）"
           }
         ]
       }
@@ -309,71 +271,78 @@
     {
       "title": {
         "en": "Draw character cards without replacement",
-        "zh": "唔重複抽角色卡"
+        "zh": "不重複抽角色卡"
       },
       "problem": {
-        "en": "Design a way to draw character cards without replacement.",
-        "zh": "設計一個不放回抽樣嘅方法"
+        "en": "Casio Fx-50FH II do not have data structures like list, set or map to store drawn cards.",
+        "zh": "Casio Fx-50FH II 沒有列表、集合或映射等數據結構來儲存已抽出的角色牌。"
+      },
+      "solution": {
+        "en": "Use decimal places to store drawn cards",
+        "zh": "用小數點位置儲存已抽出的牌。"
       },
       "steps": [
         {
           "title": {
-            "en": "Deciding Which Available Card to Pick",
-            "zh": "決定要抽第幾張「剩低嘅牌」"
+            "en": "Example: 10 players",
+            "zh": "例子：10個玩家"
           },
           "explanation": {
-            "en": "First, the program doesn't pick a final card number directly. Instead, it determines how many cards are left to be drawn (`Y`). Then, it generates a random number `D` from 1 to `Y`. This number `D` represents the target, for instance, \"pick the 3rd available card\".",
-            "zh": "首先，程式唔係直接抽一個牌嘅號碼。佢會先計下仲有幾多張牌未抽（`Y`），然後喺 1 同 `Y` 之間整個隨機數 `D` 出嚟。呢個 `D` 就係目標，例如話「我要抽剩低啲牌入面嘅第 3 張」"
+            "en": "We first get a random number from 1 to 10, for example 3.",
+            "zh": "我們首先從1到10獲得一個隨機數，例如3。"
+          }
+        },
+        {
+          "formula": "0.0010000000",
+          "title": {
+            "en": "The nth 0 in \"Drawn Card Memory\"",
+            "zh": "「已抽牌記憶」的第n個0"
+          },
+          "explanation": {
+            "en": "The 3rd 0 in \"Drawn Card Memory\" is in the 3rd decimal place, so the card number is 3. Update the 3rd 0 to 1.",
+            "zh": "「已抽牌記憶」的第3個0在第3個小數位，所以牌號是3。更新第3個小數位為1。"
           }
         },
         {
           "title": {
-            "en": "Using a \"Digital Ledger\" to Remember Drawn Cards",
-            "zh": "用「電子數簿」記低抽咗嘅牌"
+            "en": "Second run",
+            "zh": "第二次抽牌"
           },
           "explanation": {
-            "en": "The core of this program is a \"digital ledger\" (`∑x`). It uses decimal places as flags. If card #3 is drawn, it adds 10^(-3) (0.001) to the ledger. If card #7 is drawn next, it adds 10^(-7), making the ledger 0.0010001. By checking which decimal places have a '1', the program knows which cards are unavailable. The `₁₀^(-X) DT` command is what adds this \"flag\" to the ledger after a card `X` is successfully drawn.",
-            "zh": "呢個程式嘅核心係一本「電子數簿」（`∑x`），佢用小數點後嘅位嚟做標記。如果抽中咗 3 號牌，佢就將 10^(-3)（即係 0.001）加入數簿。如果下次抽中 7 號，就再加 10^(-7)，本數簿就會變成 0.0010001。只要睇下邊個小數位係「1」，程式就知道邊張牌已經冇咗。`₁₀^(-X) DT` 呢個指令就係喺抽完一張牌 `X` 之後，將呢個「標記」加入數簿嘅動作。"
+            "en": "In second run, we get a random number from 1 to 9, because there are 9 zeros left. For example we get4.",
+            "zh": "在第二次抽牌時，我們從1到9獲得一個隨機數，因為還有9個零，例如我們得到4。"
+          }
+        },
+        {
+          "formula": "0.0010100000",
+          "title": {
+            "en": "The nth 0 in \"Drawn Card Memory\"",
+            "zh": "「已抽牌記憶」的第n個0"
+          },
+          "explanation": {
+            "en": "Now the 4th 0 in \"Drawn Card Memory\" is actually in position 5, so the card number is 5. Update the 5th 0 to 1.",
+            "zh": "「已抽牌記憶」的第4個0實際上是第5個小數位，所以牌號是5。更新第5個小數位為1。"
           }
         },
         {
           "title": {
-            "en": "The Countdown Logic",
-            "zh": "倒數嘅邏輯"
+            "en": "Last run",
+            "zh": "最後一次抽牌"
           },
+          "formula": "0.1111110111",
           "explanation": {
-            "en": "This loop finds the Dth card that is not drawn. Inside the loop, the code `D-(M<1)→D` checks if the current card is available. The condition `M<1` is only true (evaluates to 1) if the card's 'flag' in the ledger is 0. If it's true, `D` is decreased by 1. In simple terms: 'If the card is free, count down D by one.'",
-            "zh": "呢個迴圈會搵出第 D 張未被抽嘅牌。喺迴圈入面，`D-(M<1)→D` 呢句會檢查而家張牌係咪抽過，只有當張牌喺數簿嘅「標記」係0，`M<1` 先會成立。如果成立，`D` 就會減1。簡單嚟講就係：「如果張牌未被人抽，就將 `D` 倒數一格。」"
+            "en": "Thus, the last random number must be 1, which is the 1st 0, in this example in the 7th decimal place, so the card number is 7",
+            "zh": "如此類推，最後的隨機數必為1，即第1個零，在這例子中在第7個小數位，所以牌號是7。"
           }
         },
         {
           "title": {
-            "en": "Reading the \"Digital Ledger\"",
-            "zh": "查閱「電子數簿」"
+            "en": "Performance discussion",
+            "zh": "性能討論"
           },
           "explanation": {
-            "en": "How does the program check the next card in the next loop? This is handled by `10(M-(M≥1))→M`. This command modifies the running ledger `M` for the next check. It effectively shifts the decimal point one place to the right, so in the next pass of the loop, it will be inspecting the *next* card's availability flag. Think of it as turning the page of the ledger to get ready to read the next entry.",
-            "zh": "程式點樣喺下一次迴圈檢查下一張牌呢？就係靠 `10(M-(M≥1))→M` 呢句。呢個技巧會改動緊運行中嘅數簿 `M`，為下一次檢查做準備。佢嘅效果等於將小數點向右移一個位，咁樣喺下一次迴圈，程式就會檢查到*下一張牌*嘅狀態。你可以當佢係揭開數簿嘅新一頁，準備讀下一個記錄。"
-          }
-        },
-        {
-          "title": {
-            "en": "Checking Cards",
-            "zh": "檢查卡牌同結束迴圈"
-          },
-          "explanation": {
-            "en": "The `X+1→X` part simply increments the actual card number, it means the Xth card. The `WhileEnd` marks the end of a single check. The entire process (checking the ledger, counting down `D` if needed, and moving to the next card `X`) repeats until `D` finally becomes zero. At that moment, the loop stops, and the current value of `X` is our randomly selected card.",
-            "zh": "`X+1→X`搵出實際號碼，即係第X張牌。`WhileEnd` 標記住一次檢查嘅結束。成個過程（查數簿、喺需要時將 `D` 減一、然後移到下一張牌 `X`）會不斷重複，直到 `D` 最終變成零為止。喺嗰一刻，迴圈就會停止，而當時 `X` 嘅數值，就係我哋隨機抽中嘅牌。"
-          }
-        },
-        {
-          "title": {
-            "en": "Repeat Until All Cards are Drawn",
-            "zh": "重複直至抽晒所有牌"
-          },
-          "explanation": {
-            "en": "Finally, the command `Y>1⇒Goto 3:` checks if there is more than one card left to be drawn. If true, the program loops back to the beginning (`Lbl 3`) to draw the next card, using the updated digital ledger to ensure no card is ever drawn twice.",
-            "zh": "最後，`Y>1⇒Goto 3:` 呢句指令會檢查係咪仲有多過一張牌未抽。如果係，程式就會跳返去開頭（`Lbl 3`）抽下一張牌，而因為本電子數簿已經更新咗，所以可以確保唔會重複抽到同一張牌。"
+            "en": "Unlike the implementation in Poker Dealer, this implementation does not incur colision, providing a more consistent performance.",
+            "zh": "有別於啤牌機，這個方法不會發生出現隨機數碰撞，能提供更穩定的性能。"
           }
         }
       ]
