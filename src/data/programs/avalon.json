@@ -166,10 +166,10 @@
         "Draw character cards: input 0 to M"
       ],
       "zh": [
-        "隨機選出K個玩家領袖：輸入-K到M",
-        "計時K秒：輸入K到M",
-        "出K張任務牌：輸入K到M（K小於或等於5）",
-        "抽角色牌：輸入0到M"
+        "隨機選出K個玩家領袖：M輸入-K",
+        "計時K秒：M輸入K",
+        "出K張任務牌：M輸入K（K小於或等於5）",
+        "抽角色牌：M輸入0"
       ]
     },
     "examples": [
@@ -217,15 +217,15 @@
         "steps": [
           {
             "en": "Input 5 to M (play 5 quest cards)",
-            "zh": "輸入5到M（出5張任務牌）"
+            "zh": "M輸入5（出5張任務牌）"
           },
           {
             "en": "Input 0 to D to play success card",
-            "zh": "輸入0到D出任務成功牌"
+            "zh": "D輸入0出任務成功牌"
           },
           {
             "en": "Input 1 to D to play failure card",
-            "zh": "輸入1到D出任務失敗牌"
+            "zh": "D輸入1出任務失敗牌"
           },
           {
             "en": "Program displays 1 in X, there is 1 failure card played",
@@ -241,19 +241,19 @@
         "steps": [
           {
             "en": "Input 0 to M",
-            "zh": "輸入0到M"
+            "zh": "M輸入0"
           },
           {
             "en": "Input 10 to A (10 players)",
-            "zh": "輸入10到A（10個玩家）"
+            "zh": "A輸入10（10個玩家）"
           },
           {
             "en": "Input 3 to B (3 evil loyalty characters)",
-            "zh": "輸入3到B（3個壞人陣營角色）"
+            "zh": "B輸入3（3個壞人陣營角色）"
           },
           {
             "en": "Input 2 to C (2 good loyalty special characters)",
-            "zh": "輸入2到C（2個好人陣營特殊角色）"
+            "zh": "C輸入2（2個好人陣營特殊角色）"
           },
           {
             "en": "Program displays GσσD 1 (good loyalty character 1)",
