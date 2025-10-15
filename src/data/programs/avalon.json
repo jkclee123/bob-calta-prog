@@ -6,7 +6,7 @@
   },
   "description": {
     "en": "Assistant program for The Resistance: Avalon board game. Functions include drawing character cards, a discussion timer, randomly selecting a leader, and playing quest cards.",
-    "zh": "桌遊阿瓦隆程式，功能包括抽身份牌、討論計時器、隨機選出領袖和出任務牌。"
+    "zh": "桌遊阿瓦隆程式，功能包括抽角色牌、討論計時器、隨機選出領袖和出任務牌。"
   },
   "image": "/images/programs/avalon.png",
   "mode": "Comp",
@@ -49,7 +49,7 @@
       "bytes": 31,
       "comment": {
         "en": "Draw Character Cards: Set up",
-        "zh": "抽身份牌：設定"
+        "zh": "抽角色牌：設定"
       }
     },
     {
@@ -57,7 +57,7 @@
       "bytes": 29,
       "comment": {
         "en": "Draw Character Cards: Generate random number",
-        "zh": "抽身份牌：生成隨機數"
+        "zh": "抽角色牌：生成隨機數"
       }
     },
     {
@@ -65,7 +65,7 @@
       "bytes": 9,
       "comment": {
         "en": "Draw Character Cards: Load \"Drawn Card Memory\"",
-        "zh": "抽身份牌：載入「已抽牌記憶」"
+        "zh": "抽角色牌：載入「已抽牌記憶」"
       }
     },
     {
@@ -73,7 +73,7 @@
       "bytes": 32,
       "comment": {
         "en": "Draw Character Cards: Find actual card number",
-        "zh": "抽身份牌：找出實際牌號"
+        "zh": "抽角色牌：找出實際牌號"
       }
     },
     {
@@ -81,7 +81,7 @@
       "bytes": 14,
       "comment": {
         "en": "Draw Character Cards: Display number of remaining cards",
-        "zh": "抽身份牌：顯示剩餘牌數"
+        "zh": "抽角色牌：顯示剩餘牌數"
       }
     },
     {
@@ -89,7 +89,7 @@
       "bytes": 34,
       "comment": {
         "en": "Draw Character Cards: Display good loyalty card",
-        "zh": "抽身份牌：顯示好人陣營角色"
+        "zh": "抽角色牌：顯示好人陣營角色"
       }
     },
     {
@@ -97,15 +97,15 @@
       "bytes": 15,
       "comment": {
         "en": "Draw Character Cards: Display evil loyalty card",
-        "zh": "抽身份牌：顯示壞人陣營角色"
+        "zh": "抽角色牌：顯示壞人陣營角色"
       }
     },
     {
       "code": "Y>1⇒Goto 3:0→X:ClrStat:Goto 0:",
       "bytes": 16,
       "comment": {
-        "en": "Draw Character Cards: Continue drawing",
-        "zh": "抽身份牌：繼續抽牌"
+        "en": "Draw Character Cards: End",
+        "zh": "抽角色牌：結束"
       }
     },
     {
@@ -148,8 +148,8 @@
       ],
       "zh": [
         "功能選單：",
-        "- M: 功能選擇變數",
-        "抽身份牌：",
+        "- M: 功能選擇",
+        "抽角色牌：",
         "- A: 玩家人數",
         "- B: 壞人陣營角色人數",
         "- C: 好人陣營特殊角色人數",
@@ -236,7 +236,7 @@
       {
         "title": {
           "en": "Function 4 - Draw Character Cards",
-          "zh": "功能4 - 抽身份牌"
+          "zh": "功能4 - 抽角色牌"
         },
         "steps": [
           {
