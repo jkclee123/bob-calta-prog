@@ -5,7 +5,7 @@
     "zh": "日期差距"
   },
   "description": {
-    "en": "Calculate the number of days between two dates (excluding end date).",
+    "en": "Calculate the number of days between two dates (excluding the end date).",
     "zh": "計算兩個日期之間的日數（不包括結束日）。"
   },
   "image": "/images/programs/date_duration.png",
@@ -71,7 +71,7 @@
       "code": "∑x→X:∑y→Y:",
       "bytes": 8,
       "comment": {
-        "en": "Load start date and end date back to input",
+        "en": "Load start date and end date to input",
         "zh": "載入開始日期及結束日期到輸入"
       }
     },
@@ -169,8 +169,8 @@
         "zh": "檢查閏年"
       },
       "problem": {
-        "en": "A leap year occurs when a year is divisible by 4, with the exception that years divisible by 100 are not leap years unless they are also divisible by 400. Casio FX-50FH II does not have a modulo operator, it cannot effciently check for divisibility by 4, 100, and 400.",
-        "zh": "閏年是指可以被4整除，但不可以被100整除，除非可以被400整除嘅年份。Casio FX-50FH II 沒有模運算，無法有效地檢查4、100和400的整除性。"
+        "en": "A leap year occurs when a year is divisible by 4, with the exception that years divisible by 100 are not leap years unless they are also divisible by 400. Casio Fx-50FH II does not have a modulo operator, it cannot efficiently check for divisibility by 4, 100, and 400.",
+        "zh": "閏年是指可以被4整除，但不可以被100整除，除非可以被400整除嘅年份。Casio Fx-50FH II 沒有模運算，無法有效地檢查4、100和400的整除性。"
       },
       "solution": {
         "en": "Use sine functions instead of modulo operator. As seen in the graph, the blue statement is true when x is a multiple of 4, the red statement is true when x is a multiple of 100, the green statement is true when x is a multiple of 400.",
@@ -185,8 +185,8 @@
           },
           "formula": "sin(45°x) = 0",
           "explanation": {
-            "en": "Sine of product of 45 and x is always 0, if x is a multiple of 4.",
-            "zh": "當K是4的倍數時，45乘K的sine值都是零。"
+            "en": "sin(45x) = 0 when x is a multiple of 4.",
+            "zh": "當x是4的倍數時，sin(45x) = 0。"
           }
         },
         {
@@ -196,8 +196,8 @@
           },
           "formula": "sin(1.8°x) ≠ 0",
           "explanation": {
-            "en": "Sine of product of 1.8 and x is always 0, if x is a multiple of 100. When x is not a multiple of 100, its sine value is not 0.",
-            "zh": "當x不是100的倍數時，1.8乘K的sine值不是零。"
+            "en": "sin(1.8x) ≠ 0 when x is a not multiple of 100.",
+            "zh": "當x不是100的倍數時，sin(1.8x) ≠ 0。"
           }
         },
         {
@@ -207,8 +207,8 @@
           },
           "formula": "sin(0.45°x) = 0",
           "explanation": {
-            "en": "Sine of product of 0.45 and x is always 0, if x is a multiple of 400.",
-            "zh": "當x是400的倍數時，0.45乘x的sine值都是零。"
+            "en": "sin(0.45x) = 0 when x is a multiple of 400.",
+            "zh": "當x是400的倍數時，sin(0.45x) = 0。"
           }
         },
         {
@@ -257,7 +257,7 @@
           },
           "formula": "||x - 7.5|-2.5| = 1",
           "explanation": {
-            "en": "When x is 4, 6, 9 or 11, LHS equals to 1. When substituting x with months with 30 days, the statement is true.",
+            "en": "When x is 4, 6, 9 or 11, LHS equals 1. When substituting x with months with 30 days, the statement is true.",
             "zh": "當x是4、6、9或11時，公式等於1。當x是30天的月份時，語句為真。"
           }
         }

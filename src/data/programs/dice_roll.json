@@ -5,7 +5,7 @@
     "zh": "骰盅"
   },
   "description": {
-    "en": "A dice rolling simulator that supports customizable dice count and die size. Perfect for board games and probability experiments.",
+    "en": "A dice rolling simulator that supports customizable dice count and die size, used for board games and probability experiments.",
     "zh": "骰盅模擬器，支援自定骰子數量和面數，適合桌遊和概率實驗。"
   },
   "image": "/images/programs/dice.png",
@@ -56,7 +56,7 @@
       "code": "Lbl 9:Norm 2:M→Y:?→Y:(Y<0)+(Y=M⇒Goto 9:Y=0⇒Goto 0:Goto 5",
       "bytes": 37,
       "comment": {
-        "en": "Display current dice, Input command",
+        "en": "Display current dice, command input",
         "zh": "顯示所有骰子，輸入指令"
       }
     }
@@ -66,7 +66,7 @@
       "en": [
         "A: Dice count (default: 5)",
         "B: Die size (default: 6)",
-        "Y: Display current dice, Input command"
+        "Y: Display current dice, command input"
       ],
       "zh": [
         "A: 骰子數量 (預設: 5粒)",
@@ -76,12 +76,12 @@
     },
     "instructions": {
       "en": [
-        "Set dice count to N: Input N to A",
-        "Set die size to M: Input M to B",
+        "Set dice count to N: input N to A",
+        "Set die size to M: input M to B",
         "All current dice are displayed in Y",
-        "Re-roll specific dice: Input positions to Y",
-        "Re-roll all dice: Enter 0 to Y",
-        "Positions are ordered from left to right: 123456789"
+        "Re-roll specific dice: input positions to Y",
+        "Re-roll all dice: input 0 to Y",
+        "Positions are ordered from left to right: 1 2 3 4 5 6 7 8 9"
       ],
       "zh": [
         "設置骰子數量為N：輸入N到A",
@@ -150,11 +150,11 @@
         "zh": "生成同等概率的隨機數"
       },
       "problem": {
-        "en": "Casio Fx-50FH II built-in random number generator ranges from 0 to 0.999, 1000 outcomes which sometimes cannot be equally divided by die size.",
+        "en": "The built-in random number generator outputs values from 0 to 0.999 (1000 discrete outcomes), which sometimes cannot be evenly divided by the die size.",
         "zh": "Casio Fx-50FH II 內置的隨機數生成器範圍是0到0.999，1000個結果有時無法被骰子面數等分。"
       },
       "solution": {
-        "en": "We have to calculate which outcomes should be discarded to ensure each die size has equal probability. As seen in the graph, using die size 6 as an example. The 4 outcomes from 0.996 to 0.999 are group to 7 and should be discarded.",
+        "en": "We have to calculate which outcomes should be discarded to ensure each die size has equal probability. As seen in the graph, using die size 6 as an example. The 4 outcomes from 0.996 to 0.999 are grouped into 7 and should be discarded.",
         "zh": "我們要計算哪些結果應該被丟棄，以確保每個骰子面數都有相等的概率。圖中，以骰子面數6為例，0.996到0.999的4個結果被分組到7，應該被丟棄。"
       },
       "image": "/images/analysis/equal_probi_draw.png",

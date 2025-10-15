@@ -6,40 +6,44 @@ A React web application showcasing a collection of calculator programs for the *
 
 - **Interactive Program Browser**: Browse through a collection of calculator programs with detailed documentation
 - **Multilingual Support**: Full English and Traditional Chinese language support
-- **Dark Theme**: Dark theme is used across the app for comfortable viewing
 - **Responsive Design**: Optimized for both desktop and mobile devices
 - **Detailed Code Analysis**: In-depth explanations of programming techniques and algorithms
 - **Symbol Reference**: Comprehensive guide to Casio fx-50FH II programming symbols
 
 ## 📱 Programs Included
 
-- **🎲 Dice Roll**: Multi-dice simulator with customizable sides and selective re-rolling
-- **🧩 Mastermind**: Classic code-breaking game implementation
+- **⚔️ Avalon**: Assistant for The Resistance: Avalon
 - **📅 Date Duration**: Calculate duration between dates
-- **⏱️ Timer & Stopwatch**: Timing utilities with counter functionality
-- **🃏 Poker Dealer**: Card dealing simulation for poker games
-- **⚔️ Avalon**: Game mechanics for The Resistance: Avalon
+- **🎲 Dice Roll**: Multi-dice simulator with selective re-rolls
+- **🧩 Mastermind**: Classic code-breaking game
+- **🃏 Poker Dealer**: Poker Card dealing simulation
+- **⏱️ Timer & Stopwatch**: Timing utilities
+- **⏱️ Timer with Counter**: Timer with counter function
 
 ## 📁 Project Structure
 
 ```
 src/
 ├── components/          # Reusable UI components
-│   ├── CodeViewer.js   # Syntax-highlighted code display
-│   ├── Header.js       # Navigation header
+│   ├── CodeViewer.js
+│   ├── CodeViewer.css
+│   ├── Header.js
+│   ├── Header.css
 │   ├── LanguageSelector.js
-│   └── (removed) ThemeToggle.js
-├── contexts/           # React context providers
-│   ├── LanguageContext.js
-│   └── (removed) ThemeContext.js
-├── data/              # Program data and symbols
-│   ├── programs/      # Individual program JSON files
-│   └── symbols.json   # Calculator symbol reference
-├── pages/             # Main application pages
-│   ├── HomePage.js    # Program listing page
-│   ├── ProgramPage.js # Individual program details
-│   └── SymbolsPage.js # Symbol reference guide
-└── utils/             # Utility functions
+│   └── LanguageSelector.css
+├── contexts/            # React context providers
+│   └── LanguageContext.js
+├── data/                # Program data and symbols
+│   ├── programs/        # Individual program JSON files
+│   └── symbols.json     # Calculator symbol reference
+├── pages/               # Main application pages
+│   ├── HomePage.js
+│   ├── HomePage.css
+│   ├── ProgramPage.js
+│   ├── ProgramPage.css
+│   ├── SymbolsPage.js
+│   └── SymbolsPage.css
+└── utils/               # Utility functions
     ├── symbolFormatter.js
     └── useDocumentTitle.js
 ```
@@ -69,7 +73,7 @@ src/
 
 ## 🔗 Related Resources
 
-- [Casio fx-50FH II](https://www.casio.com/intl/scientific-calculators/product.FX-50FHII) - Official calculator documentation
+- [Casio fx-50FH II](https://www.casio.com/intl/scientific-calculators/product.Fx-50FHII) - Official calculator documentation
 
 ---
 

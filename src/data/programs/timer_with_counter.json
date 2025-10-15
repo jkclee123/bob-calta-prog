@@ -23,7 +23,7 @@
       "code": "Lbl 0:D÷AB→X:M▫+X▫→Y:?→Y:",
       "bytes": 22,
       "comment": {
-        "en": "Display counter and timer, Input command",
+        "en": "Display counter and timer, command input",
         "zh": "顯示記數器和計時器，輸入指令"
       }
     },
@@ -55,7 +55,7 @@
   "guide": {
     "parameters": {
       "en": [
-        "Y: Display timer and counter, Input command"
+        "Y: Display timer and counter, command input"
       ],
       "zh": [
         "Y: 顯示計時器及記數器，輸入指令"
@@ -63,10 +63,10 @@
     },
     "instructions": {
       "en": [
-        "‼️Calibrate variable A with a clock (Empty loop per second)",
-        "Reset Counter: Input 0 to Y",
-        "Set Counter to N: Input -N to Y",
-        "Time N seconds: Input N to Y"
+        "‼️Calibrate variable A using a clock (empty loops per second)",
+        "Reset Counter: input 0 to Y",
+        "Set Counter to N: input -N to Y",
+        "Time N seconds: input N to Y"
       ],
       "zh": [
         "‼️用時鐘校準變數A（每秒空循環次數）",

@@ -23,7 +23,7 @@
       "code": "Lbl 0:D÷AB▫→Y:?→Y:",
       "bytes": 15,
       "comment": {
-        "en": "Display timer, Input command",
+        "en": "Display timer, command input",
         "zh": "顯示計時器，輸入指令"
       }
     },
@@ -47,7 +47,7 @@
   "guide": {
     "parameters": {
       "en": [
-        "Y: Display timer, Input command"
+        "Y: Display timer, command input"
       ],
       "zh": [
         "Y: 顯示計時器，輸入指令"
@@ -55,9 +55,9 @@
     },
     "instructions": {
       "en": [
-        "‼️Calibrate variable A with a clock (Empty loop per second)",
-        "Stopwatch mode: Input 0 or any negative value to Y",
-        "Time N seconds: Input N to Y"
+        "‼️Calibrate variable A using a clock (empty loops per second).",
+        "Stopwatch mode: input 0 or any negative value to Y",
+        "Time N seconds: input N to Y"
       ],
       "zh": [
         "‼️用時鐘校準變數A（每秒空循環次數）",
@@ -85,7 +85,7 @@
             "zh": "按「ON」停止秒錶"
           },
           {
-            "en": "Enter program to check stopwatch elapsed time",
+            "en": "Re-enter the program to check the elapsed time.",
             "zh": "返回程式查看秒錶"
           }
         ]

@@ -5,7 +5,7 @@
     "zh": "啤牌機"
   },
   "description": {
-    "en": "A virtual poker cards dealer that deals card one at a time.",
+    "en": "A virtual poker card dealer that deals cards one at a time.",
     "zh": "模擬啤牌機，每次派一隻牌。"
   },
   "image": "/images/programs/poker.png",
@@ -16,7 +16,7 @@
       "code": "Lbl 0:M→D:?→M:M=0⇒Goto 9:D→M:Fix 0:",
       "bytes": 25,
       "comment": {
-        "en": "Display remaining cards, Input command",
+        "en": "Display remaining cards, command input",
         "zh": "顯示剩餘牌數，輸入指令"
       }
     },
@@ -64,7 +64,7 @@
   "guide": {
     "parameters": {
       "en": [
-        "M: Display remaining cards, Input command"
+        "M: Display remaining cards, command input"
       ],
       "zh": [
         "M: 顯示剩餘牌數，輸入指令"
@@ -72,16 +72,16 @@
     },
     "instructions": {
       "en": [
-        "Shuffle Deck: Input 0 to M",
-        "Draw Card: Input any other number to M",
+        "Shuffle Deck: input 0 to M",
+        "Draw Card: input any other number to M",
         "Cards displayed in [Rank].[Suit] format",
-        "Shuffle and Reset Deck for first use"
+        "Shuffle and reset the deck before first use"
       ],
       "zh": [
         "洗牌：輸入0到M",
         "派牌：輸入任何其他數字到M",
         "啤牌以[點數].[花色]格式顯示",
-        "第一次使用前請重置牌組"
+        "第一次使用前請洗牌"
       ]
     },
     "examples": [
@@ -176,7 +176,7 @@
             "zh": "性能討論"
           },
           "explanation": {
-            "en": "As the program keeps dealing cards, colision rate increases, performance degrades. That said, the program is optimized for use cases where only a small number of cards are dealt—such as in Texas Hold'em, where a maximum of 25 cards are dealt.",
+            "en": "As the program keeps dealing cards, collision rate increases, performance degrades. That said, the program is optimized for use cases where only a small number of cards are dealt—such as in Texas Hold'em, where a maximum of 25 cards are dealt.",
             "zh": "隨著程式不斷派牌，碰撞率增加，性能下降。然而，程式優化於少量派牌的情況——例如德州撲克，最多只會派25張牌。"
           }
         }

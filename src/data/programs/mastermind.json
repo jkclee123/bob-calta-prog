@@ -5,7 +5,7 @@
     "zh": "數字推理"
   },
   "description": {
-    "en": "A classic code-breaking game where player guess a secret number sequence. Difficulty can be adjusted by setting the number of digits (4-8).",
+    "en": "A classic code-breaking game where players guess a secret number sequence. Difficulty can be adjusted by setting the number of digits (4-8).",
     "zh": "經典密碼破解遊戲，可調整密碼長度（4至8位）。"
   },
   "image": "/images/programs/mastermind.png",
@@ -132,18 +132,18 @@
     },
     "instructions": {
       "en": [
-        "Continue previous game: Input 0 to X in start menu",
-        "Set new game's code length: Input 4-8 to X in start menu",
-        "Guess: Input guess to Y in game",
-        "Return to start menu: Input any negative number to Y in game",
-        "Read feedback: in format [J.K]. J is number of exact matches, K is number of number matches"
+        "Continue previous game: input 0 to X in start menu",
+        "Set the new game's code length: input 4-8 to X in start menu",
+        "Guess: input guess to Y in game",
+        "Return to start menu: input any negative number to Y in game",
+        "Feedbacks are in the format of [J.K]. J is number of exact matches, K is number of number matches"
       ],
       "zh": [
         "繼續遊戲：在開始菜單輸入0到X",
         "設定新遊戲密碼長度：在開始菜單輸入4-8到X",
         "猜測：在遊戲中輸入猜測到Y",
         "返回開始菜單：在遊戲中輸入任何負數到Y",
-        "讀取提示：格式為[J.K]。J是完全匹配的數目，K是數字匹配的數目"
+        "提示格式為[J.K]。J是完全匹配的數目，K是數字匹配的數目"
       ]
     },
     "examples": [
@@ -184,7 +184,7 @@
         "zh": "計算機沒有內置抽取數字的第n位的功能。需要這個功能來找出完全匹配和數字匹配。"
       },
       "solution": {
-        "en": "Calculator does have round function, we can shift digits and floor to retrieve a digit.",
+        "en": "The calculator provides a rounding function, we can shift digits and floor to retrieve a digit.",
         "zh": "計算機有四捨五入功能，可以移位及向下取整來讀取個別位"
       },
       "steps": [
@@ -290,10 +290,10 @@
           }
         },
         {
-          "title": {
-            "en": "Check for Number Match",
-            "zh": "檢查數字匹配"
-          },
+      "title": {
+        "en": "Check for number matches",
+        "zh": "檢查數字匹配"
+      },
           "explanation": {
             "en": "Retrieve digits from the guess, map them to their corresponding prime numbers, finally divide the \"prime numbers product\" by the prime numbers. If the result is a whole number, it is a number match.",
             "zh": "讀取猜測所有的個別位，對應到其相應的質數，最後將「質數乘積」除以質數。如果結果是整數，則為數字匹配。"
