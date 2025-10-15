@@ -2,7 +2,7 @@
   "id": "timer_with_counter",
   "name": {
     "en": "Timer with Counter",
-    "zh": "計時器及記數器"
+    "zh": "記數計時器"
   },
   "description": {
     "en": "A timer with counter function.",
