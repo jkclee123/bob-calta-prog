@@ -17,7 +17,7 @@
       "bytes": 25,
       "comment": {
         "en": "Display remaining cards, command input",
-        "zh": "顯示剩餘牌數，輸入指令"
+        "zh": "顯示剩餘牌數，指令輸入"
       }
     },
     {
@@ -48,8 +48,8 @@
       "code": "X+Y₁₀^(-D→X:C<3⇒X→A:C≥3⇒X→B:1M⁻:D+.1C:Norm 2◢Goto 0:",
       "bytes": 40,
       "comment": {
-        "en": "Mark card as dealt",
-        "zh": "標記牌已派出"
+        "en": "Mark card as dealt, display card",
+        "zh": "標記牌已派出，顯示牌"
       }
     },
     {
@@ -67,7 +67,7 @@
         "M: Display remaining cards, command input"
       ],
       "zh": [
-        "M: 顯示剩餘牌數，輸入指令"
+        "M: 顯示剩餘牌數，指令輸入"
       ]
     },
     "instructions": {
@@ -134,7 +134,7 @@
           },
           "explanation": {
             "en": "Each decimal place represents a rank. A is the 1st decimal place, 2 is the 2nd, and so on. Each variable can store up to 15 decimal place, which is enough for 13 ranks.",
-            "zh": "每個小數位代表一個點數。第1個小數位是A，第2個小數位是2，如此類推。每個變量可以儲存最多15個小數位，足夠記錄13個點數。"
+            "zh": "每個小數位代表一個點數。第1個小數位是A，第2個小數位是2，如此類推。每個變量最多可以儲存15個小數位，足夠記錄13個點數。"
           }
         },
         {
@@ -145,7 +145,7 @@
           },
           "explanation": {
             "en": "Each decimal place stores value 0, 1, 2 or 3. 0 for none dealt, 1 for first suit dealt, 2 for second suit dealt, 3 for both suits dealt. Each decimal place can store up to 2 suits. Each variable can store up to 26 cards, 2 variables can store all 52 cards.",
-            "zh": "每個小數位儲存值為0、1、2或3。0表示未派出，1表示第一花色已派出，2表示第二花色已派出，3表示兩種花色都已派出。每個小數位可以儲存最多2種花色。每個變量可以儲存最多26張牌，2個變量可以儲存所有52張牌。"
+            "zh": "每個小數位儲存值為0、1、2或3。0表示未派出，1表示第一花色已派出，2表示第二花色已派出，3表示兩種花色都已派出。每個小數位可以儲存2種花色。每個變量最多可以儲存26張牌，2個變量可以儲存所有52張牌。"
           }
         },
         {

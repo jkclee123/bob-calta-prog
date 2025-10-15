@@ -57,7 +57,7 @@
       "bytes": 37,
       "comment": {
         "en": "Display current dice, command input",
-        "zh": "顯示所有骰子，輸入指令"
+        "zh": "顯示所有骰子，指令輸入"
       }
     }
   ],
@@ -71,7 +71,7 @@
       "zh": [
         "A: 骰子數量 (預設: 5粒)",
         "B: 骰子面數 (預設: 6面)",
-        "Y: 顯示所有骰子，輸入指令"
+        "Y: 顯示所有骰子，指令輸入"
       ]
     },
     "instructions": {
@@ -133,7 +133,7 @@
           },
           {
             "en": "Program re-rolls all dice",
-            "zh": "重擲所有骰仔"
+            "zh": "重擲所有骰子"
           },
           {
             "en": "Y displays: 56241",
@@ -188,8 +188,8 @@
           },
           "formula": "ceil(1000 • Ran# ÷ 166)",
           "explanation": {
-            "en": "This groups the random number outcomes into groups of 1 to 7. Each group has 166 outcomes, except the last group 7 which has 4 outcomes from 0.996 to 0.999. They are excess outcomes to be discarded.",
-            "zh": "這將隨機數結果分為1至7組，每組有166個結果，除了最後一組7，有4個結果0.996到0.999。它們是過剩的結果，需要被丟棄。"
+            "en": "This formula groups the random number outcomes into groups of 1 to 7. Each group has 166 outcomes, except the last group 7 which has 4 outcomes from 0.996 to 0.999. They are excess outcomes to be discarded.",
+            "zh": "這公式將隨機數結果分為1至7組，每組有166個結果，除了最後一組7，有4個結果0.996到0.999。它們是過剩的結果，需要被丟棄。"
           }
         },
         {

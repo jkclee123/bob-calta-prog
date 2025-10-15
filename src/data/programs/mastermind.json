@@ -163,7 +163,7 @@
           },
           {
             "en": "1.2 means 1 exact match, 2 number matches",
-            "zh": "1.2 表示一個完全匹配，兩個數字匹配"
+            "zh": "1.2 表示1個完全匹配，2個數字匹配"
           },
           {
             "en": "1 is the exact match, 3 and 4 are the number matches",
@@ -185,7 +185,7 @@
       },
       "solution": {
         "en": "The calculator provides a rounding function, we can shift digits and floor to retrieve a digit.",
-        "zh": "計算機有四捨五入功能，可以移位及向下取整來讀取個別位"
+        "zh": "計算機有四捨五入功能，並用移位和向下取整來讀取個別位"
       },
       "steps": [
         {
@@ -213,12 +213,12 @@
         {
           "title": {
             "en": "Getting 470 from 476128",
-            "zh": "從得出470"
+            "zh": "從 476128 得出 470"
           },
-          "formula": "floor(47.6128) x 10 = 470",
+          "formula": "floor(47.6128) • 10 = 470",
           "explanation": {
             "en": "Floor 47.6128 to get 47 and then multiply by 10 to get 470",
-            "zh": "向下取整47.6128得到47，然後乘以10得到470"
+            "zh": "向下取整 47.6128 得到47，然後乘以 10 得到 470"
           }
         },
         {
@@ -255,7 +255,7 @@
       },
       "solution": {
         "en": "Check divisibility of a \"prime numbers product\" to look up whether the secret code contains a certain digit.",
-        "zh": "檢查「質數乘積」的整除性來檢查密碼是否包含某個數字。"
+        "zh": "用「質數乘積」的整除性來檢查密碼是否包含某個數字。"
       },
       "steps": [
         {
@@ -264,8 +264,8 @@
             "zh": "核心概念"
           },
           "explanation": {
-            "en": "A number formed by multiplying only prime numbers together is only divisible by 1 and those prime factors.",
-            "zh": "只由質數相乘組成的數，只能被1和其因數整除。"
+            "en": "A number formed by multiplying only prime numbers together is only divisible by 1 and its factors.",
+            "zh": "只由質數相乘組成的數，只能被1及其因數整除。"
           }
         },
         {

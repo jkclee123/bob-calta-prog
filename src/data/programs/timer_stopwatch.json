@@ -24,7 +24,7 @@
       "bytes": 15,
       "comment": {
         "en": "Display timer, command input",
-        "zh": "顯示計時器，輸入指令"
+        "zh": "顯示計時器，指令輸入"
       }
     },
     {
@@ -50,7 +50,7 @@
         "Y: Display timer, command input"
       ],
       "zh": [
-        "Y: 顯示計時器，輸入指令"
+        "Y: 顯示計時器，指令輸入"
       ]
     },
     "instructions": {

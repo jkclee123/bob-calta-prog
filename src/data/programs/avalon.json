@@ -293,7 +293,7 @@
           },
           "explanation": {
             "en": "We first get a random number from 1 to 10, for example 3.",
-            "zh": "我們首先從1到10獲得一個隨機數，例如3。"
+            "zh": "我們首先從1到10獲得隨機數，例如3。"
           }
         },
         {

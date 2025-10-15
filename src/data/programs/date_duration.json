@@ -48,7 +48,7 @@
       "bytes": 13,
       "comment": {
         "en": "Loop from start date year to end date year",
-        "zh": "由開始年份循環至結束年份"
+        "zh": "由開始年份至結束年份"
       }
     },
     {
@@ -80,7 +80,7 @@
       "bytes": 29,
       "comment": {
         "en": "Determine whether to add or subtract days",
-        "zh": "決定月份應該向前或向後移動"
+        "zh": "決定月份應向前或後移動"
       }
     },
     {
@@ -88,7 +88,7 @@
       "bytes": 9,
       "comment": {
         "en": "Loop from start date month to end date month",
-        "zh": "由開始月份循環至結束月份"
+        "zh": "由開始月份至結束月份"
       }
     },
     {
@@ -148,15 +148,15 @@
         "steps": [
           {
             "en": "Input X = 20240415 (April 15, 2024)",
-            "zh": "輸入 X = 20240415（2024年4月15日）"
+            "zh": "X 輸入 20240415（2024年4月15日）"
           },
           {
             "en": "Input Y = 20250609 (June 9, 2025)",
-            "zh": "輸入 Y = 20250609（2025年6月9日）"
+            "zh": "Y 輸入 20250609（2025年6月9日）"
           },
           {
             "en": "Result: M = 420 days",
-            "zh": "結果：M = 420日"
+            "zh": "結果：M 420日"
           }
         ]
       }
@@ -170,7 +170,7 @@
       },
       "problem": {
         "en": "A leap year occurs when a year is divisible by 4, with the exception that years divisible by 100 are not leap years unless they are also divisible by 400. Casio Fx-50FH II does not have a modulo operator, it cannot efficiently check for divisibility by 4, 100, and 400.",
-        "zh": "閏年是指可以被4整除，但不可以被100整除，除非可以被400整除嘅年份。Casio Fx-50FH II 沒有模運算，無法有效地檢查4、100和400的整除性。"
+        "zh": "閏年是指可以被4整除，但不可以被100整除，除非可以被400整除嘅年份。Casio Fx-50FH II 沒有餘數運算，無法有效地檢查4、100和400的整除性。"
       },
       "solution": {
         "en": "Use sine functions instead of modulo operator. As seen in the graph, the blue statement is true when x is a multiple of 4, the red statement is true when x is a multiple of 100, the green statement is true when x is a multiple of 400.",
@@ -242,7 +242,7 @@
       },
       "problem": {
         "en": "There are 4 months with 30 days in a year, April, June, September and November. Using if statements to check would use a lot of memory.",
-        "zh": "一年有4個月有30天，四月、六月、九月和十一月，使用if語句來檢查需要用很多字節。"
+        "zh": "一年有4個月有30天，四月、六月、九月和十一月，使用if語句來檢查佔用很多記憶體。"
       },
       "solution": {
         "en": "We can use a single statement to filter months with 30 days. As seen in the graph, the function intersects with y = 1 at x = 4, x = 6, x = 9 and x = 11.",
@@ -252,8 +252,8 @@
       "steps": [
         {
           "title": {
-            "en": "Core Statement",
-            "zh": "核心語句"
+            "en": "Filter Statement",
+            "zh": "過濾語句"
           },
           "formula": "||x - 7.5|-2.5| = 1",
           "explanation": {
