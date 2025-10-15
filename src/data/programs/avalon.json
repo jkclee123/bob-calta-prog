@@ -129,7 +129,7 @@
       "bytes": 11,
       "comment": {
         "en": "Play Quest Cards: Display number of failure quest cards",
-        "zh": "出任務牌：顯示任務失敗卡數量"
+        "zh": "出任務牌：顯示任務失敗牌數量"
       }
     }
   ],
@@ -155,7 +155,7 @@
         "- C: 好人陣營特殊角色人數",
         "出任務牌：",
         "- D: 任務牌類型（0: 成功，1: 失敗）",
-        "- X: 任務失敗卡數量"
+        "- X: 任務失敗牌數量"
       ]
     },
     "instructions": {
@@ -213,19 +213,19 @@
         "steps": [
           {
             "en": "Input 5 to M (play 5 quest cards)",
-            "zh": "輸入5到M（出5張任務卡）"
+            "zh": "輸入5到M（出5張任務牌）"
           },
           {
             "en": "Input 0 to D to play success card",
-            "zh": "輸入0到D出任務成功卡"
+            "zh": "輸入0到D出任務成功牌"
           },
           {
             "en": "Input 1 to D to play failure card",
-            "zh": "輸入1到D出任務失敗卡"
+            "zh": "輸入1到D出任務失敗牌"
           },
           {
             "en": "Program displays 1 in X, there is 1 failure card played",
-            "zh": "程式顯示X為1，有1張任務失敗卡"
+            "zh": "程式顯示X為1，有1張任務失敗牌"
           }
         ]
       },
@@ -271,7 +271,7 @@
     {
       "title": {
         "en": "Draw character cards without replacement",
-        "zh": "不重複抽角色卡"
+        "zh": "不重複抽角色牌"
       },
       "problem": {
         "en": "Casio Fx-50FH II do not have data structures like list, set or map to store drawn cards.",
