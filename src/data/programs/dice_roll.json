@@ -76,16 +76,16 @@
     },
     "instructions": {
       "en": [
-        "Set dice count to N: input N to A",
-        "Set die size to M: input M to B",
+        "Set dice count to K: input K to A",
+        "Set die size to K: input K to B",
         "All current dice are displayed in Y",
         "Re-roll specific dice: input positions to Y",
         "Re-roll all dice: input 0 to Y",
         "Positions are ordered from left to right: 1 2 3 4 5 6 7 8 9"
       ],
       "zh": [
-        "設置骰子數量為N：輸入N到A",
-        "設置骰子面數為M：輸入M到B",
+        "設置骰子數量為K：輸入K到A",
+        "設置骰子面數為K：輸入K到B",
         "現有骰子會顯示在Y",
         "重擲特定骰子：輸入位置到Y",
         "重擲所有骰子：輸入0到Y",

@@ -57,12 +57,12 @@
       "en": [
         "‼️Calibrate variable A using a clock (empty loops per second).",
         "Stopwatch mode: input 0 or any negative value to Y",
-        "Time N seconds: input N to Y"
+        "Time K seconds: input K to Y"
       ],
       "zh": [
         "‼️用時鐘校準變數A（每秒空循環次數）",
-        "秒錶模式：輸入Y為零或負數",
-        "計時N秒：輸入Y為N"
+        "秒錶模式：輸入零或負數到Y",
+        "計時K秒：輸入K到Y"
       ]
     },
     "examples": [

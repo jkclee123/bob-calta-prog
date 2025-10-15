@@ -160,15 +160,15 @@
     },
     "instructions": {
       "en": [
-        "Randomly select a leader from N players: input -N to M",
-        "Time N seconds: input N to M",
-        "Play N quest cards: input N to M (N less than or equal to 5)",
+        "Randomly select a leader from K players: input -K to M",
+        "Time K seconds: input K to M",
+        "Play K quest cards: input K to M (K less than or equal to 5)",
         "Draw character cards: input 0 to M"
       ],
       "zh": [
-        "隨機選出N個玩家領袖：輸入-N到M",
-        "計時N秒：輸入N到M",
-        "出N張任務牌：輸入N到M（N小於或等於5）",
+        "隨機選出K個玩家領袖：輸入-K到M",
+        "計時K秒：輸入K到M",
+        "出K張任務牌：輸入K到M（K小於或等於5）",
         "抽角色牌：輸入0到M"
       ]
     },
