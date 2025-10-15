@@ -61,8 +61,8 @@
       ],
       "zh": [
         "‼️用時鐘校準變數A（每秒空循環次數）",
-        "秒錶模式：Y輸入零或負數",
-        "計時K秒：Y輸入K"
+        "秒錶模式：Y 輸入零或負數",
+        "計時K秒：Y 輸入 K"
       ]
     },
     "examples": [
@@ -74,7 +74,7 @@
         "steps": [
           {
             "en": "Input 0 to Y",
-            "zh": "輸入 0 到 Y"
+            "zh": "Y 輸入 0"
           },
           {
             "en": "Stopwatch starts",
@@ -98,7 +98,7 @@
         "steps": [
           {
             "en": "Input 60 to Y (for 1 minute)",
-            "zh": "輸入 60 到 Y（1分鐘）"
+            "zh": "Y 輸入 60（1分鐘）"
           },
           {
             "en": "Timer counts down",

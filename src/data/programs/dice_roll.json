@@ -84,12 +84,12 @@
         "Positions are ordered from left to right: 1 2 3 4 5 6 7 8 9"
       ],
       "zh": [
-        "設置骰子數量為K：A輸入K",
-        "設置骰子面數為K：B輸入K",
+        "設置骰子數量為K：A 輸入 K",
+        "設置骰子面數為K：B 輸入 K",
         "現有骰子會顯示在Y",
-        "重擲特定骰子：Y輸入位置",
+        "重擲特定骰子：Y 輸入位置",
         "位置由左至右：1 2 3 4 5 6 7 8 9",
-        "重擲所有骰子：Y輸入0"
+        "重擲所有骰子：Y 輸入 0"
       ]
     },
     "examples": [
@@ -105,7 +105,7 @@
           },
           {
             "en": "Input 24 to Y",
-            "zh": "在 Y 中輸入 24"
+            "zh": "Y 輸入 24"
           },
           {
             "en": "Program re-rolls positions 2 and 4 (Dice of value 4 and 3)",
@@ -129,7 +129,7 @@
           },
           {
             "en": "Input 0 to Y",
-            "zh": "在 Y 中輸入 0"
+            "zh": "Y 輸入 0"
           },
           {
             "en": "Program re-rolls all dice",
