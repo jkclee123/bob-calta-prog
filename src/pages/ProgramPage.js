@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useDocumentTitle } from '../utils/useDocumentTitle';
 import { formatCodeForDisplay } from '../utils/symbolFormatter';
@@ -9,6 +9,7 @@ import './ProgramPage.css';
 
 const ProgramPage = () => {
   const { programId } = useParams();
+  const location = useLocation();
   const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState('code');
   const [modalImage, setModalImage] = useState(null); // {src: string, alt: string}
@@ -52,6 +53,13 @@ const ProgramPage = () => {
       document.body.classList.remove('modal-open');
     };
   }, [modalImage]);
+
+  // Switch to analysis tab when hash targets an analysis section
+  useEffect(() => {
+    if (location.hash && location.hash.startsWith('#analysis-')) {
+      if (activeTab !== 'analysis') setActiveTab('analysis');
+    }
+  }, [location.hash]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Scroll to top when component mounts or programId changes
   useEffect(() => {
@@ -97,6 +105,22 @@ const ProgramPage = () => {
     // Additional delay for iOS Chrome
     setTimeout(scrollToTop, 150);
   }, [programId]);
+
+  // Scroll to analysis section when hash changes and analysis tab is active
+  useEffect(() => {
+    if (!location.hash) return;
+    if (!location.hash.startsWith('#analysis-')) return;
+    if (activeTab !== 'analysis') return;
+
+    const id = location.hash.slice(1);
+    // Wait a tick so the section is in the DOM after tab renders
+    requestAnimationFrame(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }, [location.hash, activeTab]);
 
   if (!program) {
     return (
@@ -172,9 +196,9 @@ const ProgramPage = () => {
                   <ol className="toc-list">
                     {program.analysis.map((analysis, index) => (
                       <li key={index} className="toc-item">
-                        <a href={`#analysis-${index}`} className="toc-link">
+                        <Link to={{ hash: `#analysis-${index}`}}className="toc-link" replace>
                           {t(analysis.title)}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ol>
