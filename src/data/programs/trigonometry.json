@@ -31,40 +31,40 @@
         "code": "D=0⇒180-X-Y→D:Asin(X)÷sin(D→B:",
         "bytes": 24,
         "comment": {
-          "en": "Section 1: 1 known side",
-          "zh": "部分1: 已知1邊"
+          "en": "1 known side: Calculate side B",
+          "zh": "已知1邊: 計算邊 B"
         }
       },
       {
         "code": "Lbl 2:If Y:Then √(A²+B²-2ABcos(Y→C:Goto 3:IfEnd:",
         "bytes": 27,
         "comment": {
-          "en": "Section 2: 2 known sides",
-          "zh": "部分2: 已知2邊"
+          "en": "2 known sides: Calculate side C",
+          "zh": "已知2邊: 計算邊 C"
         }
       },
       {
         "code": "-2Bcos(D→M:B²-A²→C:If X:Then -2Acos(X→M:-C→C:IfEnd:",
         "bytes": 35,
         "comment": {
-          "en": "Section 2: Calculation preparation",
-          "zh": "部分2: 計算準備"
+          "en": "2 known sides: Calculate side C",
+          "zh": "已知2邊: 計算邊 C"
         }
       },
       {
         "code": ".5(-M+√(M²-4C→C:",
         "bytes": 15,
         "comment": {
-          "en": "Section 2: Calculate side C",
-          "zh": "部分2: 計算邊 C"
+          "en": "2 known sides: Calculate side C",
+          "zh": "已知2邊: 計算邊 C"
         }
       },
       {
         "code": "Lbl 3: cos⁻¹((A²-B²-C²)÷(-2BC→D:sin⁻¹(Bsin(D)÷A→X:180-D-X→Y:",
         "bytes": 43,
         "comment": {
-          "en": "Section 3: 3 known sides",
-          "zh": "部分3: 已知3邊"
+          "en": "3 known sides: Calculate angles D, X and Y",
+          "zh": "已知3邊: 計算角 D, X 和 Y"
         }
       },
       {
