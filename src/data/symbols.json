@@ -319,6 +319,30 @@
           "howToType": "tan"
         },
         {
+          "symbol": "sin⁻¹(",
+          "description": {
+            "en": "Inverse sine trigonometric function",
+            "zh": "反正弦三角函數"
+          },
+          "howToType": "SHIFT sin"
+        },
+        {
+          "symbol": "cos⁻¹(",
+          "description": {
+            "en": "Inverse cosine trigonometric function",
+            "zh": "反餘弦三角函數"
+          },
+          "howToType": "SHIFT cos"
+        },
+        {
+          "symbol": "tan⁻¹(",
+          "description": {
+            "en": "Inverse tangent trigonometric function",
+            "zh": "反正切三角函數"
+          },
+          "howToType": "SHIFT tan"
+        },
+        {
           "symbol": "Abs(",
           "description": {
             "en": "Absolute value function",

@@ -1,0 +1,240 @@
+{
+    "id": "trigonometry",
+    "name": {
+      "en": "Trigonometry",
+      "zh": "三角形全解"
+    },
+    "description": {
+      "en": "A program that solves unknowns of a triangle.",
+      "zh": "一個解三角形未知數的程式。"
+    },
+    "image": "/images/programs/trigonometry.png",
+    "mode": "Comp",
+    "code": [
+      {
+        "code": "1→M:?→A:?→D:?→B:B⇒1M⁺:?→X:?→C:C⇒1M⁺:?→Y:",
+        "bytes": 38,
+        "comment": {
+          "en": "Input known sides and angles",
+          "zh": "輸入已知邊和角"
+        }
+      },
+      {
+        "code": "M=2⇒Goto 2:M=3⇒Goto 3:",
+        "bytes": 14,
+        "comment": {
+          "en": "Route to different sections based on number of known sides",
+          "zh": "根據已知邊的數量，跳轉到不同的部分"
+        }
+      },
+      {
+        "code": "D=0⇒180-X-Y→D:Asin(X)÷sin(D→B:",
+        "bytes": 24,
+        "comment": {
+          "en": "Section 1: 1 known side",
+          "zh": "部分1: 已知1邊"
+        }
+      },
+      {
+        "code": "Lbl 2:If Y:Then √(A²+B²-2ABcos(Y→C:Goto 3:IfEnd:",
+        "bytes": 27,
+        "comment": {
+          "en": "Section 2: 2 known sides",
+          "zh": "部分2: 已知2邊"
+        }
+      },
+      {
+        "code": "-2Bcos(D→M:B²-A²→C:If X:Then -2Acos(X→M:-C→C:IfEnd:",
+        "bytes": 35,
+        "comment": {
+          "en": "Section 2: Calculation preparation",
+          "zh": "部分2: 計算準備"
+        }
+      },
+      {
+        "code": ".5(-M+√(M²-4C→C:",
+        "bytes": 15,
+        "comment": {
+          "en": "Section 2: Calculate side C",
+          "zh": "部分2: 計算邊 C"
+        }
+      },
+      {
+        "code": "Lbl 3: cos⁻¹((A²-B²-C²)÷(-2BC→D:sin⁻¹(Bsin(D)÷A→X:180-D-X→Y:",
+        "bytes": 43,
+        "comment": {
+          "en": "Section 3: 3 known sides",
+          "zh": "部分3: 已知3邊"
+        }
+      },
+      {
+        "code": "A◢D◢B◢X◢C◢Y◢.5ABsin(Y",
+        "bytes": 18,
+        "comment": {
+          "en": "Display solution",
+          "zh": "顯示解答"
+        }
+      }
+    ],
+    "guide": {
+      "image": "/images/programs/trigonometry.png",
+      "parameters": {
+        "en": [
+          "A: Side A",
+          "D: Angle D ∠BC",
+          "B: Side B",
+          "X: Angle X ∠AC",
+          "C: Side C",
+          "Y: Angle Y ∠AB"
+        ],
+        "zh": [
+          "A: 邊 A",
+          "D: 角 D ∠BC",
+          "B: 邊 B",
+          "X: 角 X ∠AC",
+          "C: 邊 C",
+          "Y: 角 Y ∠AB"
+        ]
+      },
+      "instructions": {
+        "en": [
+          "Input known sides and angles",
+          "Input unknown sides and angles as 0",
+          "Program will calculate the unknown sides, angles and area",
+          "‼️ If only one side is known, input the known side as A",
+          "‼️ If two sides are known, input the known sides as A and B"
+        ],
+        "zh": [
+          "輸入已知邊和角",
+          "未知邊和角輸入0",
+          "程式計算未知邊、角和面積",
+          "‼️ 如果只有一邊已知，輸入已知邊為A",
+          "‼️ 如果兩邊已知，輸入已知邊為A和B"
+        ]
+      },
+      "examples": [
+        {
+          "title": {
+            "en": "3 known sides",
+            "zh": "已知3邊"
+          },
+          "steps": [
+            {
+              "en": "Input A = 5, D = 0",
+              "zh": "輸入 A = 5，D = 0"
+            },
+            {
+              "en": "Input B = 7, X = 0",
+              "zh": "輸入 B = 7，X = 0"
+            },
+            {
+              "en": "Input C = 8, Y = 0",
+              "zh": "輸入 C = 8，Y = 0"
+            },
+            {
+              "en": "Solution: D = 38.21°, X = 60°, Y = 81.79°, Area = 17.32",
+              "zh": "解答: D = 38.21°，X = 60°，Y = 81.79°，面積 = 17.32"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "2 known sides (a)",
+            "zh": "已知2邊 (a)"
+          },
+          "steps": [
+            {
+              "en": "Input A = 5, D = 38.21",
+              "zh": "輸入 A = 5，D = 38.21"
+            },
+            {
+              "en": "Input B = 7, X = 0",
+              "zh": "輸入 B = 7，X = 0"
+            },
+            {
+              "en": "Input C = 0, Y = 0",
+              "zh": "輸入 C = 0，Y = 0"
+            },
+            {
+              "en": "Solution: X = 60°, C = 8, Y = 81.79°, Area = 17.32",
+              "zh": "解答: X = 60°，C = 8，Y = 81.79°，面積 = 17.32"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "2 known sides (b)",
+            "zh": "已知2邊 (b)"
+          },
+          "steps": [
+            {
+              "en": "Input A = 5, D = 0",
+              "zh": "輸入 A = 5，D = 0"
+            },
+            {
+              "en": "Input B = 8, X = 0",
+              "zh": "輸入 B = 8，X = 0"
+            },
+            {
+              "en": "Input C = 0, Y = 60",
+              "zh": "輸入 C = 0，Y = 60"
+            },
+            {
+              "en": "Solution: D = 38.21°, X = 81.79°, C = 7, Area = 17.32",
+              "zh": "解答: D = 38.21°，X = 81.79°，C = 7，面積 = 17.32"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "1 known sides (a)",
+            "zh": "已知1邊 (a)"
+          },
+          "steps": [
+            {
+              "en": "Input A = 5, D = 0",
+              "zh": "輸入 A = 5，D = 0"
+            },
+            {
+              "en": "Input B = 0, X = 60",
+              "zh": "輸入 B = 0，X = 60"
+            },
+            {
+              "en": "Input C = 0, Y = 81.79",
+              "zh": "輸入 C = 0，Y = 81.79"
+            },
+            {
+              "en": "Solution: D = 38.21°, B = 7, C = 8, Area = 17.32",
+              "zh": "解答: D = 38.21°，B = 7，C = 8，面積 = 17.32"
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "1 known sides (b)",
+            "zh": "已知1邊 (b)"
+          },
+          "steps": [
+            {
+              "en": "Input A = 5, D = 38.21",
+              "zh": "輸入 A = 5，D = 38.21"
+            },
+            {
+              "en": "Input B = 0, X = 60",
+              "zh": "輸入 B = 0，X = 60"
+            },
+            {
+              "en": "Input C = 0, Y = 0",
+              "zh": "輸入 C = 0，Y = 0"
+            },
+            {
+              "en": "Solution: B = 7, C = 8, Y = 81.79°, Area = 17.32",
+              "zh": "解答: B = 7，C = 8，Y = 81.79°，面積 = 17.32"
+            }
+          ]
+        }
+      ]
+    },
+    "analysis": [
+    ]
+  } 

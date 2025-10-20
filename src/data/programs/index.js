@@ -6,6 +6,7 @@ import timerStopwatch from './timer_stopwatch.json';
 import timerWithCounter from './timer_with_counter.json';
 import pokerDealer from './poker_dealer.json';
 import avalon from './avalon.json';
+import trigonometry from './trigonometry.json';
 
 // Export combined programs object
 const programs = {
@@ -16,6 +17,7 @@ const programs = {
   poker_dealer: pokerDealer,
   timer_stopwatch: timerStopwatch,
   timer_with_counter: timerWithCounter,
+  trigonometry: trigonometry,
 };
 
 export default programs; 

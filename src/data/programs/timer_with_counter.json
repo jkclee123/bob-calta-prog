@@ -63,13 +63,13 @@
     },
     "instructions": {
       "en": [
-        "‼️Calibrate variable A using a clock (empty loops per second)",
+        "‼️ Calibrate variable A using a clock (empty loops per second)",
         "Reset Counter: input 0 to Y",
         "Set Counter to K: input -K to Y",
         "Time K seconds: input K to Y"
       ],
       "zh": [
-        "‼️用時鐘校準變數A（每秒空循環次數）",
+        "‼️ 用時鐘校準變數A（每秒空循環次數）",
         "重設記數器：Y 輸入零",
         "設定記數器為K：Y 輸入 -K",
         "計時K秒：Y 輸入 K"

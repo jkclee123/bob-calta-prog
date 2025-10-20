@@ -125,14 +125,8 @@ const ProgramPage = () => {
   if (!program) {
     return (
       <div className="program-page">
-        <div className="container">
           <div className="error-message">
             <h2>{t({ en: 'Program Not Found', zh: '找不到程式' })}</h2>
-            <p>{t({ en: 'The requested program could not be found.', zh: '找不到請求的程式。' })}</p>
-            <Link to="/" className="btn btn-primary">
-              {t({ en: 'Back to Programs', zh: '返回程式列表' })}
-            </Link>
-          </div>
         </div>
       </div>
     );
@@ -153,6 +147,19 @@ const ProgramPage = () => {
         return (
           <div className="guide-content">
             <div className="guide-section">
+
+              {program.guide.image && (
+                <div className="guide-image">
+                  <img
+                    src={program.guide.image}
+                    alt={t({ en: 'Guide Image', zh: '使用指南圖' })}
+                    className="guide-image"
+                    onClick={() => openImageModal(program.guide.image, t({ en: 'Guide Image', zh: '使用指南圖' }))}
+                    style={{ cursor: 'pointer', maxHeight: '500px', maxWidth: '100%', objectFit: 'contain' }}
+                  />
+                </div>
+              )}
+
               <h3>{t({ en: 'Parameters', zh: '參數' })}</h3>
               <ul className="parameter-list">
                 {t(program.guide.parameters).map((param, index) => (
