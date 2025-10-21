@@ -19,6 +19,7 @@ A React web application showcasing a collection of calculator programs for the *
 - **🃏 Poker Dealer**: Poker Card dealing simulation
 - **⏱️ Timer & Stopwatch**: Timing utilities
 - **⏱️ Timer with Counter**: Timer with counter function
+- **📐 Trigonometry**: Triangle complete solution calculator
 
 ## 📁 Project Structure
 
