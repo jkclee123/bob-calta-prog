@@ -156,6 +156,8 @@ const ProgramPage = () => {
                     className="guide-image"
                     onClick={() => openImageModal(program.guide.image, t({ en: 'Guide Image', zh: '使用指南圖' }))}
                     style={{ cursor: 'pointer', maxHeight: '500px', maxWidth: '100%', objectFit: 'contain' }}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               )}
@@ -237,6 +239,8 @@ const ProgramPage = () => {
                         className="analysis-image"
                         onClick={() => openImageModal(analysis.image, t({ en: 'Analysis Image', zh: '解決方法圖表' }))}
                         style={{ cursor: 'pointer' }}
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                   )}
@@ -284,7 +288,7 @@ const ProgramPage = () => {
         {/* Header */}
         <div
           className="program-header"
-          style={{ '--program-bg-image': `url(${program.image})` }}
+          style={{ '--program-bg-image': `url(${program.imageSet?.webp || program.imageSet?.png || program.image})` }}
         >
           <div className="program-title-section">
             <h1 className="program-title">{t(program.name)}</h1>

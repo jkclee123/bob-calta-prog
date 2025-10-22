@@ -24,11 +24,17 @@ const HomePage = () => {
                 className="program-card-link"
               >
                 <div className="program-card">
-                  <img
-                    src={program.image}
-                    alt={`${t(program.name)} preview`}
-                    className="program-card-image"
-                  />
+                  <picture>
+                    {program.imageSet?.webp && <source type="image/webp" srcSet={program.imageSet.webp} />}
+                    {program.imageSet?.png && <source type="image/png" srcSet={program.imageSet.png} />}
+                    <img
+                      src={program.image}
+                      alt={`${t(program.name)} preview`}
+                      className="program-card-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                   <div className="program-card-content">
                     <h3 className="program-card-title">{t(program.name)}</h3>
                     <p className="program-card-description">{t(program.description)}</p>
