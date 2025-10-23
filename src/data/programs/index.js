@@ -18,16 +18,11 @@ function withResolvedImages(programs) {
     const set = programImages[id] || {};
     // Prefer webp; fallback to png; fallback to original string (transition safety)
     const primary = set.webp || set.png || program.image;
-    const guidePrimary = set.webp || set.png || (program.guide?.image ?? null);
 
     resolved[id] = {
       ...program,
       imageSet: { webp: set.webp, png: set.png },
-      image: primary,
-      guide: {
-        ...program.guide,
-        image: guidePrimary,
-      },
+      image: primary
     };
   }
   return resolved;
