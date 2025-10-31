@@ -41,7 +41,7 @@
   background: var(--bg-secondary);
   border-radius: 12px;
   padding: 32px;
-  box-shadow: 0 2px 4px var(--shadow-light);
+  box-shadow: var(--shadow);
   border: 1.5px solid var(--border-primary);
 }
 
@@ -51,7 +51,7 @@
   color: var(--text-primary);
   margin-bottom: 24px;
   padding-bottom: 12px;
-  border-bottom: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--color-accent);
 }
 
 .symbols-grid {
@@ -147,9 +147,9 @@
   text-align: center;
   padding: 80px 20px;
   color: var(--text-secondary);
-  background: var(--card-bg);
+  background: var(--bg-quaternary);
   border-radius: 12px;
-  box-shadow: 0 2px 4px var(--shadow-light);
+  box-shadow: var(--shadow);
   border: 1.5px solid var(--border-primary);
 }
 

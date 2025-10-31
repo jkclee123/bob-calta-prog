@@ -4,9 +4,9 @@
   left: 0;
   right: 0;
   background-color: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-primary);
+  border-bottom: 1px solid var(--border-header);
   z-index: 1000;
-  box-shadow: 0 2px 4px var(--shadow-light);
+  box-shadow: var(--shadow);
 }
 
 .header-container {
@@ -63,7 +63,7 @@
 }
 
 .nav-link.active {
-  color: var(--accent-color);
+  color: var(--color-accent);
   background-color: var(--bg-quaternary);
 }
 

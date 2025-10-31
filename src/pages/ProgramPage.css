@@ -6,14 +6,14 @@
 .error-message {
   text-align: center;
   padding: 80px 20px;
-  background: var(--card-bg);
+  background: var(--bg-quaternary);
   border-radius: 12px;
   margin: 40px auto;
   max-width: 500px;
 }
 
 .error-message h2 {
-  color: #f44336;
+  color: var(--color-error);
   margin-bottom: 16px;
 }
 
@@ -24,14 +24,14 @@
 
 /* Program Header */
 .program-header {
-  background: var(--program-bg-image, none);
+  background: var(--program-bg-image);
   background-size: cover;
   background-position: center;
-  color: white;
+  color: var(--text-primary);
   padding: 32px;
-  border-radius: 12px;
+  border-radius: 14px;
   margin-bottom: 24px;
-  box-shadow: 0 4px 15px var(--shadow-medium);
+  box-shadow: var(--shadow);
   border: 1.5px solid var(--border-primary);
   position: relative;
 }
@@ -43,7 +43,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--bg-primary-alpha);
   border-radius: 12px;
   z-index: 1;
 }
@@ -90,9 +90,9 @@
 
 /* Tabs */
 .tabs-container {
-  background: var(--card-bg);
+  background: var(--bg-quaternary);
   border-radius: 12px;
-  box-shadow: 0 2px 4px var(--shadow-light);
+  box-shadow: var(--shadow);
   border: 1.5px solid var(--border-primary);
   overflow: hidden;
 }
@@ -124,7 +124,7 @@
   font-weight: 600;
   background: linear-gradient(0deg, var(--bg-tertiary), var(--bg-quaternary));
   color: var(--text-primary);
-  border-bottom: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--color-accent);
 }
 
 .tab-content {
@@ -217,12 +217,12 @@
 
 /* Table of Contents */
 .analysis-toc {
-  background-color: var(--card-bg);
-  border: 2px solid var(--border-primary);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
   border-radius: 12px;
   padding: 24px;
   margin-bottom: 40px;
-  box-shadow: 0 2px 8px var(--shadow-light);
+  box-shadow: var(--shadow);
 }
 
 .toc-title {
@@ -292,7 +292,7 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 24px;
-  border-bottom: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--color-accent);
   padding-bottom: 12px;
 }
 
@@ -338,7 +338,7 @@
 }
 
 .code-line:hover {
-  background-color: var(--accent-color);
+  background-color: var(--color-accent);
 }
 
 .steps-container {
@@ -428,7 +428,7 @@
   .tab-button.active {
     border-bottom-color: transparent;
     border-top: 0.5px solid var(--border-primary);
-    border-left: 2px solid var(--accent-color);
+    border-left: 2px solid var(--color-accent);
   }
 
   .tab-content {
@@ -599,7 +599,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--bg-primary-alpha);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -612,10 +612,10 @@
   position: relative;
   max-width: 90vw;
   max-height: 90vh;
-  background-color: var(--bg-secondary, #ffffff);
+  background-color: var(--bg-secondary);
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow);
   animation: zoomIn 0.3s ease-out;
 }
 
@@ -626,9 +626,9 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: var(--bg-primary, #333333);
-  color: var(--text-primary, #ffffff);
-  border: 2px solid var(--border-primary, #555555);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 2px solid var(--border-primary);
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
@@ -639,7 +639,7 @@
 }
 
 .image-modal-close:hover {
-  background-color: var(--bg-tertiary, #555555);
+  background-color: var(--bg-tertiary);
   transform: scale(1.1);
 }
 

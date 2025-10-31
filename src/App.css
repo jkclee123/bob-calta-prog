@@ -7,7 +7,6 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', sans-serif, 'Noto Sans Math', 'STIX Two Math', 'Cambria Math';
   line-height: 1.6;
-  color: var(--text-primary);
   background-color: var(--bg-primary);
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -43,15 +42,6 @@ body {
   cursor: pointer;
   text-align: center;
   line-height: 1;
-}
-
-.btn-primary {
-  background-color: var(--accent-color);
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: #1976D2;
 }
 
 /* Responsive Design */
