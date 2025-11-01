@@ -30,29 +30,10 @@ body {
   max-width: 1800px;
 }
 
-/* Button Styles */
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  text-align: center;
-  line-height: 1;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
     padding: 0 16px;
-  }
-  
-  .btn {
-    padding: 10px 20px;
-    font-size: 13px;
   }
 }
 
