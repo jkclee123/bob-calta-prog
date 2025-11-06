@@ -12,6 +12,15 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
+      {/* Banner Card */}
+      <section className="banner-section">
+        <div className="container">
+          <h1 className="banner-title">{t({
+            en: "Casio fx-50FH II Program Collection by Bob",
+            zh: "Casio fx-50FH II 計數機程式集"
+          })}</h1>
+        </div>
+      </section>
 
       {/* Programs Grid */}
       <section className="programs-section">
