@@ -62,15 +62,14 @@
 }
 
 .symbol-card {
-  border: 1.5px solid var(--border-primary);
+  border: 1px solid var(--border-primary);
   border-radius: 8px;
   padding: 16px;
-  background: linear-gradient(0deg, var(--bg-tertiary) 95%, var(--bg-quaternary));
+  background: var(--bg-quaternary);
   display: flex;
   flex-direction: column;
   height: 100%;
   box-shadow: var(--shadow);
-  border-top: 1px solid var(--border-highlight);
 }
 
 .symbol-header {
@@ -84,7 +83,7 @@
   font-family: 'Courier New', monospace;
   font-size: 1.5rem;
   font-weight: bold;
-  background-color: var(--bg-quaternary);
+  background-color: var(--bg-quinary);
   color: var(--text-primary);
   padding: 8px 12px;
   border-radius: 6px;
@@ -133,7 +132,7 @@
 }
 
 .typing-instruction {
-  background-color: var(--bg-quaternary);
+  background-color: var(--bg-quinary);
   padding: 6px 8px;
   font-family: 'Courier New', monospace;
   font-size: 0.9rem;

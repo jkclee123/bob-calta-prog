@@ -23,13 +23,13 @@
   justify-content: space-between;
   align-items: flex-start;
   padding: 20px 32px;
-  border-bottom: 1px solid var(--border-secondary);
+  border-bottom: 1px solid var(--border-primary);
   min-height: 80px;
-  background-color: var(--bg-tertiary);
+  background-color: var(--bg-quaternary);
 }
 
 .code-line-card:hover {
-  background-color: var(--bg-quaternary);
+  background-color: var(--bg-quinary);
 }
 
 .code-line-card:last-child {

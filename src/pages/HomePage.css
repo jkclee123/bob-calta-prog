@@ -30,7 +30,7 @@
 }
 
 .program-card {
-  background: var(--bg-secondary);
+  background: var(--bg-quaternary);
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
@@ -43,7 +43,7 @@
 
 .program-card:hover {
   transform: translateY(-2px);
-  background-color: var(--bg-tertiary);
+  background-color: var(--bg-quinary);
   border-color: var(--border-highlight);
 }
 
