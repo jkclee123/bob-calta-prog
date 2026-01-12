@@ -40,8 +40,6 @@ const HomePage = () => {
                       src={program.image}
                       alt={`${t(program.name)} preview`}
                       className="program-card-image"
-                      loading="lazy"
-                      decoding="async"
                     />
                   </picture>
                   <div className="program-card-content">

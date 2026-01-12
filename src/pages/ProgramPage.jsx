@@ -61,51 +61,6 @@ const ProgramPage = () => {
     }
   }, [location.hash]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Scroll to top when component mounts or programId changes
-  useEffect(() => {
-    // More robust scroll to top for mobile devices, especially iOS
-    const scrollToTop = () => {
-      // Method 1: Try scrolling the document body and documentElement
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-      
-      // Method 2: Use window.scrollTo with different approaches
-      try {
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: 'instant' // Use 'instant' for more reliable mobile behavior
-        });
-      } catch (e) {
-        // Fallback for older browsers
-        window.scrollTo(0, 0);
-      }
-      
-      // Method 3: Force scroll for iOS by targeting specific elements
-      const rootElement = document.getElementById('root');
-      if (rootElement) {
-        rootElement.scrollTop = 0;
-      }
-      
-      // Method 4: Additional check and retry for mobile
-      setTimeout(() => {
-        if (window.pageYOffset > 0 || document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
-          window.scrollTo(0, 0);
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-        }
-      }, 50);
-    };
-
-    // Use requestAnimationFrame for better timing on mobile
-    requestAnimationFrame(() => {
-      scrollToTop();
-    });
-    
-    // Additional delay for iOS Chrome
-    setTimeout(scrollToTop, 150);
-  }, [programId]);
-
   // Scroll to analysis section when hash changes and analysis tab is active
   useEffect(() => {
     if (!location.hash) return;

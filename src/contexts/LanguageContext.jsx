@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 const LanguageContext = createContext();
 
@@ -10,15 +10,21 @@ export const useLanguage = () => {
   return context;
 };
 
-export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('zh');
-
-  useEffect(() => {
+// Initialize language from localStorage synchronously to avoid re-render
+const getInitialLanguage = () => {
+  try {
     const savedLanguage = localStorage.getItem('preferred-language');
     if (savedLanguage && ['en', 'zh'].includes(savedLanguage)) {
-      setLanguage(savedLanguage);
+      return savedLanguage;
     }
-  }, []);
+  } catch (e) {
+    // localStorage may not be available (SSR, private browsing)
+  }
+  return 'zh';
+};
+
+export const LanguageProvider = ({ children }) => {
+  const [language, setLanguage] = useState(getInitialLanguage);
 
   const changeLanguage = (newLanguage) => {
     setLanguage(newLanguage);

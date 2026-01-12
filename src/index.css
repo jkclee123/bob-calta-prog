@@ -30,11 +30,6 @@ code {
     monospace;
 }
 
-/* Smooth scrolling for the entire page */
-html {
-  scroll-behavior: smooth;
-}
-
 /* Enhanced font support for mathematical symbols */
 .symbol-display,
 .typing-instruction,
