@@ -75,7 +75,3 @@ src/
 ## 🔗 Related Resources
 
 - [Casio fx-50FH II](https://www.casio.com/intl/scientific-calculators/product.Fx-50FHII) - Official calculator documentation
-
----
-
-**Made with ❤️ for the calculator programming community**
